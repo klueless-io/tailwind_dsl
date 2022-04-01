@@ -1,8 +1,6 @@
-# TailwindDsl
+# Tailwind Dsl
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/tailwind_dsl`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+> Tailwind DSL will build tailwind websites useing Domain Specific Language conventions
 
 ## Installation
 
@@ -14,25 +12,62 @@ gem 'tailwind_dsl'
 
 And then execute:
 
-    $ bundle install
+```bash
+bundle install
+```
 
 Or install it yourself as:
 
-    $ gem install tailwind_dsl
+```bash
+gem install tailwind_dsl
+```
+
+## Stories
+
+### Main Story
+
+As a Developer, I can use natural language systems to build websites quickly, so that I can automate website creation
+
+See all [stories](./STORIES.md)
+
 
 ## Usage
 
-TODO: Write usage instructions here
+See all [usage examples](./USAGE.md)
+
+
 
 ## Development
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+Checkout the repo
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+```bash
+git clone 
+```
+
+After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. 
+
+You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+
+```bash
+bin/console
+
+Aaa::Bbb::Program.execute()
+# => ""
+```
+
+`tailwind_dsl` is setup with Guard, run `guard`, this will watch development file changes and run tests automatically, if successful, it will then run rubocop for style quality.
+
+To release a new version, update the version number in `version.rb`, build the gem and push the `.gem` file to [rubygems.org](https://rubygems.org).
+
+```bash
+rake publish
+rake clean
+```
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/tailwind_dsl. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/tailwind_dsl/blob/master/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at https://github.com/klueless-io/tailwind_dsl. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
@@ -40,4 +75,8 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the TailwindDsl project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/tailwind_dsl/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the Tailwind Dsl project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/klueless-io/tailwind_dsl/blob/master/CODE_OF_CONDUCT.md).
+
+## Copyright
+
+Copyright (c) David Cruwys. See [MIT License](LICENSE.txt) for further details.
