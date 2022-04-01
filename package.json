@@ -1,0 +1,14 @@
+{
+  "name": "tailwind_dsl",
+  "version": "0.0.1",
+  "description": "Tailwind DSL will build tailwind websites useing Domain Specific Language conventions",
+  "scripts": {
+    "release": "semantic-release"
+  },
+  "devDependencies": {
+    "@klueless-js/semantic-release-rubygem": "github:klueless-js/semantic-release-rubygem",
+    "@semantic-release/changelog": "^6.0.1",
+    "@semantic-release/git": "^10.0.1",
+    "semantic-release": "^19.0.2"
+  }
+}
