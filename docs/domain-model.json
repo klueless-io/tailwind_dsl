@@ -1,0 +1,715 @@
+{
+  "host": "akf",
+  "theme": "style_04",
+  "palette": {
+    "fill_color": "#ffe6cc",
+    "stroke_color": "#d79b00",
+    "font_color": "#333333",
+    "gradient": null
+  },
+  "style": {
+    "white_space": "wrap",
+    "html": 1,
+    "rounded": null,
+    "shadow": null,
+    "sketch": null,
+    "glass": null
+  },
+  "pages": [
+    {
+      "id": "1Og",
+      "active": true,
+      "name": "Domain Modal",
+      "position_x": 0,
+      "position_y": 540,
+      "theme": "style_04",
+      "bg_theme": "snow",
+      "palette": {
+        "fill_color": "#ffe6cc",
+        "stroke_color": "#d79b00",
+        "font_color": "#333333",
+        "gradient": null
+      },
+      "style": {
+        "white_space": "wrap",
+        "html": 1,
+        "rounded": 0,
+        "shadow": null,
+        "sketch": null,
+        "glass": null
+      },
+      "settings": {
+        "margin_left": 0,
+        "margin_top": 0,
+        "grid": 0,
+        "grid_size": 10,
+        "guides": 1,
+        "tooltips": 1,
+        "connect": 1,
+        "arrows": 1,
+        "fold": 1,
+        "page_no": 1,
+        "page_scale": 1,
+        "page_width": 1169,
+        "page_height": 827,
+        "background": "#fafafa",
+        "page_shadow": 0,
+        "math": 0
+      },
+      "nodes": [
+        {
+          "id": "page_root_1Og",
+          "parent_id": "1Og",
+          "classification": "anchor",
+          "key": "page_root",
+          "nodes": [
+            {
+              "id": "node_root_1Og",
+              "parent_id": "page_root_1Og",
+              "classification": "anchor",
+              "key": "node_root",
+              "nodes": [
+                {
+                  "id": "rule-2",
+                  "parent_id": "node_root_1Og",
+                  "classification": "layout_rule",
+                  "key": "grid_layout",
+                  "anchor_x": 0,
+                  "anchor_y": 0,
+                  "direction": "horizontal",
+                  "wrap_at": 6,
+                  "grid_w": 220,
+                  "grid_h": 180,
+                  "cell_no": 1
+                },
+                {
+                  "id": "1Og-2",
+                  "parent_id": "node_root_1Og",
+                  "classification": "shape",
+                  "key": "square",
+                  "x": 30,
+                  "y": 10,
+                  "w": 160,
+                  "h": 160,
+                  "style": "whiteSpace=wrap;html=1;rounded=0;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333",
+                  "value": "Tailwind GEM",
+                  "meta_data": {
+                    "items": [
+                      {
+                        "type": "title",
+                        "content": "Tailwind GEM"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "1Og-3",
+                  "parent_id": "node_root_1Og",
+                  "classification": "shape",
+                  "key": "square",
+                  "x": 250,
+                  "y": 10,
+                  "w": 160,
+                  "h": 160,
+                  "style": "whiteSpace=wrap;html=1;rounded=0;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333",
+                  "value": "Configuration",
+                  "meta_data": {
+                    "items": [
+                      {
+                        "type": "title",
+                        "content": "Configuration"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "1Og-4",
+                  "parent_id": "node_root_1Og",
+                  "classification": "shape",
+                  "key": "klass",
+                  "x": 450,
+                  "y": 10,
+                  "w": 200,
+                  "h": 160,
+                  "style": "whiteSpace=wrap;html=1;rounded=0;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#333333;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica",
+                  "value": "<p style=\"margin:0px;margin-left:4px;margin-bottom:4px;text-align:center\"><b>Configuration</b></p><hr size=\"1\"/><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">collections: A&lt;Collection&gt;</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">themes: A&lt;Theme&gt;</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">data_shapes: A&lt;DataShape&gt;</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">component_groups: A&lt;ComponentGroup&gt;</p>",
+                  "meta_data": {
+                    "items": [
+                      {
+                        "type": "class",
+                        "name": "Configuration",
+                        "description": null
+                      },
+                      {
+                        "type": "field",
+                        "name": "collections",
+                        "return_type": "A&lt;Collection&gt;"
+                      },
+                      {
+                        "type": "field",
+                        "name": "themes",
+                        "return_type": "A&lt;Theme&gt;"
+                      },
+                      {
+                        "type": "field",
+                        "name": "data_shapes",
+                        "return_type": "A&lt;DataShape&gt;"
+                      },
+                      {
+                        "type": "field",
+                        "name": "component_groups",
+                        "return_type": "A&lt;ComponentGroup&gt;"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "1Og-5",
+                  "parent_id": "node_root_1Og",
+                  "classification": "shape",
+                  "key": "klass",
+                  "x": 670,
+                  "y": 10,
+                  "w": 200,
+                  "h": 160,
+                  "style": "whiteSpace=wrap;html=1;rounded=0;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#333333;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica",
+                  "value": "<p style=\"margin:0px;margin-left:4px;margin-bottom:4px;text-align:center\"><b>Collection</b></p><hr size=\"1\"/><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">name: String</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">description: String</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">component_groups: A&lt;ComponentGroup&gt;</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">default_themes: A&lt;Theme&gt;</p>",
+                  "meta_data": {
+                    "items": [
+                      {
+                        "type": "class",
+                        "name": "Collection",
+                        "description": null
+                      },
+                      {
+                        "type": "field",
+                        "name": "name",
+                        "return_type": "String"
+                      },
+                      {
+                        "type": "field",
+                        "name": "description",
+                        "return_type": "String"
+                      },
+                      {
+                        "type": "field",
+                        "name": "component_groups",
+                        "return_type": "A&lt;ComponentGroup&gt;"
+                      },
+                      {
+                        "type": "field",
+                        "name": "default_themes",
+                        "return_type": "A&lt;Theme&gt;"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "1Og-6",
+                  "parent_id": "node_root_1Og",
+                  "classification": "shape",
+                  "key": "klass",
+                  "x": 890,
+                  "y": 10,
+                  "w": 200,
+                  "h": 160,
+                  "style": "whiteSpace=wrap;html=1;rounded=0;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#333333;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica",
+                  "value": "<p style=\"margin:0px;margin-left:4px;margin-bottom:4px;text-align:center\"><b>Theme</b></p><hr size=\"1\"/><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">key: Symbol</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">name: String</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">description: String</p>",
+                  "meta_data": {
+                    "items": [
+                      {
+                        "type": "class",
+                        "name": "Theme",
+                        "description": null
+                      },
+                      {
+                        "type": "field",
+                        "name": "key",
+                        "return_type": "Symbol"
+                      },
+                      {
+                        "type": "field",
+                        "name": "name",
+                        "return_type": "String"
+                      },
+                      {
+                        "type": "field",
+                        "name": "description",
+                        "return_type": "String"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "1Og-7",
+                  "parent_id": "node_root_1Og",
+                  "classification": "shape",
+                  "key": "klass",
+                  "x": 1110,
+                  "y": 10,
+                  "w": 200,
+                  "h": 160,
+                  "style": "whiteSpace=wrap;html=1;rounded=0;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#333333;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica",
+                  "value": "<p style=\"margin:0px;margin-left:4px;margin-bottom:4px;text-align:center\"><b>ComponentGroup</b></p><hr size=\"1\"/><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">key: Symbol</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">name: String</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">description: String</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">collection: Collection</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">components: A&lt;Component&gt;</p>",
+                  "meta_data": {
+                    "items": [
+                      {
+                        "type": "class",
+                        "name": "ComponentGroup",
+                        "description": null
+                      },
+                      {
+                        "type": "field",
+                        "name": "key",
+                        "return_type": "Symbol"
+                      },
+                      {
+                        "type": "field",
+                        "name": "name",
+                        "return_type": "String"
+                      },
+                      {
+                        "type": "field",
+                        "name": "description",
+                        "return_type": "String"
+                      },
+                      {
+                        "type": "field",
+                        "name": "collection",
+                        "return_type": "Collection"
+                      },
+                      {
+                        "type": "field",
+                        "name": "components",
+                        "return_type": "A&lt;Component&gt;"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "1Og-8",
+                  "parent_id": "node_root_1Og",
+                  "classification": "shape",
+                  "key": "klass",
+                  "x": 10,
+                  "y": 190,
+                  "w": 200,
+                  "h": 160,
+                  "style": "whiteSpace=wrap;html=1;rounded=0;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#333333;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica",
+                  "value": "<p style=\"margin:0px;margin-left:4px;margin-bottom:4px;text-align:center\"><b>Component</b></p><hr size=\"1\"/><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">key: Symbol</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">name: String</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">description: String</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">data_shape: DataShape</p>",
+                  "meta_data": {
+                    "items": [
+                      {
+                        "type": "class",
+                        "name": "Component",
+                        "description": null
+                      },
+                      {
+                        "type": "field",
+                        "name": "key",
+                        "return_type": "Symbol"
+                      },
+                      {
+                        "type": "field",
+                        "name": "name",
+                        "return_type": "String"
+                      },
+                      {
+                        "type": "field",
+                        "name": "description",
+                        "return_type": "String"
+                      },
+                      {
+                        "type": "field",
+                        "name": "data_shape",
+                        "return_type": "DataShape"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "1Og-9",
+                  "parent_id": "node_root_1Og",
+                  "classification": "shape",
+                  "key": "klass",
+                  "x": 230,
+                  "y": 190,
+                  "w": 200,
+                  "h": 160,
+                  "style": "whiteSpace=wrap;html=1;rounded=0;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#333333;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica",
+                  "value": "<p style=\"margin:0px;margin-left:4px;margin-bottom:4px;text-align:center\"><b>DataShape</b></p><hr size=\"1\"/><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">key: Symbol</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">name: String</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">description: String</p>",
+                  "meta_data": {
+                    "items": [
+                      {
+                        "type": "class",
+                        "name": "DataShape",
+                        "description": null
+                      },
+                      {
+                        "type": "field",
+                        "name": "key",
+                        "return_type": "Symbol"
+                      },
+                      {
+                        "type": "field",
+                        "name": "name",
+                        "return_type": "String"
+                      },
+                      {
+                        "type": "field",
+                        "name": "description",
+                        "return_type": "String"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "1Og-10",
+                  "parent_id": "node_root_1Og",
+                  "classification": "shape",
+                  "key": "square",
+                  "x": 470,
+                  "y": 190,
+                  "w": 160,
+                  "h": 160,
+                  "style": "whiteSpace=wrap;html=1;rounded=0;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333",
+                  "value": "Schema",
+                  "meta_data": {
+                    "items": [
+                      {
+                        "type": "title",
+                        "content": "Schema"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "1Og-11",
+                  "parent_id": "node_root_1Og",
+                  "classification": "shape",
+                  "key": "klass",
+                  "x": 670,
+                  "y": 190,
+                  "w": 200,
+                  "h": 160,
+                  "style": "whiteSpace=wrap;html=1;rounded=0;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#333333;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica",
+                  "value": "<p style=\"margin:0px;margin-left:4px;margin-bottom:4px;text-align:center\"><b>WebSite</b></p><hr size=\"1\"/><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">key: Symbol</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">name: String</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">description: String</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">target_folder: String</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">base_collection: Collection</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">theme: Theme</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">root: Page</p><hr size=\"1\"/><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">favourite_components() : A&lt;Component&gt;</p>",
+                  "meta_data": {
+                    "items": [
+                      {
+                        "type": "class",
+                        "name": "WebSite",
+                        "description": null
+                      },
+                      {
+                        "type": "field",
+                        "name": "key",
+                        "return_type": "Symbol"
+                      },
+                      {
+                        "type": "field",
+                        "name": "name",
+                        "return_type": "String"
+                      },
+                      {
+                        "type": "field",
+                        "name": "description",
+                        "return_type": "String"
+                      },
+                      {
+                        "type": "field",
+                        "name": "target_folder",
+                        "return_type": "String"
+                      },
+                      {
+                        "type": "field",
+                        "name": "base_collection",
+                        "return_type": "Collection"
+                      },
+                      {
+                        "type": "field",
+                        "name": "theme",
+                        "return_type": "Theme"
+                      },
+                      {
+                        "type": "field",
+                        "name": "root",
+                        "return_type": "Page"
+                      },
+                      {
+                        "type": "method",
+                        "name": "favourite_components",
+                        "return_type": "A&lt;Component&gt;"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "1Og-12",
+                  "parent_id": "node_root_1Og",
+                  "classification": "shape",
+                  "key": "klass",
+                  "x": 890,
+                  "y": 190,
+                  "w": 200,
+                  "h": 160,
+                  "style": "whiteSpace=wrap;html=1;rounded=0;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#333333;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica",
+                  "value": "<p style=\"margin:0px;margin-left:4px;margin-bottom:4px;text-align:center\"><b>Page</b></p><hr size=\"1\"/><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">key: Symbol</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">name: String</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">description: String</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">sub_folder: String</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">level: Integer</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">pages: A&lt;Page&gt;</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">components: A&lt;Component&gt;</p>",
+                  "meta_data": {
+                    "items": [
+                      {
+                        "type": "class",
+                        "name": "Page",
+                        "description": null
+                      },
+                      {
+                        "type": "field",
+                        "name": "key",
+                        "return_type": "Symbol"
+                      },
+                      {
+                        "type": "field",
+                        "name": "name",
+                        "return_type": "String"
+                      },
+                      {
+                        "type": "field",
+                        "name": "description",
+                        "return_type": "String"
+                      },
+                      {
+                        "type": "field",
+                        "name": "sub_folder",
+                        "return_type": "String"
+                      },
+                      {
+                        "type": "field",
+                        "name": "level",
+                        "return_type": "Integer"
+                      },
+                      {
+                        "type": "field",
+                        "name": "pages",
+                        "return_type": "A&lt;Page&gt;"
+                      },
+                      {
+                        "type": "field",
+                        "name": "components",
+                        "return_type": "A&lt;Component&gt;"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "1Og-13",
+                  "parent_id": "node_root_1Og",
+                  "classification": "shape",
+                  "key": "klass",
+                  "x": 1110,
+                  "y": 190,
+                  "w": 200,
+                  "h": 160,
+                  "style": "whiteSpace=wrap;html=1;rounded=0;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#333333;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica",
+                  "value": "<p style=\"margin:0px;margin-left:4px;margin-bottom:4px;text-align:center\"><b>Component</b></p><hr size=\"1\"/><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">key: Symbol</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">name: String</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">description: String</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">component_group: ComponentGroup</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">data_shape: DataShape</p>",
+                  "meta_data": {
+                    "items": [
+                      {
+                        "type": "class",
+                        "name": "Component",
+                        "description": null
+                      },
+                      {
+                        "type": "field",
+                        "name": "key",
+                        "return_type": "Symbol"
+                      },
+                      {
+                        "type": "field",
+                        "name": "name",
+                        "return_type": "String"
+                      },
+                      {
+                        "type": "field",
+                        "name": "description",
+                        "return_type": "String"
+                      },
+                      {
+                        "type": "field",
+                        "name": "component_group",
+                        "return_type": "ComponentGroup"
+                      },
+                      {
+                        "type": "field",
+                        "name": "data_shape",
+                        "return_type": "DataShape"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "1Og-14",
+                  "parent_id": "node_root_1Og",
+                  "classification": "shape",
+                  "key": "square",
+                  "x": 30,
+                  "y": 370,
+                  "w": 160,
+                  "h": 160,
+                  "style": "whiteSpace=wrap;html=1;rounded=0;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333",
+                  "value": "Tailwind Generator",
+                  "meta_data": {
+                    "items": [
+                      {
+                        "type": "title",
+                        "content": "Tailwind Generator"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "1Og-15",
+                  "parent_id": "node_root_1Og",
+                  "classification": "shape",
+                  "key": "square",
+                  "x": 250,
+                  "y": 370,
+                  "w": 160,
+                  "h": 160,
+                  "style": "whiteSpace=wrap;html=1;rounded=0;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333",
+                  "value": "Tailwind DSL",
+                  "meta_data": {
+                    "items": [
+                      {
+                        "type": "title",
+                        "content": "Tailwind DSL"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "1Og-16",
+                  "parent_id": "node_root_1Og",
+                  "classification": "shape",
+                  "key": "klass",
+                  "x": 450,
+                  "y": 370,
+                  "w": 200,
+                  "h": 160,
+                  "style": "whiteSpace=wrap;html=1;rounded=0;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#333333;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica",
+                  "value": "<p style=\"margin:0px;margin-left:4px;margin-bottom:4px;text-align:center\"><b>TailwindDsl</b></p><hr size=\"1\"/><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">website()</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">page()</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">component()</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">save()</p>",
+                  "meta_data": {
+                    "items": [
+                      {
+                        "type": "class",
+                        "name": "TailwindDsl",
+                        "description": null
+                      },
+                      {
+                        "type": "method",
+                        "name": "website",
+                        "return_type": null
+                      },
+                      {
+                        "type": "method",
+                        "name": "page",
+                        "return_type": null
+                      },
+                      {
+                        "type": "method",
+                        "name": "component",
+                        "return_type": null
+                      },
+                      {
+                        "type": "method",
+                        "name": "save",
+                        "return_type": null
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "1Og-17",
+                  "parent_id": "node_root_1Og",
+                  "classification": "shape",
+                  "key": "square",
+                  "x": 690,
+                  "y": 370,
+                  "w": 160,
+                  "h": 160,
+                  "style": "whiteSpace=wrap;html=1;rounded=0;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333",
+                  "value": "DataBuilder",
+                  "meta_data": {
+                    "items": [
+                      {
+                        "type": "title",
+                        "content": "DataBuilder"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "1Og-18",
+                  "parent_id": "node_root_1Og",
+                  "classification": "shape",
+                  "key": "klass",
+                  "x": 890,
+                  "y": 370,
+                  "w": 200,
+                  "h": 160,
+                  "style": "whiteSpace=wrap;html=1;rounded=0;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#333333;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica",
+                  "value": "<p style=\"margin:0px;margin-left:4px;margin-bottom:4px;text-align:center\"><b>BaseDataBuilder</b></p><hr size=\"1\"/><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">obj: Hash</p>",
+                  "meta_data": {
+                    "items": [
+                      {
+                        "type": "class",
+                        "name": "BaseDataBuilder",
+                        "description": null
+                      },
+                      {
+                        "type": "field",
+                        "name": "obj",
+                        "return_type": "Hash"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "1Og-19",
+                  "parent_id": "node_root_1Og",
+                  "classification": "shape",
+                  "key": "interface",
+                  "x": 1130,
+                  "y": 370,
+                  "w": 160,
+                  "h": 160,
+                  "style": "whiteSpace=wrap;html=1;rounded=0;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica",
+                  "value": "<p style=\"margin:0px;margin-left:4px;margin-bottom:4px;text-align:center\"><i>&lt;&lt; MixIn &gt;&gt;</i></p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px;text-align:center\"><b>Factory</b></p><hr size=\"1\"/><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">data()</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">data_instance()</p>",
+                  "meta_data": {
+                    "items": [
+                      {
+                        "type": "interface",
+                        "name": "Factory",
+                        "description": null,
+                        "interface_type": "MixIn"
+                      },
+                      {
+                        "type": "method",
+                        "name": "data",
+                        "return_type": null
+                      },
+                      {
+                        "type": "method",
+                        "name": "data_instance",
+                        "return_type": null
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

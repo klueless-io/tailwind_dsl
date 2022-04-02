@@ -49,6 +49,9 @@ KConfig.configure(CONFIG_KEY) do |config|
   config.template_folders.add(:template           , File.expand_path('.templates', Dir.pwd))
 
   config.target_folders.add(:app                  , base_folder)
+  config.target_folders.add(:lib                  , :app, 'lib', 'drawio_dsl')
+  config.target_folders.add(:spec                 , :app, 'spec', 'drawio_dsl')
+  config.target_folders.add(:docs                 , :app, 'docs')
   config.target_folders.add(:builder              , builder_folder)
 end
 
