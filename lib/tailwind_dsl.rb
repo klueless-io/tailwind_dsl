@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require_relative 'tailwind_dsl/version'
+require_relative '_'
 
 module TailwindDsl
   # raise TailwindDsl::Error, 'Sample message'

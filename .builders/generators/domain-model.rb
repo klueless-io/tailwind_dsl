@@ -7,56 +7,37 @@ KManager.action :domain_model do
       .page('Domain Modal', margin_left: 0, margin_top: 0, rounded: 0, background: '#fafafa') do
         grid_layout(wrap_at: 6, grid_w: 220, grid_h: 180)
 
-        square(title: 'Tailwind GEM', theme: :style_01) 
+        group(title: 'Tailwind GEM', theme: :style_01) 
 
-        square(title: 'Configuration', theme: :style_01) 
+        group(title: 'Configuration', theme: :style_01) 
 
-        klass(w: 200, description: 'Configuration container for the Tailwind DSL') do
+        klass(:a1, w: 200, description: 'Configuration container for the Tailwind DSL') do
           format
-            .header('Configuration')
-            .field(:collections       , type: 'A&lt;Collection&gt;')      # winter, summer
-            .field(:themes            , type: 'A&lt;Theme&gt;')           # light, dark, red, blue
-            .field(:data_shapes       , type: 'A&lt;DataShape&gt;')       # obj, heading_paragraph_list, image_heading_paragraph_list
-            .field(:component_groups  , type: 'A&lt;ComponentGroup&gt;')  # nav, footer, header, hero, price
+            .header('Configuration', namespace: :config)
+            .field(:collections       , type: :Collections)      # winter, summer
+            .field(:themes            , type: :Themes)           # light, dark, red, blue
+            .field(:data_shapes       , type: :DataShapes)       # obj, heading_paragraph_list, image_heading_paragraph_list
+            .field(:component_groups  , type: :ComponentGroups)  # nav, footer, header, hero, price
         end
 
-        klass(w: 200, description: 'Configuration for collection', note: 'other words could be - brands / set / design / collection') do
+        klass(:a2, w: 200, description: 'Configuration for collection', note: 'other words could be - brands / set / design / collection') do
           format
-            .header('Collection')
+            .header('Collection', namespace: :config)
             .field(:name, type: :String)
             .field(:description, type: :String)
-            .field(:component_groups  , type: 'A&lt;ComponentGroup&gt;')  # winter, summer
-            .field(:default_themes    , type: 'A&lt;Theme&gt;')           # light, dark
+            .field(:component_groups  , type: :ComponentGroups)  # winter, summer
+            .field(:default_themes    , type: :Themes)           # light, dark
         end
 
-        klass(w: 200, description: 'Configuration for theme', note: 'light, dark, red, green') do
+        klass(:a3, w: 200, description: 'Configuration for theme', note: 'light, dark, red, green') do
           format
-            .header('Theme')
+            .header('Theme', namespace: :config)
             .field(:key, type: :Symbol)
             .field(:name, type: :String) # The name will default to the titleized version of the key
             .field(:description, type: :String)
         end
 
-        klass(w: 200, description: 'Configuration for component group', note: 'nav, , footer, header, hero, price') do
-          format
-            .header('ComponentGroup')
-            .field(:key, type: :Symbol)
-            .field(:name, type: :String)
-            .field(:description, type: :String)
-            .field(:collection, type: :Collection) # belongs_to (foreign_key)
-            .field(:components  , type: 'A&lt;Component&gt;')   # 01, 02, 03
-        end
-
-        klass(w: 200, description: 'Configuration for component', note: '01, 02, 03') do
-          format
-            .header('Component')
-            .field(:key, type: :Symbol)
-            .field(:name, type: :String)
-            .field(:description, type: :String)
-            .field(:data_shape, type: :DataShape)
-        end
-
-        klass(w: 200, description: 'Configuration for data shape', note: 'object, key_value array') do
+        klass(:a4, w: 200, description: 'Configuration for data shape', note: 'object, key_value array') do
           format
             .header('DataShape')
             .field(:key, type: :Symbol)
@@ -64,15 +45,42 @@ KManager.action :domain_model do
             .field(:description, type: :String)
         end
 
-        square(title: 'Schema', theme: :style_01) 
+        klass(:a5, w: 200, description: 'Configuration for component group', note: 'nav, , footer, header, hero, price') do
+          format
+            .header('ComponentGroup', namespace: :config)
+            .field(:key, type: :Symbol)
+            .field(:name, type: :String)
+            .field(:description, type: :String)
+            .field(:collection, type: :Collection) # belongs_to (foreign_key)
+            .field(:components  , type: :Components)   # 01, 02, 03
+        end
+
+        klass(:a6, w: 200, description: 'Configuration for component', note: '01, 02, 03') do
+          format
+            .header('Component', namespace: :config)
+            .field(:key, type: :Symbol)
+            .field(:name, type: :String)
+            .field(:description, type: :String)
+            .field(:data_shape, type: :DataShape)
+        end
+
+        solid(source: :a1, target: :a2, exit_point: :e, entry_point: :w, waypoint: :orthogonal_curved)
+        solid(source: :a1, target: :a3, exit_point: :e, entry_point: :w, waypoint: :orthogonal_curved)
+        solid(source: :a1, target: :a4, exit_point: :e, entry_point: :w, waypoint: :orthogonal_curved)
+        solid(source: :a1, target: :a5, exit_point: :e, entry_point: :w, waypoint: :orthogonal_curved)
+        solid(source: :a5, target: :a6, exit_point: :e, entry_point: :w, waypoint: :orthogonal_curved)
+        solid(source: :a6, target: :a4, exit_point: :w, entry_point: :e, waypoint: :orthogonal_curved)
+        solid(source: :a2, target: :a3, exit_point: :w, entry_point: :e, waypoint: :orthogonal_curved)
+
+        group(title: 'Schema', theme: :style_01) 
 
         # website -> root<Page> (start of sitemap)
         #         -> page -> pages [about, contact, news, products, services, terms, privacy] -> news -> news_item
         #         -> page -> components -> component -> data_shape
 
-        klass(w: 200, description: '') do
+        klass(:b1, w: 200, description: '') do
           format
-            .header('WebSite')
+            .header('WebSite', namespace: :schema)
             .field(:key, type: :Symbol)
             .field(:name, type: :String)
             .field(:description, type: :String)
@@ -80,24 +88,24 @@ KManager.action :domain_model do
             .field(:base_collection, type: :Collection) # belongs_to (foreign_key)
             .field(:theme, type: :Theme)  # belongs_to (foreign_key)
             .field(:root, type: :Page)
-            .method(:favourite_components, type: 'A&lt;Component&gt;') # these are the components have been used in the site and implicitly become favourite
+            .method(:favourite_components, type: :Components) # these are the components have been used in the site and implicitly become favourite
         end
 
-        klass(w: 200, description: '') do
+        klass(:b2, w: 200, description: '') do
           format
-            .header('Page')
+            .header('Page', namespace: :schema)
             .field(:key, type: :Symbol)
             .field(:name, type: :String)
             .field(:description, type: :String)
             .field(:sub_folder, type: :String)
             .field(:level, type: :Integer) # level 1 will hold root (home page) and top level pages (about, contact, etc)
-            .field(:pages, type: 'A&lt;Page&gt;')   # 01, 02, 03
-            .field(:components, type: 'A&lt;Component&gt;')   # 01, 02, 03
+            .field(:pages, type: :Pages)   # 01, 02, 03
+            .field(:components, type: :Components)   # 01, 02, 03
         end
 
-        klass(w: 200, description: '') do
+        klass(:b3, w: 200, description: '') do
           format
-            .header('Component')
+            .header('Component', namespace: :schema)
             .field(:key, type: :Symbol)
             .field(:name, type: :String)
             .field(:description, type: :String)
@@ -105,12 +113,16 @@ KManager.action :domain_model do
             .field(:data_shape, type: :DataShape)
         end
 
-        square(title: 'Tailwind Generator', theme: :style_01)
+        solid(source: :b1, target: :b2, exit_point: :e, entry_point: :w, waypoint: :orthogonal_curved)
+        solid(source: :b2, target: :b3, exit_point: :e, entry_point: :w, waypoint: :orthogonal_curved)
+        solid(source: :b2, target: :b2, exit_point: :e, entry_point: :s, waypoint: :orthogonal_curved)
+
+        group(title: 'Tailwind Generator', theme: :style_01)
 
         # MVC pattern
         # Model (data shape) -> View (component html) -> Controller (tailwind generator)
 
-        square(title: 'Tailwind DSL', theme: :style_01)
+        group(title: 'Tailwind DSL', theme: :style_01)
 
         klass(w: 200, description: 'DSL for tailwind websites') do
           format
@@ -121,7 +133,7 @@ KManager.action :domain_model do
             .method(:save)
         end
 
-        square(title: 'DataBuilder', theme: :style_01)
+        group(title: 'DataBuilder', theme: :style_01)
 
         klass(w: 200, description: 'Base for any Data Builder') do
           format

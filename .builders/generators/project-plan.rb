@@ -10,6 +10,8 @@ KManager.action :project_plan do
 
         grid_layout(y: 90, direction: :horizontal, grid_h: 80, grid_w: 320, wrap_at: 3, grid: 0)
 
+        todo(title: 'build a or addapt the existing RubyDsl so that it can write classes and specs based on tailwind domain model')
+
       end
       .page('To Do', theme: :style_02, margin_left: 0, margin_top: 0) do
 
