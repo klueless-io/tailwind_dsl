@@ -1,31 +1,40 @@
-<mxfile host="l0Z">
-  <diagram id="pKS" name="In progress">
+<mxfile host="tQX">
+  <diagram id="IST" name="In progress">
     <mxGraphModel dx="0" dy="0" background="#FFFAFA" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
-        <mxCell id="page_root_pKS" parent="pKS"/>
-        <mxCell id="node_root_pKS" parent="page_root_pKS"/>
-        <mxCell id="pKS-1" value="DrawIO DSL" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fontColor=#1F2D3D;text;fontSize=28;fontStyle=1;fillColor=none" vertex="1" parent="node_root_pKS">
+        <mxCell id="page_root_IST" parent="IST"/>
+        <mxCell id="node_root_IST" parent="page_root_IST"/>
+        <mxCell id="IST-1" value="DrawIO DSL" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fontColor=#1F2D3D;text;fontSize=28;fontStyle=1;fillColor=none" vertex="1" parent="node_root_IST">
           <mxGeometry x="300" y="0" width="400" height="80" as="geometry"/>
         </mxCell>
-        <mxCell id="pKS-3" value="build a or addapt the existing RubyDsl so that it can write classes and specs based on tailwind domain model" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#333333" vertex="1" parent="node_root_pKS">
+        <mxCell id="IST-3" value="build a sample DSL to test how this can be used" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#333333" vertex="1" parent="node_root_IST">
           <mxGeometry x="10" y="10" width="300" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="IST-4" value="build a JSON builder proof of concept based on the rails XML builder" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#333333" vertex="1" parent="node_root_IST">
+          <mxGeometry x="330" y="10" width="300" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="IST-5" value="add icon list + svg to the configuration" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#333333" vertex="1" parent="node_root_IST">
+          <mxGeometry x="650" y="10" width="300" height="60" as="geometry"/>
         </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="edq" name="To Do">
+  <diagram id="QPm" name="To Do">
     <mxGraphModel dx="0" dy="0" background="#FFFAFA" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
-        <mxCell id="page_root_edq" parent="edq"/>
-        <mxCell id="node_root_edq" parent="page_root_edq"/>
+        <mxCell id="page_root_QPm" parent="QPm"/>
+        <mxCell id="node_root_QPm" parent="page_root_QPm"/>
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="yCV" name="Done">
+  <diagram id="PrX" name="Done">
     <mxGraphModel dx="0" dy="0" background="#FFFAFA" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
-        <mxCell id="page_root_yCV" parent="yCV"/>
-        <mxCell id="node_root_yCV" parent="page_root_yCV"/>
+        <mxCell id="page_root_PrX" parent="PrX"/>
+        <mxCell id="node_root_PrX" parent="page_root_PrX"/>
+        <mxCell id="PrX-1" value="build a or adapt the existing RubyDsl so that it can write classes and specs based on tailwind domain model" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_PrX">
+          <mxGeometry x="0" y="0" width="300" height="60" as="geometry"/>
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>

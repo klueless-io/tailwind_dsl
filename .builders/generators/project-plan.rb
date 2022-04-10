@@ -10,8 +10,9 @@ KManager.action :project_plan do
 
         grid_layout(y: 90, direction: :horizontal, grid_h: 80, grid_w: 320, wrap_at: 3, grid: 0)
 
-        todo(title: 'build a or addapt the existing RubyDsl so that it can write classes and specs based on tailwind domain model')
-
+        todo(title: 'build a sample DSL to test how this can be used')
+        todo(title: 'build a JSON builder proof of concept based on the rails XML builder')
+        todo(title: 'add icon list + svg to the configuration')
       end
       .page('To Do', theme: :style_02, margin_left: 0, margin_top: 0) do
 
@@ -24,6 +25,7 @@ KManager.action :project_plan do
 
         # h5(x: 300, y: 0, w: 400, h: 80, title: 'DrawIO DSL')
 
+        todo(title: 'build a or adapt the existing RubyDsl so that it can write classes and specs based on tailwind domain model')
         grid_layout(y:90, direction: :horizontal, grid_h: 80, grid_w: 320, wrap_at: 3, grid: 0)
 
       end

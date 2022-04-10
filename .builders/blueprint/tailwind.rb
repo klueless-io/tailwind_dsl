@@ -9,10 +9,11 @@ KManager.model :tailwind, namespace: %i[domain] do
   # endFill=1,0
 
   table :collections do
-    fields %i[key description default_themes]
+    fields %i[key description default_themes source]
 
-    row :devdojo, 'DevDojo', %w[blue red green]
-    row :merikui, 'Merikui', %w[black white]
+    row :devdojo    , 'DevDojo'   , %w[blue red green]
+    row :merakiui   , 'Merakiui'  , %w[black white]       , 'https://github.com/merakiui/merakiui'
+    row :start_kit  , 'start_kit' , %w[black white]
   end
 
   table :component_groups do

@@ -58,6 +58,9 @@ KConfig.configure(CONFIG_KEY) do |config|
   config.target_folders.add(:spec                 , :app, 'spec', 'tailwind_dsl')
   config.target_folders.add(:docs                 , :app, 'docs')
   config.target_folders.add(:builder              , builder_folder)
+
+  config.target_folders.add(:template_merakiui    , global_template, 'tailwind', 'merakiui')
+  config.target_folders.add(:template_devdojo     , global_template, 'tailwind', 'devdojo')
 end
 
 KConfig.configuration(CONFIG_KEY).debug
