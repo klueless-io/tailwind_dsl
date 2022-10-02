@@ -12,24 +12,24 @@ RSpec.describe TailwindDsl::Config::Collection do
   context '.name' do
     subject { instance.name }
 
-    fit { is_expected.to be_nil }
+    it { is_expected.to be_nil }
   end
 
   context '.description' do
     subject { instance.description }
 
-    fit { is_expected.to be_nil }
+    it { is_expected.to be_nil }
   end
 
   context '.component_groups' do
     subject { instance.component_groups }
 
-    fit { is_expected.to be_nil }
+    it { is_expected.to be_nil }
   end
 
   context '.default_themes' do
     subject { instance.default_themes }
 
-    fit { is_expected.to be_nil }
+    it { is_expected.to be_nil }
   end
 end
