@@ -1,7 +1,7 @@
-inherit_mode:
-  merge:
-    - Exclude # see: https://stackoverflow.com/a/70818366/473923
-    - AllowedNames
+# inherit_mode:
+#   merge:
+#     - Exclude # see: https://stackoverflow.com/a/70818366/473923
+#     - AllowedNames
 AllCops:
   TargetRubyVersion: 2.7
   DisplayCopNames: true
