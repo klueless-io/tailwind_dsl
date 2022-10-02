@@ -11,8 +11,6 @@ module TailwindDsl
       attr_accessor :level
       attr_accessor :pages
       attr_accessor :components
-
-      def initialize; end
     end
   end
 end

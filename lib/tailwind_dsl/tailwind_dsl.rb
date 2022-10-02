@@ -3,8 +3,6 @@
 module TailwindDsl
   # Tailwind Dsl
   class TailwindDsl
-    def initialize; end
-
     def website; end
 
     def page; end

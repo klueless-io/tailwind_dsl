@@ -12,8 +12,6 @@ module TailwindDsl
       attr_accessor :theme
       attr_accessor :root
 
-      def initialize; end
-
       def favourite_components; end
     end
   end

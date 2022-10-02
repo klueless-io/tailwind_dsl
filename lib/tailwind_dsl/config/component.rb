@@ -8,8 +8,6 @@ module TailwindDsl
       attr_accessor :name
       attr_accessor :description
       attr_accessor :data_shape
-
-      def initialize; end
     end
   end
 end

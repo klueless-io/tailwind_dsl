@@ -8,8 +8,6 @@ module TailwindDsl
       attr_accessor :themes
       attr_accessor :data_shapes
       attr_accessor :component_groups
-
-      def initialize; end
     end
   end
 end

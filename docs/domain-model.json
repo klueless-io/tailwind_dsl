@@ -1,5 +1,5 @@
 {
-  "host": "TM6",
+  "host": "Qvx",
   "theme": "style_04",
   "palette": {
     "fill_color": "#ffe6cc",
@@ -17,7 +17,7 @@
   },
   "pages": [
     {
-      "id": "1xz",
+      "id": "CfI",
       "active": true,
       "name": "Domain Modal",
       "position_x": 0,
@@ -58,20 +58,20 @@
       },
       "nodes": [
         {
-          "id": "page_root_1xz",
-          "parent_id": "1xz",
+          "id": "page_root_CfI",
+          "parent_id": "CfI",
           "classification": "anchor",
           "key": "page_root",
           "nodes": [
             {
-              "id": "node_root_1xz",
-              "parent_id": "page_root_1xz",
+              "id": "node_root_CfI",
+              "parent_id": "page_root_CfI",
               "classification": "anchor",
               "key": "node_root",
               "nodes": [
                 {
                   "id": "rule-2",
-                  "parent_id": "node_root_1xz",
+                  "parent_id": "node_root_CfI",
                   "classification": "layout_rule",
                   "key": "grid_layout",
                   "anchor_x": 0,
@@ -83,8 +83,8 @@
                   "cell_no": 1
                 },
                 {
-                  "id": "1xz-2",
-                  "parent_id": "node_root_1xz",
+                  "id": "CfI-2",
+                  "parent_id": "node_root_CfI",
                   "classification": "shape",
                   "key": "group",
                   "x": 5,
@@ -103,8 +103,8 @@
                   }
                 },
                 {
-                  "id": "1xz-3",
-                  "parent_id": "node_root_1xz",
+                  "id": "CfI-3",
+                  "parent_id": "node_root_CfI",
                   "classification": "shape",
                   "key": "group",
                   "x": 225,
@@ -124,7 +124,7 @@
                 },
                 {
                   "id": "a1",
-                  "parent_id": "node_root_1xz",
+                  "parent_id": "node_root_CfI",
                   "classification": "shape",
                   "key": "klass",
                   "x": 450,
@@ -166,7 +166,7 @@
                 },
                 {
                   "id": "a2",
-                  "parent_id": "node_root_1xz",
+                  "parent_id": "node_root_CfI",
                   "classification": "shape",
                   "key": "klass",
                   "x": 670,
@@ -174,7 +174,7 @@
                   "w": 200,
                   "h": 160,
                   "style": "whiteSpace=wrap;html=1;rounded=0;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#333333;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica",
-                  "value": "<p style=\"margin:0px;margin-left:4px;margin-bottom:4px;text-align:center\"><b>Collection</b></p><hr size=\"1\"/><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">more: String</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">name: String</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">description: String</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">component_groups: ComponentGroups</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">default_themes: Themes</p>",
+                  "value": "<p style=\"margin:0px;margin-left:4px;margin-bottom:4px;text-align:center\"><b>Collection</b></p><hr size=\"1\"/><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">name: String</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">name: String</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">description: String</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">component_groups: ComponentGroups</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">default_themes: Themes</p>",
                   "meta_data": {
                     "items": [
                       {
@@ -185,7 +185,7 @@
                       },
                       {
                         "type": "field",
-                        "name": "more",
+                        "name": "name",
                         "return_type": "String"
                       },
                       {
@@ -213,7 +213,7 @@
                 },
                 {
                   "id": "a3",
-                  "parent_id": "node_root_1xz",
+                  "parent_id": "node_root_CfI",
                   "classification": "shape",
                   "key": "klass",
                   "x": 890,
@@ -250,7 +250,7 @@
                 },
                 {
                   "id": "a4",
-                  "parent_id": "node_root_1xz",
+                  "parent_id": "node_root_CfI",
                   "classification": "shape",
                   "key": "klass",
                   "x": 1110,
@@ -287,7 +287,7 @@
                 },
                 {
                   "id": "a5",
-                  "parent_id": "node_root_1xz",
+                  "parent_id": "node_root_CfI",
                   "classification": "shape",
                   "key": "klass",
                   "x": 10,
@@ -334,7 +334,7 @@
                 },
                 {
                   "id": "a6",
-                  "parent_id": "node_root_1xz",
+                  "parent_id": "node_root_CfI",
                   "classification": "shape",
                   "key": "klass",
                   "x": 230,
@@ -375,8 +375,8 @@
                   }
                 },
                 {
-                  "id": "1xz-10",
-                  "parent_id": "node_root_1xz",
+                  "id": "CfI-10",
+                  "parent_id": "node_root_CfI",
                   "classification": "shape",
                   "key": "solid",
                   "x": 0,
@@ -395,8 +395,8 @@
                   }
                 },
                 {
-                  "id": "1xz-11",
-                  "parent_id": "node_root_1xz",
+                  "id": "CfI-11",
+                  "parent_id": "node_root_CfI",
                   "classification": "shape",
                   "key": "solid",
                   "x": 0,
@@ -415,8 +415,8 @@
                   }
                 },
                 {
-                  "id": "1xz-12",
-                  "parent_id": "node_root_1xz",
+                  "id": "CfI-12",
+                  "parent_id": "node_root_CfI",
                   "classification": "shape",
                   "key": "solid",
                   "x": 0,
@@ -435,8 +435,8 @@
                   }
                 },
                 {
-                  "id": "1xz-13",
-                  "parent_id": "node_root_1xz",
+                  "id": "CfI-13",
+                  "parent_id": "node_root_CfI",
                   "classification": "shape",
                   "key": "solid",
                   "x": 0,
@@ -455,8 +455,8 @@
                   }
                 },
                 {
-                  "id": "1xz-14",
-                  "parent_id": "node_root_1xz",
+                  "id": "CfI-14",
+                  "parent_id": "node_root_CfI",
                   "classification": "shape",
                   "key": "solid",
                   "x": 0,
@@ -475,8 +475,8 @@
                   }
                 },
                 {
-                  "id": "1xz-15",
-                  "parent_id": "node_root_1xz",
+                  "id": "CfI-15",
+                  "parent_id": "node_root_CfI",
                   "classification": "shape",
                   "key": "solid",
                   "x": 0,
@@ -495,8 +495,8 @@
                   }
                 },
                 {
-                  "id": "1xz-16",
-                  "parent_id": "node_root_1xz",
+                  "id": "CfI-16",
+                  "parent_id": "node_root_CfI",
                   "classification": "shape",
                   "key": "solid",
                   "x": 0,
@@ -515,8 +515,8 @@
                   }
                 },
                 {
-                  "id": "1xz-17",
-                  "parent_id": "node_root_1xz",
+                  "id": "CfI-17",
+                  "parent_id": "node_root_CfI",
                   "classification": "shape",
                   "key": "group",
                   "x": 445,
@@ -536,7 +536,7 @@
                 },
                 {
                   "id": "b1",
-                  "parent_id": "node_root_1xz",
+                  "parent_id": "node_root_CfI",
                   "classification": "shape",
                   "key": "klass",
                   "x": 670,
@@ -598,7 +598,7 @@
                 },
                 {
                   "id": "b2",
-                  "parent_id": "node_root_1xz",
+                  "parent_id": "node_root_CfI",
                   "classification": "shape",
                   "key": "klass",
                   "x": 890,
@@ -655,7 +655,7 @@
                 },
                 {
                   "id": "b3",
-                  "parent_id": "node_root_1xz",
+                  "parent_id": "node_root_CfI",
                   "classification": "shape",
                   "key": "klass",
                   "x": 1110,
@@ -701,8 +701,8 @@
                   }
                 },
                 {
-                  "id": "1xz-21",
-                  "parent_id": "node_root_1xz",
+                  "id": "CfI-21",
+                  "parent_id": "node_root_CfI",
                   "classification": "shape",
                   "key": "solid",
                   "x": 0,
@@ -721,8 +721,8 @@
                   }
                 },
                 {
-                  "id": "1xz-22",
-                  "parent_id": "node_root_1xz",
+                  "id": "CfI-22",
+                  "parent_id": "node_root_CfI",
                   "classification": "shape",
                   "key": "solid",
                   "x": 0,
@@ -741,8 +741,8 @@
                   }
                 },
                 {
-                  "id": "1xz-23",
-                  "parent_id": "node_root_1xz",
+                  "id": "CfI-23",
+                  "parent_id": "node_root_CfI",
                   "classification": "shape",
                   "key": "solid",
                   "x": 0,
@@ -761,8 +761,8 @@
                   }
                 },
                 {
-                  "id": "1xz-24",
-                  "parent_id": "node_root_1xz",
+                  "id": "CfI-24",
+                  "parent_id": "node_root_CfI",
                   "classification": "shape",
                   "key": "group",
                   "x": 5,
@@ -781,8 +781,8 @@
                   }
                 },
                 {
-                  "id": "1xz-25",
-                  "parent_id": "node_root_1xz",
+                  "id": "CfI-25",
+                  "parent_id": "node_root_CfI",
                   "classification": "shape",
                   "key": "group",
                   "x": 225,
@@ -801,8 +801,8 @@
                   }
                 },
                 {
-                  "id": "1xz-26",
-                  "parent_id": "node_root_1xz",
+                  "id": "CfI-26",
+                  "parent_id": "node_root_CfI",
                   "classification": "shape",
                   "key": "klass",
                   "x": 450,
@@ -843,8 +843,8 @@
                   }
                 },
                 {
-                  "id": "1xz-27",
-                  "parent_id": "node_root_1xz",
+                  "id": "CfI-27",
+                  "parent_id": "node_root_CfI",
                   "classification": "shape",
                   "key": "group",
                   "x": 665,
@@ -863,8 +863,8 @@
                   }
                 },
                 {
-                  "id": "1xz-28",
-                  "parent_id": "node_root_1xz",
+                  "id": "CfI-28",
+                  "parent_id": "node_root_CfI",
                   "classification": "shape",
                   "key": "klass",
                   "x": 890,
@@ -890,8 +890,8 @@
                   }
                 },
                 {
-                  "id": "1xz-29",
-                  "parent_id": "node_root_1xz",
+                  "id": "CfI-29",
+                  "parent_id": "node_root_CfI",
                   "classification": "shape",
                   "key": "interface",
                   "x": 1130,

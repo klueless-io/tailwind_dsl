@@ -49,7 +49,7 @@ KManager.action :domain_model_to_code do
         cd(:lib)
         add('../_.rb', template_file: 'requires.rb', require_paths: require_paths)
 
-        run_command('rubocop -a')
+        run_command('rubocop -A')
 
         # puts JSON.pretty_generate(domain_model)
         # add('.gitignore')
