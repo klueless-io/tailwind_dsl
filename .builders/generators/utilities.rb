@@ -5,7 +5,6 @@ KManager.action :utilities do
     # target = :template_merakiui
     # collection_name = :merakiui
 
-
     path = '/Users/davidcruwys/dev/kgems/k_templates/templates/tailwind/devdojo'
     target = :template_devdojo
     collection_name = :devdojo
@@ -35,6 +34,7 @@ KManager.action :utilities do
 
     director.add('all-component-menu.html', template_file: 'tailwind-collections-menu.html', groups: tailwind[:groups])
     director.add('all-components.txt', groups: tailwind[:groups])
+
     director.add('all-components.csv', content: group_component_csv(tailwind[:groups]))
 
     # BUILDS the JSON FILES
@@ -186,12 +186,17 @@ HTML
     }
   end
 
+  def titleize
+    Cmdlet::Case::Title.new
+  end
+
   def group_component_csv(groups)
     rows = groups.flat_map do |group|
       group[:files].map do |file|
         [group[:name], titleize.call(group[:name]), file[:file_name_only], titleize.call(file[:file_name_only])]
       end
     end
+    puts rows
 
     CSV.generate do |csv|
       csv << ["Group Name", "Group Title", "Component Name", "Component Title"]

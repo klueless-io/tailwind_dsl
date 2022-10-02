@@ -1,3 +1,7 @@
+def snake
+  Cmdlet::Case::Snake.new
+end
+
 KManager.action :domain_model_to_code do
   action do
     director = KDirector::Dsls::RubyGemDsl
@@ -14,12 +18,12 @@ KManager.action :domain_model_to_code do
         description: 'Build the domain classes and tests based on the domain model',
         on_exist: :skip) do
 
-        domain_model_list = domain_model.take(11)
+        domain_model_list = domain_model.take(1)
 
         domain_model_list.each do |code_block|
           if code_block[:block_type] == 'klass'
             klass = code_block[:items].select { |item| item[:type] == 'class' }.first
-            namespaces = snake.parse(klass[:namespace]).to_s.split('::')
+            namespaces = snake.call(klass[:namespace]).to_s.split('::')
             model = {
               name: klass[:name],
               description: klass[:description],
@@ -37,8 +41,8 @@ KManager.action :domain_model_to_code do
 
         require_paths = domain_model_list.map { |code_block|
           klass = code_block[:items].select { |item| item[:type] == 'class' }.first
-          namespaces = snake.parse(klass[:namespace]).to_s.split('::')
-          full_namespace = [:tailwind_dsl] + namespaces + [snake.parse(klass[:name])]
+          namespaces = snake.call(klass[:namespace]).to_s.split('::')
+          full_namespace = [:tailwind_dsl] + namespaces + [snake.call(klass[:name])]
           full_namespace.join('/')
         }
 
@@ -79,7 +83,7 @@ def domain_model
 end
 
 def output_file_name(namespaces, name, suffix: '', extension: 'rb')
-  name = snake.parse(name)
+  name = snake.call(name)
 
   file_name = "#{name}#{suffix}.#{extension}"
   file_parts = namespaces.reject(&:empty?)
