@@ -5,9 +5,13 @@ KManager.action :utilities do
     # target = :template_merakiui
     # collection_name = :merakiui
 
-    path = '/Users/davidcruwys/dev/kgems/k_templates/templates/tailwind/devdojo'
-    target = :template_devdojo
-    collection_name = :devdojo
+    # path = '/Users/davidcruwys/dev/kgems/k_templates/templates/tailwind/devdojo'
+    # target = :template_devdojo
+    # collection_name = :devdojo
+
+    path = '/Users/davidcruwys/dev/kgems/k_templates/templates/tailwind/tui'
+    target = :template_tui
+    collection_name = :tui
 
     # move_files_vue_to_html(path)
 
@@ -27,9 +31,11 @@ KManager.action :utilities do
 
     # BUILDS the HTML FILES
     tailwind[:groups].each do |group|
+      next if group[:files].length == 0
+
       content = group[:files].map { |f| File.read(f[:file]) }.join(separator)
       content = "#{content}\n#{separator}"
-      director.add("#{group[:name]}/all.html", content: page_content(content, group_name: group[:name], collection_name: collection_name))
+      director.add("#{group[:folder]}/all.html", content: page_content(content, group_name: group[:name], collection_name: collection_name))
     end
 
     director.add('all-component-menu.html', template_file: 'tailwind-collections-menu.html', groups: tailwind[:groups])
@@ -155,16 +161,21 @@ HTML
 
     Dir.glob(glob) do |entry|
       if File.directory?(entry)
+        relative_folder = Pathname.new(entry).relative_path_from(Pathname.new(path)).to_s
+                
         current_group = {
           name: File.basename(entry),
           group_name: File.basename(entry),
-          folder: entry,
+          folder: relative_folder, #  entry,
           all_file: File.join(entry, 'all.html'),
           all_file_json: File.join(entry, 'all.json'),
           files: []
         }
+
+        require 'pathname'
+
         groups << current_group
-      elsif entry.end_with?('all.html') || entry.end_with?('all.json')
+      elsif entry.end_with?('all.html') || entry.end_with?('all.json') || entry.end_with?('all-component-menu.html') || entry.end_with?('all-components.txt') || entry.end_with?('all-components.json') || entry.end_with?('all-components.csv') || entry.end_with?('.txt')
         # skip
       else
         current_group[:files] << {

@@ -30,6 +30,7 @@ KConfig.configure(CONFIG_KEY) do |config|
 
   config.target_folders.add(:template_merakiui    , global_template, 'tailwind', 'merakiui')
   config.target_folders.add(:template_devdojo     , global_template, 'tailwind', 'devdojo')
+  config.target_folders.add(:template_tui         , global_template, 'tailwind', 'tui')
 end
 
 KConfig.configuration(CONFIG_KEY).debug
