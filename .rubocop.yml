@@ -1,15 +1,13 @@
-# inherit_mode:
-#   merge:
-#     - Exclude # see: https://stackoverflow.com/a/70818366/473923
-#     - AllowedNames
+require: rubocop-rake
 AllCops:
   TargetRubyVersion: 2.7
   DisplayCopNames: true
   ExtraDetails: true
   NewCops: enable
   Exclude:
-    - ".builders/**/*"
+    - "_/**/*"
     - "spec/samples/**/*"
+    - "bin/*"
 
 Metrics/BlockLength:
   Exclude:
@@ -63,9 +61,9 @@ Naming/MemoizedInstanceVariableName:
 Naming/VariableNumber:
   Exclude:
     - "**/spec/**/*"
-Naming/MethodParameterName:
-  AllowedNames:
-    - as
+Naming/AccessorMethodName:
+  Exclude:
+    - "**/*builder*.rb"
 Style/EmptyMethod:    
   Exclude:
     - "**/spec/**/*"
@@ -75,6 +73,9 @@ Metrics/ParameterLists:
 Layout/EmptyLineBetweenDefs:
   Exclude:
     - "**/spec/**/*"
+
+Style/Documentation:
+  Enabled: false
 
 Lint/AmbiguousBlockAssociation:
   Exclude:
@@ -86,4 +87,3 @@ Style/AccessorGrouping:
 Layout/SpaceBeforeComma:
   Enabled: false
 # My Preferences - End
-
