@@ -1,0 +1,6 @@
+{{#each groups}}
+{{name}}
+{{#each files}}
+  {{file_name_only}}
+{{/each}}
+{{/each}}

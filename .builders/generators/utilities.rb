@@ -3,13 +3,16 @@ KManager.action :utilities do
 
     # path = '/Users/davidcruwys/dev/kgems/k_templates/templates/tailwind/merakiui'
     # target = :template_merakiui
+    # collection_name = :merakiui
+
+
     path = '/Users/davidcruwys/dev/kgems/k_templates/templates/tailwind/devdojo'
-    output_file_name = File.join(path, 'all-components.json')
     target = :template_devdojo
     collection_name = :devdojo
 
     # move_files_vue_to_html(path)
 
+    output_file_name = File.join(path, 'all-components.json')
     tailwind = build_folder_file_groups(path)
     tailwind_json = JSON.pretty_generate(tailwind)
 
@@ -31,6 +34,8 @@ KManager.action :utilities do
     end
 
     director.add('all-component-menu.html', template_file: 'tailwind-collections-menu.html', groups: tailwind[:groups])
+    director.add('all-components.txt', groups: tailwind[:groups])
+    director.add('all-components.csv', content: group_component_csv(tailwind[:groups]))
 
     # BUILDS the JSON FILES
     # tailwind[:groups].each do |group|
@@ -152,6 +157,7 @@ HTML
       if File.directory?(entry)
         current_group = {
           name: File.basename(entry),
+          group_name: File.basename(entry),
           folder: entry,
           all_file: File.join(entry, 'all.html'),
           all_file_json: File.join(entry, 'all.json'),
@@ -163,6 +169,8 @@ HTML
       else
         current_group[:files] << {
           name: File.basename(entry),
+          file_name: File.basename(entry),
+          file_name_only: File.basename(entry, File.extname(entry)),
           file: entry,
           sample_data_file: File.join(current_group[:folder], File.basename(entry, File.extname(entry)) + '.sample.json')
         }
@@ -176,6 +184,24 @@ HTML
     {
       groups: groups
     }
+  end
+
+  def group_component_csv(groups)
+    rows = groups.flat_map do |group|
+      group[:files].map do |file|
+        [group[:name], titleize.call(group[:name]), file[:file_name_only], titleize.call(file[:file_name_only])]
+      end
+    end
+
+    CSV.generate do |csv|
+      csv << ["Group Name", "Group Title", "Component Name", "Component Title"]
+      rows.each do |row|
+        csv << row
+      end
+      # System::TableCountQuery.call.to_h.each do |row|
+      #   csv << row
+      # end
+    end
   end
 end
 KManager.opts.sleep                       = 2

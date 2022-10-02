@@ -9,9 +9,9 @@ Gem::Specification.new do |spec|
   spec.authors                = ['David Cruwys']
   spec.email                  = ['david@ideasmen.com.au']
 
-  spec.summary                = 'Tailwind DSL will build tailwind websites useing Domain Specific Language conventions'
+  spec.summary                = 'Tailwind DSL will build tailwind websites using Domain Specific Language conventions'
   spec.description            = <<-TEXT
-    Tailwind DSL will build tailwind websites useing Domain Specific Language conventions
+    Tailwind DSL will build tailwind websites using Domain Specific Language conventions
   TEXT
   spec.homepage               = 'http://appydave.com/gems/tailwind_dsl'
   spec.license                = 'MIT'
@@ -22,9 +22,10 @@ Gem::Specification.new do |spec|
 
   # spec.metadata['allowed_push_host'] = "Set to 'http://mygemserver.com'"
 
-  spec.metadata['homepage_uri']     = spec.homepage
-  spec.metadata['source_code_uri']  = ''
-  spec.metadata['changelog_uri']    = '/blob/main/CHANGELOG.md'
+  spec.metadata['homepage_uri']           = spec.homepage
+  spec.metadata['source_code_uri']        = 'https://github.com/klueless-io/tailwind_dsl'
+  spec.metadata['changelog_uri']          = 'https://github.com/klueless-io/tailwind_dsl/commits/master'
+  spec.metadata['documentation_uri']      = 'https://rubydoc.info/github/klueless-io/tailwind_dsl/master'
 
   # The `git ls-files -z` loads the RubyGem files that have been added into git.
   spec.files = Dir.chdir(File.expand_path(__dir__)) do
@@ -35,12 +36,9 @@ Gem::Specification.new do |spec|
 
   spec.bindir        = 'exe'
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
+  spec.metadata['rubygems_mfa_required'] = 'true'
   spec.require_paths = ['lib']
   # spec.extensions    = ['ext/tailwind_dsl/extconf.rb']
-
-  spec.metadata = {
-    'rubygems_mfa_required' => 'true'
-  }
 
   spec.add_dependency 'k_log', '~> 0.0.0'
   # spec.add_dependency 'k_type', '~> 0.0.0'
