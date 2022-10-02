@@ -1,6 +1,6 @@
 # Tailwind Dsl
 
-> Tailwind DSL will build tailwind websites useing Domain Specific Language conventions
+> Tailwind DSL will build tailwind websites using Domain Specific Language conventions
 
 ## Installation
 

@@ -10,9 +10,10 @@ KManager.action :project_plan do
 
         grid_layout(y: 90, direction: :horizontal, grid_h: 80, grid_w: 320, wrap_at: 3, grid: 0)
 
+        todo(title: 'use a domain model generator to build base classes and unit tests')
+        todo(title: 'restart the application so that I can figure out the issues with RuboCop')
         todo(title: 'build a sample DSL to test how this can be used')
         todo(title: 'build a JSON builder proof of concept based on the rails XML builder')
-        todo(title: 'add icon list + svg to the configuration')
       end
       .page('To Do', theme: :style_02, margin_left: 0, margin_top: 0) do
 

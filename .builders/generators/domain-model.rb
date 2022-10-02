@@ -23,6 +23,7 @@ KManager.action :domain_model do
         klass(:a2, w: 200, description: 'Configuration for collection', note: 'other words could be - brands / set / design / collection') do
           format
             .header('Collection', namespace: :config)
+            .field(:more, type: :String)
             .field(:name, type: :String)
             .field(:description, type: :String)
             .field(:component_groups  , type: :ComponentGroups)  # winter, summer

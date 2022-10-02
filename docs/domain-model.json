@@ -1,5 +1,5 @@
 {
-  "host": "eXv",
+  "host": "TM6",
   "theme": "style_04",
   "palette": {
     "fill_color": "#ffe6cc",
@@ -17,7 +17,7 @@
   },
   "pages": [
     {
-      "id": "6pa",
+      "id": "1xz",
       "active": true,
       "name": "Domain Modal",
       "position_x": 0,
@@ -58,20 +58,20 @@
       },
       "nodes": [
         {
-          "id": "page_root_6pa",
-          "parent_id": "6pa",
+          "id": "page_root_1xz",
+          "parent_id": "1xz",
           "classification": "anchor",
           "key": "page_root",
           "nodes": [
             {
-              "id": "node_root_6pa",
-              "parent_id": "page_root_6pa",
+              "id": "node_root_1xz",
+              "parent_id": "page_root_1xz",
               "classification": "anchor",
               "key": "node_root",
               "nodes": [
                 {
                   "id": "rule-2",
-                  "parent_id": "node_root_6pa",
+                  "parent_id": "node_root_1xz",
                   "classification": "layout_rule",
                   "key": "grid_layout",
                   "anchor_x": 0,
@@ -83,8 +83,8 @@
                   "cell_no": 1
                 },
                 {
-                  "id": "6pa-2",
-                  "parent_id": "node_root_6pa",
+                  "id": "1xz-2",
+                  "parent_id": "node_root_1xz",
                   "classification": "shape",
                   "key": "group",
                   "x": 5,
@@ -103,8 +103,8 @@
                   }
                 },
                 {
-                  "id": "6pa-3",
-                  "parent_id": "node_root_6pa",
+                  "id": "1xz-3",
+                  "parent_id": "node_root_1xz",
                   "classification": "shape",
                   "key": "group",
                   "x": 225,
@@ -124,7 +124,7 @@
                 },
                 {
                   "id": "a1",
-                  "parent_id": "node_root_6pa",
+                  "parent_id": "node_root_1xz",
                   "classification": "shape",
                   "key": "klass",
                   "x": 450,
@@ -166,7 +166,7 @@
                 },
                 {
                   "id": "a2",
-                  "parent_id": "node_root_6pa",
+                  "parent_id": "node_root_1xz",
                   "classification": "shape",
                   "key": "klass",
                   "x": 670,
@@ -174,7 +174,7 @@
                   "w": 200,
                   "h": 160,
                   "style": "whiteSpace=wrap;html=1;rounded=0;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#333333;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica",
-                  "value": "<p style=\"margin:0px;margin-left:4px;margin-bottom:4px;text-align:center\"><b>Collection</b></p><hr size=\"1\"/><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">name: String</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">description: String</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">component_groups: ComponentGroups</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">default_themes: Themes</p>",
+                  "value": "<p style=\"margin:0px;margin-left:4px;margin-bottom:4px;text-align:center\"><b>Collection</b></p><hr size=\"1\"/><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">more: String</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">name: String</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">description: String</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">component_groups: ComponentGroups</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">default_themes: Themes</p>",
                   "meta_data": {
                     "items": [
                       {
@@ -182,6 +182,11 @@
                         "name": "Collection",
                         "description": null,
                         "namespace": "config"
+                      },
+                      {
+                        "type": "field",
+                        "name": "more",
+                        "return_type": "String"
                       },
                       {
                         "type": "field",
@@ -208,7 +213,7 @@
                 },
                 {
                   "id": "a3",
-                  "parent_id": "node_root_6pa",
+                  "parent_id": "node_root_1xz",
                   "classification": "shape",
                   "key": "klass",
                   "x": 890,
@@ -245,7 +250,7 @@
                 },
                 {
                   "id": "a4",
-                  "parent_id": "node_root_6pa",
+                  "parent_id": "node_root_1xz",
                   "classification": "shape",
                   "key": "klass",
                   "x": 1110,
@@ -282,7 +287,7 @@
                 },
                 {
                   "id": "a5",
-                  "parent_id": "node_root_6pa",
+                  "parent_id": "node_root_1xz",
                   "classification": "shape",
                   "key": "klass",
                   "x": 10,
@@ -329,7 +334,7 @@
                 },
                 {
                   "id": "a6",
-                  "parent_id": "node_root_6pa",
+                  "parent_id": "node_root_1xz",
                   "classification": "shape",
                   "key": "klass",
                   "x": 230,
@@ -370,8 +375,8 @@
                   }
                 },
                 {
-                  "id": "6pa-10",
-                  "parent_id": "node_root_6pa",
+                  "id": "1xz-10",
+                  "parent_id": "node_root_1xz",
                   "classification": "shape",
                   "key": "solid",
                   "x": 0,
@@ -390,8 +395,8 @@
                   }
                 },
                 {
-                  "id": "6pa-11",
-                  "parent_id": "node_root_6pa",
+                  "id": "1xz-11",
+                  "parent_id": "node_root_1xz",
                   "classification": "shape",
                   "key": "solid",
                   "x": 0,
@@ -410,8 +415,8 @@
                   }
                 },
                 {
-                  "id": "6pa-12",
-                  "parent_id": "node_root_6pa",
+                  "id": "1xz-12",
+                  "parent_id": "node_root_1xz",
                   "classification": "shape",
                   "key": "solid",
                   "x": 0,
@@ -430,8 +435,8 @@
                   }
                 },
                 {
-                  "id": "6pa-13",
-                  "parent_id": "node_root_6pa",
+                  "id": "1xz-13",
+                  "parent_id": "node_root_1xz",
                   "classification": "shape",
                   "key": "solid",
                   "x": 0,
@@ -450,8 +455,8 @@
                   }
                 },
                 {
-                  "id": "6pa-14",
-                  "parent_id": "node_root_6pa",
+                  "id": "1xz-14",
+                  "parent_id": "node_root_1xz",
                   "classification": "shape",
                   "key": "solid",
                   "x": 0,
@@ -470,8 +475,8 @@
                   }
                 },
                 {
-                  "id": "6pa-15",
-                  "parent_id": "node_root_6pa",
+                  "id": "1xz-15",
+                  "parent_id": "node_root_1xz",
                   "classification": "shape",
                   "key": "solid",
                   "x": 0,
@@ -490,8 +495,8 @@
                   }
                 },
                 {
-                  "id": "6pa-16",
-                  "parent_id": "node_root_6pa",
+                  "id": "1xz-16",
+                  "parent_id": "node_root_1xz",
                   "classification": "shape",
                   "key": "solid",
                   "x": 0,
@@ -510,8 +515,8 @@
                   }
                 },
                 {
-                  "id": "6pa-17",
-                  "parent_id": "node_root_6pa",
+                  "id": "1xz-17",
+                  "parent_id": "node_root_1xz",
                   "classification": "shape",
                   "key": "group",
                   "x": 445,
@@ -531,7 +536,7 @@
                 },
                 {
                   "id": "b1",
-                  "parent_id": "node_root_6pa",
+                  "parent_id": "node_root_1xz",
                   "classification": "shape",
                   "key": "klass",
                   "x": 670,
@@ -593,7 +598,7 @@
                 },
                 {
                   "id": "b2",
-                  "parent_id": "node_root_6pa",
+                  "parent_id": "node_root_1xz",
                   "classification": "shape",
                   "key": "klass",
                   "x": 890,
@@ -650,7 +655,7 @@
                 },
                 {
                   "id": "b3",
-                  "parent_id": "node_root_6pa",
+                  "parent_id": "node_root_1xz",
                   "classification": "shape",
                   "key": "klass",
                   "x": 1110,
@@ -696,8 +701,8 @@
                   }
                 },
                 {
-                  "id": "6pa-21",
-                  "parent_id": "node_root_6pa",
+                  "id": "1xz-21",
+                  "parent_id": "node_root_1xz",
                   "classification": "shape",
                   "key": "solid",
                   "x": 0,
@@ -716,8 +721,8 @@
                   }
                 },
                 {
-                  "id": "6pa-22",
-                  "parent_id": "node_root_6pa",
+                  "id": "1xz-22",
+                  "parent_id": "node_root_1xz",
                   "classification": "shape",
                   "key": "solid",
                   "x": 0,
@@ -736,8 +741,8 @@
                   }
                 },
                 {
-                  "id": "6pa-23",
-                  "parent_id": "node_root_6pa",
+                  "id": "1xz-23",
+                  "parent_id": "node_root_1xz",
                   "classification": "shape",
                   "key": "solid",
                   "x": 0,
@@ -756,8 +761,8 @@
                   }
                 },
                 {
-                  "id": "6pa-24",
-                  "parent_id": "node_root_6pa",
+                  "id": "1xz-24",
+                  "parent_id": "node_root_1xz",
                   "classification": "shape",
                   "key": "group",
                   "x": 5,
@@ -776,8 +781,8 @@
                   }
                 },
                 {
-                  "id": "6pa-25",
-                  "parent_id": "node_root_6pa",
+                  "id": "1xz-25",
+                  "parent_id": "node_root_1xz",
                   "classification": "shape",
                   "key": "group",
                   "x": 225,
@@ -796,8 +801,8 @@
                   }
                 },
                 {
-                  "id": "6pa-26",
-                  "parent_id": "node_root_6pa",
+                  "id": "1xz-26",
+                  "parent_id": "node_root_1xz",
                   "classification": "shape",
                   "key": "klass",
                   "x": 450,
@@ -838,8 +843,8 @@
                   }
                 },
                 {
-                  "id": "6pa-27",
-                  "parent_id": "node_root_6pa",
+                  "id": "1xz-27",
+                  "parent_id": "node_root_1xz",
                   "classification": "shape",
                   "key": "group",
                   "x": 665,
@@ -858,8 +863,8 @@
                   }
                 },
                 {
-                  "id": "6pa-28",
-                  "parent_id": "node_root_6pa",
+                  "id": "1xz-28",
+                  "parent_id": "node_root_1xz",
                   "classification": "shape",
                   "key": "klass",
                   "x": 890,
@@ -885,8 +890,8 @@
                   }
                 },
                 {
-                  "id": "6pa-29",
-                  "parent_id": "node_root_6pa",
+                  "id": "1xz-29",
+                  "parent_id": "node_root_1xz",
                   "classification": "shape",
                   "key": "interface",
                   "x": 1130,
