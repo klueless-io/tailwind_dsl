@@ -3,6 +3,8 @@
 module TailwindDsl
   module Config
     # Component Group
+    #
+    # Configuration for component group. [nav, footer, header, hero, price]
     class ComponentGroup
       attr_accessor :key
       attr_accessor :name

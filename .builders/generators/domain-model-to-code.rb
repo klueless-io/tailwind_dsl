@@ -16,9 +16,9 @@ KManager.action :domain_model_to_code do
         active: true,
         name: :build_domain,
         description: 'Build the domain classes and tests based on the domain model',
-        on_exist: :skip) do
+        on_exist: :overwrite) do
 
-        domain_model_list = domain_model.take(1)
+        domain_model_list = domain_model #.take(1)
 
         domain_model_list.each do |code_block|
           if code_block[:block_type] == 'klass'
@@ -32,6 +32,8 @@ KManager.action :domain_model_to_code do
               methods: code_block[:items].select { |item| item[:type] == 'method' }.map { |item| { name: item[:name], type: item[:type] } }
             }
 
+            puts JSON.pretty_generate(model)
+
             cd(:lib)
             add(output_file_name(namespaces, klass[:name]), template_file: 'class.rb', model: model)
             cd(:spec)
@@ -41,10 +43,11 @@ KManager.action :domain_model_to_code do
 
         require_paths = domain_model_list.map { |code_block|
           klass = code_block[:items].select { |item| item[:type] == 'class' }.first
+          next if klass.nil?
           namespaces = snake.call(klass[:namespace]).to_s.split('::')
           full_namespace = [:tailwind_dsl] + namespaces + [snake.call(klass[:name])]
           full_namespace.join('/')
-        }
+        }.compact
 
         cd(:lib)
         add('../_.rb', template_file: 'requires.rb', require_paths: require_paths)

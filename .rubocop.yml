@@ -13,7 +13,7 @@ Metrics/BlockLength:
   Exclude:
     - "**/spec/**/*"
     - "*.gemspec"
-  IgnoredMethods:
+  AllowedMethods:
     - configure
     - context
     - define

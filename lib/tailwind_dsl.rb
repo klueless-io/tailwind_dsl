@@ -2,6 +2,7 @@
 
 require_relative 'tailwind_dsl/version'
 require_relative '_'
+require_relative 'tailwind_dsl/raw_component_graph'
 
 module TailwindDsl
   # raise TailwindDsl::Error, 'Sample message'

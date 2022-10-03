@@ -6,6 +6,8 @@ CONFIG_KEY = :tailwind_dsl
 
 log.kv 'working folder', Dir.pwd
 
+require_relative '../lib/tailwind_dsl'
+
 KConfig.configure do |config|
   config.handlebars.defaults.add_all_defaults
 end
@@ -27,6 +29,8 @@ KConfig.configure(CONFIG_KEY) do |config|
   config.target_folders.add(:spec                 , :app, 'spec', 'tailwind_dsl')
   config.target_folders.add(:docs                 , :app, 'docs')
   config.target_folders.add(:builder              , builder_folder)
+  config.target_folders.add(:components           , base_folder, '.components')
+  config.target_folders.add(:components_raw       , base_folder, '.components-raw')
 
   config.target_folders.add(:template_merakiui    , global_template, 'tailwind', 'merakiui')
   config.target_folders.add(:template_devdojo     , global_template, 'tailwind', 'devdojo')

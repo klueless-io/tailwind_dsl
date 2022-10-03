@@ -11,19 +11,19 @@ KManager.action :domain_model do
 
         group(title: 'Configuration', theme: :style_01) 
 
-        klass(:a1, w: 200, description: 'Configuration container for the Tailwind DSL') do
+        klass(:a1, w: 200) do
           format
-            .header('Configuration', namespace: :config)
+            .header('Configuration', namespace: :config, description: 'Configuration container for the Tailwind DSL')
             .field(:collections       , type: :Collections)      # winter, summer
             .field(:themes            , type: :Themes)           # light, dark, red, blue
             .field(:data_shapes       , type: :DataShapes)       # obj, heading_paragraph_list, image_heading_paragraph_list
             .field(:component_groups  , type: :ComponentGroups)  # nav, footer, header, hero, price
         end
 
-        klass(:a2, w: 200, description: 'Configuration for collection', note: 'other words could be - brands / set / design / collection') do
+        # A Collection would be better named as a UIKit or DesignSystem
+        klass(:a2, w: 200) do
           format
-            .header('Collection', namespace: :config)
-            .field(:name, type: :String)
+            .header('Collection', namespace: :config, description: 'Configuration for collection of Tailwind components. AKA uikit / brands / set / design')
             .field(:name, type: :String)
             .field(:description, type: :String)
             .field(:component_groups  , type: :ComponentGroups)  # winter, summer
@@ -46,9 +46,9 @@ KManager.action :domain_model do
             .field(:description, type: :String)
         end
 
-        klass(:a5, w: 200, description: 'Configuration for component group', note: 'nav, , footer, header, hero, price') do
+        klass(:a5, w: 200) do
           format
-            .header('ComponentGroup', namespace: :config)
+            .header('ComponentGroup', namespace: :config, description: 'Configuration for component group. [nav, footer, header, hero, price]')
             .field(:key, type: :Symbol)
             .field(:name, type: :String)
             .field(:description, type: :String)

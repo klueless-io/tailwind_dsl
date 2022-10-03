@@ -3,6 +3,8 @@
 module TailwindDsl
   module Config
     # Collection
+    #
+    # Configuration for collection of Tailwind components. AKA uikit / brands / set / design
     class Collection
       attr_accessor :name
       attr_accessor :description

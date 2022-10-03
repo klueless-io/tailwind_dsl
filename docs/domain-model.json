@@ -1,5 +1,5 @@
 {
-  "host": "Qvx",
+  "host": "tcX",
   "theme": "style_04",
   "palette": {
     "fill_color": "#ffe6cc",
@@ -17,7 +17,7 @@
   },
   "pages": [
     {
-      "id": "CfI",
+      "id": "Idl",
       "active": true,
       "name": "Domain Modal",
       "position_x": 0,
@@ -58,20 +58,20 @@
       },
       "nodes": [
         {
-          "id": "page_root_CfI",
-          "parent_id": "CfI",
+          "id": "page_root_Idl",
+          "parent_id": "Idl",
           "classification": "anchor",
           "key": "page_root",
           "nodes": [
             {
-              "id": "node_root_CfI",
-              "parent_id": "page_root_CfI",
+              "id": "node_root_Idl",
+              "parent_id": "page_root_Idl",
               "classification": "anchor",
               "key": "node_root",
               "nodes": [
                 {
                   "id": "rule-2",
-                  "parent_id": "node_root_CfI",
+                  "parent_id": "node_root_Idl",
                   "classification": "layout_rule",
                   "key": "grid_layout",
                   "anchor_x": 0,
@@ -83,8 +83,8 @@
                   "cell_no": 1
                 },
                 {
-                  "id": "CfI-2",
-                  "parent_id": "node_root_CfI",
+                  "id": "Idl-2",
+                  "parent_id": "node_root_Idl",
                   "classification": "shape",
                   "key": "group",
                   "x": 5,
@@ -103,8 +103,8 @@
                   }
                 },
                 {
-                  "id": "CfI-3",
-                  "parent_id": "node_root_CfI",
+                  "id": "Idl-3",
+                  "parent_id": "node_root_Idl",
                   "classification": "shape",
                   "key": "group",
                   "x": 225,
@@ -124,7 +124,7 @@
                 },
                 {
                   "id": "a1",
-                  "parent_id": "node_root_CfI",
+                  "parent_id": "node_root_Idl",
                   "classification": "shape",
                   "key": "klass",
                   "x": 450,
@@ -138,7 +138,7 @@
                       {
                         "type": "class",
                         "name": "Configuration",
-                        "description": null,
+                        "description": "Configuration container for the Tailwind DSL",
                         "namespace": "config"
                       },
                       {
@@ -166,7 +166,7 @@
                 },
                 {
                   "id": "a2",
-                  "parent_id": "node_root_CfI",
+                  "parent_id": "node_root_Idl",
                   "classification": "shape",
                   "key": "klass",
                   "x": 670,
@@ -174,19 +174,14 @@
                   "w": 200,
                   "h": 160,
                   "style": "whiteSpace=wrap;html=1;rounded=0;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#333333;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica",
-                  "value": "<p style=\"margin:0px;margin-left:4px;margin-bottom:4px;text-align:center\"><b>Collection</b></p><hr size=\"1\"/><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">name: String</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">name: String</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">description: String</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">component_groups: ComponentGroups</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">default_themes: Themes</p>",
+                  "value": "<p style=\"margin:0px;margin-left:4px;margin-bottom:4px;text-align:center\"><b>Collection</b></p><hr size=\"1\"/><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">name: String</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">description: String</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">component_groups: ComponentGroups</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">default_themes: Themes</p>",
                   "meta_data": {
                     "items": [
                       {
                         "type": "class",
                         "name": "Collection",
-                        "description": null,
+                        "description": "Configuration for collection of Tailwind components. AKA uikit / brands / set / design",
                         "namespace": "config"
-                      },
-                      {
-                        "type": "field",
-                        "name": "name",
-                        "return_type": "String"
                       },
                       {
                         "type": "field",
@@ -213,7 +208,7 @@
                 },
                 {
                   "id": "a3",
-                  "parent_id": "node_root_CfI",
+                  "parent_id": "node_root_Idl",
                   "classification": "shape",
                   "key": "klass",
                   "x": 890,
@@ -250,7 +245,7 @@
                 },
                 {
                   "id": "a4",
-                  "parent_id": "node_root_CfI",
+                  "parent_id": "node_root_Idl",
                   "classification": "shape",
                   "key": "klass",
                   "x": 1110,
@@ -287,7 +282,7 @@
                 },
                 {
                   "id": "a5",
-                  "parent_id": "node_root_CfI",
+                  "parent_id": "node_root_Idl",
                   "classification": "shape",
                   "key": "klass",
                   "x": 10,
@@ -301,7 +296,7 @@
                       {
                         "type": "class",
                         "name": "ComponentGroup",
-                        "description": null,
+                        "description": "Configuration for component group. [nav, footer, header, hero, price]",
                         "namespace": "config"
                       },
                       {
@@ -334,7 +329,7 @@
                 },
                 {
                   "id": "a6",
-                  "parent_id": "node_root_CfI",
+                  "parent_id": "node_root_Idl",
                   "classification": "shape",
                   "key": "klass",
                   "x": 230,
@@ -375,8 +370,8 @@
                   }
                 },
                 {
-                  "id": "CfI-10",
-                  "parent_id": "node_root_CfI",
+                  "id": "Idl-10",
+                  "parent_id": "node_root_Idl",
                   "classification": "shape",
                   "key": "solid",
                   "x": 0,
@@ -395,8 +390,8 @@
                   }
                 },
                 {
-                  "id": "CfI-11",
-                  "parent_id": "node_root_CfI",
+                  "id": "Idl-11",
+                  "parent_id": "node_root_Idl",
                   "classification": "shape",
                   "key": "solid",
                   "x": 0,
@@ -415,8 +410,8 @@
                   }
                 },
                 {
-                  "id": "CfI-12",
-                  "parent_id": "node_root_CfI",
+                  "id": "Idl-12",
+                  "parent_id": "node_root_Idl",
                   "classification": "shape",
                   "key": "solid",
                   "x": 0,
@@ -435,8 +430,8 @@
                   }
                 },
                 {
-                  "id": "CfI-13",
-                  "parent_id": "node_root_CfI",
+                  "id": "Idl-13",
+                  "parent_id": "node_root_Idl",
                   "classification": "shape",
                   "key": "solid",
                   "x": 0,
@@ -455,8 +450,8 @@
                   }
                 },
                 {
-                  "id": "CfI-14",
-                  "parent_id": "node_root_CfI",
+                  "id": "Idl-14",
+                  "parent_id": "node_root_Idl",
                   "classification": "shape",
                   "key": "solid",
                   "x": 0,
@@ -475,8 +470,8 @@
                   }
                 },
                 {
-                  "id": "CfI-15",
-                  "parent_id": "node_root_CfI",
+                  "id": "Idl-15",
+                  "parent_id": "node_root_Idl",
                   "classification": "shape",
                   "key": "solid",
                   "x": 0,
@@ -495,8 +490,8 @@
                   }
                 },
                 {
-                  "id": "CfI-16",
-                  "parent_id": "node_root_CfI",
+                  "id": "Idl-16",
+                  "parent_id": "node_root_Idl",
                   "classification": "shape",
                   "key": "solid",
                   "x": 0,
@@ -515,8 +510,8 @@
                   }
                 },
                 {
-                  "id": "CfI-17",
-                  "parent_id": "node_root_CfI",
+                  "id": "Idl-17",
+                  "parent_id": "node_root_Idl",
                   "classification": "shape",
                   "key": "group",
                   "x": 445,
@@ -536,7 +531,7 @@
                 },
                 {
                   "id": "b1",
-                  "parent_id": "node_root_CfI",
+                  "parent_id": "node_root_Idl",
                   "classification": "shape",
                   "key": "klass",
                   "x": 670,
@@ -598,7 +593,7 @@
                 },
                 {
                   "id": "b2",
-                  "parent_id": "node_root_CfI",
+                  "parent_id": "node_root_Idl",
                   "classification": "shape",
                   "key": "klass",
                   "x": 890,
@@ -655,7 +650,7 @@
                 },
                 {
                   "id": "b3",
-                  "parent_id": "node_root_CfI",
+                  "parent_id": "node_root_Idl",
                   "classification": "shape",
                   "key": "klass",
                   "x": 1110,
@@ -701,8 +696,8 @@
                   }
                 },
                 {
-                  "id": "CfI-21",
-                  "parent_id": "node_root_CfI",
+                  "id": "Idl-21",
+                  "parent_id": "node_root_Idl",
                   "classification": "shape",
                   "key": "solid",
                   "x": 0,
@@ -721,8 +716,8 @@
                   }
                 },
                 {
-                  "id": "CfI-22",
-                  "parent_id": "node_root_CfI",
+                  "id": "Idl-22",
+                  "parent_id": "node_root_Idl",
                   "classification": "shape",
                   "key": "solid",
                   "x": 0,
@@ -741,8 +736,8 @@
                   }
                 },
                 {
-                  "id": "CfI-23",
-                  "parent_id": "node_root_CfI",
+                  "id": "Idl-23",
+                  "parent_id": "node_root_Idl",
                   "classification": "shape",
                   "key": "solid",
                   "x": 0,
@@ -761,8 +756,8 @@
                   }
                 },
                 {
-                  "id": "CfI-24",
-                  "parent_id": "node_root_CfI",
+                  "id": "Idl-24",
+                  "parent_id": "node_root_Idl",
                   "classification": "shape",
                   "key": "group",
                   "x": 5,
@@ -781,8 +776,8 @@
                   }
                 },
                 {
-                  "id": "CfI-25",
-                  "parent_id": "node_root_CfI",
+                  "id": "Idl-25",
+                  "parent_id": "node_root_Idl",
                   "classification": "shape",
                   "key": "group",
                   "x": 225,
@@ -801,8 +796,8 @@
                   }
                 },
                 {
-                  "id": "CfI-26",
-                  "parent_id": "node_root_CfI",
+                  "id": "Idl-26",
+                  "parent_id": "node_root_Idl",
                   "classification": "shape",
                   "key": "klass",
                   "x": 450,
@@ -843,8 +838,8 @@
                   }
                 },
                 {
-                  "id": "CfI-27",
-                  "parent_id": "node_root_CfI",
+                  "id": "Idl-27",
+                  "parent_id": "node_root_Idl",
                   "classification": "shape",
                   "key": "group",
                   "x": 665,
@@ -863,8 +858,8 @@
                   }
                 },
                 {
-                  "id": "CfI-28",
-                  "parent_id": "node_root_CfI",
+                  "id": "Idl-28",
+                  "parent_id": "node_root_Idl",
                   "classification": "shape",
                   "key": "klass",
                   "x": 890,
@@ -890,8 +885,8 @@
                   }
                 },
                 {
-                  "id": "CfI-29",
-                  "parent_id": "node_root_CfI",
+                  "id": "Idl-29",
+                  "parent_id": "node_root_Idl",
                   "classification": "shape",
                   "key": "interface",
                   "x": 1130,

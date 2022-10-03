@@ -3,6 +3,8 @@
 module TailwindDsl
   module Config
     # Configuration
+    #
+    # Configuration container for the Tailwind DSL
     class Configuration
       attr_accessor :collections
       attr_accessor :themes
