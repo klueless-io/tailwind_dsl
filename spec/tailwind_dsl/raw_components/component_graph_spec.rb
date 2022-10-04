@@ -49,23 +49,30 @@ RSpec.describe TailwindDsl::RawComponents::ComponentGraph do
 
       it { is_expected.to include(name: name, path: path) }
 
-      # it { puts JSON.pretty_generate(subject.to_h) }
+      it { puts JSON.pretty_generate(subject.to_h) }
     end
   end
 
   # context 'examples' do
-  #   let(:path) { File.join(component_path, 'tui') }
   #   let(:output_path) { File.expand_path('../../sample_output', File.dirname(__FILE__)) }
 
-  #   before { instance.add_design_system(path) }
-
   #   context 'sample' do
-  #     let(:component_path) { File.expand_path('../../sample_components', File.dirname(__FILE__)) }
+  #     before { 
+  #       instance.add_design_system(File.join(component_path, 'tui'))
+  #       instance.add_design_system(File.join(component_path, 'noq'))
+  #     }
+
   #     it { instance.write(File.join(output_path, 'uikit.sample.json')) }
   #   end
 
   #   context 'live' do
-  #     let(:component_path) { '/Users/davidcruwys/dev/kgems/k_templates/templates/tailwind' }
+  #     let(:component_path) { File.expand_path('~/dev/kgems/k_templates/templates/tailwind') }
+
+  #     before { 
+  #       instance.add_design_system(File.join(component_path, 'tui'))
+  #       instance.add_design_system(File.join(component_path, 'noq'))
+  #     }
+
   #     it { instance.write(File.join(output_path, 'uikit.live.json')) }
   #   end
   # end

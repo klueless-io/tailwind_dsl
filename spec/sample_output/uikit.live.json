@@ -6130,5 +6130,546 @@
         ]
       }
     ]
+  },
+  "noq": {
+    "name": "noq",
+    "path": "/Users/davidcruwys/dev/kgems/k_templates/templates/tailwind/noq",
+    "stats": {
+      "@": 3,
+      "footer": 2,
+      "form": 4,
+      "card": 5,
+      "faq": 2,
+      "element": 15,
+      "content": 1,
+      "teams": 1,
+      "feature": 1,
+      "nav": 2,
+      "hero": 1,
+      "custom": 5,
+      "pricing": 2,
+      "header": 1,
+      "stats": 1
+    },
+    "groups": [
+      {
+        "key": "@",
+        "type": "root",
+        "folder": ".",
+        "sub_keys": [
+
+        ],
+        "files": [
+          {
+            "name": "page_staff_orders2.html",
+            "file_name": "page_staff_orders2.html",
+            "file_name_only": "page_staff_orders2",
+            "absolute_file": "/Users/davidcruwys/dev/kgems/k_templates/templates/tailwind/noq/page_staff_orders2.html",
+            "file": "./page_staff_orders2.html",
+            "sample_data_file": "./page_staff_orders2.sample.json"
+          },
+          {
+            "name": "page.html",
+            "file_name": "page.html",
+            "file_name_only": "page",
+            "absolute_file": "/Users/davidcruwys/dev/kgems/k_templates/templates/tailwind/noq/page.html",
+            "file": "./page.html",
+            "sample_data_file": "./page.sample.json"
+          },
+          {
+            "name": "page_staff_orders.html",
+            "file_name": "page_staff_orders.html",
+            "file_name_only": "page_staff_orders",
+            "absolute_file": "/Users/davidcruwys/dev/kgems/k_templates/templates/tailwind/noq/page_staff_orders.html",
+            "file": "./page_staff_orders.html",
+            "sample_data_file": "./page_staff_orders.sample.json"
+          }
+        ]
+      },
+      {
+        "key": "footer",
+        "type": "footer",
+        "folder": "footer",
+        "sub_keys": [
+          "footer"
+        ],
+        "files": [
+          {
+            "name": "style1.html",
+            "file_name": "style1.html",
+            "file_name_only": "style1",
+            "absolute_file": "/Users/davidcruwys/dev/kgems/k_templates/templates/tailwind/noq/footer/style1.html",
+            "file": "footer/style1.html",
+            "sample_data_file": "footer/style1.sample.json"
+          },
+          {
+            "name": "style2.html",
+            "file_name": "style2.html",
+            "file_name_only": "style2",
+            "absolute_file": "/Users/davidcruwys/dev/kgems/k_templates/templates/tailwind/noq/footer/style2.html",
+            "file": "footer/style2.html",
+            "sample_data_file": "footer/style2.sample.json"
+          }
+        ]
+      },
+      {
+        "key": "form",
+        "type": "form",
+        "folder": "form",
+        "sub_keys": [
+          "form"
+        ],
+        "files": [
+          {
+            "name": "login2.html",
+            "file_name": "login2.html",
+            "file_name_only": "login2",
+            "absolute_file": "/Users/davidcruwys/dev/kgems/k_templates/templates/tailwind/noq/form/login2.html",
+            "file": "form/login2.html",
+            "sample_data_file": "form/login2.sample.json"
+          },
+          {
+            "name": "login2_custom.html",
+            "file_name": "login2_custom.html",
+            "file_name_only": "login2_custom",
+            "absolute_file": "/Users/davidcruwys/dev/kgems/k_templates/templates/tailwind/noq/form/login2_custom.html",
+            "file": "form/login2_custom.html",
+            "sample_data_file": "form/login2_custom.sample.json"
+          },
+          {
+            "name": "complex1.html",
+            "file_name": "complex1.html",
+            "file_name_only": "complex1",
+            "absolute_file": "/Users/davidcruwys/dev/kgems/k_templates/templates/tailwind/noq/form/complex1.html",
+            "file": "form/complex1.html",
+            "sample_data_file": "form/complex1.sample.json"
+          },
+          {
+            "name": "login1.html",
+            "file_name": "login1.html",
+            "file_name_only": "login1",
+            "absolute_file": "/Users/davidcruwys/dev/kgems/k_templates/templates/tailwind/noq/form/login1.html",
+            "file": "form/login1.html",
+            "sample_data_file": "form/login1.sample.json"
+          }
+        ]
+      },
+      {
+        "key": "card",
+        "type": "card",
+        "folder": "card",
+        "sub_keys": [
+          "card"
+        ],
+        "files": [
+          {
+            "name": "style1.html",
+            "file_name": "style1.html",
+            "file_name_only": "style1",
+            "absolute_file": "/Users/davidcruwys/dev/kgems/k_templates/templates/tailwind/noq/card/style1.html",
+            "file": "card/style1.html",
+            "sample_data_file": "card/style1.sample.json"
+          },
+          {
+            "name": "style3.html",
+            "file_name": "style3.html",
+            "file_name_only": "style3",
+            "absolute_file": "/Users/davidcruwys/dev/kgems/k_templates/templates/tailwind/noq/card/style3.html",
+            "file": "card/style3.html",
+            "sample_data_file": "card/style3.sample.json"
+          },
+          {
+            "name": "style123.html",
+            "file_name": "style123.html",
+            "file_name_only": "style123",
+            "absolute_file": "/Users/davidcruwys/dev/kgems/k_templates/templates/tailwind/noq/card/style123.html",
+            "file": "card/style123.html",
+            "sample_data_file": "card/style123.sample.json"
+          },
+          {
+            "name": "style2.html",
+            "file_name": "style2.html",
+            "file_name_only": "style2",
+            "absolute_file": "/Users/davidcruwys/dev/kgems/k_templates/templates/tailwind/noq/card/style2.html",
+            "file": "card/style2.html",
+            "sample_data_file": "card/style2.sample.json"
+          },
+          {
+            "name": "style4.html",
+            "file_name": "style4.html",
+            "file_name_only": "style4",
+            "absolute_file": "/Users/davidcruwys/dev/kgems/k_templates/templates/tailwind/noq/card/style4.html",
+            "file": "card/style4.html",
+            "sample_data_file": "card/style4.sample.json"
+          }
+        ]
+      },
+      {
+        "key": "faq",
+        "type": "faq",
+        "folder": "faq",
+        "sub_keys": [
+          "faq"
+        ],
+        "files": [
+          {
+            "name": "style1.html",
+            "file_name": "style1.html",
+            "file_name_only": "style1",
+            "absolute_file": "/Users/davidcruwys/dev/kgems/k_templates/templates/tailwind/noq/faq/style1.html",
+            "file": "faq/style1.html",
+            "sample_data_file": "faq/style1.sample.json"
+          },
+          {
+            "name": "style2.html",
+            "file_name": "style2.html",
+            "file_name_only": "style2",
+            "absolute_file": "/Users/davidcruwys/dev/kgems/k_templates/templates/tailwind/noq/faq/style2.html",
+            "file": "faq/style2.html",
+            "sample_data_file": "faq/style2.sample.json"
+          }
+        ]
+      },
+      {
+        "key": "element",
+        "type": "element",
+        "folder": "element",
+        "sub_keys": [
+          "element"
+        ],
+        "files": [
+          {
+            "name": "list_of_shops.html",
+            "file_name": "list_of_shops.html",
+            "file_name_only": "list_of_shops",
+            "absolute_file": "/Users/davidcruwys/dev/kgems/k_templates/templates/tailwind/noq/element/list_of_shops.html",
+            "file": "element/list_of_shops.html",
+            "sample_data_file": "element/list_of_shops.sample.json"
+          },
+          {
+            "name": "kanban_2.html",
+            "file_name": "kanban_2.html",
+            "file_name_only": "kanban_2",
+            "absolute_file": "/Users/davidcruwys/dev/kgems/k_templates/templates/tailwind/noq/element/kanban_2.html",
+            "file": "element/kanban_2.html",
+            "sample_data_file": "element/kanban_2.sample.json"
+          },
+          {
+            "name": "home_head.html",
+            "file_name": "home_head.html",
+            "file_name_only": "home_head",
+            "absolute_file": "/Users/davidcruwys/dev/kgems/k_templates/templates/tailwind/noq/element/home_head.html",
+            "file": "element/home_head.html",
+            "sample_data_file": "element/home_head.sample.json"
+          },
+          {
+            "name": "search_shop_name.html",
+            "file_name": "search_shop_name.html",
+            "file_name_only": "search_shop_name",
+            "absolute_file": "/Users/davidcruwys/dev/kgems/k_templates/templates/tailwind/noq/element/search_shop_name.html",
+            "file": "element/search_shop_name.html",
+            "sample_data_file": "element/search_shop_name.sample.json"
+          },
+          {
+            "name": "favourite_orders.html",
+            "file_name": "favourite_orders.html",
+            "file_name_only": "favourite_orders",
+            "absolute_file": "/Users/davidcruwys/dev/kgems/k_templates/templates/tailwind/noq/element/favourite_orders.html",
+            "file": "element/favourite_orders.html",
+            "sample_data_file": "element/favourite_orders.sample.json"
+          },
+          {
+            "name": "order_history.html",
+            "file_name": "order_history.html",
+            "file_name_only": "order_history",
+            "absolute_file": "/Users/davidcruwys/dev/kgems/k_templates/templates/tailwind/noq/element/order_history.html",
+            "file": "element/order_history.html",
+            "sample_data_file": "element/order_history.sample.json"
+          },
+          {
+            "name": "shop_menu.html",
+            "file_name": "shop_menu.html",
+            "file_name_only": "shop_menu",
+            "absolute_file": "/Users/davidcruwys/dev/kgems/k_templates/templates/tailwind/noq/element/shop_menu.html",
+            "file": "element/shop_menu.html",
+            "sample_data_file": "element/shop_menu.sample.json"
+          },
+          {
+            "name": "favourite_orders2.html",
+            "file_name": "favourite_orders2.html",
+            "file_name_only": "favourite_orders2",
+            "absolute_file": "/Users/davidcruwys/dev/kgems/k_templates/templates/tailwind/noq/element/favourite_orders2.html",
+            "file": "element/favourite_orders2.html",
+            "sample_data_file": "element/favourite_orders2.sample.json"
+          },
+          {
+            "name": "connect_shop_modal.html",
+            "file_name": "connect_shop_modal.html",
+            "file_name_only": "connect_shop_modal",
+            "absolute_file": "/Users/davidcruwys/dev/kgems/k_templates/templates/tailwind/noq/element/connect_shop_modal.html",
+            "file": "element/connect_shop_modal.html",
+            "sample_data_file": "element/connect_shop_modal.sample.json"
+          },
+          {
+            "name": "current_order_summary.html",
+            "file_name": "current_order_summary.html",
+            "file_name_only": "current_order_summary",
+            "absolute_file": "/Users/davidcruwys/dev/kgems/k_templates/templates/tailwind/noq/element/current_order_summary.html",
+            "file": "element/current_order_summary.html",
+            "sample_data_file": "element/current_order_summary.sample.json"
+          },
+          {
+            "name": "list_of_shops2.html",
+            "file_name": "list_of_shops2.html",
+            "file_name_only": "list_of_shops2",
+            "absolute_file": "/Users/davidcruwys/dev/kgems/k_templates/templates/tailwind/noq/element/list_of_shops2.html",
+            "file": "element/list_of_shops2.html",
+            "sample_data_file": "element/list_of_shops2.sample.json"
+          },
+          {
+            "name": "current_order_summary3.html",
+            "file_name": "current_order_summary3.html",
+            "file_name_only": "current_order_summary3",
+            "absolute_file": "/Users/davidcruwys/dev/kgems/k_templates/templates/tailwind/noq/element/current_order_summary3.html",
+            "file": "element/current_order_summary3.html",
+            "sample_data_file": "element/current_order_summary3.sample.json"
+          },
+          {
+            "name": "kanban_1.html",
+            "file_name": "kanban_1.html",
+            "file_name_only": "kanban_1",
+            "absolute_file": "/Users/davidcruwys/dev/kgems/k_templates/templates/tailwind/noq/element/kanban_1.html",
+            "file": "element/kanban_1.html",
+            "sample_data_file": "element/kanban_1.sample.json"
+          },
+          {
+            "name": "current_order_modal.html",
+            "file_name": "current_order_modal.html",
+            "file_name_only": "current_order_modal",
+            "absolute_file": "/Users/davidcruwys/dev/kgems/k_templates/templates/tailwind/noq/element/current_order_modal.html",
+            "file": "element/current_order_modal.html",
+            "sample_data_file": "element/current_order_modal.sample.json"
+          },
+          {
+            "name": "current_order_summary2.html",
+            "file_name": "current_order_summary2.html",
+            "file_name_only": "current_order_summary2",
+            "absolute_file": "/Users/davidcruwys/dev/kgems/k_templates/templates/tailwind/noq/element/current_order_summary2.html",
+            "file": "element/current_order_summary2.html",
+            "sample_data_file": "element/current_order_summary2.sample.json"
+          }
+        ]
+      },
+      {
+        "key": "content",
+        "type": "content",
+        "folder": "content",
+        "sub_keys": [
+          "content"
+        ],
+        "files": [
+          {
+            "name": "style1.html",
+            "file_name": "style1.html",
+            "file_name_only": "style1",
+            "absolute_file": "/Users/davidcruwys/dev/kgems/k_templates/templates/tailwind/noq/content/style1.html",
+            "file": "content/style1.html",
+            "sample_data_file": "content/style1.sample.json"
+          }
+        ]
+      },
+      {
+        "key": "teams",
+        "type": "teams",
+        "folder": "teams",
+        "sub_keys": [
+          "teams"
+        ],
+        "files": [
+          {
+            "name": "style1.html",
+            "file_name": "style1.html",
+            "file_name_only": "style1",
+            "absolute_file": "/Users/davidcruwys/dev/kgems/k_templates/templates/tailwind/noq/teams/style1.html",
+            "file": "teams/style1.html",
+            "sample_data_file": "teams/style1.sample.json"
+          }
+        ]
+      },
+      {
+        "key": "feature",
+        "type": "feature",
+        "folder": "feature",
+        "sub_keys": [
+          "feature"
+        ],
+        "files": [
+          {
+            "name": "style1.html",
+            "file_name": "style1.html",
+            "file_name_only": "style1",
+            "absolute_file": "/Users/davidcruwys/dev/kgems/k_templates/templates/tailwind/noq/feature/style1.html",
+            "file": "feature/style1.html",
+            "sample_data_file": "feature/style1.sample.json"
+          }
+        ]
+      },
+      {
+        "key": "nav",
+        "type": "nav",
+        "folder": "nav",
+        "sub_keys": [
+          "nav"
+        ],
+        "files": [
+          {
+            "name": "style1.html",
+            "file_name": "style1.html",
+            "file_name_only": "style1",
+            "absolute_file": "/Users/davidcruwys/dev/kgems/k_templates/templates/tailwind/noq/nav/style1.html",
+            "file": "nav/style1.html",
+            "sample_data_file": "nav/style1.sample.json"
+          },
+          {
+            "name": "style2.html",
+            "file_name": "style2.html",
+            "file_name_only": "style2",
+            "absolute_file": "/Users/davidcruwys/dev/kgems/k_templates/templates/tailwind/noq/nav/style2.html",
+            "file": "nav/style2.html",
+            "sample_data_file": "nav/style2.sample.json"
+          }
+        ]
+      },
+      {
+        "key": "hero",
+        "type": "hero",
+        "folder": "hero",
+        "sub_keys": [
+          "hero"
+        ],
+        "files": [
+          {
+            "name": "style1.html",
+            "file_name": "style1.html",
+            "file_name_only": "style1",
+            "absolute_file": "/Users/davidcruwys/dev/kgems/k_templates/templates/tailwind/noq/hero/style1.html",
+            "file": "hero/style1.html",
+            "sample_data_file": "hero/style1.sample.json"
+          }
+        ]
+      },
+      {
+        "key": "custom",
+        "type": "custom",
+        "folder": "custom",
+        "sub_keys": [
+          "custom"
+        ],
+        "files": [
+          {
+            "name": "checkout1.html",
+            "file_name": "checkout1.html",
+            "file_name_only": "checkout1",
+            "absolute_file": "/Users/davidcruwys/dev/kgems/k_templates/templates/tailwind/noq/custom/checkout1.html",
+            "file": "custom/checkout1.html",
+            "sample_data_file": "custom/checkout1.sample.json"
+          },
+          {
+            "name": "checkout1-style.html",
+            "file_name": "checkout1-style.html",
+            "file_name_only": "checkout1-style",
+            "absolute_file": "/Users/davidcruwys/dev/kgems/k_templates/templates/tailwind/noq/custom/checkout1-style.html",
+            "file": "custom/checkout1-style.html",
+            "sample_data_file": "custom/checkout1-style.sample.json"
+          },
+          {
+            "name": "checkout4.html",
+            "file_name": "checkout4.html",
+            "file_name_only": "checkout4",
+            "absolute_file": "/Users/davidcruwys/dev/kgems/k_templates/templates/tailwind/noq/custom/checkout4.html",
+            "file": "custom/checkout4.html",
+            "sample_data_file": "custom/checkout4.sample.json"
+          },
+          {
+            "name": "checkout2.html",
+            "file_name": "checkout2.html",
+            "file_name_only": "checkout2",
+            "absolute_file": "/Users/davidcruwys/dev/kgems/k_templates/templates/tailwind/noq/custom/checkout2.html",
+            "file": "custom/checkout2.html",
+            "sample_data_file": "custom/checkout2.sample.json"
+          },
+          {
+            "name": "checkout3.html",
+            "file_name": "checkout3.html",
+            "file_name_only": "checkout3",
+            "absolute_file": "/Users/davidcruwys/dev/kgems/k_templates/templates/tailwind/noq/custom/checkout3.html",
+            "file": "custom/checkout3.html",
+            "sample_data_file": "custom/checkout3.sample.json"
+          }
+        ]
+      },
+      {
+        "key": "pricing",
+        "type": "pricing",
+        "folder": "pricing",
+        "sub_keys": [
+          "pricing"
+        ],
+        "files": [
+          {
+            "name": "style1.html",
+            "file_name": "style1.html",
+            "file_name_only": "style1",
+            "absolute_file": "/Users/davidcruwys/dev/kgems/k_templates/templates/tailwind/noq/pricing/style1.html",
+            "file": "pricing/style1.html",
+            "sample_data_file": "pricing/style1.sample.json"
+          },
+          {
+            "name": "style2.html",
+            "file_name": "style2.html",
+            "file_name_only": "style2",
+            "absolute_file": "/Users/davidcruwys/dev/kgems/k_templates/templates/tailwind/noq/pricing/style2.html",
+            "file": "pricing/style2.html",
+            "sample_data_file": "pricing/style2.sample.json"
+          }
+        ]
+      },
+      {
+        "key": "header",
+        "type": "header",
+        "folder": "header",
+        "sub_keys": [
+          "header"
+        ],
+        "files": [
+          {
+            "name": "style1.html",
+            "file_name": "style1.html",
+            "file_name_only": "style1",
+            "absolute_file": "/Users/davidcruwys/dev/kgems/k_templates/templates/tailwind/noq/header/style1.html",
+            "file": "header/style1.html",
+            "sample_data_file": "header/style1.sample.json"
+          }
+        ]
+      },
+      {
+        "key": "stats",
+        "type": "stats",
+        "folder": "stats",
+        "sub_keys": [
+          "stats"
+        ],
+        "files": [
+          {
+            "name": "style1.html",
+            "file_name": "style1.html",
+            "file_name_only": "style1",
+            "absolute_file": "/Users/davidcruwys/dev/kgems/k_templates/templates/tailwind/noq/stats/style1.html",
+            "file": "stats/style1.html",
+            "sample_data_file": "stats/style1.sample.json"
+          }
+        ]
+      }
+    ]
   }
 }
