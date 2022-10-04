@@ -27,6 +27,7 @@
 *.a
 mkmf.log
 
+.data
 # Ruby Version
 .ruby-version
 

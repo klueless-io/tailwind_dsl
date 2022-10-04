@@ -1,5 +1,6 @@
 KManager.action :utilities do
   helpers = self
+
   action do
     KDirector::Dsls::BasicDsl
       .init(k_builder,
@@ -29,7 +30,6 @@ KManager.action :utilities do
     graph.add_design_system(File.join(source_path, 'starter-kit'))
 
     JSON.pretty_generate(graph.to_h)
-    
   end
 end
 KManager.opts.sleep                       = 2
