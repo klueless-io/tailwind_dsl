@@ -1,8 +1,10 @@
 # frozen_string_literal: true
 
+require 'cmdlet'
 require_relative 'tailwind_dsl/version'
 require_relative '_'
-require_relative 'tailwind_dsl/raw_component_graph'
+require_relative 'tailwind_dsl/raw_components/component_graph'
+require_relative 'tailwind_dsl/raw_components/component_reader'
 
 module TailwindDsl
   # raise TailwindDsl::Error, 'Sample message'

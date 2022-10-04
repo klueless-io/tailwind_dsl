@@ -10,6 +10,7 @@ KManager.action :project_plan do
 
         grid_layout(y: 90, direction: :horizontal, grid_h: 80, grid_w: 320, wrap_at: 3, grid: 0)
 
+        todo(title: 'use the design system file reader to generate a component graph in ./builder/utilities.rb')
         todo(title: 'use a domain model generator to build base classes and unit tests')
         todo(title: 'restart the application so that I can figure out the issues with RuboCop')
         todo(title: 'build a sample DSL to test how this can be used')
@@ -20,6 +21,8 @@ KManager.action :project_plan do
         # h5(x: 300, y: 0, w: 400, h: 80, title: 'DrawIO DSL')
 
         grid_layout(y:90, direction: :horizontal, grid_h: 80, grid_w: 320, wrap_at: 3, grid: 0)
+
+        todo(title: 'build file reader for raw design system files')
 
       end
       .page('Done', theme: :style_06, margin_left: 0, margin_top: 0) do

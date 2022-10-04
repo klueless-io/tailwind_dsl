@@ -1,0 +1,150 @@
+{
+  "tui": {
+    "name": "tui",
+    "path": "/Users/davidcruwys/dev/kgems/tailwind_dsl/spec/sample_components/tui",
+    "stats": {
+      "@": 1,
+      "application_ui": 1,
+      "application_ui.page.detail_screens": 1,
+      "application_ui.component.element.buttons": 2,
+      "application_ui.component.element.avatars": 1,
+      "application_ui.application_shell.multi_column": 2
+    },
+    "groups": [
+      {
+        "key": "@",
+        "type": "root",
+        "folder": ".",
+        "sub_keys": [
+
+        ],
+        "files": [
+          {
+            "name": "ui-set-root.html",
+            "file_name": "ui-set-root.html",
+            "file_name_only": "ui-set-root",
+            "absolute_file": "/Users/davidcruwys/dev/kgems/tailwind_dsl/spec/sample_components/tui/ui-set-root.html",
+            "file": "./ui-set-root.html",
+            "sample_data_file": "./ui-set-root.sample.json"
+          }
+        ]
+      },
+      {
+        "key": "application_ui",
+        "type": "application-ui",
+        "folder": "application-ui",
+        "sub_keys": [
+          "application-ui"
+        ],
+        "files": [
+          {
+            "name": "base-file.html",
+            "file_name": "base-file.html",
+            "file_name_only": "base-file",
+            "absolute_file": "/Users/davidcruwys/dev/kgems/tailwind_dsl/spec/sample_components/tui/application-ui/base-file.html",
+            "file": "application-ui/base-file.html",
+            "sample_data_file": "application-ui/base-file.sample.json"
+          }
+        ]
+      },
+      {
+        "key": "application_ui.page.detail_screens",
+        "type": "detail-screens",
+        "folder": "application-ui/page/detail-screens",
+        "sub_keys": [
+          "application-ui",
+          "page",
+          "detail-screens"
+        ],
+        "files": [
+          {
+            "name": "01.html",
+            "file_name": "01.html",
+            "file_name_only": "01",
+            "absolute_file": "/Users/davidcruwys/dev/kgems/tailwind_dsl/spec/sample_components/tui/application-ui/page/detail-screens/01.html",
+            "file": "application-ui/page/detail-screens/01.html",
+            "sample_data_file": "application-ui/page/detail-screens/01.sample.json"
+          }
+        ]
+      },
+      {
+        "key": "application_ui.component.element.buttons",
+        "type": "buttons",
+        "folder": "application-ui/component/element/buttons",
+        "sub_keys": [
+          "application-ui",
+          "component",
+          "element",
+          "buttons"
+        ],
+        "files": [
+          {
+            "name": "02.html",
+            "file_name": "02.html",
+            "file_name_only": "02",
+            "absolute_file": "/Users/davidcruwys/dev/kgems/tailwind_dsl/spec/sample_components/tui/application-ui/component/element/buttons/02.html",
+            "file": "application-ui/component/element/buttons/02.html",
+            "sample_data_file": "application-ui/component/element/buttons/02.sample.json"
+          },
+          {
+            "name": "01.html",
+            "file_name": "01.html",
+            "file_name_only": "01",
+            "absolute_file": "/Users/davidcruwys/dev/kgems/tailwind_dsl/spec/sample_components/tui/application-ui/component/element/buttons/01.html",
+            "file": "application-ui/component/element/buttons/01.html",
+            "sample_data_file": "application-ui/component/element/buttons/01.sample.json"
+          }
+        ]
+      },
+      {
+        "key": "application_ui.component.element.avatars",
+        "type": "avatars",
+        "folder": "application-ui/component/element/avatars",
+        "sub_keys": [
+          "application-ui",
+          "component",
+          "element",
+          "avatars"
+        ],
+        "files": [
+          {
+            "name": "01.html",
+            "file_name": "01.html",
+            "file_name_only": "01",
+            "absolute_file": "/Users/davidcruwys/dev/kgems/tailwind_dsl/spec/sample_components/tui/application-ui/component/element/avatars/01.html",
+            "file": "application-ui/component/element/avatars/01.html",
+            "sample_data_file": "application-ui/component/element/avatars/01.sample.json"
+          }
+        ]
+      },
+      {
+        "key": "application_ui.application_shell.multi_column",
+        "type": "multi-column",
+        "folder": "application-ui/application-shell/multi-column",
+        "sub_keys": [
+          "application-ui",
+          "application-shell",
+          "multi-column"
+        ],
+        "files": [
+          {
+            "name": "02.html",
+            "file_name": "02.html",
+            "file_name_only": "02",
+            "absolute_file": "/Users/davidcruwys/dev/kgems/tailwind_dsl/spec/sample_components/tui/application-ui/application-shell/multi-column/02.html",
+            "file": "application-ui/application-shell/multi-column/02.html",
+            "sample_data_file": "application-ui/application-shell/multi-column/02.sample.json"
+          },
+          {
+            "name": "01.html",
+            "file_name": "01.html",
+            "file_name_only": "01",
+            "absolute_file": "/Users/davidcruwys/dev/kgems/tailwind_dsl/spec/sample_components/tui/application-ui/application-shell/multi-column/01.html",
+            "file": "application-ui/application-shell/multi-column/01.html",
+            "sample_data_file": "application-ui/application-shell/multi-column/01.sample.json"
+          }
+        ]
+      }
+    ]
+  }
+}
