@@ -1,0 +1,9 @@
+{
+  "source": "https://tailwindui.com/components/application-ui/application-shells/stacked",
+  "custom_html": {
+    "html": "<html class=\"h-full\">",
+    "body": "<body class=\"h-full\">"
+  },
+  "tailwind_config": {
+  }
+}

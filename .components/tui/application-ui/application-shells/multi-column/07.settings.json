@@ -1,0 +1,9 @@
+{
+  "source": "https://tailwindui.com/components/application-ui/application-shells/multi-column",
+  "custom_html": {
+    "html": "<html class=\"h-full bg-gray-50\">",
+    "body": "<body class=\"h-full overflow-hidden\">"
+  },
+  "tailwind_config": {
+  }
+}

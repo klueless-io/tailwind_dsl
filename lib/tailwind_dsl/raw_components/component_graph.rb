@@ -4,6 +4,8 @@ module TailwindDsl
   module RawComponents
     # Component Graph will store a JSON representation of the Design System components.
     #
+    # This is a raw representation of the source.
+    #
     # This data structure will be used by the component transformer to build
     # auxiliary data structures for components such as clean HTML, Astro, data shapes.
     class ComponentGraph

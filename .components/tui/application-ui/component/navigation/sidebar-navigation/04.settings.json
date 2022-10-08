@@ -1,8 +1,9 @@
 {
-  "tailwind_config": {
-  },
+  "source": "https://tailwindui.com/components/application-ui/component/navigation/sidebar-navigation",
   "custom_html": {
     "html": null,
     "body": null
+  },
+  "tailwind_config": {
   }
 }

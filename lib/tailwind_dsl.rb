@@ -5,6 +5,7 @@ require_relative 'tailwind_dsl/version'
 require_relative '_'
 require_relative 'tailwind_dsl/raw_components/component_graph'
 require_relative 'tailwind_dsl/raw_components/component_reader'
+require_relative 'tailwind_dsl/raw_components/generate_component_data'
 require_relative 'tailwind_dsl/raw_components/generate_component_structures'
 
 module TailwindDsl

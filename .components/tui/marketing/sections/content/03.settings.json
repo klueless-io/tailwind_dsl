@@ -1,0 +1,15 @@
+{
+  "source": "https://tailwindui.com/components/marketing/sections/content",
+  "custom_html": {
+    "html": null,
+    "body": null
+  },
+  "tailwind_config": {
+    "plugins": {
+      "forms": false,
+      "aspect_ratio": true,
+      "line_clamp": false,
+      "typography": true
+    }
+  }
+}

@@ -1,4 +1,9 @@
 {
+  "source": "https://tailwindui.com/components/application-ui/overlays/slide-overs",
+  "custom_html": {
+    "html": null,
+    "body": null
+  },
   "tailwind_config": {
     "plugins": {
       "forms": false,
@@ -6,9 +11,5 @@
       "line_clamp": false,
       "typography": false
     }
-  },
-  "custom_html": {
-    "html": null,
-    "body": null
   }
 }

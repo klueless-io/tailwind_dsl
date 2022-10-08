@@ -57,6 +57,34 @@ RSpec.describe TailwindDsl::RawComponents::GenerateComponentStructures do
       end
     end
 
+    context 'when resetting root path' do
+      let(:instance) { described_class.new(graph, root_target_path, reset_root_path: reset_root_path) }
+
+      before do
+        FileUtils.mkdir_p(File.join(root_target_path, 'a', 'b', 'c'))
+
+        graph.add_design_system(File.join(component_path, 'tui'))
+
+        instance.generate
+      end
+
+      context 'when reset_root_path is false' do
+        let(:reset_root_path) { false }
+
+        it 'does not delete the content under root path' do
+          expect(File.exist?(File.join(root_target_path, 'a', 'b', 'c'))).to be true
+        end
+      end
+
+      context 'when reset_root_path is true' do
+        let(:reset_root_path) { true }
+
+        it 'deletes the content under root path' do
+          expect(File.exist?(File.join(root_target_path, 'a', 'b', 'c'))).to be false
+        end
+      end
+    end
+
     context 'when target path exists and #generate' do
       before do
         FileUtils.mkdir_p(root_target_path)

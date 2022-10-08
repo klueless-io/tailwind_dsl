@@ -1,8 +1,9 @@
 {
-  "tailwind_config": {
-  },
+  "source": "https://tailwindui.com/components/ecommerce/page/order-detail-pages",
   "custom_html": {
     "html": null,
     "body": null
+  },
+  "tailwind_config": {
   }
 }

@@ -1,4 +1,9 @@
 {
+  "source": "https://tailwindui.com/components/application-ui/page/detail-screens",
+  "custom_html": {
+    "html": "<html class=\"h-full bg-gray-100\">",
+    "body": "<body class=\"h-full\">"
+  },
   "tailwind_config": {
     "plugins": {
       "forms": true,
@@ -6,9 +11,5 @@
       "line_clamp": false,
       "typography": false
     }
-  },
-  "custom_html": {
-    "html": "<html class=\"h-full bg-gray-100\">",
-    "body": "<body class=\"h-full\">"
   }
 }

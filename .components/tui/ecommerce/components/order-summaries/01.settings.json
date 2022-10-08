@@ -1,8 +1,9 @@
 {
-  "tailwind_config": {
-  },
+  "source": "https://tailwindui.com/components/ecommerce/components/order-summaries",
   "custom_html": {
     "html": "<html class=\"h-full bg-white\">",
     "body": "<body class=\"h-full\">"
+  },
+  "tailwind_config": {
   }
 }

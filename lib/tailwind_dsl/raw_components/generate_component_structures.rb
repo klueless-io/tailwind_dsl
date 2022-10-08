@@ -2,21 +2,16 @@
 
 module TailwindDsl
   module RawComponents
-    # Build target components using information from the component graph.
+    # Generate component structures such as HTML, Astro, and data shapes, settings, tailwind config as
+    # individual files from the raw component data.
     #
-    # Goals
-    # Check if there is a target folder
-    #   If not, raise error
-    # Create a HTML file for each component
-    #   Capture all comment sections
-    #   Remove comment sections
-    # Write a settings file
-    #   Settings should include information that can be gathered from the raw HTML
-    #   Information about what can be overwritten
-    #   Record the source of the component
-    # Write a data file
-    #   Note that the data file is meant to represent the data in the raw component
-    # Write an Astro file
+    # By default this will just refresh the files on the system, in future it might have some smarts around
+    # what to update, but for now it is all files.
+    #
+    # Some times you need to reset the data, ie. delete the contents of the target folder, this happens when
+    # you change the structure of the source input files. This is a destructive operation, so be warned.
+    #
+    # To execute this you need to pass reset_root_path: true
     class GenerateComponentStructures
       COMMENT_REGEX = /<!--[\s\S]*?-->/.freeze
       BLANK_LINE_REGEX = /(\n\s*\n)+/.freeze
@@ -25,15 +20,19 @@ module TailwindDsl
       # .gsub(/(\n\s*\n)+/, "\n")
       attr_reader :graph
       attr_reader :root_target_path
+      attr_reader :reset_root_path
 
-      def initialize(graph, root_target_path)
+      def initialize(graph, root_target_path, reset_root_path: false)
         @debug = true
         @graph = graph
         @root_target_path = root_target_path
+        @reset_root_path = reset_root_path
       end
 
       def generate
         assert_root_target_path_exists
+
+        delete_target_root_path if reset_root_path
 
         graph.design_systems.each do |name, design_system|
           process_design_system(name, design_system)
@@ -46,6 +45,10 @@ module TailwindDsl
         raise 'Target path does not exist' unless Dir.exist?(root_target_path)
       end
 
+      def delete_target_root_path
+        FileUtils.rm_rf(Dir.glob("#{root_target_path}/*"))
+      end
+
       def process_design_system(design_system_name, design_system)
         design_system[:groups].each do |group|
           process_group(design_system_name, group)
@@ -53,10 +56,8 @@ module TailwindDsl
       end
 
       def process_group(design_system_name, group)
-        # puts JSON.pretty_generate(group)
         group[:files].each do |file|
-          puts "DSN: #{design_system_name}, GRP: #{group[:type]}, FILE: #{file[:file]}"
-
+          # puts "DSN: #{design_system_name}, GRP: #{group[:type]}, FILE: #{file[:file]}"
           data = Data.new(design_system_name, group, file)
 
           unless data.source.exist?
@@ -84,6 +85,9 @@ module TailwindDsl
         # Create a settings file after extracting information from the HTML file
         create_settings_file(data)
 
+        # Build a menu of sources
+        # see: https://tailwindui.com/components/application-ui/data-display/description-lists
+
         # Create a data file
 
         # Create an Astro file
@@ -91,12 +95,7 @@ module TailwindDsl
         # Create a HTML file without tailwind config comment, but keep (DATA ONLY) comments
       end
 
-      # Create a HTML file for each component
-      #   Capture all comment sections
-      #   Remove comment sections
       # Write a settings file
-      #   Settings should include information that can be gathered from the raw HTML
-      #   Information about what can be overwritten
       #   Record the source of the component
       # Write a data file
       #   Note that the data file is meant to represent the data in the raw component
@@ -162,11 +161,12 @@ module TailwindDsl
         # templates/tailwind/tui/application-ui/page/home-screens/02.html
         # templates/tailwind/tui/application-ui/component/list/feed/03.html
         settings = {
-          tailwind_config: build_tailwind_config_settings(data),
+          source: extract_source(data),
           custom_html: {
             html: data.captured_comment_text.match(/<html.*>/),
             body: data.captured_comment_text.match(/<body.*>/)
-          }
+          },
+          tailwind_config: tailwind_config_settings(data.captured_tailwind_config)
         }
 
         File.write(target_file(data, data.target.settings_file), JSON.pretty_generate(settings))
@@ -178,17 +178,19 @@ module TailwindDsl
         data.captured_comment_list.first.match(TAILWIND_CONFIG_REGEX)[:tailwind]
       end
 
-      def build_tailwind_config_settings(data)
-        return {} if data.captured_comment_list.length.zero? || !data.captured_comment_list.first.include?('// tailwind.config.js')
+      def extract_source(data)
+        # In future I may be able to store the source in a comment in the HTML file
+        # but at the moment all components are generally from TailwindUI and the source
+        # URL can be inferred from the sub keys.
 
-        match = data.captured_comment_list.first.match(TAILWIND_CONFIG_REGEX)
+        return "https://tailwindui.com/components/#{data.group.sub_keys.join('/')}" if data.design_system_name == 'tui'
 
-        return {} unless match[:tailwind]
-
-        tailwind_config(match[:tailwind])
+        "##{data.design_system_name}/#{data.group.sub_keys.join('/')}"
       end
 
-      def tailwind_config(raw_tailwind_config)
+      def tailwind_config_settings(raw_tailwind_config)
+        return {} unless raw_tailwind_config
+
         {
           plugins: {
             forms: raw_tailwind_config.include?("require('@tailwindcss/forms')"),
@@ -197,52 +199,6 @@ module TailwindDsl
             typography: raw_tailwind_config.include?("require('@tailwindcss/typography')")
           }
         }
-      end
-
-      # -----------------------------------------------------------------------------------------------
-      # Internal Data Structure
-      class Data
-        attr_reader :design_system_name
-        attr_reader :group                    # Component group information
-        attr_reader :source                   # Source file information for the component
-        attr_reader :target                   # Multiple target file information
-        # attr_reader :settings                 # Settings data will be built dynamically during processing
-
-        attr_accessor :captured_comment_text
-        attr_accessor :captured_comment_list
-        attr_accessor :captured_tailwind_config
-
-        # rubocop:disable Metrics/AbcSize
-        def initialize(design_system_name, group, file)
-          @design_system_name = design_system_name
-          @group = Group.new(**group.slice(:key, :type, :sub_keys))
-          @source = Source.new(file: file[:absolute_file])
-          @target = Target.new(
-            folder: group[:folder],
-            html_file: file[:target][:html_file],
-            clean_html_file: file[:target][:clean_html_file],
-            tailwind_config_file: file[:target][:tailwind_config_file],
-            settings_file: file[:target][:settings_file],
-            data_file: file[:target][:data_file],
-            astro_file: file[:target][:astro_file]
-          )
-          @captured_comment_text = ''
-          @captured_comment_list = []
-          @captured_tailwind_config = ''
-        end
-        # rubocop:enable Metrics/AbcSize
-
-        Group = Struct.new(:key, :type, :sub_keys, keyword_init: true)
-        Source = Struct.new(:file, keyword_init: true) do
-          def exist?
-            File.exist?(file)
-          end
-
-          def content
-            @content ||= File.exist?(file) ? File.read(file) : ''
-          end
-        end
-        Target = Struct.new(:folder, :html_file, :clean_html_file, :tailwind_config_file, :settings_file, :data_file, :astro_file, keyword_init: true)
       end
     end
   end

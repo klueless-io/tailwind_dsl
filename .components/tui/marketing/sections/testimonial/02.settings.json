@@ -1,0 +1,9 @@
+{
+  "source": "https://tailwindui.com/components/marketing/sections/testimonial",
+  "custom_html": {
+    "html": null,
+    "body": null
+  },
+  "tailwind_config": {
+  }
+}
