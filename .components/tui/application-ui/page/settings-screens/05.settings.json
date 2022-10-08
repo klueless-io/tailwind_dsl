@@ -1,0 +1,14 @@
+{
+  "tailwind_config": {
+    "plugins": {
+      "forms": true,
+      "aspect_ratio": false,
+      "line_clamp": false,
+      "typography": false
+    }
+  },
+  "custom_html": {
+    "html": "<html class=\"h-full bg-blue-gray-50\">",
+    "body": "<body class=\"h-full overflow-hidden\">"
+  }
+}

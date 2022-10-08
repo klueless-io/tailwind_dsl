@@ -1,0 +1,8 @@
+{
+  "tailwind_config": {
+  },
+  "custom_html": {
+    "html": "<html class=\"h-full bg-white\">",
+    "body": "<body class=\"h-full\">"
+  }
+}

@@ -3,6 +3,7 @@
 require 'pry'
 require 'bundler/setup'
 require 'simplecov'
+require 'support/use_temp_folder'
 
 SimpleCov.start
 

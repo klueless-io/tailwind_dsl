@@ -24,7 +24,11 @@
             "file_name_only": "02",
             "absolute_file": "/Users/davidcruwys/dev/kgems/tailwind_dsl/spec/sample_components/tui/component/navigation/breadcrumbs/02.html",
             "file": "component/navigation/breadcrumbs/02.html",
-            "sample_data_file": "component/navigation/breadcrumbs/02.sample.json"
+            "other_files": {
+              "settings": "component/navigation/breadcrumbs/02.settings.json",
+              "data": "component/navigation/breadcrumbs/02.data.json",
+              "astro": "component/navigation/breadcrumbs/02.astro"
+            }
           },
           {
             "name": "01.html",
@@ -32,7 +36,11 @@
             "file_name_only": "01",
             "absolute_file": "/Users/davidcruwys/dev/kgems/tailwind_dsl/spec/sample_components/tui/component/navigation/breadcrumbs/01.html",
             "file": "component/navigation/breadcrumbs/01.html",
-            "sample_data_file": "component/navigation/breadcrumbs/01.sample.json"
+            "other_files": {
+              "settings": "component/navigation/breadcrumbs/01.settings.json",
+              "data": "component/navigation/breadcrumbs/01.data.json",
+              "astro": "component/navigation/breadcrumbs/01.astro"
+            }
           }
         ]
       },
@@ -52,7 +60,11 @@
             "file_name_only": "01",
             "absolute_file": "/Users/davidcruwys/dev/kgems/tailwind_dsl/spec/sample_components/tui/component/list/feed/01.html",
             "file": "component/list/feed/01.html",
-            "sample_data_file": "component/list/feed/01.sample.json"
+            "other_files": {
+              "settings": "component/list/feed/01.settings.json",
+              "data": "component/list/feed/01.data.json",
+              "astro": "component/list/feed/01.astro"
+            }
           }
         ]
       },
@@ -72,7 +84,11 @@
             "file_name_only": "02",
             "absolute_file": "/Users/davidcruwys/dev/kgems/tailwind_dsl/spec/sample_components/tui/component/list/grid-list/02.html",
             "file": "component/list/grid-list/02.html",
-            "sample_data_file": "component/list/grid-list/02.sample.json"
+            "other_files": {
+              "settings": "component/list/grid-list/02.settings.json",
+              "data": "component/list/grid-list/02.data.json",
+              "astro": "component/list/grid-list/02.astro"
+            }
           },
           {
             "name": "01.html",
@@ -80,7 +96,11 @@
             "file_name_only": "01",
             "absolute_file": "/Users/davidcruwys/dev/kgems/tailwind_dsl/spec/sample_components/tui/component/list/grid-list/01.html",
             "file": "component/list/grid-list/01.html",
-            "sample_data_file": "component/list/grid-list/01.sample.json"
+            "other_files": {
+              "settings": "component/list/grid-list/01.settings.json",
+              "data": "component/list/grid-list/01.data.json",
+              "astro": "component/list/grid-list/01.astro"
+            }
           }
         ]
       }
@@ -108,7 +128,11 @@
             "file_name_only": "style1",
             "absolute_file": "/Users/davidcruwys/dev/kgems/tailwind_dsl/spec/sample_components/noq/card/style1.html",
             "file": "card/style1.html",
-            "sample_data_file": "card/style1.sample.json"
+            "other_files": {
+              "settings": "card/style1.settings.json",
+              "data": "card/style1.data.json",
+              "astro": "card/style1.astro"
+            }
           },
           {
             "name": "style2.html",
@@ -116,7 +140,11 @@
             "file_name_only": "style2",
             "absolute_file": "/Users/davidcruwys/dev/kgems/tailwind_dsl/spec/sample_components/noq/card/style2.html",
             "file": "card/style2.html",
-            "sample_data_file": "card/style2.sample.json"
+            "other_files": {
+              "settings": "card/style2.settings.json",
+              "data": "card/style2.data.json",
+              "astro": "card/style2.astro"
+            }
           }
         ]
       },
@@ -134,7 +162,11 @@
             "file_name_only": "style1",
             "absolute_file": "/Users/davidcruwys/dev/kgems/tailwind_dsl/spec/sample_components/noq/faq/style1.html",
             "file": "faq/style1.html",
-            "sample_data_file": "faq/style1.sample.json"
+            "other_files": {
+              "settings": "faq/style1.settings.json",
+              "data": "faq/style1.data.json",
+              "astro": "faq/style1.astro"
+            }
           },
           {
             "name": "style2.html",
@@ -142,7 +174,11 @@
             "file_name_only": "style2",
             "absolute_file": "/Users/davidcruwys/dev/kgems/tailwind_dsl/spec/sample_components/noq/faq/style2.html",
             "file": "faq/style2.html",
-            "sample_data_file": "faq/style2.sample.json"
+            "other_files": {
+              "settings": "faq/style2.settings.json",
+              "data": "faq/style2.data.json",
+              "astro": "faq/style2.astro"
+            }
           }
         ]
       }

@@ -8,6 +8,7 @@ AllCops:
     - "_/**/*"
     - "spec/samples/**/*"
     - "bin/*"
+    - ".builders/**/*"
 
 Metrics/BlockLength:
   Exclude:
@@ -41,6 +42,10 @@ Layout/LineLength:
   # Ignores annotate output
   AllowedPatterns: ['\A# \*\*']
   IgnoreCopDirectives: true
+
+Layout/HashAlignment:
+  Exclude:
+    - "**/*"
 
 Lint/UnusedMethodArgument:
   AllowUnusedKeywordArguments: true

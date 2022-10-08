@@ -13,7 +13,7 @@ RSpec.describe TailwindDsl::RawComponents::ComponentGraph do
 
     context '.design_systems' do
       subject { instance.design_systems }
-    
+
       it { is_expected.to be_empty }
     end
   end
@@ -31,7 +31,7 @@ RSpec.describe TailwindDsl::RawComponents::ComponentGraph do
 
       context 'with a different name' do
         let(:name) { 'tailwind_ui' }
-          
+
         it { is_expected.to be_truthy }
       end
 
@@ -57,7 +57,7 @@ RSpec.describe TailwindDsl::RawComponents::ComponentGraph do
   #   let(:output_path) { File.expand_path('../../sample_output', File.dirname(__FILE__)) }
 
   #   context 'sample' do
-  #     before { 
+  #     before {
   #       instance.add_design_system(File.join(component_path, 'tui'))
   #       instance.add_design_system(File.join(component_path, 'noq'))
   #     }
@@ -68,7 +68,7 @@ RSpec.describe TailwindDsl::RawComponents::ComponentGraph do
   #   context 'live' do
   #     let(:component_path) { File.expand_path('~/dev/kgems/k_templates/templates/tailwind') }
 
-  #     before { 
+  #     before {
   #       instance.add_design_system(File.join(component_path, 'tui'))
   #       instance.add_design_system(File.join(component_path, 'noq'))
   #     }

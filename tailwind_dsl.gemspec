@@ -40,6 +40,6 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
   # spec.extensions    = ['ext/tailwind_dsl/extconf.rb']
 
-  spec.add_dependency 'k_log', '~> 0'
   spec.add_dependency 'cmdlet', '~> 0'
+  spec.add_dependency 'k_log', '~> 0'
 end

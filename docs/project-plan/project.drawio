@@ -1,48 +1,42 @@
-<mxfile host="T08">
-  <diagram id="KbA" name="In progress">
+<mxfile host="WH2">
+  <diagram id="Wyw" name="In progress">
     <mxGraphModel dx="0" dy="0" background="#FFFAFA" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
-        <mxCell id="page_root_KbA" parent="KbA"/>
-        <mxCell id="node_root_KbA" parent="page_root_KbA"/>
-        <mxCell id="KbA-1" value="DrawIO DSL" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fontColor=#1F2D3D;text;fontSize=28;fontStyle=1;fillColor=none" vertex="1" parent="node_root_KbA">
+        <mxCell id="page_root_Wyw" parent="Wyw"/>
+        <mxCell id="node_root_Wyw" parent="page_root_Wyw"/>
+        <mxCell id="Wyw-1" value="DrawIO DSL" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fontColor=#1F2D3D;text;fontSize=28;fontStyle=1;fillColor=none" vertex="1" parent="node_root_Wyw">
           <mxGeometry x="300" y="0" width="400" height="80" as="geometry"/>
         </mxCell>
-        <mxCell id="KbA-3" value="use the design system file reader to generate a component graph in ./builder/utilities.rb" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#333333" vertex="1" parent="node_root_KbA">
+        <mxCell id="Wyw-3" value="use a domain model generator to build base classes and unit tests" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#333333" vertex="1" parent="node_root_Wyw">
           <mxGeometry x="10" y="10" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="KbA-4" value="use a domain model generator to build base classes and unit tests" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#333333" vertex="1" parent="node_root_KbA">
+        <mxCell id="Wyw-4" value="restart the application so that I can figure out the issues with RuboCop" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#333333" vertex="1" parent="node_root_Wyw">
           <mxGeometry x="330" y="10" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="KbA-5" value="restart the application so that I can figure out the issues with RuboCop" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#333333" vertex="1" parent="node_root_KbA">
+        <mxCell id="Wyw-5" value="build a sample DSL to test how this can be used" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#333333" vertex="1" parent="node_root_Wyw">
           <mxGeometry x="650" y="10" width="300" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="KbA-6" value="build a sample DSL to test how this can be used" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#333333" vertex="1" parent="node_root_KbA">
-          <mxGeometry x="10" y="90" width="300" height="60" as="geometry"/>
-        </mxCell>
-        <mxCell id="KbA-7" value="build a JSON builder proof of concept based on the rails XML builder" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#333333" vertex="1" parent="node_root_KbA">
-          <mxGeometry x="330" y="90" width="300" height="60" as="geometry"/>
-        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="pBL" name="To Do">
+  <diagram id="pnr" name="To Do">
     <mxGraphModel dx="0" dy="0" background="#FFFAFA" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
-        <mxCell id="page_root_pBL" parent="pBL"/>
-        <mxCell id="node_root_pBL" parent="page_root_pBL"/>
-        <mxCell id="pBL-2" value="build file reader for raw design system files" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#333333" vertex="1" parent="node_root_pBL">
+        <mxCell id="page_root_pnr" parent="pnr"/>
+        <mxCell id="node_root_pnr" parent="page_root_pnr"/>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="BM1" name="Done">
+    <mxGraphModel dx="0" dy="0" background="#FFFAFA" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="page_root_BM1" parent="BM1"/>
+        <mxCell id="node_root_BM1" parent="page_root_BM1"/>
+        <mxCell id="BM1-2" value="build file reader for raw design system files" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_BM1">
           <mxGeometry x="10" y="10" width="300" height="60" as="geometry"/>
         </mxCell>
-      </root>
-    </mxGraphModel>
-  </diagram>
-  <diagram id="raJ" name="Done">
-    <mxGraphModel dx="0" dy="0" background="#FFFAFA" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
-      <root>
-        <mxCell id="page_root_raJ" parent="raJ"/>
-        <mxCell id="node_root_raJ" parent="page_root_raJ"/>
-        <mxCell id="raJ-1" value="build a or adapt the existing RubyDsl so that it can write classes and specs based on tailwind domain model" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_raJ">
-          <mxGeometry x="0" y="0" width="300" height="60" as="geometry"/>
+        <mxCell id="BM1-3" value="use the design system file reader to generate a component graph in ./builder/utilities.rb" style="whiteSpace=wrap;html=1;rounded=1;glass=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#333333" vertex="1" parent="node_root_BM1">
+          <mxGeometry x="330" y="10" width="300" height="60" as="geometry"/>
         </mxCell>
       </root>
     </mxGraphModel>
