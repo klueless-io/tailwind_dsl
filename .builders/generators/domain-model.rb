@@ -164,7 +164,7 @@ KManager.action :domain_model do
           format
             .header('Root'                , namespace: "#{temp_suffix}Transformers::RawComponents",
                                             description: 'Root container for normalizing the raw Tailwind html in component data structures',
-                                            dry_struct: true)
+                                            dry_struct: false)
             .field(:design_systems        , type: "Types::Strict::Array.of(DesignSystem)")
         end
 
@@ -172,7 +172,7 @@ KManager.action :domain_model do
           format
             .header('DesignSystem', namespace: "#{temp_suffix}Transformers::RawComponents",
                                             description: 'DesignSystem represents a collection of Tailwind CSS components that follow a specific design system',
-                                            dry_struct: true)
+                                            dry_struct: false)
             .field(:name                  , type: 'Types::Strict::String')
             .field(:path                  , type: 'Types::Strict::String')
             .field(:stats                 , type: 'Types::Strict::Hash')
@@ -183,7 +183,7 @@ KManager.action :domain_model do
           format
             .header('Group'               , namespace: "#{temp_suffix}Transformers::RawComponents",
                                             description: 'Group represents a collection of Tailwind CSS components withing a named group or category',
-                                            dry_struct: true)
+                                            dry_struct: false)
             .field(:key                   , type: 'Types::Strict::String')
             .field(:type                  , type: 'Types::Strict::String')
             .field(:folder                , type: 'Types::Strict::String')
@@ -195,7 +195,7 @@ KManager.action :domain_model do
           format
             .header('SourceFile'          , namespace: "#{temp_suffix}Transformers::RawComponents",
                                             description: 'SourceFile represents a list of source files that contain raw Tailwind CSS components',
-                                            dry_struct: true)
+                                            dry_struct: false)
             .field(:name                  , type: 'Types::Strict::String')
             .field(:file_name             , type: 'Types::Strict::String')
             .field(:file_name_only        , type: 'Types::Strict::String')
@@ -208,7 +208,7 @@ KManager.action :domain_model do
           format
             .header('TargetFile'          , namespace: "#{temp_suffix}Transformers::RawComponents",
                                             description: 'TargetFile represents each sub_file that can be built from a source file, such as HTML Component, Tailwind Config, Settings and Data Structure',
-                                            dry_struct: true)
+                                            dry_struct: false)
             .field(:html_file             , type: 'Types::Strict::String')
             .field(:clean_html_file       , type: 'Types::Strict::String')
             .field(:tailwind_config_file  , type: 'Types::Strict::String')

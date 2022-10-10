@@ -6,19 +6,35 @@ module TailwindDsl
       # Group
       #
       # Group represents a collection of Tailwind CSS components withing a named group or category
-      class Group < Dry::Struct
-        attribute :key                            , Types::Strict::String
-        attribute :type                           , Types::Strict::String
-        attribute :folder                         , Types::Strict::String
-        attribute :sub_keys                       , Types::Array.of(Types::Strict::String)
+      class Group
+        attr_accessor :key
+        attr_accessor :type
+        attr_accessor :folder
+        attr_accessor :sub_keys
+        attr_accessor :files
 
-        # Default value needs to be a proc to avoid sharing the same array across groups
-        attribute :files?                         , Types::Strict::Array.of(SourceFile).optional.default() { [] }
+        def initialize(key:, type:, folder:, sub_keys:, files: [])
+          @key = key
+          @type = type
+          @folder = folder
+          @sub_keys = sub_keys
+          @files = files
+        end
 
         def add_file(file)
           files << file
 
           file
+        end
+
+        def to_h
+          {
+            key: key,
+            type: type,
+            folder: folder,
+            sub_keys: sub_keys,
+            files: files.map(&:to_h)
+          }
         end
       end
     end

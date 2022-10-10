@@ -1,5 +1,5 @@
 {
-  "host": "6ZQ",
+  "host": "END",
   "theme": "style_04",
   "palette": {
     "fill_color": "#ffe6cc",
@@ -17,7 +17,7 @@
   },
   "pages": [
     {
-      "id": "Brz",
+      "id": "LLa",
       "active": true,
       "name": "Domain Modal",
       "position_x": 1100,
@@ -58,20 +58,20 @@
       },
       "nodes": [
         {
-          "id": "page_root_Brz",
-          "parent_id": "Brz",
+          "id": "page_root_LLa",
+          "parent_id": "LLa",
           "classification": "anchor",
           "key": "page_root",
           "nodes": [
             {
-              "id": "node_root_Brz",
-              "parent_id": "page_root_Brz",
+              "id": "node_root_LLa",
+              "parent_id": "page_root_LLa",
               "classification": "anchor",
               "key": "node_root",
               "nodes": [
                 {
                   "id": "rule-2",
-                  "parent_id": "node_root_Brz",
+                  "parent_id": "node_root_LLa",
                   "classification": "layout_rule",
                   "key": "grid_layout",
                   "anchor_x": 0,
@@ -83,8 +83,8 @@
                   "cell_no": 6
                 },
                 {
-                  "id": "Brz-2",
-                  "parent_id": "node_root_Brz",
+                  "id": "LLa-2",
+                  "parent_id": "node_root_LLa",
                   "classification": "shape",
                   "key": "group",
                   "x": 5,
@@ -103,8 +103,8 @@
                   }
                 },
                 {
-                  "id": "Brz-3",
-                  "parent_id": "node_root_Brz",
+                  "id": "LLa-3",
+                  "parent_id": "node_root_LLa",
                   "classification": "shape",
                   "key": "group",
                   "x": 225,
@@ -124,7 +124,7 @@
                 },
                 {
                   "id": "a1",
-                  "parent_id": "node_root_Brz",
+                  "parent_id": "node_root_LLa",
                   "classification": "shape",
                   "key": "klass",
                   "x": 450,
@@ -166,7 +166,7 @@
                 },
                 {
                   "id": "a2",
-                  "parent_id": "node_root_Brz",
+                  "parent_id": "node_root_LLa",
                   "classification": "shape",
                   "key": "klass",
                   "x": 670,
@@ -208,7 +208,7 @@
                 },
                 {
                   "id": "a3",
-                  "parent_id": "node_root_Brz",
+                  "parent_id": "node_root_LLa",
                   "classification": "shape",
                   "key": "klass",
                   "x": 890,
@@ -245,7 +245,7 @@
                 },
                 {
                   "id": "a4",
-                  "parent_id": "node_root_Brz",
+                  "parent_id": "node_root_LLa",
                   "classification": "shape",
                   "key": "klass",
                   "x": 1110,
@@ -282,7 +282,7 @@
                 },
                 {
                   "id": "a5",
-                  "parent_id": "node_root_Brz",
+                  "parent_id": "node_root_LLa",
                   "classification": "shape",
                   "key": "klass",
                   "x": 10,
@@ -329,7 +329,7 @@
                 },
                 {
                   "id": "a6",
-                  "parent_id": "node_root_Brz",
+                  "parent_id": "node_root_LLa",
                   "classification": "shape",
                   "key": "klass",
                   "x": 230,
@@ -370,8 +370,8 @@
                   }
                 },
                 {
-                  "id": "Brz-10",
-                  "parent_id": "node_root_Brz",
+                  "id": "LLa-10",
+                  "parent_id": "node_root_LLa",
                   "classification": "shape",
                   "key": "solid",
                   "x": 0,
@@ -390,8 +390,8 @@
                   }
                 },
                 {
-                  "id": "Brz-11",
-                  "parent_id": "node_root_Brz",
+                  "id": "LLa-11",
+                  "parent_id": "node_root_LLa",
                   "classification": "shape",
                   "key": "solid",
                   "x": 0,
@@ -410,8 +410,8 @@
                   }
                 },
                 {
-                  "id": "Brz-12",
-                  "parent_id": "node_root_Brz",
+                  "id": "LLa-12",
+                  "parent_id": "node_root_LLa",
                   "classification": "shape",
                   "key": "solid",
                   "x": 0,
@@ -430,8 +430,8 @@
                   }
                 },
                 {
-                  "id": "Brz-13",
-                  "parent_id": "node_root_Brz",
+                  "id": "LLa-13",
+                  "parent_id": "node_root_LLa",
                   "classification": "shape",
                   "key": "solid",
                   "x": 0,
@@ -450,8 +450,8 @@
                   }
                 },
                 {
-                  "id": "Brz-14",
-                  "parent_id": "node_root_Brz",
+                  "id": "LLa-14",
+                  "parent_id": "node_root_LLa",
                   "classification": "shape",
                   "key": "solid",
                   "x": 0,
@@ -470,8 +470,8 @@
                   }
                 },
                 {
-                  "id": "Brz-15",
-                  "parent_id": "node_root_Brz",
+                  "id": "LLa-15",
+                  "parent_id": "node_root_LLa",
                   "classification": "shape",
                   "key": "solid",
                   "x": 0,
@@ -490,8 +490,8 @@
                   }
                 },
                 {
-                  "id": "Brz-16",
-                  "parent_id": "node_root_Brz",
+                  "id": "LLa-16",
+                  "parent_id": "node_root_LLa",
                   "classification": "shape",
                   "key": "solid",
                   "x": 0,
@@ -510,8 +510,8 @@
                   }
                 },
                 {
-                  "id": "Brz-17",
-                  "parent_id": "node_root_Brz",
+                  "id": "LLa-17",
+                  "parent_id": "node_root_LLa",
                   "classification": "shape",
                   "key": "group",
                   "x": 445,
@@ -531,7 +531,7 @@
                 },
                 {
                   "id": "b1",
-                  "parent_id": "node_root_Brz",
+                  "parent_id": "node_root_LLa",
                   "classification": "shape",
                   "key": "klass",
                   "x": 670,
@@ -593,7 +593,7 @@
                 },
                 {
                   "id": "b2",
-                  "parent_id": "node_root_Brz",
+                  "parent_id": "node_root_LLa",
                   "classification": "shape",
                   "key": "klass",
                   "x": 890,
@@ -650,7 +650,7 @@
                 },
                 {
                   "id": "b3",
-                  "parent_id": "node_root_Brz",
+                  "parent_id": "node_root_LLa",
                   "classification": "shape",
                   "key": "klass",
                   "x": 1110,
@@ -696,8 +696,8 @@
                   }
                 },
                 {
-                  "id": "Brz-21",
-                  "parent_id": "node_root_Brz",
+                  "id": "LLa-21",
+                  "parent_id": "node_root_LLa",
                   "classification": "shape",
                   "key": "solid",
                   "x": 0,
@@ -716,8 +716,8 @@
                   }
                 },
                 {
-                  "id": "Brz-22",
-                  "parent_id": "node_root_Brz",
+                  "id": "LLa-22",
+                  "parent_id": "node_root_LLa",
                   "classification": "shape",
                   "key": "solid",
                   "x": 0,
@@ -736,8 +736,8 @@
                   }
                 },
                 {
-                  "id": "Brz-23",
-                  "parent_id": "node_root_Brz",
+                  "id": "LLa-23",
+                  "parent_id": "node_root_LLa",
                   "classification": "shape",
                   "key": "solid",
                   "x": 0,
@@ -756,8 +756,8 @@
                   }
                 },
                 {
-                  "id": "Brz-24",
-                  "parent_id": "node_root_Brz",
+                  "id": "LLa-24",
+                  "parent_id": "node_root_LLa",
                   "classification": "shape",
                   "key": "group",
                   "x": 5,
@@ -776,8 +776,8 @@
                   }
                 },
                 {
-                  "id": "Brz-25",
-                  "parent_id": "node_root_Brz",
+                  "id": "LLa-25",
+                  "parent_id": "node_root_LLa",
                   "classification": "shape",
                   "key": "group",
                   "x": 225,
@@ -796,8 +796,8 @@
                   }
                 },
                 {
-                  "id": "Brz-26",
-                  "parent_id": "node_root_Brz",
+                  "id": "LLa-26",
+                  "parent_id": "node_root_LLa",
                   "classification": "shape",
                   "key": "klass",
                   "x": 450,
@@ -838,8 +838,8 @@
                   }
                 },
                 {
-                  "id": "Brz-27",
-                  "parent_id": "node_root_Brz",
+                  "id": "LLa-27",
+                  "parent_id": "node_root_LLa",
                   "classification": "shape",
                   "key": "group",
                   "x": 665,
@@ -858,8 +858,8 @@
                   }
                 },
                 {
-                  "id": "Brz-28",
-                  "parent_id": "node_root_Brz",
+                  "id": "LLa-28",
+                  "parent_id": "node_root_LLa",
                   "classification": "shape",
                   "key": "klass",
                   "x": 890,
@@ -885,8 +885,8 @@
                   }
                 },
                 {
-                  "id": "Brz-29",
-                  "parent_id": "node_root_Brz",
+                  "id": "LLa-29",
+                  "parent_id": "node_root_LLa",
                   "classification": "shape",
                   "key": "interface",
                   "x": 1130,
@@ -919,7 +919,7 @@
                 },
                 {
                   "id": "c1",
-                  "parent_id": "node_root_Brz",
+                  "parent_id": "node_root_LLa",
                   "classification": "shape",
                   "key": "klass",
                   "x": 10,
@@ -935,7 +935,7 @@
                         "name": "Root",
                         "description": "Root container for normalizing the raw Tailwind html in component data structures",
                         "namespace": "XTransformers::RawComponents",
-                        "dry_struct": true
+                        "dry_struct": false
                       },
                       {
                         "type": "field",
@@ -947,7 +947,7 @@
                 },
                 {
                   "id": "c2",
-                  "parent_id": "node_root_Brz",
+                  "parent_id": "node_root_LLa",
                   "classification": "shape",
                   "key": "klass",
                   "x": 230,
@@ -963,7 +963,7 @@
                         "name": "DesignSystem",
                         "description": "DesignSystem represents a collection of Tailwind CSS components that follow a specific design system",
                         "namespace": "XTransformers::RawComponents",
-                        "dry_struct": true
+                        "dry_struct": false
                       },
                       {
                         "type": "field",
@@ -990,7 +990,7 @@
                 },
                 {
                   "id": "c3",
-                  "parent_id": "node_root_Brz",
+                  "parent_id": "node_root_LLa",
                   "classification": "shape",
                   "key": "klass",
                   "x": 450,
@@ -1006,7 +1006,7 @@
                         "name": "Group",
                         "description": "Group represents a collection of Tailwind CSS components withing a named group or category",
                         "namespace": "XTransformers::RawComponents",
-                        "dry_struct": true
+                        "dry_struct": false
                       },
                       {
                         "type": "field",
@@ -1038,7 +1038,7 @@
                 },
                 {
                   "id": "c4",
-                  "parent_id": "node_root_Brz",
+                  "parent_id": "node_root_LLa",
                   "classification": "shape",
                   "key": "klass",
                   "x": 670,
@@ -1046,7 +1046,7 @@
                   "w": 200,
                   "h": 160,
                   "style": "whiteSpace=wrap;html=1;rounded=0;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#333333;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica",
-                  "value": "<p style=\"margin:0px;margin-left:4px;margin-bottom:4px;text-align:center\"><b>SourceFile</b></p><hr size=\"1\"/><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">key: Types::Strict::String</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">type: Types::Strict::String</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">folder: Types::Strict::String</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">sub_keys: Types::Array.of(Types::Strict::String)</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">target: TailwindDsl::XTransformers::RawComponents::TargetFile</p>",
+                  "value": "<p style=\"margin:0px;margin-left:4px;margin-bottom:4px;text-align:center\"><b>SourceFile</b></p><hr size=\"1\"/><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">name: Types::Strict::String</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">file_name: Types::Strict::String</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">file_name_only: Types::Strict::String</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">absolute_file: Types::Strict::String</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">file: Types::Strict::String</p><p style=\"margin:0px;margin-left:4px;margin-bottom:4px\">target: TailwindDsl::XTransformers::RawComponents::TargetFile</p>",
                   "meta_data": {
                     "items": [
                       {
@@ -1054,27 +1054,32 @@
                         "name": "SourceFile",
                         "description": "SourceFile represents a list of source files that contain raw Tailwind CSS components",
                         "namespace": "XTransformers::RawComponents",
-                        "dry_struct": true
+                        "dry_struct": false
                       },
                       {
                         "type": "field",
-                        "name": "key",
+                        "name": "name",
                         "return_type": "Types::Strict::String"
                       },
                       {
                         "type": "field",
-                        "name": "type",
+                        "name": "file_name",
                         "return_type": "Types::Strict::String"
                       },
                       {
                         "type": "field",
-                        "name": "folder",
+                        "name": "file_name_only",
                         "return_type": "Types::Strict::String"
                       },
                       {
                         "type": "field",
-                        "name": "sub_keys",
-                        "return_type": "Types::Array.of(Types::Strict::String)"
+                        "name": "absolute_file",
+                        "return_type": "Types::Strict::String"
+                      },
+                      {
+                        "type": "field",
+                        "name": "file",
+                        "return_type": "Types::Strict::String"
                       },
                       {
                         "type": "field",
@@ -1086,7 +1091,7 @@
                 },
                 {
                   "id": "c5",
-                  "parent_id": "node_root_Brz",
+                  "parent_id": "node_root_LLa",
                   "classification": "shape",
                   "key": "klass",
                   "x": 890,
@@ -1102,7 +1107,7 @@
                         "name": "TargetFile",
                         "description": "TargetFile represents each sub_file that can be built from a source file, such as HTML Component, Tailwind Config, Settings and Data Structure",
                         "namespace": "XTransformers::RawComponents",
-                        "dry_struct": true
+                        "dry_struct": false
                       },
                       {
                         "type": "field",
@@ -1138,8 +1143,8 @@
                   }
                 },
                 {
-                  "id": "Brz-35",
-                  "parent_id": "node_root_Brz",
+                  "id": "LLa-35",
+                  "parent_id": "node_root_LLa",
                   "classification": "shape",
                   "key": "solid",
                   "x": 0,
@@ -1158,8 +1163,8 @@
                   }
                 },
                 {
-                  "id": "Brz-36",
-                  "parent_id": "node_root_Brz",
+                  "id": "LLa-36",
+                  "parent_id": "node_root_LLa",
                   "classification": "shape",
                   "key": "solid",
                   "x": 0,
@@ -1178,8 +1183,8 @@
                   }
                 },
                 {
-                  "id": "Brz-37",
-                  "parent_id": "node_root_Brz",
+                  "id": "LLa-37",
+                  "parent_id": "node_root_LLa",
                   "classification": "shape",
                   "key": "solid",
                   "x": 0,
@@ -1198,8 +1203,8 @@
                   }
                 },
                 {
-                  "id": "Brz-38",
-                  "parent_id": "node_root_Brz",
+                  "id": "LLa-38",
+                  "parent_id": "node_root_LLa",
                   "classification": "shape",
                   "key": "solid",
                   "x": 0,

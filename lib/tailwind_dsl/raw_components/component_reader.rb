@@ -26,33 +26,11 @@ module TailwindDsl
         @group_lookup = {}
 
         process_files
-
-        groups = group_lookup
-                 .keys
-                 .map { |key| group_lookup[key] }
-                 .select { |group| group[:files].any? }
-
-        groups.each do |group|
-          design_system.add_group(group)
-        end
-      end
-
-      def to_h
-        design_system.to_h
+        add_groups_to_design_system
       end
 
       # def to_h
-      #   groups = group_lookup
-      #            .keys
-      #            .map { |key| group_lookup[key] }
-      #            .select { |group| group[:files].any? }
-
-      #   {
-      #     name: name,
-      #     path: path,
-      #     stats: groups.map { |group| { group[:key] => group[:files].size } }.reduce({}, :merge),
-      #     groups: groups
-      #   }
+      #   design_system.to_h
       # end
 
       private
@@ -78,22 +56,34 @@ module TailwindDsl
 
         @current_group = group_lookup[group_key]
 
-
         return unless current_group.nil?
 
         @current_group = group(entry, relative_folder, group_key)
         group_lookup[group_key] = current_group
-
       end
       # rubocop:enable Metrics/AbcSize
 
       def process_file(entry)
-
-        key = File.join(current_group[:folder], File.basename(entry, File.extname(entry)))
+        key = File.join(current_group.folder, File.basename(entry, File.extname(entry)))
         target = target_file(key)
-        source = source_file(entry, current_group[:folder], target)
-        # current_group[:files] << source # source_file(entry, current_group[:folder], key)
+        source = source_file(entry, current_group.folder, target)
+        # current_group[:files] << source # source_file(entry, current_group.folder, key)
         current_group.add_file(source)
+      end
+
+      def add_groups_to_design_system
+        design_system.stats = active_groups.map { |group| { group.key => group.files.size } }.reduce({}, :merge)
+
+        active_groups.each do |group|
+          design_system.add_group(group)
+        end
+      end
+
+      def active_groups
+        group_lookup
+          .keys
+          .map { |key| group_lookup[key] }
+          .select { |group| group.files.any? }
       end
 
       def group(entry, relative_folder, key)
