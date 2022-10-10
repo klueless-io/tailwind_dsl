@@ -23,12 +23,14 @@ KManager.action :domain_model_to_code do
         domain_model_list.each do |code_block|
           if code_block[:block_type] == 'klass'
             klass = code_block[:items].select { |item| item[:type] == 'class' }.first
-            namespaces = snake.call(klass[:namespace]).to_s.split('::')
+            namespace_parts = (klass[:namespace] || '').to_s.split('::')
+            namespaces = namespace_parts.map { |part|snake.call(part) }
             model = {
               name: klass[:name],
               description: klass[:description],
               namespaces: [:tailwind_dsl] + namespaces,
-              fields: code_block[:items].select { |item| item[:type] == 'field' }.map { |item| { name: item[:name], type: item[:type] } },
+              dry_struct: klass[:dry_struct] || false,
+              fields: code_block[:items].select { |item| item[:type] == 'field' }.map { |item| { name: item[:name], type: item[:type], return_type: item[:return_type] } },
               methods: code_block[:items].select { |item| item[:type] == 'method' }.map { |item| { name: item[:name], type: item[:type] } }
             }
 

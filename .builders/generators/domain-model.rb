@@ -157,6 +157,71 @@ KManager.action :domain_model do
             .method(:data)
             .method(:data_instance)
         end
+
+        temp_suffix = 'X' # turn this on when generating code to avoid folder name collision
+        # Transformers
+        klass(:c1, w: 200) do
+          format
+            .header('Root'                , namespace: "#{temp_suffix}Transformers::RawComponents",
+                                            description: 'Root container for normalizing the raw Tailwind html in component data structures',
+                                            dry_struct: true)
+            .field(:design_systems        , type: "Types::Strict::Array.of(DesignSystem)")
+        end
+
+        klass(:c2, w: 200) do
+          format
+            .header('DesignSystem', namespace: "#{temp_suffix}Transformers::RawComponents",
+                                            description: 'DesignSystem represents a collection of Tailwind CSS components that follow a specific design system',
+                                            dry_struct: true)
+            .field(:name                  , type: 'Types::Strict::String')
+            .field(:path                  , type: 'Types::Strict::String')
+            .field(:stats                 , type: 'Types::Strict::Hash')
+            .field(:groups                , type: "Types::Strict::Array.of(Group)")
+        end
+
+        klass(:c3, w: 200) do
+          format
+            .header('Group'               , namespace: "#{temp_suffix}Transformers::RawComponents",
+                                            description: 'Group represents a collection of Tailwind CSS components withing a named group or category',
+                                            dry_struct: true)
+            .field(:key                   , type: 'Types::Strict::String')
+            .field(:type                  , type: 'Types::Strict::String')
+            .field(:folder                , type: 'Types::Strict::String')
+            .field(:sub_keys              , type: "Types::Array.of(Types::Strict:'Types::Strict::String')")
+            .field(:files                 , type: "Types::Strict::Array.of(SourceFile)")
+        end
+
+        klass(:c4, w: 200) do
+          format
+            .header('SourceFile'          , namespace: "#{temp_suffix}Transformers::RawComponents",
+                                            description: 'SourceFile represents a list of source files that contain raw Tailwind CSS components',
+                                            dry_struct: true)
+            .field(:name                  , type: 'Types::Strict::String')
+            .field(:file_name             , type: 'Types::Strict::String')
+            .field(:file_name_only        , type: 'Types::Strict::String')
+            .field(:absolute_file         , type: 'Types::Strict::String')
+            .field(:file                  , type: 'Types::Strict::String')
+            .field(:target                , type: "TailwindDsl::#{temp_suffix}Transformers::RawComponents::TargetFile")
+        end
+
+        klass(:c5, w: 200) do
+          format
+            .header('TargetFile'          , namespace: "#{temp_suffix}Transformers::RawComponents",
+                                            description: 'TargetFile represents each sub_file that can be built from a source file, such as HTML Component, Tailwind Config, Settings and Data Structure',
+                                            dry_struct: true)
+            .field(:html_file             , type: 'Types::Strict::String')
+            .field(:clean_html_file       , type: 'Types::Strict::String')
+            .field(:tailwind_config_file  , type: 'Types::Strict::String')
+            .field(:settings_file         , type: 'Types::Strict::String')
+            .field(:data_file             , type: 'Types::Strict::String')
+            .field(:astro_file            , type: 'Types::Strict::String')
+        end
+
+        solid(source: :c1, target: :c2, exit_point: :e, entry_point: :w, waypoint: :orthogonal_curved)
+        solid(source: :c2, target: :c3, exit_point: :e, entry_point: :w, waypoint: :orthogonal_curved)
+        solid(source: :c3, target: :c4, exit_point: :e, entry_point: :w, waypoint: :orthogonal_curved)
+        solid(source: :c4, target: :c5, exit_point: :e, entry_point: :w, waypoint: :orthogonal_curved)
+
       end
       .cd(:docs)
       .save('domain-model.drawio')

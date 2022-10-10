@@ -5,6 +5,7 @@ source 'https://rubygems.org'
 gemspec
 
 group :development, :test do
+  gem 'factory_bot'
   gem 'guard-bundler'
   gem 'guard-rspec'
   gem 'guard-rubocop'

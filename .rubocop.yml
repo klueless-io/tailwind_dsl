@@ -43,6 +43,10 @@ Layout/LineLength:
   AllowedPatterns: ['\A# \*\*']
   IgnoreCopDirectives: true
 
+Lint/MissingSuper:
+  Exclude:
+    - '**/*'
+
 Layout/HashAlignment:
   Exclude:
     - "**/*"

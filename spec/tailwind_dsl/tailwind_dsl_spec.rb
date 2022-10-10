@@ -12,24 +12,24 @@ RSpec.describe TailwindDsl::TailwindDsl do
   context '.website' do
     subject { instance.website }
 
-    it { is_expected.to be_nil }
+    fit { is_expected.to be_nil }
   end
 
   context '.page' do
     subject { instance.page }
 
-    it { is_expected.to be_nil }
+    fit { is_expected.to be_nil }
   end
 
   context '.component' do
     subject { instance.component }
 
-    it { is_expected.to be_nil }
+    fit { is_expected.to be_nil }
   end
 
   context '.save' do
     subject { instance.save }
 
-    it { is_expected.to be_nil }
+    fit { is_expected.to be_nil }
   end
 end

@@ -2,104 +2,60 @@
   "tui": {
     "name": "tui",
     "path": "/Users/davidcruwys/dev/kgems/tailwind_dsl/spec/sample_components/tui",
-    "stats": {
-      "component.navigation.breadcrumbs": 2,
-      "component.list.feed": 1,
-      "component.list.grid_list": 2
-    },
     "groups": [
       {
-        "key": "component.navigation.breadcrumbs",
-        "type": "breadcrumbs",
-        "folder": "component/navigation/breadcrumbs",
+        "key": "marketing.section.cta",
+        "type": "cta",
+        "folder": "marketing/section/cta",
         "sub_keys": [
-          "component",
-          "navigation",
-          "breadcrumbs"
+          "marketing",
+          "section",
+          "cta"
         ],
         "files": [
+          {
+            "name": "03.html",
+            "file_name": "03.html",
+            "file_name_only": "03",
+            "absolute_file": "/Users/davidcruwys/dev/kgems/tailwind_dsl/spec/sample_components/tui/marketing/section/cta/03.html",
+            "file": "marketing/section/cta/03.html",
+            "target": {
+              "html_file": "marketing/section/cta/03.html",
+              "clean_html_file": "marketing/section/cta/03.clean.html",
+              "tailwind_config_file": "marketing/section/cta/03.tailwind.config.js",
+              "settings_file": "marketing/section/cta/03.settings.json",
+              "data_file": "marketing/section/cta/03.data.json",
+              "astro_file": "marketing/section/cta/03.astro"
+            }
+          },
           {
             "name": "02.html",
             "file_name": "02.html",
             "file_name_only": "02",
-            "absolute_file": "/Users/davidcruwys/dev/kgems/tailwind_dsl/spec/sample_components/tui/component/navigation/breadcrumbs/02.html",
-            "file": "component/navigation/breadcrumbs/02.html",
-            "other_files": {
-              "settings": "component/navigation/breadcrumbs/02.settings.json",
-              "data": "component/navigation/breadcrumbs/02.data.json",
-              "astro": "component/navigation/breadcrumbs/02.astro"
+            "absolute_file": "/Users/davidcruwys/dev/kgems/tailwind_dsl/spec/sample_components/tui/marketing/section/cta/02.html",
+            "file": "marketing/section/cta/02.html",
+            "target": {
+              "html_file": "marketing/section/cta/02.html",
+              "clean_html_file": "marketing/section/cta/02.clean.html",
+              "tailwind_config_file": "marketing/section/cta/02.tailwind.config.js",
+              "settings_file": "marketing/section/cta/02.settings.json",
+              "data_file": "marketing/section/cta/02.data.json",
+              "astro_file": "marketing/section/cta/02.astro"
             }
           },
           {
             "name": "01.html",
             "file_name": "01.html",
             "file_name_only": "01",
-            "absolute_file": "/Users/davidcruwys/dev/kgems/tailwind_dsl/spec/sample_components/tui/component/navigation/breadcrumbs/01.html",
-            "file": "component/navigation/breadcrumbs/01.html",
-            "other_files": {
-              "settings": "component/navigation/breadcrumbs/01.settings.json",
-              "data": "component/navigation/breadcrumbs/01.data.json",
-              "astro": "component/navigation/breadcrumbs/01.astro"
-            }
-          }
-        ]
-      },
-      {
-        "key": "component.list.feed",
-        "type": "feed",
-        "folder": "component/list/feed",
-        "sub_keys": [
-          "component",
-          "list",
-          "feed"
-        ],
-        "files": [
-          {
-            "name": "01.html",
-            "file_name": "01.html",
-            "file_name_only": "01",
-            "absolute_file": "/Users/davidcruwys/dev/kgems/tailwind_dsl/spec/sample_components/tui/component/list/feed/01.html",
-            "file": "component/list/feed/01.html",
-            "other_files": {
-              "settings": "component/list/feed/01.settings.json",
-              "data": "component/list/feed/01.data.json",
-              "astro": "component/list/feed/01.astro"
-            }
-          }
-        ]
-      },
-      {
-        "key": "component.list.grid_list",
-        "type": "grid-list",
-        "folder": "component/list/grid-list",
-        "sub_keys": [
-          "component",
-          "list",
-          "grid-list"
-        ],
-        "files": [
-          {
-            "name": "02.html",
-            "file_name": "02.html",
-            "file_name_only": "02",
-            "absolute_file": "/Users/davidcruwys/dev/kgems/tailwind_dsl/spec/sample_components/tui/component/list/grid-list/02.html",
-            "file": "component/list/grid-list/02.html",
-            "other_files": {
-              "settings": "component/list/grid-list/02.settings.json",
-              "data": "component/list/grid-list/02.data.json",
-              "astro": "component/list/grid-list/02.astro"
-            }
-          },
-          {
-            "name": "01.html",
-            "file_name": "01.html",
-            "file_name_only": "01",
-            "absolute_file": "/Users/davidcruwys/dev/kgems/tailwind_dsl/spec/sample_components/tui/component/list/grid-list/01.html",
-            "file": "component/list/grid-list/01.html",
-            "other_files": {
-              "settings": "component/list/grid-list/01.settings.json",
-              "data": "component/list/grid-list/01.data.json",
-              "astro": "component/list/grid-list/01.astro"
+            "absolute_file": "/Users/davidcruwys/dev/kgems/tailwind_dsl/spec/sample_components/tui/marketing/section/cta/01.html",
+            "file": "marketing/section/cta/01.html",
+            "target": {
+              "html_file": "marketing/section/cta/01.html",
+              "clean_html_file": "marketing/section/cta/01.clean.html",
+              "tailwind_config_file": "marketing/section/cta/01.tailwind.config.js",
+              "settings_file": "marketing/section/cta/01.settings.json",
+              "data_file": "marketing/section/cta/01.data.json",
+              "astro_file": "marketing/section/cta/01.astro"
             }
           }
         ]
@@ -109,10 +65,6 @@
   "noq": {
     "name": "noq",
     "path": "/Users/davidcruwys/dev/kgems/tailwind_dsl/spec/sample_components/noq",
-    "stats": {
-      "card": 2,
-      "faq": 2
-    },
     "groups": [
       {
         "key": "card",
@@ -128,10 +80,13 @@
             "file_name_only": "style1",
             "absolute_file": "/Users/davidcruwys/dev/kgems/tailwind_dsl/spec/sample_components/noq/card/style1.html",
             "file": "card/style1.html",
-            "other_files": {
-              "settings": "card/style1.settings.json",
-              "data": "card/style1.data.json",
-              "astro": "card/style1.astro"
+            "target": {
+              "html_file": "card/style1.html",
+              "clean_html_file": "card/style1.clean.html",
+              "tailwind_config_file": "card/style1.tailwind.config.js",
+              "settings_file": "card/style1.settings.json",
+              "data_file": "card/style1.data.json",
+              "astro_file": "card/style1.astro"
             }
           },
           {
@@ -140,10 +95,13 @@
             "file_name_only": "style2",
             "absolute_file": "/Users/davidcruwys/dev/kgems/tailwind_dsl/spec/sample_components/noq/card/style2.html",
             "file": "card/style2.html",
-            "other_files": {
-              "settings": "card/style2.settings.json",
-              "data": "card/style2.data.json",
-              "astro": "card/style2.astro"
+            "target": {
+              "html_file": "card/style2.html",
+              "clean_html_file": "card/style2.clean.html",
+              "tailwind_config_file": "card/style2.tailwind.config.js",
+              "settings_file": "card/style2.settings.json",
+              "data_file": "card/style2.data.json",
+              "astro_file": "card/style2.astro"
             }
           }
         ]
@@ -162,10 +120,13 @@
             "file_name_only": "style1",
             "absolute_file": "/Users/davidcruwys/dev/kgems/tailwind_dsl/spec/sample_components/noq/faq/style1.html",
             "file": "faq/style1.html",
-            "other_files": {
-              "settings": "faq/style1.settings.json",
-              "data": "faq/style1.data.json",
-              "astro": "faq/style1.astro"
+            "target": {
+              "html_file": "faq/style1.html",
+              "clean_html_file": "faq/style1.clean.html",
+              "tailwind_config_file": "faq/style1.tailwind.config.js",
+              "settings_file": "faq/style1.settings.json",
+              "data_file": "faq/style1.data.json",
+              "astro_file": "faq/style1.astro"
             }
           },
           {
@@ -174,10 +135,13 @@
             "file_name_only": "style2",
             "absolute_file": "/Users/davidcruwys/dev/kgems/tailwind_dsl/spec/sample_components/noq/faq/style2.html",
             "file": "faq/style2.html",
-            "other_files": {
-              "settings": "faq/style2.settings.json",
-              "data": "faq/style2.data.json",
-              "astro": "faq/style2.astro"
+            "target": {
+              "html_file": "faq/style2.html",
+              "clean_html_file": "faq/style2.clean.html",
+              "tailwind_config_file": "faq/style2.tailwind.config.js",
+              "settings_file": "faq/style2.settings.json",
+              "data_file": "faq/style2.data.json",
+              "astro_file": "faq/style2.astro"
             }
           }
         ]

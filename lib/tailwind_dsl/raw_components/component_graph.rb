@@ -18,7 +18,8 @@ module TailwindDsl
       def add_design_system(path, name: nil)
         name = (name || File.basename(path)).to_s
 
-        @design_systems[name] = ComponentReader.build(name, path)
+        a = ComponentReader.build(name, path)
+        @design_systems[name] = a
       end
 
       def design_system(name)

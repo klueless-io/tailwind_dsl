@@ -17,7 +17,20 @@ KManager.action :utilities do
 
         component_folder = k_builder.target_folders.get(:components)
 
-        helpers.generate_components(graph, component_folder)
+        helpers.generate_components(graph, component_folder, reset_root_path: false) # HAVE NOT TESTED THIS YET
+
+        # Goals
+        #   - Generate a Tailwind component complete design system so that I can see both the component plus the original source code
+        #     There should be a deep hierarchy of folders and files in a menu structure
+        #     When you click on a menu item, there should be a preview of the component
+        #     The menus should be collapsible
+        #     The menus should be searchable
+        #     The component should have link to the original Tailwind component
+        #     The component should show tailwind config if it exists
+        #     The component should show the data shape if it exists
+        #     The component should show the Astro component if it exists
+        #   - Generate a Data Structure JSON file for each component (one at a time, so just the next component using GPT3)
+        #   - Bulk training of GPT3 to generate a Data Structure JSON file after every 5 to 10 new components
       end
 
   end
@@ -36,8 +49,8 @@ KManager.action :utilities do
     graph
   end
 
-  def generate_components(graph, target_folder)
-    generator = TailwindDsl::RawComponents::GenerateComponentStructures.new(graph, target_folder)
+  def generate_components(graph, target_folder, reset_root_path: false)
+    generator = TailwindDsl::RawComponents::GenerateComponentStructures.new(graph, target_folder, reset_root_path: reset_root_path)
     generator.generate
   end
 end

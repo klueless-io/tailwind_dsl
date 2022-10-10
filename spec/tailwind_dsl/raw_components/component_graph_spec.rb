@@ -53,27 +53,27 @@ RSpec.describe TailwindDsl::RawComponents::ComponentGraph do
     end
   end
 
-  # context 'examples' do
-  #   let(:output_path) { File.expand_path('../../sample_output', File.dirname(__FILE__)) }
+  context 'examples' do
+    let(:output_path) { File.expand_path('../../sample_output', File.dirname(__FILE__)) }
 
-  #   context 'sample' do
-  #     before {
-  #       instance.add_design_system(File.join(component_path, 'tui'))
-  #       instance.add_design_system(File.join(component_path, 'noq'))
-  #     }
+    context 'sample' do
+      before do
+        instance.add_design_system(File.join(component_path, 'tui'))
+        instance.add_design_system(File.join(component_path, 'noq'))
+      end
 
-  #     it { instance.write(File.join(output_path, 'uikit.sample.json')) }
-  #   end
+      fit { instance.write(File.join(output_path, 'uikit.sample.json')) }
+    end
 
-  #   context 'live' do
-  #     let(:component_path) { File.expand_path('~/dev/kgems/k_templates/templates/tailwind') }
+    context 'live' do
+      let(:component_path) { File.expand_path('~/dev/kgems/k_templates/templates/tailwind') }
 
-  #     before {
-  #       instance.add_design_system(File.join(component_path, 'tui'))
-  #       instance.add_design_system(File.join(component_path, 'noq'))
-  #     }
+      before do
+        instance.add_design_system(File.join(component_path, 'tui'))
+        instance.add_design_system(File.join(component_path, 'noq'))
+      end
 
-  #     it { instance.write(File.join(output_path, 'uikit.live.json')) }
-  #   end
-  # end
+      it { instance.write(File.join(output_path, 'uikit.live.json')) }
+    end
+  end
 end
