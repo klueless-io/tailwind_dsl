@@ -9,14 +9,6 @@ module TailwindDsl
       attr_reader :group_lookup
       attr_reader :current_group
 
-      class << self
-        def build(name, path)
-          builder = new
-          builder.call(name, path)
-          builder.to_h
-        end
-      end
-
       def call(name, path)
         @design_system = ::TailwindDsl::Transformers::RawComponents::DesignSystem.new(
           name: name,
@@ -27,6 +19,7 @@ module TailwindDsl
 
         process_files
         add_groups_to_design_system
+        design_system
       end
 
       # def to_h
