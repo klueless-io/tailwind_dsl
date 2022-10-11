@@ -18,13 +18,19 @@ module TailwindDsl
           @type = type
           @folder = folder
           @sub_keys = sub_keys
-          @files = files
+
+          @files = []
+          files.each { |file| add_file(file) }
         end
 
         def add_file(file)
-          files << file
+          add = convert_file(file)
 
-          file
+          return nil if add.nil?
+
+          files << add
+
+          add
         end
 
         def to_h
@@ -35,6 +41,18 @@ module TailwindDsl
             sub_keys: sub_keys,
             files: files.map(&:to_h)
           }
+        end
+
+        private
+
+        def convert_file(file)
+          return nil if file.nil?
+
+          return file if file.is_a?(::TailwindDsl::Transformers::RawComponents::SourceFile)
+          return ::TailwindDsl::Transformers::RawComponents::SourceFile.new(file) if file.is_a?(Hash)
+
+          puts "Unknown file type: #{file.class}"
+          nil
         end
       end
     end

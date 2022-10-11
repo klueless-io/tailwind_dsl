@@ -1,8 +1,10 @@
 # frozen_string_literal: true
 
 FactoryBot.define do
-  # TailwindDsl::Transformers::RawComponents::DesignSystem
-  factory :raw_components_design_system_hash, class: Hash do
+  factory :raw_components_design_system, class: TailwindDsl::Transformers::RawComponents::DesignSystem do
+    skip_create
+    initialize_with { new(attributes) }
+
     name  { 'tui' }
     path  { '/Users/davidcruwys/dev/kgems/k_templates/templates/tailwind/tui' }
     stats do
@@ -11,8 +13,7 @@ FactoryBot.define do
         'ecommerce.page.product_pages': 5
       }
     end
-    groups { [build(:raw_components_group_hash)] }
 
-    initialize_with { attributes }
+    # groups - handle outside of the factory
   end
 end

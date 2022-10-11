@@ -9,4 +9,8 @@ RSpec.describe TailwindDsl do
     expect { raise TailwindDsl::Error, 'some message' }
       .to raise_error('some message')
   end
+
+  context 'run factory bot linter' do
+    it { FactoryBot.lint }
+  end
 end

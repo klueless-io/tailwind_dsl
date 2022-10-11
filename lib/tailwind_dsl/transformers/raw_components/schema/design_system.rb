@@ -16,13 +16,19 @@ module TailwindDsl
           @name = name
           @path = path
           @stats = stats
-          @groups = groups
+
+          @groups = []
+          groups.each { |group| add_group(group) }
         end
 
         def add_group(group)
-          groups << group
+          add = convert_group(group)
 
-          group
+          return nil if add.nil?
+
+          groups << add
+
+          add
         end
 
         def to_h
@@ -32,6 +38,18 @@ module TailwindDsl
             stats: stats,
             groups: groups.map(&:to_h)
           }
+        end
+
+        private
+
+        def convert_group(group)
+          return nil if group.nil?
+
+          return group if group.is_a?(::TailwindDsl::Transformers::RawComponents::Group)
+          return ::TailwindDsl::Transformers::RawComponents::Group.new(group) if group.is_a?(Hash)
+
+          puts "Unknown group type: #{group.class}"
+          nil
         end
       end
     end

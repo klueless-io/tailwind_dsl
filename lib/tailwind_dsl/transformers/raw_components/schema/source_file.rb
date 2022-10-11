@@ -21,7 +21,7 @@ module TailwindDsl
           @file_name_only = file_name_only
           @absolute_file = absolute_file
           @file = file
-          @target = target
+          @target = convert_target(target)
         end
         # rubocop:enable Metrics/ParameterLists
 
@@ -35,6 +35,21 @@ module TailwindDsl
           }
           result[:target] = target.to_h if target
           result
+        end
+
+        private
+
+        def convert_target(target)
+          return nil if target.nil?
+
+          case target
+          when ::TailwindDsl::Transformers::RawComponents::TargetFile
+            target
+          when Hash
+            ::TailwindDsl::Transformers::RawComponents::TargetFile.new(target)
+          else
+            raise "Unknown target type: #{target.class}"
+          end
         end
       end
     end

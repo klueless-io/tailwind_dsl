@@ -14,7 +14,7 @@ RSpec.describe TailwindDsl::Transformers::RawComponents::RawComponentDirector do
     context '.design_systems' do
       subject { instance.design_systems }
 
-      it { is_expected.to be_empty }
+      it { is_expected.to be_a(::TailwindDsl::Transformers::RawComponents::Root) }
     end
   end
 
@@ -27,7 +27,7 @@ RSpec.describe TailwindDsl::Transformers::RawComponents::RawComponentDirector do
     context '.design_system?' do
       subject { instance.design_system?(name) }
 
-      it { is_expected.to be_truthy }
+      fit { is_expected.to be_truthy }
 
       context 'with a different name' do
         let(:name) { 'tailwind_ui' }
@@ -62,7 +62,7 @@ RSpec.describe TailwindDsl::Transformers::RawComponents::RawComponentDirector do
         instance.add_design_system(File.join(component_path, 'noq'))
       end
 
-      fit { instance.write(File.join(output_path, 'uikit.sample.json')) }
+      it { instance.write(File.join(output_path, 'uikit.sample.json')) }
     end
 
     context 'live' do
@@ -73,7 +73,7 @@ RSpec.describe TailwindDsl::Transformers::RawComponents::RawComponentDirector do
         instance.add_design_system(File.join(component_path, 'noq'))
       end
 
-      it { instance.write(File.join(output_path, 'uikit.live.json')) }
+      fit { instance.write(File.join(output_path, 'uikit.live.json')) }
     end
   end
 end

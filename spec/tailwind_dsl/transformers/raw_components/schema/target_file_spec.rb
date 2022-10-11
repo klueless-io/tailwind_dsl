@@ -2,16 +2,14 @@
 
 require 'spec_helper'
 
-RSpec.describe TailwindDsl::Transformers::RawComponents::SourceFile do
+RSpec.describe TailwindDsl::Transformers::RawComponents::TargetFile do
   subject { instance }
 
   let(:instance) { described_class.new(data) }
 
-  let(:data) { FactoryBot.build(:raw_components_source_file_hash) }
+  context 'when json/hash used for input' do
+    let(:data) { attributes_for(:raw_components_target_file) }
 
-  describe '#to_h' do
-    subject { instance.to_h }
-
-    it { is_expected.to eq(data) }
+    it { is_expected.to have_attributes(data) }
   end
 end
