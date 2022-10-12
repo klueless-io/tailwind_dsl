@@ -5,7 +5,7 @@ require 'spec_helper'
 RSpec.describe TailwindDsl::Etl::RawComponents::Group do
   subject { instance.to_h }
 
-  let(:instance) { described_class.new(**data) }
+  let(:instance) { described_class.new(data) }
 
   context 'when json/hash used for input' do
     context 'when files excluded' do

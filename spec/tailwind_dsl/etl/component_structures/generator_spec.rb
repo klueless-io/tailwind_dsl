@@ -52,15 +52,13 @@ RSpec.describe TailwindDsl::Etl::ComponentStructures::Generator do
       before do
         FileUtils.mkdir_p(File.join(root_target_path, 'a', 'b', 'c'))
 
-        # uikit.add_design_system(File.join(component_path, 'tui'))
-
         instance.generate
       end
 
       context 'when reset_root_path is false' do
         let(:reset_root_path) { false }
 
-        it 'does not delete the content under root path' do
+        fit 'does not delete the content under root path' do
           expect(File.exist?(File.join(root_target_path, 'a', 'b', 'c'))).to be true
         end
       end
