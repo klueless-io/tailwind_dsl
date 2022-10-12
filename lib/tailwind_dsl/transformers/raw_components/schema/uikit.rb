@@ -3,12 +3,17 @@
 module TailwindDsl
   module Transformers
     module RawComponents
-      # Root
+      # UiKit
       #
-      # Root container for normalizing the raw Tailwind html in component data structures
-      class Root
+      # UiKit is a container for storing different tailwind design systems
+      class UiKit
         attr_accessor :design_systems
 
+        # Pass in a document with the keys symbolized
+        #
+        # JSON.parse(json, symbolize_names: true)
+        #
+        # @param document [Hash] the document to convert
         def initialize(document = nil)
           @design_systems = []
 
@@ -48,8 +53,8 @@ module TailwindDsl
         def convert_design_system(design_system)
           return nil if design_system.nil?
 
-          return design_system if design_system.is_a?(::TailwindDsl::Transformers::RawComponents::DesignSystem)
-          return ::TailwindDsl::Transformers::RawComponents::DesignSystem.new(design_system) if design_system.is_a?(Hash)
+          return design_system if design_system.is_a?(DesignSystem)
+          return DesignSystem.new(design_system) if design_system.is_a?(Hash)
 
           puts "Unknown design_system type: #{design_system.class}"
           nil

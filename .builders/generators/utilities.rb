@@ -10,14 +10,14 @@ KManager.action :utilities do
       .blueprint(name: :build_design_system) do
         cd(:data)
 
-        graph = helpers.build_design_system_graph
-        json = JSON.pretty_generate(graph.to_h)
+        design_systems = helpers.build_design_systems
+        json = JSON.pretty_generate(design_systems.to_h)
 
         add('design_system.json', content: json)
 
         component_folder = k_builder.target_folders.get(:components)
 
-        helpers.generate_components(graph, component_folder, reset_root_path: false) # HAVE NOT TESTED THIS YET
+        # helpers.generate_components(graph, component_folder, reset_root_path: false) # HAVE NOT TESTED THIS YET
 
         # Goals
         #   - Generate a Tailwind component complete design system so that I can see both the component plus the original source code
@@ -35,18 +35,18 @@ KManager.action :utilities do
 
   end
 
-  def build_design_system_graph
+  def build_design_systems
     source_path = File.expand_path('~/dev/kgems/k_templates/templates/tailwind')
 
-    graph = TailwindDsl::RawComponents::ComponentGraph.new
+    director = TailwindDsl::Transformers::RawComponents::Director.new
 
-    graph.add_design_system(File.join(source_path, 'tui'))
-    # graph.add_design_system(File.join(source_path, 'codepen'))
-    # graph.add_design_system(File.join(source_path, 'devdojo'))
-    # graph.add_design_system(File.join(source_path, 'merakiui'))
-    # graph.add_design_system(File.join(source_path, 'noq'))
-    # graph.add_design_system(File.join(source_path, 'starter-kit'))
-    graph
+    director.add_design_system(File.join(source_path, 'tui'))
+    # director.add_design_system(File.join(source_path, 'codepen'))
+    # director.add_design_system(File.join(source_path, 'devdojo'))
+    # director.add_design_system(File.join(source_path, 'merakiui'))
+    # director.add_design_system(File.join(source_path, 'noq'))
+    # director.add_design_system(File.join(source_path, 'starter-kit'))
+    director.design_systems
   end
 
   def generate_components(graph, target_folder, reset_root_path: false)

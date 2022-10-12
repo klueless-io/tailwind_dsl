@@ -4,7 +4,7 @@ module TailwindDsl
   module Transformers
     module RawComponents
       # The component reader will read the raw component files for each UI Kit.
-      class RawComponentTransformer
+      class Transformer
         attr_reader :design_system
 
         attr_reader :group_lookup

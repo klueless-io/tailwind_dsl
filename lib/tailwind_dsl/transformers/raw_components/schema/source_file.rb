@@ -43,10 +43,10 @@ module TailwindDsl
           return nil if target.nil?
 
           case target
-          when ::TailwindDsl::Transformers::RawComponents::TargetFile
+          when TargetFile
             target
           when Hash
-            ::TailwindDsl::Transformers::RawComponents::TargetFile.new(target)
+            TargetFile.new(target)
           else
             raise "Unknown target type: #{target.class}"
           end

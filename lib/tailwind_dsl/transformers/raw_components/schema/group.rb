@@ -48,8 +48,8 @@ module TailwindDsl
         def convert_file(file)
           return nil if file.nil?
 
-          return file if file.is_a?(::TailwindDsl::Transformers::RawComponents::SourceFile)
-          return ::TailwindDsl::Transformers::RawComponents::SourceFile.new(file) if file.is_a?(Hash)
+          return file if file.is_a?(SourceFile)
+          return SourceFile.new(file) if file.is_a?(Hash)
 
           puts "Unknown file type: #{file.class}"
           nil

@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-RSpec.describe TailwindDsl::Transformers::RawComponents::Root do
+RSpec.describe TailwindDsl::Transformers::RawComponents::UiKit do
   subject { instance.to_h }
 
   let(:instance) { described_class.new(data) }

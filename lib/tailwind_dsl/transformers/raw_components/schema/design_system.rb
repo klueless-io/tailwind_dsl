@@ -45,8 +45,8 @@ module TailwindDsl
         def convert_group(group)
           return nil if group.nil?
 
-          return group if group.is_a?(::TailwindDsl::Transformers::RawComponents::Group)
-          return ::TailwindDsl::Transformers::RawComponents::Group.new(group) if group.is_a?(Hash)
+          return group if group.is_a?(Group)
+          return Group.new(group) if group.is_a?(Hash)
 
           puts "Unknown group type: #{group.class}"
           nil
