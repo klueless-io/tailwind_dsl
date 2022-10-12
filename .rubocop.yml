@@ -9,7 +9,7 @@ AllCops:
     - "spec/samples/**/*"
     - "bin/*"
     - ".builders/**/*"
-    - vendor/**/*.rb # or vendor/bundle/**/*
+    - vendor/bundle/**/*
 
 Metrics/BlockLength:
   Exclude:
