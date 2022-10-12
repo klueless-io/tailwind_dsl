@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-RSpec.describe TailwindDsl::Etl::ComponentStructures::Transformer do
+RSpec.describe TailwindDsl::Etl::ComponentStructures::Generator do
   include_context :use_temp_folder
 
   subject { instance }
@@ -60,18 +60,18 @@ RSpec.describe TailwindDsl::Etl::ComponentStructures::Transformer do
       context 'when reset_root_path is false' do
         let(:reset_root_path) { false }
 
-        # it 'does not delete the content under root path' do
-        #   expect(File.exist?(File.join(root_target_path, 'a', 'b', 'c'))).to be true
-        # end
+        it 'does not delete the content under root path' do
+          expect(File.exist?(File.join(root_target_path, 'a', 'b', 'c'))).to be true
+        end
       end
 
-      #     context 'when reset_root_path is true' do
-      #       let(:reset_root_path) { true }
+      context 'when reset_root_path is true' do
+        let(:reset_root_path) { true }
 
-      #       it 'deletes the content under root path' do
-      #         expect(File.exist?(File.join(root_target_path, 'a', 'b', 'c'))).to be false
-      #       end
-      #     end
+        it 'deletes the content under root path' do
+          expect(File.exist?(File.join(root_target_path, 'a', 'b', 'c'))).to be false
+        end
+      end
     end
 
     #   context 'when target path exists and #generate' do

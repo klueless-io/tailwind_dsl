@@ -26,7 +26,7 @@ module TailwindDsl
 
         def write(file)
           FileUtils.mkdir_p(File.dirname(file))
-          File.write(file, JSON.pretty_generate(design_systems.to_h))
+          File.write(file, JSON.pretty_generate(uikit.to_h))
         end
       end
     end

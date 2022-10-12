@@ -13,7 +13,7 @@ module TailwindDsl
       # you change the structure of the source input files. This is a destructive operation, so be warned.
       #
       # To execute this you need to pass reset_root_path: true
-      class Transformer
+      class Generator
         COMMENT_REGEX = /<!--[\s\S]*?-->/.freeze
         BLANK_LINE_REGEX = /(\n\s*\n)+/.freeze
         TAILWIND_CONFIG_REGEX = /```(?<tailwind>\n[\s\S]+?)```/.freeze
@@ -34,8 +34,8 @@ module TailwindDsl
 
           delete_target_root_path if reset_root_path
 
-          uikit.design_systems.each do |name, design_system|
-            process_design_system(name, design_system)
+          uikit.design_systems.each do |design_system|
+            process_design_system(design_system)
           end
         end
 
@@ -49,15 +49,16 @@ module TailwindDsl
           FileUtils.rm_rf(Dir.glob("#{root_target_path}/*"))
         end
 
-        def process_design_system(design_system_name, design_system)
-          design_system[:groups].each do |group|
+        def process_design_system(design_system)
+          design_system_name = design_system.name
+          design_system.groups.each do |group|
             process_group(design_system_name, group)
           end
         end
 
         def process_group(design_system_name, group)
-          group[:files].each do |file|
-            # puts "DSN: #{design_system_name}, GRP: #{group[:type]}, FILE: #{file[:file]}"
+          group.files.each do |file|
+            # puts "DSN: #{design_system_name}, GRP: #{group.type}, FILE: #{file.file}"
             data = Data.new(design_system_name, group, file)
 
             unless data.source.exist?
