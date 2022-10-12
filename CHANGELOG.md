@@ -1,3 +1,10 @@
+## [0.0.5](https://github.com/klueless-io/tailwind_dsl/compare/v0.0.4...v0.0.5) (2022-10-12)
+
+
+### Bug Fixes
+
+* add support for generating component structures ([555f188](https://github.com/klueless-io/tailwind_dsl/commit/555f1880b104897e26d89518e1ac7263ff7be978))
+
 ## [0.0.4](https://github.com/klueless-io/tailwind_dsl/compare/v0.0.3...v0.0.4) (2022-10-12)
 
 
