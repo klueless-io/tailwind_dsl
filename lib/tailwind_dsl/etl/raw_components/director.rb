@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module TailwindDsl
-  module Transformers
+  module Etl
     module RawComponents
       # Use the Director to build the UiKit which will store the JSON representations of each Design System plus components.
       #
@@ -13,7 +13,7 @@ module TailwindDsl
         attr_reader :uikit
 
         def initialize
-          @uikit = ::TailwindDsl::Transformers::RawComponents::UiKit.new
+          @uikit = ::TailwindDsl::Etl::RawComponents::UiKit.new
         end
 
         def add_design_system(path, name: nil)

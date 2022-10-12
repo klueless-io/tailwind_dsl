@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-RSpec.describe TailwindDsl::Transformers::RawComponents::DesignSystem do
+RSpec.describe TailwindDsl::Etl::RawComponents::DesignSystem do
   subject { instance.to_h }
 
   let(:instance) { described_class.new(data) }
@@ -58,14 +58,14 @@ RSpec.describe TailwindDsl::Transformers::RawComponents::DesignSystem do
     context 'when group is Group' do
       let(:group) { build(:raw_components_group) }
 
-      it { is_expected.to be_a(TailwindDsl::Transformers::RawComponents::Group) }
+      it { is_expected.to be_a(TailwindDsl::Etl::RawComponents::Group) }
       it { expect { instance.add_group(group) }.to change(instance.groups, :count).by(1) }
     end
 
     context 'when group is Hash' do
       let(:group) { attributes_for(:raw_components_group) }
 
-      it { is_expected.to be_a(TailwindDsl::Transformers::RawComponents::Group) }
+      it { is_expected.to be_a(TailwindDsl::Etl::RawComponents::Group) }
       it { expect { instance.add_group(group) }.to change(instance.groups, :count).by(1) }
     end
 

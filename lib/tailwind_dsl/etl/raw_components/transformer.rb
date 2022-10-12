@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module TailwindDsl
-  module Transformers
+  module Etl
     module RawComponents
       # The component reader will read the raw component files for each UI Kit.
       class Transformer
@@ -11,7 +11,7 @@ module TailwindDsl
         attr_reader :current_group
 
         def call(name, path)
-          @design_system = ::TailwindDsl::Transformers::RawComponents::DesignSystem.new(
+          @design_system = ::TailwindDsl::Etl::RawComponents::DesignSystem.new(
             name: name,
             path: path
           )
@@ -81,7 +81,7 @@ module TailwindDsl
         end
 
         def group(entry, relative_folder, key)
-          ::TailwindDsl::Transformers::RawComponents::Group.new(
+          ::TailwindDsl::Etl::RawComponents::Group.new(
             key: key,
             type: key == '@' ? 'root' : File.basename(entry),
             folder: relative_folder, #  entry,
@@ -90,7 +90,7 @@ module TailwindDsl
         end
 
         def source_file(entry, folder, target)
-          ::TailwindDsl::Transformers::RawComponents::SourceFile.new(
+          ::TailwindDsl::Etl::RawComponents::SourceFile.new(
             name: File.basename(entry),
             file_name: File.basename(entry),
             file_name_only: File.basename(entry, File.extname(entry)),
@@ -101,7 +101,7 @@ module TailwindDsl
         end
 
         def target_file(key)
-          ::TailwindDsl::Transformers::RawComponents::TargetFile.new(
+          ::TailwindDsl::Etl::RawComponents::TargetFile.new(
             html_file: "#{key}.html",
             clean_html_file: "#{key}.clean.html",
             tailwind_config_file: "#{key}.tailwind.config.js",

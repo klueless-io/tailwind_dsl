@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-RSpec.describe TailwindDsl::Transformers::RawComponents::UiKit do
+RSpec.describe TailwindDsl::Etl::RawComponents::UiKit do
   subject { instance.to_h }
 
   let(:instance) { described_class.new(data) }
@@ -79,14 +79,14 @@ RSpec.describe TailwindDsl::Transformers::RawComponents::UiKit do
     context 'when design_system is design_system' do
       let(:design_system) { build(:raw_components_design_system) }
 
-      it { is_expected.to be_a(TailwindDsl::Transformers::RawComponents::DesignSystem) }
+      it { is_expected.to be_a(TailwindDsl::Etl::RawComponents::DesignSystem) }
       it { expect { instance.add_design_system(design_system) }.to change(instance.design_systems, :count).by(1) }
     end
 
     context 'when design_system is Hash' do
       let(:design_system) { attributes_for(:raw_components_design_system) }
 
-      it { is_expected.to be_a(TailwindDsl::Transformers::RawComponents::DesignSystem) }
+      it { is_expected.to be_a(TailwindDsl::Etl::RawComponents::DesignSystem) }
       it { expect { instance.add_design_system(design_system) }.to change(instance.design_systems, :count).by(1) }
     end
 

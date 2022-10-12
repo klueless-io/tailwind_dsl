@@ -38,7 +38,7 @@ KManager.action :utilities do
   def build_design_systems
     source_path = File.expand_path('~/dev/kgems/k_templates/templates/tailwind')
 
-    director = TailwindDsl::Transformers::RawComponents::Director.new
+    director = TailwindDsl::Etl::RawComponents::Director.new
 
     director.add_design_system(File.join(source_path, 'tui'))
     # director.add_design_system(File.join(source_path, 'codepen'))

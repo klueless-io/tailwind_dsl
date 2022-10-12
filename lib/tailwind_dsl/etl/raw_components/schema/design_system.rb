@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module TailwindDsl
-  module Transformers
+  module Etl
     module RawComponents
       # Design System
       #

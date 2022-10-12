@@ -2,14 +2,14 @@
 
 require 'spec_helper'
 
-RSpec.describe TailwindDsl::Transformers::ComponentStructures::Transformer do
+RSpec.describe TailwindDsl::Etl::ComponentStructures::Transformer do
   include_context :use_temp_folder
 
   subject { instance }
 
   let(:design_systems_file) { File.join(SPEC_FOLDER, 'samples/input/uikit.json') }
   let(:design_systems_data) { JSON.parse(File.read(design_systems_file), symbolize_names: true) }
-  let(:uikit) { ::TailwindDsl::Transformers::RawComponents::UiKit.new(design_systems_data) }
+  let(:uikit) { ::TailwindDsl::Etl::RawComponents::UiKit.new(design_systems_data) }
 
   let(:instance) { described_class.new(uikit, root_target_path) }
 
@@ -37,7 +37,7 @@ RSpec.describe TailwindDsl::Transformers::ComponentStructures::Transformer do
     end
   end
 
-  fdescribe '#generate' do
+  describe '#generate' do
     context 'when target path does not exist' do
       let(:root_target_path) { File.join(temp_folder, 'bad') }
 

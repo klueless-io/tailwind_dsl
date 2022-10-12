@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-RSpec.describe TailwindDsl::Transformers::RawComponents::Director do
+RSpec.describe TailwindDsl::Etl::RawComponents::Director do
   subject { instance }
 
   let(:instance) { described_class.new }
@@ -14,7 +14,7 @@ RSpec.describe TailwindDsl::Transformers::RawComponents::Director do
     context '.uikit' do
       subject { instance.uikit }
 
-      it { is_expected.to be_a(::TailwindDsl::Transformers::RawComponents::UiKit) }
+      it { is_expected.to be_a(::TailwindDsl::Etl::RawComponents::UiKit) }
     end
   end
 
@@ -27,7 +27,7 @@ RSpec.describe TailwindDsl::Transformers::RawComponents::Director do
     context '.uikit' do
       subject { instance.uikit }
 
-      it { is_expected.to be_a(::TailwindDsl::Transformers::RawComponents::UiKit) }
+      it { is_expected.to be_a(::TailwindDsl::Etl::RawComponents::UiKit) }
     end
   end
 

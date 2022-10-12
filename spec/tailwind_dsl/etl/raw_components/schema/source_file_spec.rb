@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-RSpec.describe TailwindDsl::Transformers::RawComponents::SourceFile do
+RSpec.describe TailwindDsl::Etl::RawComponents::SourceFile do
   subject { instance.to_h }
 
   let(:instance) { described_class.new(data) }
@@ -27,7 +27,7 @@ RSpec.describe TailwindDsl::Transformers::RawComponents::SourceFile do
       context 'target should be TargetFile' do
         subject { instance.target }
 
-        it { is_expected.to be_a(TailwindDsl::Transformers::RawComponents::TargetFile) }
+        it { is_expected.to be_a(TailwindDsl::Etl::RawComponents::TargetFile) }
       end
     end
   end

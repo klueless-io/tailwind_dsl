@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 FactoryBot.define do
-  factory :raw_components_group, class: TailwindDsl::Transformers::RawComponents::Group do
+  factory :raw_components_group, class: TailwindDsl::Etl::RawComponents::Group do
     skip_create
     initialize_with { new(attributes) }
 

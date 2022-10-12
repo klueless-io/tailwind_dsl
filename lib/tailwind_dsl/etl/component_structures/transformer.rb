@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module TailwindDsl
-  module Transformers
+  module Etl
     module ComponentStructures
       # Generate component structures such as HTML, Astro, and data shapes, settings, tailwind config as
       # individual files from the raw component data.

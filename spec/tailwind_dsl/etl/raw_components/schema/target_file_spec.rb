@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-RSpec.describe TailwindDsl::Transformers::RawComponents::TargetFile do
+RSpec.describe TailwindDsl::Etl::RawComponents::TargetFile do
   subject { instance }
 
   let(:instance) { described_class.new(data) }

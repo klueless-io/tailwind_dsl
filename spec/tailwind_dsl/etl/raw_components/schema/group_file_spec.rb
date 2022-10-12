@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-RSpec.describe TailwindDsl::Transformers::RawComponents::Group do
+RSpec.describe TailwindDsl::Etl::RawComponents::Group do
   subject { instance.to_h }
 
   let(:instance) { described_class.new(data) }
@@ -31,7 +31,7 @@ RSpec.describe TailwindDsl::Transformers::RawComponents::Group do
       context 'files should contain SourceFile' do
         subject { instance.files.first }
 
-        it { is_expected.to be_a(TailwindDsl::Transformers::RawComponents::SourceFile) }
+        it { is_expected.to be_a(TailwindDsl::Etl::RawComponents::SourceFile) }
       end
     end
   end
@@ -64,14 +64,14 @@ RSpec.describe TailwindDsl::Transformers::RawComponents::Group do
     context 'when file is SourceFile' do
       let(:file) { build(:raw_components_source_file) }
 
-      it { is_expected.to be_a(TailwindDsl::Transformers::RawComponents::SourceFile) }
+      it { is_expected.to be_a(TailwindDsl::Etl::RawComponents::SourceFile) }
       it { expect { instance.add_file(file) }.to change(instance.files, :count).by(1) }
     end
 
     context 'when file is Hash' do
       let(:file) { attributes_for(:raw_components_source_file) }
 
-      it { is_expected.to be_a(TailwindDsl::Transformers::RawComponents::SourceFile) }
+      it { is_expected.to be_a(TailwindDsl::Etl::RawComponents::SourceFile) }
       it { expect { instance.add_file(file) }.to change(instance.files, :count).by(1) }
     end
 
