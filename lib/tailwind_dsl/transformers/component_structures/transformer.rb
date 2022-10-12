@@ -19,12 +19,12 @@ module TailwindDsl
         TAILWIND_CONFIG_REGEX = /```(?<tailwind>\n[\s\S]+?)```/.freeze
 
         # .gsub(/(\n\s*\n)+/, "\n")
-        attr_reader :graph
+        attr_reader :uikit
         attr_reader :root_target_path
         attr_reader :reset_root_path
 
-        def initialize(graph, root_target_path, reset_root_path: false)
-          @graph = graph
+        def initialize(uikit, root_target_path, reset_root_path: false)
+          @uikit = uikit
           @root_target_path = root_target_path
           @reset_root_path = reset_root_path
         end
@@ -34,7 +34,7 @@ module TailwindDsl
 
           delete_target_root_path if reset_root_path
 
-          graph.design_systems.each do |name, design_system|
+          uikit.design_systems.each do |name, design_system|
             process_design_system(name, design_system)
           end
         end

@@ -6,7 +6,7 @@ RSpec.describe TailwindDsl::Transformers::RawComponents::Director do
   subject { instance }
 
   let(:instance) { described_class.new }
-  let(:component_path) { File.expand_path('../../../sample_components', File.dirname(__FILE__)) }
+  let(:component_path) { File.expand_path('../../../sample/components', File.dirname(__FILE__)) }
 
   context 'initialize' do
     it { is_expected.to be_a described_class }

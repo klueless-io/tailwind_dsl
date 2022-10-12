@@ -12,6 +12,8 @@ require 'tailwind_dsl'
 
 FactoryBot.find_definitions
 
+SPEC_FOLDER = File.dirname(__FILE__)
+
 RSpec.configure do |config|
   config.include FactoryBot::Syntax::Methods
 
