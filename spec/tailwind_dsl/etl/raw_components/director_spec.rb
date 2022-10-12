@@ -31,27 +31,27 @@ RSpec.describe TailwindDsl::Etl::RawComponents::Director do
     end
   end
 
-  context 'examples' do
-    let(:output_path) { File.join(SPEC_FOLDER, 'samples/output') }
+  # context 'examples' do
+  #   let(:output_path) { File.join(SPEC_FOLDER, 'samples/output') }
 
-    context 'sample' do
-      before do
-        instance.add_design_system(File.join(component_path, 'tui'))
-        instance.add_design_system(File.join(component_path, 'noq'))
-      end
+  #   context 'sample' do
+  #     before do
+  #       instance.add_design_system(File.join(component_path, 'tui'))
+  #       instance.add_design_system(File.join(component_path, 'noq'))
+  #     end
 
-      it { instance.write(File.join(output_path, 'uikit.sample.json')) }
-    end
+  #     it { instance.write(File.join(output_path, 'uikit.sample.json')) }
+  #   end
 
-    context 'live' do
-      let(:component_path) { File.expand_path('~/dev/kgems/k_templates/templates/tailwind') }
+  #   context 'live' do
+  #     let(:component_path) { File.expand_path('~/dev/kgems/k_templates/templates/tailwind') }
 
-      before do
-        instance.add_design_system(File.join(component_path, 'tui'))
-        instance.add_design_system(File.join(component_path, 'noq'))
-      end
+  #     before do
+  #       instance.add_design_system(File.join(component_path, 'tui'))
+  #       instance.add_design_system(File.join(component_path, 'noq'))
+  #     end
 
-      it { instance.write(File.join(output_path, 'uikit.live.json')) }
-    end
-  end
+  #     it { instance.write(File.join(output_path, 'uikit.live.json')) }
+  #   end
+  # end
 end
