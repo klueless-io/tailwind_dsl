@@ -1,3 +1,11 @@
+## [0.0.7](https://github.com/klueless-io/tailwind_dsl/compare/v0.0.6...v0.0.7) (2022-10-13)
+
+
+### Bug Fixes
+
+* add base element class with tests ([1845f67](https://github.com/klueless-io/tailwind_dsl/commit/1845f6769a3be7f81b2f8ed3c9e7e2e94d0b6861))
+* json objects inherit element ([494908f](https://github.com/klueless-io/tailwind_dsl/commit/494908f840b562011038a387149cf3891ad3fe6c))
+
 ## [0.0.6](https://github.com/klueless-io/tailwind_dsl/compare/v0.0.5...v0.0.6) (2022-10-12)
 
 
