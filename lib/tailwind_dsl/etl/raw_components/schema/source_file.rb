@@ -18,7 +18,7 @@ module TailwindDsl
           @file_name = grab_arg(args, :file_name, guard: 'Missing file_name')
           @file_name_only = grab_arg(args, :file_name_only, guard: 'Missing file_name_only')
           @file = grab_arg(args, :file, guard: 'Missing file')
-          @target = convert_target(grab_arg(args, :target))
+          @target = map_to(TargetFile, grab_arg(args, :target))
         end
 
         def to_h
@@ -30,21 +30,6 @@ module TailwindDsl
           }
           result[:target] = target.to_h if target
           result
-        end
-
-        private
-
-        def convert_target(target)
-          return nil if target.nil?
-
-          case target
-          when TargetFile
-            target
-          when Hash
-            TargetFile.new(**target)
-          else
-            raise "Unknown target type: #{target.class}"
-          end
         end
       end
     end

@@ -17,6 +17,16 @@ module TailwindDsl
 
         value || default
       end
+
+      def map_to(klass, data)
+        return nil if data.nil?
+
+        return data if data.is_a?(klass)
+        return klass.new(**data) if data.is_a?(Hash)
+
+        puts "Data of type: #{data.class} cannot be converted to #{klass}"
+        nil
+      end
     end
   end
 end

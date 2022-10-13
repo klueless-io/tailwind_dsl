@@ -18,12 +18,11 @@ module TailwindDsl
           @type = grab_arg(args, :type, guard: 'Missing type')
           @folder = grab_arg(args, :folder, guard: 'Missing folder')
           @sub_keys = grab_arg(args, :sub_keys, guard: 'Missing sub_keys')
-
           @files = grab_arg(args, :files, default: []).map { |file| convert_file(file) }.compact
         end
 
         def add_file(file)
-          add = convert_file(file)
+          add = map_to(SourceFile, file)
 
           return nil if add.nil?
 

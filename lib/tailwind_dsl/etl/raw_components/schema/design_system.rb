@@ -14,11 +14,11 @@ module TailwindDsl
         def initialize(**args)
           @name = grab_arg(args, :name, guard: 'Missing name')
           @stats = grab_arg(args, :stats, default: {})
-          @groups = grab_arg(args, :groups, default: []).map { |group| convert_group(group) }.compact
+          @groups = grab_arg(args, :groups, default: []).map { |group| map_to(Group, group) }.compact
         end
 
         def add_group(group)
-          add = convert_group(group)
+          add = map_to(Group, group)
 
           return nil if add.nil?
 
@@ -33,18 +33,6 @@ module TailwindDsl
             stats: stats,
             groups: groups.map(&:to_h)
           }
-        end
-
-        private
-
-        def convert_group(group)
-          return nil if group.nil?
-
-          return group if group.is_a?(Group)
-          return Group.new(**group) if group.is_a?(Hash)
-
-          puts "Unknown group type: #{group.class}"
-          nil
         end
       end
     end

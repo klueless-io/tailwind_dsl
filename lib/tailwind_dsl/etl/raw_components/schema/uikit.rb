@@ -6,7 +6,7 @@ module TailwindDsl
       # UiKit
       #
       # UiKit is a container for storing different tailwind design systems
-      class UiKit
+      class UiKit < TailwindDsl::Etl::Element
         attr_accessor :design_systems
 
         # Pass in a document with the keys symbolized
@@ -23,7 +23,7 @@ module TailwindDsl
         end
 
         def add_design_system(design_system)
-          add = convert_design_system(design_system)
+          add = map_to(DesignSystem, design_system)
 
           return nil if add.nil?
 
@@ -46,18 +46,6 @@ module TailwindDsl
           {
             design_systems: design_systems.map(&:to_h)
           }
-        end
-
-        private
-
-        def convert_design_system(design_system)
-          return nil if design_system.nil?
-
-          return design_system if design_system.is_a?(DesignSystem)
-          return DesignSystem.new(**design_system) if design_system.is_a?(Hash)
-
-          puts "Unknown design_system type: #{design_system.class}"
-          nil
         end
       end
     end
