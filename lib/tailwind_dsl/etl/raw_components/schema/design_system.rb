@@ -18,13 +18,7 @@ module TailwindDsl
         end
 
         def add_group(group)
-          add = map_to(Group, group)
-
-          return nil if add.nil?
-
-          groups << add
-
-          add
+          add_to_list(Group, groups, group)
         end
 
         def to_h

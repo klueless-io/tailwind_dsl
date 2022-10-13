@@ -18,6 +18,10 @@ module TailwindDsl
         value || default
       end
 
+      # Map data to a class
+      #
+      # @param klass [Class] The class to map to
+      # @param data [Hash, Class] The data to map can be hash, an instance of the class or nil
       def map_to(klass, data)
         return nil if data.nil?
 
@@ -26,6 +30,20 @@ module TailwindDsl
 
         puts "Data of type: #{data.class} cannot be converted to #{klass}"
         nil
+      end
+
+      # Add data onto an array
+      #
+      # @param target_list [Array] The array to add to
+      # @param data [Hash, Class] The data to add can be hash or an instance of the class. Nil data will not be added
+      def add_to_list(klass, target_list, data)
+        item = map_to(klass, data)
+
+        return nil if item.nil?
+
+        target_list << item
+
+        item
       end
     end
   end

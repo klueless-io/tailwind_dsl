@@ -18,17 +18,11 @@ module TailwindDsl
           @type = grab_arg(args, :type, guard: 'Missing type')
           @folder = grab_arg(args, :folder, guard: 'Missing folder')
           @sub_keys = grab_arg(args, :sub_keys, guard: 'Missing sub_keys')
-          @files = grab_arg(args, :files, default: []).map { |file| convert_file(file) }.compact
+          @files = grab_arg(args, :files, default: []).map { |file| map_to(SourceFile, file) }.compact
         end
 
         def add_file(file)
-          add = map_to(SourceFile, file)
-
-          return nil if add.nil?
-
-          files << add
-
-          add
+          add_to_list(SourceFile, files, file)
         end
 
         def to_h
@@ -39,18 +33,6 @@ module TailwindDsl
             sub_keys: sub_keys,
             files: files.map(&:to_h)
           }
-        end
-
-        private
-
-        def convert_file(file)
-          return nil if file.nil?
-
-          return file if file.is_a?(SourceFile)
-          return SourceFile.new(**file) if file.is_a?(Hash)
-
-          puts "Unknown file type: #{file.class}"
-          nil
         end
       end
     end
