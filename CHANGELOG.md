@@ -1,3 +1,10 @@
+## [0.0.10](https://github.com/klueless-io/tailwind_dsl/compare/v0.0.9...v0.0.10) (2022-10-13)
+
+
+### Bug Fixes
+
+* add tests for map_to and add_to_list for element ([f5d0347](https://github.com/klueless-io/tailwind_dsl/commit/f5d0347c73e87d4be6b4e863101aa165a8209523))
+
 ## [0.0.9](https://github.com/klueless-io/tailwind_dsl/compare/v0.0.8...v0.0.9) (2022-10-13)
 
 
