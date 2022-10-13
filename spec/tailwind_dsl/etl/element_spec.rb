@@ -3,9 +3,7 @@
 require 'spec_helper'
 
 RSpec.describe TailwindDsl::Etl::Element do
-  let(:instance) { described_class.new(data) }
-
-  let(:some_data_object) do
+  let(:parent) do
     Class.new(described_class) do
       attr_accessor :first_name
       attr_accessor :last_name
@@ -19,10 +17,52 @@ RSpec.describe TailwindDsl::Etl::Element do
     end
   end
 
-  describe '#grab_arg' do
-    before { stub_const('SomeDataObject', some_data_object) }
+  let(:child) do
+    Class.new(described_class) do
+      attr_accessor :a
+      attr_accessor :b
 
-    subject { SomeDataObject.new(**data) }
+      def initialize(**args)
+        @a = grab_arg(args, :a)
+        @b = grab_arg(args, :b)
+      end
+    end
+  end
+
+  describe '#map_to' do
+    before { stub_const('Child', child) }
+
+    subject { described_class.new.map_to(Child, data) }
+
+    context 'when data of type Hash is mapped' do
+      let(:data) { { a: 'aaa', b: 'bbb' } }
+
+      it { is_expected.to be_a(Child).and have_attributes(a: 'aaa', b: 'bbb') }
+    end
+  end
+
+  describe '#add_to_list' do
+    subject { child_list }
+
+    before do
+      stub_const('Child', child)
+
+      described_class.new.add_to_list(Child, child_list, data)
+    end
+
+    let(:child_list) { [] }
+
+    context 'when data of type Hash is added to a list' do
+      let(:data) { { a: 'aaa', b: 'bbb' } }
+
+      it { is_expected.to all(be_a(Child)).and include(have_attributes(a: 'aaa', b: 'bbb')) }
+    end
+  end
+
+  describe '#grab_arg' do
+    before { stub_const('Parent', parent) }
+
+    subject { Parent.new(**data) }
 
     context 'when the key is a symbol and value is provided' do
       let(:data) { { first_name: 'John' } }
