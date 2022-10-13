@@ -1,3 +1,10 @@
+## [0.0.8](https://github.com/klueless-io/tailwind_dsl/compare/v0.0.7...v0.0.8) (2022-10-13)
+
+
+### Bug Fixes
+
+* add map_to to element ([216e93e](https://github.com/klueless-io/tailwind_dsl/commit/216e93ed8d1a59802132341b9501ee0921127061))
+
 ## [0.0.7](https://github.com/klueless-io/tailwind_dsl/compare/v0.0.6...v0.0.7) (2022-10-13)
 
 
