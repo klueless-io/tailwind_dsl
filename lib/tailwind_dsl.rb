@@ -7,6 +7,8 @@ require_relative 'tailwind_dsl/version'
 
 require_relative 'tailwind_dsl/etl/raw_components/director'
 require_relative 'tailwind_dsl/etl/raw_components/transformer'
+
+require_relative 'tailwind_dsl/etl/element'
 require_relative 'tailwind_dsl/etl/raw_components/schema/target_file'
 require_relative 'tailwind_dsl/etl/raw_components/schema/source_file'
 require_relative 'tailwind_dsl/etl/raw_components/schema/group'

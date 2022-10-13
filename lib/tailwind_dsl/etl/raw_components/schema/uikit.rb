@@ -54,7 +54,7 @@ module TailwindDsl
           return nil if design_system.nil?
 
           return design_system if design_system.is_a?(DesignSystem)
-          return DesignSystem.new(design_system) if design_system.is_a?(Hash)
+          return DesignSystem.new(**design_system) if design_system.is_a?(Hash)
 
           puts "Unknown design_system type: #{design_system.class}"
           nil

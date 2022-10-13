@@ -15,7 +15,7 @@ module TailwindDsl
         attr_accessor :astro_file
 
         # rubocop:disable Metrics/ParameterLists
-        def initialize(html_file:, clean_html_file:, tailwind_config_file:, settings_file:, data_file:, astro_file:)
+        def initialize(html_file:, clean_html_file:, tailwind_config_file:, settings_file:, data_file:, astro_file:, **_args)
           @html_file = html_file
           @clean_html_file = clean_html_file
           @tailwind_config_file = tailwind_config_file

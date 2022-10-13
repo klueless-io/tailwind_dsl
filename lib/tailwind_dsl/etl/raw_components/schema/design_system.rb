@@ -8,14 +8,11 @@ module TailwindDsl
       # DesignSystem represents a collection of Tailwind CSS components that follow a specific design system
       class DesignSystem
         attr_accessor :name
-        # attr_accessor :path
         attr_accessor :stats
         attr_accessor :groups
 
-        # , path:
         def initialize(name:, stats: {}, groups: [], **_args)
           @name = name
-          # @path = path
           @stats = stats
 
           @groups = []
@@ -32,7 +29,6 @@ module TailwindDsl
           add
         end
 
-        # path: path,
         def to_h
           {
             name: name,
@@ -47,7 +43,7 @@ module TailwindDsl
           return nil if group.nil?
 
           return group if group.is_a?(Group)
-          return Group.new(group) if group.is_a?(Hash)
+          return Group.new(**group) if group.is_a?(Hash)
 
           puts "Unknown group type: #{group.class}"
           nil
