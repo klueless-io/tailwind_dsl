@@ -2,7 +2,6 @@
   "design_systems": [
     {
       "name": "tui",
-      "path": "/Users/davidcruwys/dev/kgems/tailwind_dsl/spec/samples/components/tui",
       "stats": {
         "marketing.section.cta": 3
       },
@@ -21,7 +20,6 @@
               "name": "03.html",
               "file_name": "03.html",
               "file_name_only": "03",
-              "absolute_file": "/Users/davidcruwys/dev/kgems/tailwind_dsl/spec/samples/components/tui/marketing/section/cta/03.html",
               "file": "marketing/section/cta/03.html",
               "target": {
                 "html_file": "marketing/section/cta/03.html",
@@ -36,7 +34,6 @@
               "name": "02.html",
               "file_name": "02.html",
               "file_name_only": "02",
-              "absolute_file": "/Users/davidcruwys/dev/kgems/tailwind_dsl/spec/samples/components/tui/marketing/section/cta/02.html",
               "file": "marketing/section/cta/02.html",
               "target": {
                 "html_file": "marketing/section/cta/02.html",
@@ -51,7 +48,6 @@
               "name": "01.html",
               "file_name": "01.html",
               "file_name_only": "01",
-              "absolute_file": "/Users/davidcruwys/dev/kgems/tailwind_dsl/spec/samples/components/tui/marketing/section/cta/01.html",
               "file": "marketing/section/cta/01.html",
               "target": {
                 "html_file": "marketing/section/cta/01.html",
@@ -68,7 +64,6 @@
     },
     {
       "name": "noq",
-      "path": "/Users/davidcruwys/dev/kgems/tailwind_dsl/spec/samples/components/noq",
       "stats": {
         "card": 2,
         "faq": 2
@@ -86,7 +81,6 @@
               "name": "style1.html",
               "file_name": "style1.html",
               "file_name_only": "style1",
-              "absolute_file": "/Users/davidcruwys/dev/kgems/tailwind_dsl/spec/samples/components/noq/card/style1.html",
               "file": "card/style1.html",
               "target": {
                 "html_file": "card/style1.html",
@@ -101,7 +95,6 @@
               "name": "style2.html",
               "file_name": "style2.html",
               "file_name_only": "style2",
-              "absolute_file": "/Users/davidcruwys/dev/kgems/tailwind_dsl/spec/samples/components/noq/card/style2.html",
               "file": "card/style2.html",
               "target": {
                 "html_file": "card/style2.html",
@@ -126,7 +119,6 @@
               "name": "style1.html",
               "file_name": "style1.html",
               "file_name_only": "style1",
-              "absolute_file": "/Users/davidcruwys/dev/kgems/tailwind_dsl/spec/samples/components/noq/faq/style1.html",
               "file": "faq/style1.html",
               "target": {
                 "html_file": "faq/style1.html",
@@ -141,7 +133,6 @@
               "name": "style2.html",
               "file_name": "style2.html",
               "file_name_only": "style2",
-              "absolute_file": "/Users/davidcruwys/dev/kgems/tailwind_dsl/spec/samples/components/noq/faq/style2.html",
               "file": "faq/style2.html",
               "target": {
                 "html_file": "faq/style2.html",

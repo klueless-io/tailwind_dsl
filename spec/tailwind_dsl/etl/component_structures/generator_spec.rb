@@ -7,14 +7,13 @@ RSpec.describe TailwindDsl::Etl::ComponentStructures::Generator do
 
   subject { instance }
 
+  let(:instance) { described_class.new(uikit, raw_component_root_path, root_target_path) }
+
   let(:design_systems_file) { File.join(SPEC_FOLDER, 'samples/input/uikit.json') }
   let(:design_systems_data) { JSON.parse(File.read(design_systems_file), symbolize_names: true) }
   let(:uikit) { ::TailwindDsl::Etl::RawComponents::UiKit.new(design_systems_data) }
 
-  let(:instance) { described_class.new(uikit, root_target_path) }
-
-  let(:component_path) { File.join(SPEC_FOLDER, 'samples/components') }
-
+  let(:raw_component_root_path) { File.join(SPEC_FOLDER, 'samples/components') }
   let(:root_target_path) { File.join(temp_folder, 'components') }
 
   context 'check mock data' do
@@ -47,7 +46,7 @@ RSpec.describe TailwindDsl::Etl::ComponentStructures::Generator do
     end
 
     context 'when resetting root path' do
-      let(:instance) { described_class.new(uikit, root_target_path, reset_root_path: reset_root_path) }
+      let(:instance) { described_class.new(uikit, raw_component_root_path, root_target_path, reset_root_path: reset_root_path) }
 
       before do
         FileUtils.mkdir_p(File.join(root_target_path, 'a', 'b', 'c'))
@@ -58,7 +57,7 @@ RSpec.describe TailwindDsl::Etl::ComponentStructures::Generator do
       context 'when reset_root_path is false' do
         let(:reset_root_path) { false }
 
-        fit 'does not delete the content under root path' do
+        it 'does not delete the content under root path' do
           expect(File.exist?(File.join(root_target_path, 'a', 'b', 'c'))).to be true
         end
       end

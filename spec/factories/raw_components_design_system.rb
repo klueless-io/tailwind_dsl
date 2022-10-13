@@ -6,7 +6,7 @@ FactoryBot.define do
     initialize_with { new(attributes) }
 
     name  { 'tui' }
-    path  { '/Users/davidcruwys/dev/kgems/k_templates/templates/tailwind/tui' }
+    # path  { '/Users/davidcruwys/dev/kgems/k_templates/templates/tailwind/tui' }
     stats do
       {
         'ecommerce.page.category_pages': 5,

@@ -17,7 +17,7 @@ module TailwindDsl
         attr_accessor :captured_tailwind_config
 
         # rubocop:disable Metrics/AbcSize
-        def initialize(design_system_name, group, file)
+        def initialize(design_system_name, group, file, root_raw_component_path)
           @design_system_name = design_system_name
 
           @captured_comment_text = ''
@@ -25,7 +25,7 @@ module TailwindDsl
           @captured_tailwind_config = ''
 
           @group = Group.new(key: group.key, type: group.type, sub_keys: group.sub_keys)
-          @source = Source.new(file: file.absolute_file)
+          @source = Source.new(file: File.join(root_raw_component_path, design_system_name, file.file))
           @target = Target.new(
             folder: group.folder,
             html_file: file.target.html_file,

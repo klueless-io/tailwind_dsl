@@ -10,27 +10,26 @@ module TailwindDsl
         attr_accessor :name
         attr_accessor :file_name
         attr_accessor :file_name_only
-        attr_accessor :absolute_file
+        # attr_accessor :absolute_file
         attr_accessor :file
         attr_accessor :target
 
-        # rubocop:disable Metrics/ParameterLists
-        def initialize(name:, file_name:, file_name_only:, absolute_file:, file:, target: nil)
+        # , absolute_file
+        def initialize(name:, file_name:, file_name_only:, file:, target: nil)
           @name = name
           @file_name = file_name
           @file_name_only = file_name_only
-          @absolute_file = absolute_file
+          # @absolute_file = absolute_file
           @file = file
           @target = convert_target(target)
         end
-        # rubocop:enable Metrics/ParameterLists
 
         def to_h
+          # absolute_file: absolute_file,
           result = {
             name: name,
             file_name: file_name,
             file_name_only: file_name_only,
-            absolute_file: absolute_file,
             file: file
           }
           result[:target] = target.to_h if target

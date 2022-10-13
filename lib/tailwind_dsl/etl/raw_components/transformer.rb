@@ -5,6 +5,7 @@ module TailwindDsl
     module RawComponents
       # The component reader will read the raw component files for each UI Kit.
       class Transformer
+        attr_reader :path
         attr_reader :design_system
 
         attr_reader :group_lookup
@@ -12,10 +13,10 @@ module TailwindDsl
 
         def call(name, path)
           @design_system = ::TailwindDsl::Etl::RawComponents::DesignSystem.new(
-            name: name,
-            path: path
+            name: name
           )
 
+          @path = path
           @group_lookup = {}
 
           process_files
@@ -30,7 +31,7 @@ module TailwindDsl
         private
 
         def process_files
-          glob = File.join(design_system.path, '**', '*')
+          glob = File.join(path, '**', '*')
 
           Dir.glob(glob) do |entry|
             next if reject?(entry)
@@ -44,7 +45,7 @@ module TailwindDsl
         # rubocop:disable Metrics/AbcSize
         def assign_group(entry)
           target_path = File.directory?(entry) ? entry : File.dirname(entry)
-          relative_folder = Pathname.new(target_path).relative_path_from(Pathname.new(design_system.path)).to_s
+          relative_folder = Pathname.new(target_path).relative_path_from(Pathname.new(path)).to_s
 
           group_key = relative_folder == '.' ? '@' :  relative_folder.split('/').map { |part| snake.call(part) }.join('.')
 
@@ -90,11 +91,11 @@ module TailwindDsl
         end
 
         def source_file(entry, folder, target)
+          # absolute_file: entry,
           ::TailwindDsl::Etl::RawComponents::SourceFile.new(
             name: File.basename(entry),
             file_name: File.basename(entry),
             file_name_only: File.basename(entry, File.extname(entry)),
-            absolute_file: entry,
             file: File.join(folder, File.basename(entry)),
             target: target
           )

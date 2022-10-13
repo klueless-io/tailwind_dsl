@@ -8,7 +8,7 @@ FactoryBot.define do
     name                  { '03.html' }
     file_name             { '03.html' }
     file_name_only        { '03' }
-    absolute_file         { '/Users/davidcruwys/dev/kgems/k_templates/templates/tailwind/tui/ecommerce/page/product-pages/03.html' }
+    # absolute_file         { '/Users/davidcruwys/dev/kgems/k_templates/templates/tailwind/tui/ecommerce/page/product-pages/03.html' }
     file                  { 'ecommerce/page/product-pages/03.html' }
 
     # target - handle outside of the factory

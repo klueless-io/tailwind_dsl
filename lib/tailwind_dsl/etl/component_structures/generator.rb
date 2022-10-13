@@ -20,11 +20,13 @@ module TailwindDsl
 
         # .gsub(/(\n\s*\n)+/, "\n")
         attr_reader :uikit
+        attr_reader :root_raw_component_path
         attr_reader :root_target_path
         attr_reader :reset_root_path
 
-        def initialize(uikit, root_target_path, reset_root_path: false)
+        def initialize(uikit, root_raw_component_path, root_target_path, reset_root_path: false)
           @uikit = uikit
+          @root_raw_component_path = root_raw_component_path
           @root_target_path = root_target_path
           @reset_root_path = reset_root_path
         end
@@ -59,7 +61,7 @@ module TailwindDsl
         def process_group(design_system_name, group)
           group.files.each do |file|
             # puts "DSN: #{design_system_name}, GRP: #{group.type}, FILE: #{file.file}"
-            data = Data.new(design_system_name, group, file)
+            data = Data.new(design_system_name, group, file, root_raw_component_path)
 
             unless data.source.exist?
               puts "Source file does not exist: #{data.source.file}"
