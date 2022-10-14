@@ -48,7 +48,7 @@ RSpec.describe TailwindDsl::Etl::RawComponents::DesignSystem do
     end
   end
 
-  fdescribe '#add_group' do
+  describe '#add_group' do
     before { instance.add_group(group) }
 
     subject { instance.groups.first }

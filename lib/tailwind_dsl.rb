@@ -16,6 +16,7 @@ require_relative 'tailwind_dsl/etl/raw_components/schema/design_system'
 require_relative 'tailwind_dsl/etl/raw_components/schema/uikit'
 
 require_relative 'tailwind_dsl/etl/component_structures/data'
+require_relative 'tailwind_dsl/etl/component_structures/raw_component_query'
 require_relative 'tailwind_dsl/etl/component_structures/generator'
 # require_relative 'tailwind_dsl/astro_demo/generate_astro_page_data'
 

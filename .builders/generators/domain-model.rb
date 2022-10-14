@@ -158,63 +158,65 @@ KManager.action :domain_model do
             .method(:data_instance)
         end
 
+        grid_layout(wrap_at: 6, grid_w: 220, grid_h: 220)
+
+        group(title: 'Raw Component Transformers', theme: :style_03)
+
         temp_suffix = 'X' # turn this on when generating code to avoid folder name collision
-        # Transformers
+        # 
         klass(:c1, w: 200) do
           format
-            .header('Root'                , namespace: "#{temp_suffix}Transformers::RawComponents",
+            .header('UiKit'               , namespace: "#{temp_suffix}Etl::RawComponents",
                                             description: 'Root container for normalizing the raw Tailwind html in component data structures',
                                             dry_struct: false)
-            .field(:design_systems        , type: "Types::Strict::Array.of(DesignSystem)")
+            .field(:design_systems        , type: "DesignSystem[]")
         end
 
         klass(:c2, w: 200) do
           format
-            .header('DesignSystem', namespace: "#{temp_suffix}Transformers::RawComponents",
+            .header('DesignSystem', namespace: "#{temp_suffix}Etl::RawComponents",
                                             description: 'DesignSystem represents a collection of Tailwind CSS components that follow a specific design system',
                                             dry_struct: false)
-            .field(:name                  , type: 'Types::Strict::String')
-            .field(:path                  , type: 'Types::Strict::String')
-            .field(:stats                 , type: 'Types::Strict::Hash')
-            .field(:groups                , type: "Types::Strict::Array.of(Group)")
+            .field(:name                  , type: :string)
+            .field(:stats                 , type: :Hash)
+            .field(:groups                , type: "Group[]")
         end
 
         klass(:c3, w: 200) do
           format
-            .header('Group'               , namespace: "#{temp_suffix}Transformers::RawComponents",
+            .header('Group'               , namespace: "#{temp_suffix}Etl::RawComponents",
                                             description: 'Group represents a collection of Tailwind CSS components withing a named group or category',
                                             dry_struct: false)
-            .field(:key                   , type: 'Types::Strict::String')
-            .field(:type                  , type: 'Types::Strict::String')
-            .field(:folder                , type: 'Types::Strict::String')
-            .field(:sub_keys              , type: "Types::Array.of(Types::Strict:'Types::Strict::String')")
-            .field(:files                 , type: "Types::Strict::Array.of(SourceFile)")
+            .field(:key                   , type: :string)
+            .field(:type                  , type: :string)
+            .field(:folder                , type: :string)
+            .field(:sub_keys              , type: "string[]")
+            .field(:files                 , type: "SourceFile[]")
         end
 
         klass(:c4, w: 200) do
           format
-            .header('SourceFile'          , namespace: "#{temp_suffix}Transformers::RawComponents",
+            .header('SourceFile'          , namespace: "#{temp_suffix}Etl::RawComponents",
                                             description: 'SourceFile represents a list of source files that contain raw Tailwind CSS components',
                                             dry_struct: false)
-            .field(:name                  , type: 'Types::Strict::String')
-            .field(:file_name             , type: 'Types::Strict::String')
-            .field(:file_name_only        , type: 'Types::Strict::String')
-            .field(:absolute_file         , type: 'Types::Strict::String')
-            .field(:file                  , type: 'Types::Strict::String')
-            .field(:target                , type: "TailwindDsl::#{temp_suffix}Transformers::RawComponents::TargetFile")
+            .field(:name                  , type: :string)
+            .field(:file_name             , type: :string)
+            .field(:file_name_only        , type: :string)
+            .field(:file                  , type: :string)
+            .field(:target                , type: "TargetFile")
         end
 
         klass(:c5, w: 200) do
           format
-            .header('TargetFile'          , namespace: "#{temp_suffix}Transformers::RawComponents",
+            .header('TargetFile'          , namespace: "#{temp_suffix}Etl::RawComponents",
                                             description: 'TargetFile represents each sub_file that can be built from a source file, such as HTML Component, Tailwind Config, Settings and Data Structure',
                                             dry_struct: false)
-            .field(:html_file             , type: 'Types::Strict::String')
-            .field(:clean_html_file       , type: 'Types::Strict::String')
-            .field(:tailwind_config_file  , type: 'Types::Strict::String')
-            .field(:settings_file         , type: 'Types::Strict::String')
-            .field(:data_file             , type: 'Types::Strict::String')
-            .field(:astro_file            , type: 'Types::Strict::String')
+            .field(:html_file             , type: :string)
+            .field(:clean_html_file       , type: :string)
+            .field(:tailwind_config_file  , type: :string)
+            .field(:settings_file         , type: :string)
+            .field(:data_file             , type: :string)
+            .field(:astro_file            , type: :string)
         end
 
         solid(source: :c1, target: :c2, exit_point: :e, entry_point: :w, waypoint: :orthogonal_curved)

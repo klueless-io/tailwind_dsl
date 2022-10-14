@@ -10,14 +10,18 @@ KManager.action :utilities do
       .blueprint(name: :build_design_system) do
         cd(:data)
 
-        design_systems = helpers.build_design_systems
-        json = JSON.pretty_generate(design_systems.to_h)
+        # Raw components are source HTML/Tailwind files that have embedded information such as tailwind.config.js and usage instructions
+        raw_component_path = File.expand_path('~/dev/kgems/k_templates/templates/tailwind')
+
+        # Target components are the processed components that are ready to be consumed by the TailwindDSL
+        component_folder = k_builder.target_folders.get(:components)
+
+        uikit = helpers.build_design_systems(raw_component_path)
+        json = JSON.pretty_generate(uikit.to_h)
 
         add('design_system.json', content: json)
 
-        component_folder = k_builder.target_folders.get(:components)
-
-        # helpers.generate_components(graph, component_folder, reset_root_path: false) # HAVE NOT TESTED THIS YET
+        helpers.generate_components(uikit, raw_component_path, component_folder, reset_root_path: false)
 
         # Goals
         #   - Generate a Tailwind component complete design system so that I can see both the component plus the original source code
@@ -35,22 +39,20 @@ KManager.action :utilities do
 
   end
 
-  def build_design_systems
-    source_path = File.expand_path('~/dev/kgems/k_templates/templates/tailwind')
-
+  def build_design_systems(raw_component_path)
     director = TailwindDsl::Etl::RawComponents::Director.new
 
-    director.add_design_system(File.join(source_path, 'tui'))
-    # director.add_design_system(File.join(source_path, 'codepen'))
-    # director.add_design_system(File.join(source_path, 'devdojo'))
-    # director.add_design_system(File.join(source_path, 'merakiui'))
-    # director.add_design_system(File.join(source_path, 'noq'))
-    # director.add_design_system(File.join(source_path, 'starter-kit'))
-    director.design_systems
+    director.add_design_system(File.join(raw_component_path, 'tui'))
+    # director.add_design_system(File.join(raw_component_path, 'codepen'))
+    # director.add_design_system(File.join(raw_component_path, 'devdojo'))
+    # director.add_design_system(File.join(raw_component_path, 'merakiui'))
+    # director.add_design_system(File.join(raw_component_path, 'noq'))
+    # director.add_design_system(File.join(raw_component_path, 'starter-kit'))
+    director.uikit
   end
 
-  def generate_components(graph, target_folder, reset_root_path: false)
-    generator = TailwindDsl::RawComponents::GenerateComponentStructures.new(graph, target_folder, reset_root_path: reset_root_path)
+  def generate_components(uikit, raw_component_path, target_folder, reset_root_path: false)
+    generator = TailwindDsl::Etl::ComponentStructures::Generator.new(uikit, raw_component_path, target_folder, reset_root_path: reset_root_path)
     generator.generate
   end
 end

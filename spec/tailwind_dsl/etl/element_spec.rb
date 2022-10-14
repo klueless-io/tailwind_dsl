@@ -96,7 +96,7 @@ RSpec.describe TailwindDsl::Etl::Element do
       end
     end
 
-    context 'when the key is not required and default value configured' do
+    context 'when the key is not required and default value is a simple list' do
       let(:data) { { first_name: 'John' } }
 
       it 'accessor is set with default value' do
