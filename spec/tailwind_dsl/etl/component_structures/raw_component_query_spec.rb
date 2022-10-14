@@ -19,10 +19,10 @@ RSpec.describe TailwindDsl::Etl::ComponentStructures::RawComponentQuery do
   let(:raw_component_root_path) { File.join(SPEC_FOLDER, 'samples/components') }
   let(:root_target_path) { File.join(temp_folder, 'components') }
 
-  # fit do
-  #   # puts JSON.pretty_generate(uikit.to_h)
-  #   puts JSON.pretty_generate(subject)
-  # end
+  it do
+    # puts JSON.pretty_generate(uikit.to_h)
+    puts JSON.pretty_generate(query.to_h)
+  end
 
   describe '.to_h' do
     subject { query.to_h }

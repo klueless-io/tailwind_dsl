@@ -22,7 +22,6 @@ module TailwindDsl
           :key,
           :type,
           :sub_keys,
-          :folder,
           keyword_init: true
         )
         ComponentInfo = Struct.new(
@@ -80,10 +79,8 @@ module TailwindDsl
 
         def call
           run_query
-          # puts JSON.pretty_generate(graph) if debug
-          # {
-          #   list: list.map(&:to_h)
-          # }
+
+          @list = build_graph_new
           self
         end
 
@@ -111,11 +108,35 @@ module TailwindDsl
 
         private
 
+        def build_graph_new
+          uikit.design_systems.flat_map do |design_system|
+            @current_design_system = design_system
+            design_system.groups.flat_map do |group|
+              group.files.map do |file|
+                Record.new(
+                  design_system: DesignSystem.new(**map_design_system_new),
+                  component_group: ComponentGroup.new(**map_group_new(group)),
+                  absolute_component: ComponentInfo.new(**map_absolute_file(file)),
+                  relative_component: ComponentInfo.new(**map_relative_file(file))
+                )
+              end
+            end
+          end
+        end
+
         def build_graph
           uikit.design_systems.map do |design_system|
             @current_design_system = design_system
             map_design_system
           end
+        end
+
+        def map_design_system_new
+          {
+            name: current_design_system.name,
+            source_path: source_path,
+            target_path: target_path
+          }
         end
 
         def map_design_system
@@ -129,6 +150,14 @@ module TailwindDsl
           }
         end
 
+        def map_group_new(group)
+          {
+            key: group.key,
+            type: group.type,
+            sub_keys: group.sub_keys
+          }
+        end
+
         def map_group(group)
           {
             key: group.key,
@@ -137,6 +166,30 @@ module TailwindDsl
             files: group.files.map do |file|
               map_file(file)
             end
+          }
+        end
+
+        def map_relative_file(file)
+          {
+            source_file: file.file,
+            target_html_file: file.target.html_file,
+            target_clean_html_file: file.target.clean_html_file,
+            target_tailwind_config_file: file.target.tailwind_config_file,
+            target_settings_file: file.target.settings_file,
+            target_data_file: file.target.data_file,
+            target_astro_file: file.target.astro_file
+          }
+        end
+
+        def map_absolute_file(file)
+          {
+            source_file: File.join(source_path, file.file),
+            target_html_file: File.join(target_path, file.target.html_file),
+            target_clean_html_file: File.join(target_path, file.target.clean_html_file),
+            target_tailwind_config_file: File.join(target_path, file.target.tailwind_config_file),
+            target_settings_file: File.join(target_path, file.target.settings_file),
+            target_data_file: File.join(target_path, file.target.data_file),
+            target_astro_file: File.join(target_path, file.target.astro_file)
           }
         end
 
