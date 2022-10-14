@@ -1,3 +1,10 @@
+## [0.0.11](https://github.com/klueless-io/tailwind_dsl/compare/v0.0.10...v0.0.11) (2022-10-14)
+
+
+### Bug Fixes
+
+* add raw component query object for use by component structures ([16cc578](https://github.com/klueless-io/tailwind_dsl/commit/16cc5785ee118b31d90c62e38b88a7ddae9c342f))
+
 ## [0.0.10](https://github.com/klueless-io/tailwind_dsl/compare/v0.0.9...v0.0.10) (2022-10-13)
 
 
