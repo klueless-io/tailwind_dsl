@@ -1,3 +1,10 @@
+## [0.0.12](https://github.com/klueless-io/tailwind_dsl/compare/v0.0.11...v0.0.12) (2022-10-14)
+
+
+### Bug Fixes
+
+* refactor component structures generator ([3598bb4](https://github.com/klueless-io/tailwind_dsl/commit/3598bb47e5b94bcc4426eb77188dcbd1247ec34e))
+
 ## [0.0.11](https://github.com/klueless-io/tailwind_dsl/compare/v0.0.10...v0.0.11) (2022-10-14)
 
 
