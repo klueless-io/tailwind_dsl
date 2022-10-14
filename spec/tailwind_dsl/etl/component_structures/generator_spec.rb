@@ -7,14 +7,30 @@ RSpec.describe TailwindDsl::Etl::ComponentStructures::Generator do
 
   subject { instance }
 
-  let(:instance) { described_class.new(uikit, raw_component_root_path, root_target_path) }
+  let(:instance) { described_class.new(uikit, source_root_path, target_root_path) }
 
   let(:design_systems_file) { File.join(SPEC_FOLDER, 'samples/input/uikit.json') }
   let(:design_systems_data) { JSON.parse(File.read(design_systems_file), symbolize_names: true) }
   let(:uikit) { ::TailwindDsl::Etl::RawComponents::UiKit.new(design_systems_data) }
 
-  let(:raw_component_root_path) { File.join(SPEC_FOLDER, 'samples/components') }
-  let(:root_target_path) { File.join(temp_folder, 'components') }
+  let(:source_root_path) { File.join(SPEC_FOLDER, 'samples/components') }
+  let(:target_root_path) { File.join(temp_folder, 'components') }
+
+  describe '.components' do
+    subject { instance.components }
+
+    before { instance.generate }
+
+    it { is_expected.to be_a(Array) }
+    it 'has a records with expected data' do
+      expect(subject).to be_a(Array)
+      expect(subject.first)
+        .to have_attributes(design_system: have_attributes(name: 'tui'))
+        .and have_attributes(component_group: have_attributes(key: 'marketing.section.cta'))
+        .and have_attributes(absolute_component: have_attributes(source_file: end_with('marketing/section/cta/03.html')))
+        .and have_attributes(relative_component: have_attributes(source_file: end_with('marketing/section/cta/03.html')))
+    end
+  end
 
   context 'check mock data' do
     it { expect(uikit.design_systems.length).to be > 0 }
@@ -29,16 +45,22 @@ RSpec.describe TailwindDsl::Etl::ComponentStructures::Generator do
       it { is_expected.to be_a(uikit.class) }
     end
 
-    describe '.root_target_path' do
-      subject { instance.root_target_path }
+    describe '.source_root_path' do
+      subject { instance.source_root_path }
 
-      it { is_expected.to eq root_target_path }
+      it { is_expected.to eq source_root_path }
+    end
+
+    describe '.target_root_path' do
+      subject { instance.target_root_path }
+
+      it { is_expected.to eq target_root_path }
     end
   end
 
   describe '#generate' do
     context 'when target path does not exist' do
-      let(:root_target_path) { File.join(temp_folder, 'bad') }
+      let(:target_root_path) { File.join(temp_folder, 'bad') }
 
       it 'raises an error' do
         expect { instance.generate }.to raise_error('Target path does not exist')
@@ -46,10 +68,10 @@ RSpec.describe TailwindDsl::Etl::ComponentStructures::Generator do
     end
 
     context 'when resetting root path' do
-      let(:instance) { described_class.new(uikit, raw_component_root_path, root_target_path, reset_root_path: reset_root_path) }
+      let(:instance) { described_class.new(uikit, source_root_path, target_root_path, reset_root_path: reset_root_path) }
 
       before do
-        FileUtils.mkdir_p(File.join(root_target_path, 'a', 'b', 'c'))
+        FileUtils.mkdir_p(File.join(target_root_path, 'a', 'b', 'c'))
 
         instance.generate
       end
@@ -58,7 +80,7 @@ RSpec.describe TailwindDsl::Etl::ComponentStructures::Generator do
         let(:reset_root_path) { false }
 
         it 'does not delete the content under root path' do
-          expect(File.exist?(File.join(root_target_path, 'a', 'b', 'c'))).to be true
+          expect(File.exist?(File.join(target_root_path, 'a', 'b', 'c'))).to be true
         end
       end
 
@@ -66,14 +88,14 @@ RSpec.describe TailwindDsl::Etl::ComponentStructures::Generator do
         let(:reset_root_path) { true }
 
         it 'deletes the content under root path' do
-          expect(File.exist?(File.join(root_target_path, 'a', 'b', 'c'))).to be false
+          expect(File.exist?(File.join(target_root_path, 'a', 'b', 'c'))).to be false
         end
       end
     end
 
     context 'when target path exists and #generate' do
       before do
-        FileUtils.mkdir_p(root_target_path)
+        FileUtils.mkdir_p(target_root_path)
 
         # uikit.add_design_system(File.join(component_path, 'tui'))
 
@@ -90,15 +112,15 @@ RSpec.describe TailwindDsl::Etl::ComponentStructures::Generator do
       let(:cta_astro) { "#{cta_component}.astro" }
 
       context 'design system folder is created' do
-        it { expect(File.exist?(File.join(root_target_path, 'tui'))).to be_truthy }
+        it { expect(File.exist?(File.join(target_root_path, 'tui'))).to be_truthy }
       end
 
       context 'component sub folder is created' do
-        it { expect(File.exist?(File.join(root_target_path, cta_folder))).to be true }
+        it { expect(File.exist?(File.join(target_root_path, cta_folder))).to be true }
       end
 
       context 'component html' do
-        let(:file) { File.join(root_target_path, cta_html) }
+        let(:file) { File.join(target_root_path, cta_html) }
         let(:content) { File.read(file) }
 
         it 'creates a file' do
@@ -115,7 +137,7 @@ RSpec.describe TailwindDsl::Etl::ComponentStructures::Generator do
       end
 
       context 'component html (cleaned)' do
-        let(:file) { File.join(root_target_path, cta_clean_html) }
+        let(:file) { File.join(target_root_path, cta_clean_html) }
         let(:content) { File.read(file) }
 
         it 'creates a file' do
@@ -133,7 +155,7 @@ RSpec.describe TailwindDsl::Etl::ComponentStructures::Generator do
       end
 
       context 'component tailwind config' do
-        let(:file) { File.join(root_target_path, cta_tailwind_config) }
+        let(:file) { File.join(target_root_path, cta_tailwind_config) }
         let(:content) { File.read(file) }
 
         context 'when the component has a tailwind config' do
@@ -155,8 +177,8 @@ RSpec.describe TailwindDsl::Etl::ComponentStructures::Generator do
         end
       end
 
-      context 'component settings' do
-        let(:file) { File.join(root_target_path, cta_settings) }
+      fcontext 'component settings' do
+        let(:file) { File.join(target_root_path, cta_settings) }
         let(:settings) { JSON.parse(File.read(file)) }
 
         it 'creates a file' do

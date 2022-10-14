@@ -20,73 +20,71 @@ module TailwindDsl
 
         # .gsub(/(\n\s*\n)+/, "\n")
         attr_reader :uikit
-        attr_reader :root_raw_component_path
-        attr_reader :root_target_path
+        attr_reader :source_root_path
+        attr_reader :target_root_path
         attr_reader :reset_root_path
 
-        def initialize(uikit, root_raw_component_path, root_target_path, reset_root_path: false)
+        def initialize(uikit, source_root_path, target_root_path, reset_root_path: false)
           @uikit = uikit
-          @root_raw_component_path = root_raw_component_path
-          @root_target_path = root_target_path
+          @source_root_path = source_root_path
+          @target_root_path = target_root_path
           @reset_root_path = reset_root_path
         end
 
         def generate
-          assert_root_target_path_exists
+          assert_target_root_path_exists
 
           delete_target_root_path if reset_root_path
 
-          uikit.design_systems.each do |design_system|
-            process_design_system(design_system)
-          end
+          @components = query_components
+
+          process_components
         end
 
         private
 
-        def assert_root_target_path_exists
-          raise 'Target path does not exist' unless Dir.exist?(root_target_path)
+        def assert_target_root_path_exists
+          raise 'Target path does not exist' unless Dir.exist?(target_root_path)
         end
 
         def delete_target_root_path
-          FileUtils.rm_rf(Dir.glob("#{root_target_path}/*"))
+          FileUtils.rm_rf(Dir.glob("#{target_root_path}/*"))
         end
 
-        def process_design_system(design_system)
-          design_system_name = design_system.name
-          design_system.groups.each do |group|
-            process_group(design_system_name, group)
-          end
+        def query_components
+          RawComponentQuery.query(uikit,
+                                  raw_component_root_path: source_root_path,
+                                  component_structure_root_path: target_root_path).records
         end
 
-        def process_group(design_system_name, group)
-          group.files.each do |file|
-            # puts "DSN: #{design_system_name}, GRP: #{group.type}, FILE: #{file.file}"
-            data = Data.new(design_system_name, group, file, root_raw_component_path)
-
-            unless data.source.exist?
-              puts "Source file does not exist: #{data.source.file}"
+        def process_components
+          @components.each do |component|
+            unless File.exist?(component.absolute_path.source_file)
+              puts "Source file does not exist: #{component.absolute_path.source_file}"
               next
             end
 
-            process_component(data)
+            # puts "DSN: #{component.design_system.name}, GRP: #{component.group.type}, FILE: #{component.relative_path.source_file}"
+
+            process_component(component)
           end
         end
 
-        def process_component(data)
+        def process_component(component)
           # Create a folder for the component
-          make_target_folder(data)
+          make_target_folder(component)
 
-          # Create a HTML file for each component
-          create_html_file(data)
+          # # Create a HTML file for each component
+          create_html_file(component)
 
-          # Create a clean HTML file for each component (comments removed)
-          create_clean_html_file(data)
+          # # Create a clean HTML file for each component (comments removed)
+          create_clean_html_file(component)
 
-          # Create a tailwind config file (if one exists) - look in first comment for the ``` ```
-          create_tailwind_config_file(data)
+          # # Create a tailwind config file (if one exists) - look in first comment for the ``` ```
+          create_tailwind_config_file(component)
 
-          # Create a settings file after extracting information from the HTML file
-          create_settings_file(data)
+          # # Create a settings file after extracting information from the HTML file
+          create_settings_file(component)
 
           # Build a menu of sources
           # see: https://tailwindui.com/components/application-ui/data-display/description-lists
@@ -104,42 +102,38 @@ module TailwindDsl
         #   Note that the data file is meant to represent the data in the raw component
         # Write an Astro file
 
-        def target_path(data)
-          File.join(root_target_path, data.design_system_name, data.target.folder)
+        def target_path(component)
+          File.join(target_root_path, component.design_system.name, component.group.folder)
         end
 
-        def target_file(data, file)
-          File.join(root_target_path, data.design_system_name, file)
+        def make_target_folder(component)
+          FileUtils.mkdir_p(target_path(component))
         end
 
-        def make_target_folder(data)
-          FileUtils.mkdir_p(target_path(data))
-        end
-
-        def create_html_file(data)
+        def create_html_file(component)
           # rules:
           # if the html file exists, then read the settings file, if the settings has html overwrite, then overwrite the html file
           # overwrite = true
-          FileUtils.cp_r(data.source.file, target_file(data, data.target.html_file), remove_destination: true) # if overwrite
+          FileUtils.cp_r(component.absolute_path.source_file, component.absolute_path.target_html_file, remove_destination: true) # if overwrite
         end
 
-        def create_clean_html_file(data)
-          html = data.source.content || ''
-          data.captured_comment_list = html.scan(COMMENT_REGEX)
-          data.captured_comment_text = data.captured_comment_list.join("\n")
+        def create_clean_html_file(component)
+          html = File.read(component.absolute_path.source_file) || ''
+          component.captured_comment_list = html.scan(COMMENT_REGEX)
+          component.captured_comment_text = component.captured_comment_list.join("\n")
 
           html = html.gsub(COMMENT_REGEX, '').gsub(BLANK_LINE_REGEX, "\n").lstrip
 
-          File.write(target_file(data, data.target.clean_html_file), html)
+          File.write(component.absolute_path.target_clean_html_file, html)
         end
 
-        def create_tailwind_config_file(data)
-          data.captured_tailwind_config = extract_tailwind_config(data)
+        def create_tailwind_config_file(component)
+          component.captured_tailwind_config = extract_tailwind_config(component)
 
-          File.write(target_file(data, data.target.tailwind_config_file), data.captured_tailwind_config) if data.captured_tailwind_config
+          File.write(component.absolute_path.target_tailwind_config_file, component.captured_tailwind_config) if component.captured_tailwind_config
         end
 
-        def create_settings_file(data)
+        def create_settings_file(component)
           # CUSTOM
           # templates/tailwind/tui/ecommerce/page/product-pages/02.html
           # templates/tailwind/tui/ecommerce/components/product-overviews/04.html
@@ -164,31 +158,31 @@ module TailwindDsl
           # templates/tailwind/tui/application-ui/page/home-screens/02.html
           # templates/tailwind/tui/application-ui/component/list/feed/03.html
           settings = {
-            source: extract_source(data),
+            source: extract_source(component),
             custom_html: {
-              html: data.captured_comment_text.match(/<html.*>/),
-              body: data.captured_comment_text.match(/<body.*>/)
+              html: component.captured_comment_text.match(/<html.*>/),
+              body: component.captured_comment_text.match(/<body.*>/)
             },
-            tailwind_config: tailwind_config_settings(data.captured_tailwind_config)
+            tailwind_config: tailwind_config_settings(component.captured_tailwind_config)
           }
 
-          File.write(target_file(data, data.target.settings_file), JSON.pretty_generate(settings))
+          File.write(component.absolute_path.target_settings_file, JSON.pretty_generate(settings))
         end
 
-        def extract_tailwind_config(data)
-          return nil if data.captured_comment_list.length.zero? || !data.captured_comment_list.first.include?('// tailwind.config.js')
+        def extract_tailwind_config(component)
+          return nil if component.captured_comment_list.length.zero? || !component.captured_comment_list.first.include?('// tailwind.config.js')
 
-          data.captured_comment_list.first.match(TAILWIND_CONFIG_REGEX)[:tailwind]
+          component.captured_comment_list.first.match(TAILWIND_CONFIG_REGEX)[:tailwind]
         end
 
-        def extract_source(data)
+        def extract_source(component)
           # In future I may be able to store the source in a comment in the HTML file
           # but at the moment all components are generally from TailwindUI and the source
           # URL can be inferred from the sub keys.
 
-          return "https://tailwindui.com/components/#{data.group.sub_keys.join('/')}" if data.design_system_name == 'tui'
+          return "https://tailwindui.com/components/#{component.group.sub_keys.join('/')}" if component.design_system.name == 'tui'
 
-          "##{data.design_system_name}/#{data.group.sub_keys.join('/')}"
+          "##{component.design_system.name}/#{component.group.sub_keys.join('/')}"
         end
 
         def tailwind_config_settings(raw_tailwind_config)
