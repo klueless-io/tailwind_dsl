@@ -1,3 +1,10 @@
+## [0.0.13](https://github.com/klueless-io/tailwind_dsl/compare/v0.0.12...v0.0.13) (2022-10-18)
+
+
+### Bug Fixes
+
+* refactor tests ([91b730d](https://github.com/klueless-io/tailwind_dsl/commit/91b730d91f99cf06810581d2d1684bb836eae860))
+
 ## [0.0.12](https://github.com/klueless-io/tailwind_dsl/compare/v0.0.11...v0.0.12) (2022-10-14)
 
 
