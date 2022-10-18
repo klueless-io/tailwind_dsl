@@ -5,13 +5,13 @@ module TailwindDsl
     module ComponentModels
       # Extract component models by reading the cleansed component HTML and then using GPT3 to infer both the data/model structure.
       class Extractor
-        attr_reader :uikit
+        attr_reader :components
         attr_reader :target_root_path
         attr_reader :batch_size
         attr_reader :use_prompt
 
-        def initialize(uikit, target_root_path, batch_size: 1, use_prompt: false, filter_design_system: nil)
-          @uikit = uikit
+        def initialize(components, target_root_path, batch_size: 1, use_prompt: false, filter_design_system: nil)
+          @components = components
           @target_root_path = target_root_path
           @batch_size = batch_size
           @batch_left = batch_size
@@ -31,7 +31,7 @@ module TailwindDsl
         def extract; end
 
         # def components
-        #   @components ||= uikit.design_systems.map do |design_system|
+        #   @components ||= components.design_systems.map do |design_system|
         #     design_system.components.map do |component|
         #       Component.new(design_system, component, source_root_path, target_root_path)
         #     end

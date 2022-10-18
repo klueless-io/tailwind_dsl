@@ -4,20 +4,16 @@ require 'spec_helper'
 
 RSpec.describe TailwindDsl::Etl::ComponentStructures::RawComponentQuery do
   include_context :use_temp_folder
+  include_context :has_configured_uikit
 
   let(:query) do
     described_class.query(uikit,
-                          raw_component_root_path: raw_component_root_path,
-                          component_structure_root_path: root_target_path,
-                          debug: true)
+                          source_root_path: raw_component_root_path,
+                          target_root_path: component_structure_root_path)
   end
 
-  let(:design_systems_file) { File.join(SPEC_FOLDER, 'samples/input/uikit.json') }
-  let(:design_systems_data) { JSON.parse(File.read(design_systems_file), symbolize_names: true) }
-  let(:uikit) { ::TailwindDsl::Etl::RawComponents::UiKit.new(design_systems_data) }
-
   let(:raw_component_root_path) { File.join(SPEC_FOLDER, 'samples/components') }
-  let(:root_target_path) { File.join(temp_folder, 'components') }
+  let(:component_structure_root_path) { File.join(temp_folder, 'components') }
 
   # it do
   #   # puts JSON.pretty_generate(uikit.to_h)

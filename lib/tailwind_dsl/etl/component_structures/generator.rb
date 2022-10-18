@@ -21,7 +21,9 @@ module TailwindDsl
         # .gsub(/(\n\s*\n)+/, "\n")
         attr_reader :uikit
         attr_reader :components
+        # Location for raw components
         attr_reader :source_root_path
+        # Location for component structures
         attr_reader :target_root_path
         attr_reader :reset_root_path
 
@@ -54,8 +56,8 @@ module TailwindDsl
 
         def query_components
           RawComponentQuery.query(uikit,
-                                  raw_component_root_path: source_root_path,
-                                  component_structure_root_path: target_root_path).records
+                                  source_root_path: source_root_path,
+                                  target_root_path: target_root_path).records
         end
 
         def process_components

@@ -4,7 +4,8 @@ require 'pry'
 require 'bundler/setup'
 require 'simplecov'
 require 'factory_bot'
-require 'support/use_temp_folder'
+
+Dir['./spec/support/**/*.rb'].sort.each { |f| require f }
 
 SimpleCov.start
 

@@ -4,14 +4,11 @@ require 'spec_helper'
 
 RSpec.describe TailwindDsl::Etl::ComponentStructures::Generator do
   include_context :use_temp_folder
+  include_context :has_configured_uikit
 
   subject { instance }
 
   let(:instance) { described_class.new(uikit, source_root_path, target_root_path) }
-
-  let(:design_systems_file) { File.join(SPEC_FOLDER, 'samples/input/uikit.json') }
-  let(:design_systems_data) { JSON.parse(File.read(design_systems_file), symbolize_names: true) }
-  let(:uikit) { ::TailwindDsl::Etl::RawComponents::UiKit.new(design_systems_data) }
 
   let(:source_root_path) { File.join(SPEC_FOLDER, 'samples/01-raw_components') }
   let(:target_root_path) { File.join(temp_folder, 'components') }

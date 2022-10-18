@@ -8,8 +8,6 @@ module TailwindDsl
       # This is a two pass process:
       #  1. Query the raw component folder for all files that match the pattern and build up a graph with required information
       #  2. Flatten the graph into a list of rows
-      #
-      # If you need to debug, then pass in the debug flag and it will output the graph to the console
       class RawComponentQuery
         DesignSystem = Struct.new(
           :name,
@@ -64,22 +62,22 @@ module TailwindDsl
         end
 
         attr_reader :uikit
-        attr_reader :raw_component_root_path
-        attr_reader :component_structure_root_path
+        # Location for raw components
+        attr_reader :source_root_path
+        # Location for component structures
+        attr_reader :target_root_path
         attr_reader :current_design_system
-        attr_reader :debug
         attr_reader :records
 
         def initialize(uikit, **args)
           @uikit = uikit
-          @raw_component_root_path = args[:raw_component_root_path] || raise(ArgumentError, 'Missing raw_component_root_path')
-          @component_structure_root_path = args[:component_structure_root_path] || raise(ArgumentError, 'Missing component_structure_root_path')
-          @debug = args[:debug] || false
+          @source_root_path = args[:source_root_path] || raise(ArgumentError, 'Missing source_root_path')
+          @target_root_path = args[:target_root_path] || raise(ArgumentError, 'Missing target_root_path')
         end
 
         class << self
-          def query(uikit, raw_component_root_path:, component_structure_root_path:, debug: false)
-            instance = new(uikit, raw_component_root_path: raw_component_root_path, component_structure_root_path: component_structure_root_path, debug: debug)
+          def query(uikit, source_root_path:, target_root_path:)
+            instance = new(uikit, source_root_path: source_root_path, target_root_path: target_root_path)
             instance.call
           end
         end
@@ -119,11 +117,11 @@ module TailwindDsl
         end
 
         def source_path
-          File.join(raw_component_root_path, design_system_name)
+          File.join(source_root_path, design_system_name)
         end
 
         def target_path
-          File.join(component_structure_root_path, design_system_name)
+          File.join(target_root_path, design_system_name)
         end
 
         def map_design_system
