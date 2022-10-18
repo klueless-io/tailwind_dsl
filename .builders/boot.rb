@@ -31,6 +31,7 @@ KConfig.configure(CONFIG_KEY) do |config|
   config.target_folders.add(:builder              , builder_folder)
   config.target_folders.add(:data                 , base_folder, '.data')
   config.target_folders.add(:components           , base_folder, '.components')
+  config.target_folders.add(:component_models     , base_folder, '.component_models')
 
   config.target_folders.add(:template_merakiui    , global_template, 'tailwind', 'merakiui')
   config.target_folders.add(:template_devdojo     , global_template, 'tailwind', 'devdojo')

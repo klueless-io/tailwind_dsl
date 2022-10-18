@@ -3,6 +3,8 @@
 module TailwindDsl
   module Etl
     module RawComponents
+      # NOTE: Director is badly named.
+
       # Use the Director to build the UiKit which will store the JSON representations of each Design System plus components.
       #
       # This is a raw representation of the source.
