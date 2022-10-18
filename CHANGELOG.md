@@ -1,3 +1,12 @@
+## [0.0.14](https://github.com/klueless-io/tailwind_dsl/compare/v0.0.13...v0.0.14) (2022-10-18)
+
+
+### Bug Fixes
+
+* refactor sample data directories ([23e4efb](https://github.com/klueless-io/tailwind_dsl/commit/23e4efb2863643cfbc8744e656a873900a421572))
+* refactor sample data directories ([4017917](https://github.com/klueless-io/tailwind_dsl/commit/401791784e51fbe771c841294a4ad837f99c8ec9))
+* start working on component model extractor ([929292d](https://github.com/klueless-io/tailwind_dsl/commit/929292dcdae8d79ccd12e2eae30d3e6710bac3f2))
+
 ## [0.0.13](https://github.com/klueless-io/tailwind_dsl/compare/v0.0.12...v0.0.13) (2022-10-18)
 
 
