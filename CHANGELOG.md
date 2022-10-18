@@ -1,3 +1,10 @@
+## [0.0.15](https://github.com/klueless-io/tailwind_dsl/compare/v0.0.14...v0.0.15) (2022-10-18)
+
+
+### Bug Fixes
+
+* refactor argument names ([3cb3a86](https://github.com/klueless-io/tailwind_dsl/commit/3cb3a869970fbe5a58afe5f1dc0cecf76b615433))
+
 ## [0.0.14](https://github.com/klueless-io/tailwind_dsl/compare/v0.0.13...v0.0.14) (2022-10-18)
 
 
