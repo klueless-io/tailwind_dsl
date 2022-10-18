@@ -28,8 +28,7 @@ module TailwindDsl
         #             if :use_prompt is true then display the input/output files and ask if you wish to process the component or skip.
         #             process the component by calling the GPT3 API and save the results to the target folder.
 
-        def extract
-        end
+        def extract; end
 
         # def components
         #   @components ||= uikit.design_systems.map do |design_system|
