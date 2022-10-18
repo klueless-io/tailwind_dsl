@@ -20,6 +20,7 @@ module TailwindDsl
 
         # .gsub(/(\n\s*\n)+/, "\n")
         attr_reader :uikit
+        attr_reader :components
         attr_reader :source_root_path
         attr_reader :target_root_path
         attr_reader :reset_root_path

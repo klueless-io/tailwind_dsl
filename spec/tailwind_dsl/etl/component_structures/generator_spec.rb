@@ -19,16 +19,20 @@ RSpec.describe TailwindDsl::Etl::ComponentStructures::Generator do
   describe '.components' do
     subject { instance.components }
 
-    before { instance.generate }
+    before do
+      FileUtils.mkdir_p(target_root_path)
+
+      instance.generate
+    end
 
     it { is_expected.to be_a(Array) }
     it 'has a records with expected data' do
       expect(subject).to be_a(Array)
       expect(subject.first)
         .to have_attributes(design_system: have_attributes(name: 'tui'))
-        .and have_attributes(component_group: have_attributes(key: 'marketing.section.cta'))
-        .and have_attributes(absolute_component: have_attributes(source_file: end_with('marketing/section/cta/03.html')))
-        .and have_attributes(relative_component: have_attributes(source_file: end_with('marketing/section/cta/03.html')))
+        .and have_attributes(group: have_attributes(key: 'marketing.section.cta'))
+        .and have_attributes(absolute_path: have_attributes(source_file: end_with('marketing/section/cta/03.html')))
+        .and have_attributes(relative_path: have_attributes(source_file: end_with('marketing/section/cta/03.html')))
     end
   end
 
@@ -177,7 +181,7 @@ RSpec.describe TailwindDsl::Etl::ComponentStructures::Generator do
         end
       end
 
-      fcontext 'component settings' do
+      context 'component settings' do
         let(:file) { File.join(target_root_path, cta_settings) }
         let(:settings) { JSON.parse(File.read(file)) }
 
