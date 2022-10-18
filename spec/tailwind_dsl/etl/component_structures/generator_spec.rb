@@ -13,8 +13,11 @@ RSpec.describe TailwindDsl::Etl::ComponentStructures::Generator do
   let(:design_systems_data) { JSON.parse(File.read(design_systems_file), symbolize_names: true) }
   let(:uikit) { ::TailwindDsl::Etl::RawComponents::UiKit.new(design_systems_data) }
 
-  let(:source_root_path) { File.join(SPEC_FOLDER, 'samples/components') }
+  let(:source_root_path) { File.join(SPEC_FOLDER, 'samples/01-raw_components') }
   let(:target_root_path) { File.join(temp_folder, 'components') }
+
+  # If you need to refresh 02-component_structures, uncomment this line and run the spec.
+  # let(:target_root_path) { File.join(SPEC_FOLDER, 'samples/02-components') }
 
   describe '.components' do
     subject { instance.components }

@@ -1,0 +1,9 @@
+{
+  "source": "#noq/card",
+  "custom_html": {
+    "html": null,
+    "body": null
+  },
+  "tailwind_config": {
+  }
+}
