@@ -4,7 +4,7 @@ require 'spec_helper'
 
 RSpec.describe TailwindDsl::Etl::ComponentStructures::Generator do
   include_context :use_temp_folder
-  include_context :has_configured_uikit
+  include_context :get_uikit
 
   subject { instance }
 
@@ -31,8 +31,8 @@ RSpec.describe TailwindDsl::Etl::ComponentStructures::Generator do
       expect(subject.first)
         .to have_attributes(design_system: have_attributes(name: 'tui'))
         .and have_attributes(group: have_attributes(key: 'marketing.section.cta'))
-        .and have_attributes(absolute_path: have_attributes(source_file: end_with('marketing/section/cta/03.html')))
-        .and have_attributes(relative_path: have_attributes(source_file: end_with('marketing/section/cta/03.html')))
+        .and have_attributes(absolute: have_attributes(source_file: end_with('marketing/section/cta/03.html')))
+        .and have_attributes(relative: have_attributes(source_file: end_with('marketing/section/cta/03.html')))
     end
   end
 

@@ -33,30 +33,33 @@ module TailwindDsl
           :target_astro_file, keyword_init: true
         )
 
-        class Record
+        class Component
+          attr_reader :name
           attr_reader :design_system
           attr_reader :group
-          attr_reader :absolute_path
-          attr_reader :relative_path
+          attr_reader :absolute
+          attr_reader :relative
 
           # Storage buckets for data that is extracted from the source file
           attr_accessor :captured_comment_text
           attr_accessor :captured_comment_list
           attr_accessor :captured_tailwind_config
 
-          def initialize(design_system:, group:, absolute_path:, relative_path:)
+          def initialize(name:, design_system:, group:, absolute:, relative:)
+            @name = name
             @design_system = design_system
             @group = group
-            @absolute_path = absolute_path
-            @relative_path = relative_path
+            @absolute = absolute
+            @relative = relative
           end
 
           def to_h
             {
+              name: name,
               design_system: design_system.to_h,
               group: group.to_h,
-              absolute_path: absolute_path.to_h,
-              relative_path: relative_path.to_h
+              absolute: absolute.to_h,
+              relative: relative.to_h
             }
           end
         end
@@ -67,7 +70,7 @@ module TailwindDsl
         # Location for component structures
         attr_reader :target_root_path
         attr_reader :current_design_system
-        attr_reader :records
+        attr_reader :components
 
         def initialize(uikit, **args)
           @uikit = uikit
@@ -83,34 +86,37 @@ module TailwindDsl
         end
 
         def call
-          @records = build_records
+          @components = build_components
 
           self
         end
 
-        # Flattened list of records in hash format
+        # Flattened list of components in hash format
         # @return [Array<Hash>] list
         def to_h
-          records.map(&:to_h)
+          components.map(&:to_h)
         end
 
         private
 
-        def build_records
+        # rubocop:disable Metrics/AbcSize
+        def build_components
           uikit.design_systems.flat_map do |design_system|
             @current_design_system = design_system
             design_system.groups.flat_map do |group|
               group.files.map do |file|
-                Record.new(
+                Component.new(
+                  name: file.file_name_only,
                   design_system: DesignSystem.new(**map_design_system),
                   group: Group.new(**map_group(group)),
-                  absolute_path: FilePath.new(**map_absolute_file(file)),
-                  relative_path: FilePath.new(**map_relative_file(file))
+                  absolute: FilePath.new(**map_absolute_file(file)),
+                  relative: FilePath.new(**map_relative_file(file))
                 )
               end
             end
           end
         end
+        # rubocop:enable Metrics/AbcSize
 
         def design_system_name
           current_design_system.name

@@ -57,17 +57,18 @@ module TailwindDsl
         def query_components
           RawComponentQuery.query(uikit,
                                   source_root_path: source_root_path,
-                                  target_root_path: target_root_path).records
+                                  target_root_path: target_root_path)
+                           .components
         end
 
         def process_components
           @components.each do |component|
-            unless File.exist?(component.absolute_path.source_file)
-              puts "Source file does not exist: #{component.absolute_path.source_file}"
+            unless File.exist?(component.absolute.source_file)
+              puts "Source file does not exist: #{component.absolute.source_file}"
               next
             end
 
-            # puts "DSN: #{component.design_system.name}, GRP: #{component.group.type}, FILE: #{component.relative_path.source_file}"
+            # puts "DSN: #{component.design_system.name}, GRP: #{component.group.type}, FILE: #{component.relative.source_file}"
 
             process_component(component)
           end
@@ -117,23 +118,23 @@ module TailwindDsl
           # rules:
           # if the html file exists, then read the settings file, if the settings has html overwrite, then overwrite the html file
           # overwrite = true
-          FileUtils.cp_r(component.absolute_path.source_file, component.absolute_path.target_html_file, remove_destination: true) # if overwrite
+          FileUtils.cp_r(component.absolute.source_file, component.absolute.target_html_file, remove_destination: true) # if overwrite
         end
 
         def create_clean_html_file(component)
-          html = File.read(component.absolute_path.source_file) || ''
+          html = File.read(component.absolute.source_file) || ''
           component.captured_comment_list = html.scan(COMMENT_REGEX)
           component.captured_comment_text = component.captured_comment_list.join("\n")
 
           html = html.gsub(COMMENT_REGEX, '').gsub(BLANK_LINE_REGEX, "\n").lstrip
 
-          File.write(component.absolute_path.target_clean_html_file, html)
+          File.write(component.absolute.target_clean_html_file, html)
         end
 
         def create_tailwind_config_file(component)
           component.captured_tailwind_config = extract_tailwind_config(component)
 
-          File.write(component.absolute_path.target_tailwind_config_file, component.captured_tailwind_config) if component.captured_tailwind_config
+          File.write(component.absolute.target_tailwind_config_file, component.captured_tailwind_config) if component.captured_tailwind_config
         end
 
         def create_settings_file(component)
@@ -169,7 +170,7 @@ module TailwindDsl
             tailwind_config: tailwind_config_settings(component.captured_tailwind_config)
           }
 
-          File.write(component.absolute_path.target_settings_file, JSON.pretty_generate(settings))
+          File.write(component.absolute.target_settings_file, JSON.pretty_generate(settings))
         end
 
         def extract_tailwind_config(component)
