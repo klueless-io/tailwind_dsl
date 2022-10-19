@@ -1,3 +1,10 @@
+## [0.0.16](https://github.com/klueless-io/tailwind_dsl/compare/v0.0.15...v0.0.16) (2022-10-19)
+
+
+### Bug Fixes
+
+* refactor component record shape ([fada95e](https://github.com/klueless-io/tailwind_dsl/commit/fada95e8990b991d7fa554d6250f85b7a440e0e9))
+
 ## [0.0.15](https://github.com/klueless-io/tailwind_dsl/compare/v0.0.14...v0.0.15) (2022-10-18)
 
 
