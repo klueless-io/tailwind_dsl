@@ -18,7 +18,7 @@ module TailwindDsl
         BLANK_LINE_REGEX = /(\n\s*\n)+/.freeze
         TAILWIND_CONFIG_REGEX = /```(?<tailwind>\n[\s\S]+?)```/.freeze
 
-        TRANSIENT_FILE_EXTENSIONS = %w[clean.html html settings.json tailwind.config.js].freeze
+        TRANSIENT_FILE_EXTENSIONS = %w[.clean.html .html .settings.json .tailwind.config.js].freeze
 
         attr_reader :uikit
         attr_reader :components
@@ -63,11 +63,10 @@ module TailwindDsl
         def transient_file?(path)
           return false if File.directory?(path)
 
-          file_parts = File.basename(path).split('.', 2)
+          ext = File.basename(path).split('.', 2)[1]
+          ext = ext.nil? ? '' : ".#{ext}"
 
-          return false if file_parts.length != 2
-
-          TRANSIENT_FILE_EXTENSIONS.include?(file_parts[1])
+          TRANSIENT_FILE_EXTENSIONS.include?(ext)
         end
 
         def query_components

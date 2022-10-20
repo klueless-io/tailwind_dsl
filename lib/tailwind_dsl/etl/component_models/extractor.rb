@@ -7,8 +7,7 @@ module TailwindDsl
         def extract_data(component)
           puts "extract data for #{component} using GPT3"
         end
-        end
-      
+
         def extract_model(component)
           puts "extract model for #{component} using GPT3"
         end

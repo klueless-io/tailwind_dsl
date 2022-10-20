@@ -86,7 +86,7 @@ RSpec.describe TailwindDsl::Etl::ComponentModels::Extractor do
 
     before { instance.extract }
 
-    fit { subject }
+    it { subject }
   end
 
   # context 'examples' do
