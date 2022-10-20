@@ -13,7 +13,6 @@ module TailwindDsl
           puts "extract model for #{component} using GPT3"
         end
       end
-      end
 
       # Extract component models by reading the cleansed component HTML and then using GPT3 to infer both the data/model structure.
       class Extractor
