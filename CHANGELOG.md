@@ -1,3 +1,12 @@
+## [0.0.18](https://github.com/klueless-io/tailwind_dsl/compare/v0.0.17...v0.0.18) (2022-10-20)
+
+
+### Bug Fixes
+
+* minor refactor on long extensions ([70615ad](https://github.com/klueless-io/tailwind_dsl/commit/70615adc3bb37267e930ac36b92472f8b054f2d7))
+* resetting root path will remove transient files and empty directories, but not custom files ([07ef5ae](https://github.com/klueless-io/tailwind_dsl/commit/07ef5ae71fda4a92b9a9312f3f4de2bca7151505))
+* resetting root path will remove transient files and empty directories, but not custom files ([e546bed](https://github.com/klueless-io/tailwind_dsl/commit/e546bed751f4e996802340a6573b68663224d555))
+
 ## [0.0.17](https://github.com/klueless-io/tailwind_dsl/compare/v0.0.16...v0.0.17) (2022-10-19)
 
 
