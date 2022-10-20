@@ -7,31 +7,42 @@ module TailwindDsl
       #
       # This is a two pass process:
       #  1. Query the raw component folder for all files that match the pattern and build up a graph with required information
+
+      # puts '%-20s %s' % ['name', name]
+      # puts '%-20s %s' % ['source_path', source_path]
+      # puts '%-20s %s' % ['target_path', target_path]
       #  2. Flatten the graph into a list of rows
       class RawComponentQuery
-        DesignSystem = Struct.new(
-          :name,
-          :source_path,
-          :target_path,
-          keyword_init: true
-        )
+        DesignSystem = Struct.new(:name, :source_path, :target_path, keyword_init: true) do
+          def debug
+            puts format('%-30<key>s : %<value>s', key: 'Design system', value: name)
+            puts format('%-30<key>s : %<value>s', key: 'Source path', value: source_path)
+            puts format('%-30<key>s : %<value>s', key: 'Target path', value: target_path)
+          end
+        end
 
-        Group = Struct.new(
-          :key,
-          :type,
-          :sub_keys,
-          :folder,
-          keyword_init: true
-        )
-        FilePath = Struct.new(
-          :source_file,
-          :target_html_file,
-          :target_clean_html_file,
-          :target_tailwind_config_file,
-          :target_settings_file,
-          :target_data_file,
-          :target_astro_file, keyword_init: true
-        )
+        Group = Struct.new(:key, :type, :sub_keys, :folder, keyword_init: true) do
+          def debug
+            puts format('%-30<key>s : %<value>s', key: 'Group key', value: key)
+            puts format('%-30<key>s : %<value>s', key: 'Group type', value: type)
+            puts format('%-30<key>s : %<value>s', key: 'Group sub keys', value: sub_keys)
+            puts format('%-30<key>s : %<value>s', key: 'Group folder', value: folder)
+          end
+        end
+        FilePath = Struct.new(:source_file, :target_html_file, :target_clean_html_file, :target_tailwind_config_file, :target_settings_file, :target_data_file, :target_astro_file,
+                              keyword_init: true) do
+          # rubocop:disable Metrics/AbcSize
+          def debug
+            puts format('%-30<key>s : %<value>s', key: 'Source file', value: source_file)
+            puts format('%-30<key>s : %<value>s', key: 'Target html file', value: target_html_file)
+            puts format('%-30<key>s : %<value>s', key: 'Target clean html file', value: target_clean_html_file)
+            puts format('%-30<key>s : %<value>s', key: 'Target tailwind config file', value: target_tailwind_config_file)
+            puts format('%-30<key>s : %<value>s', key: 'Target settings file', value: target_settings_file)
+            puts format('%-30<key>s : %<value>s', key: 'Target data file', value: target_data_file)
+            puts format('%-30<key>s : %<value>s', key: 'Target astro file', value: target_astro_file)
+          end
+          # rubocop:enable Metrics/AbcSize
+        end
 
         class Component
           attr_reader :name
@@ -61,6 +72,16 @@ module TailwindDsl
               absolute: absolute.to_h,
               relative: relative.to_h
             }
+          end
+
+          def debug
+            puts format('%-30<key>s : %<value>s', key: 'Component', value: name)
+            design_system.debug
+            group.debug
+            puts ':: Absolute paths'
+            absolute.debug
+            puts '::Relative paths'
+            relative.debug
           end
         end
 

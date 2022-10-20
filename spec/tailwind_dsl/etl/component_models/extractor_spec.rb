@@ -2,6 +2,16 @@
 
 require 'spec_helper'
 
+class FakeExtractor
+  def extract_data(component)
+    puts "extract data for #{component}"
+  end
+
+  def extract_model(component)
+    puts "extract model for #{component}"
+  end
+end
+
 RSpec.describe TailwindDsl::Etl::ComponentModels::Extractor do
   include_context :use_temp_folder
   include_context :get_uikit
@@ -11,7 +21,7 @@ RSpec.describe TailwindDsl::Etl::ComponentModels::Extractor do
   let(:raw_component_root_path) { File.join(SPEC_FOLDER, 'samples/components') }
   let(:component_structure_root_path) { File.join(temp_folder, 'components') }
   let(:component_model_root_path) { File.join(temp_folder, 'components') }
-  let(:dry_run) { false }
+  let(:extract_handler) { FakeExtractor }
 
   let(:components) do
     TailwindDsl::Etl::ComponentStructures::RawComponentQuery.query(uikit,
@@ -27,7 +37,7 @@ RSpec.describe TailwindDsl::Etl::ComponentModels::Extractor do
       batch_size: 1,
       use_prompt: false,
       filter_design_system: 'tui',
-      dry_run: dry_run
+      extract_handler: extract_handler
     )
   end
 
@@ -64,19 +74,19 @@ RSpec.describe TailwindDsl::Etl::ComponentModels::Extractor do
       it { is_expected.to eq('tui') }
     end
 
-    context '.dry_run' do
-      subject { instance.dry_run }
+    context '.extract_handler' do
+      subject { instance.extract_handler }
 
-      it { is_expected.to eq(false) }
+      it { is_expected.to be_a(FakeExtractor) }
     end
   end
 
   describe '#extract' do
-    let(:dry_run) { true }
+    let(:extract_handler) { FakeExtractor }
 
     before { instance.extract }
 
-    it { subject }
+    fit { subject }
   end
 
   # context 'examples' do

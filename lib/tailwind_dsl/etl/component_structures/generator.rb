@@ -18,7 +18,8 @@ module TailwindDsl
         BLANK_LINE_REGEX = /(\n\s*\n)+/.freeze
         TAILWIND_CONFIG_REGEX = /```(?<tailwind>\n[\s\S]+?)```/.freeze
 
-        # .gsub(/(\n\s*\n)+/, "\n")
+        TRANSIENT_FILE_EXTENSIONS = %w[clean.html html settings.json tailwind.config.js].freeze
+
         attr_reader :uikit
         attr_reader :components
         # Location for raw components
@@ -37,7 +38,7 @@ module TailwindDsl
         def generate
           assert_target_root_path_exists
 
-          delete_target_root_path if reset_root_path
+          clear_root_path if reset_root_path
 
           @components = query_components
 
@@ -50,8 +51,23 @@ module TailwindDsl
           raise 'Target path does not exist' unless Dir.exist?(target_root_path)
         end
 
-        def delete_target_root_path
-          FileUtils.rm_rf(Dir.glob("#{target_root_path}/*"))
+        def clear_root_path
+          Dir.glob("#{target_root_path}/**/*")
+             .select { |path| transient_file?(path) }
+             .each { |path| File.delete(path) }
+
+          Dir.glob("#{target_root_path}/**/")
+             .reverse_each { |d| Dir.rmdir d if Dir.entries(d).size == 2 }
+        end
+
+        def transient_file?(path)
+          return false if File.directory?(path)
+
+          file_parts = File.basename(path).split('.', 2)
+
+          return false if file_parts.length != 2
+
+          TRANSIENT_FILE_EXTENSIONS.include?(file_parts[1])
         end
 
         def query_components

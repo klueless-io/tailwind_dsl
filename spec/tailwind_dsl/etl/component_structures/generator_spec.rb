@@ -2,6 +2,17 @@
 
 require 'spec_helper'
 
+# Generated files are transient, because they can be regenerated at any time
+GEN_CLEAN_HTML  = '01.clean.html'
+GEN_HTML        = '01.html'
+GEN_SETTINGS    = '01.settings.json'
+GEN_TAILWIND    = '01.tailwind.config.js'
+
+# Extracted files are not transient, because they use AI and sometimes manual editing.
+# Once these files are created, they should not be automatically removed.
+EXT_DATA        = '01.data.json'
+EXT_MODEL       = '01.model.rb'
+
 RSpec.describe TailwindDsl::Etl::ComponentStructures::Generator do
   include_context :use_temp_folder
   include_context :get_uikit
@@ -77,9 +88,77 @@ RSpec.describe TailwindDsl::Etl::ComponentStructures::Generator do
 
       before do
         FileUtils.mkdir_p(File.join(target_root_path, 'a', 'b', 'c'))
+        FileUtils.mkdir_p(File.join(target_root_path, 'b', 'generated_only', 'b'))
+        FileUtils.mkdir_p(File.join(target_root_path, 'c', 'c', 'extract_only'))
+        FileUtils.mkdir_p(File.join(target_root_path, 'd', 'generated_only', 'extract_only'))
+        FileUtils.mkdir_p(File.join(target_root_path, 'e', 'generated_and_extract'))
+        FileUtils.mkdir_p(File.join(target_root_path, 'f', 'edge_cases'))
+
+        # Rules for on reset root path. These rules relate to what folders should be left after reset
+        # a/b/c                           - no files                          - all folders should be deleted
+        # b/generated_only/b              - has generated files               - folder and files should be deleted
+        # b/generated_only                -                                   - folder should be deleted
+        # b                               -                                   - folder should be deleted
+        # c/c/extract_only                - has extracted files               - extracted files should exist, folder should not be deleted
+        # c/c                             -                                   - folder should not be deleted
+        # c                               -                                   - folder should not be deleted
+        # d/generated_only/extract_only   - has extracted files               - extracted files should exist, folder should not be deleted
+        # d/generated_only                - has generated files               - generated files should be cleared, folder should not be deleted
+        # d/                              -                                   - folder should not be deleted
+        # e/generated_and_extract         - has generated and extracted files - generated files should be cleared, extracted files should exist, folder should not be deleted
+        # e                               -                                   - folder should not be deleted
+        # f/edge_cases/xmen.txt           -                                   - file with extension should not be deleted
+        # f/edge_cases/xmen               -                                   - file with no extension should not deleted
+        # f/edge_cases/html               -                                   - file with name that looks like an extension should not be deleted
+
+        FileUtils.touch b1_generated
+        FileUtils.touch b2_generated
+        FileUtils.touch b3_generated
+        FileUtils.touch b4_generated
+
+        FileUtils.touch c1_extracted
+        FileUtils.touch c2_extracted
+
+        FileUtils.touch d1_extracted
+        FileUtils.touch d2_generated
+
+        FileUtils.touch e1_generated
+        FileUtils.touch e2_extracted
+
+        FileUtils.touch f1_edge_case
+        FileUtils.touch f2_edge_case
+        FileUtils.touch f3_edge_case
 
         instance.generate
       end
+
+      let(:b1_generated) { File.join(target_root_path, 'b', 'generated_only', 'b', GEN_CLEAN_HTML) }
+      let(:b2_generated) { File.join(target_root_path, 'b', 'generated_only', 'b', GEN_HTML) }
+      let(:b3_generated) { File.join(target_root_path, 'b', 'generated_only', 'b', GEN_SETTINGS) }
+      let(:b4_generated) { File.join(target_root_path, 'b', 'generated_only', 'b', GEN_TAILWIND) }
+
+      let(:c1_extracted) { File.join(target_root_path, 'c', 'c', 'extract_only', EXT_DATA) }
+      let(:c2_extracted) { File.join(target_root_path, 'c', 'c', 'extract_only', EXT_MODEL) }
+
+      let(:d1_extracted) { File.join(target_root_path, 'd', 'generated_only', 'extract_only', EXT_DATA) }
+      let(:d2_generated) { File.join(target_root_path, 'd', 'generated_only', GEN_CLEAN_HTML) }
+
+      let(:e1_generated) { File.join(target_root_path, 'e', 'generated_and_extract', GEN_CLEAN_HTML) }
+      let(:e2_extracted) { File.join(target_root_path, 'e', 'generated_and_extract', EXT_DATA) }
+
+      let(:f1_edge_case) { File.join(target_root_path, 'f', 'edge_cases', 'xmen.txt') }
+      let(:f2_edge_case) { File.join(target_root_path, 'f', 'edge_cases', 'ymen') }
+      let(:f3_edge_case) { File.join(target_root_path, 'f', 'edge_cases', 'html') }
+
+      # Generated files include
+      # *.clean.html
+      # *.html
+      # *.settings.json
+      # *.tailwind.config.js
+
+      # Extracted or manually modified files include
+      # *.data.json
+      # *.model.rb
 
       context 'when reset_root_path is false' do
         let(:reset_root_path) { false }
@@ -92,8 +171,58 @@ RSpec.describe TailwindDsl::Etl::ComponentStructures::Generator do
       context 'when reset_root_path is true' do
         let(:reset_root_path) { true }
 
-        it 'deletes the content under root path' do
-          expect(File.exist?(File.join(target_root_path, 'a', 'b', 'c'))).to be false
+        # c/c/extract_only                - has extracted files               - extracted files should exist, folder should not be deleted
+        # c/c                             -                                   - folder should not be deleted
+        # c                               -                                   - folder should not be deleted
+        # d/generated_only/extract_only   - has extracted files               - extracted files should exist, folder should not be deleted
+        # d/generated_only                - has generated files               - generated files should be cleared, folder should not be deleted
+        # d/                              -                                   - folder should not be deleted
+        # e/generated_and_extract         - has generated and extracted files - generated files should be cleared, extracted files should exist, folder should not be deleted
+        # e                               -                                   - folder should not be deleted
+        # f/edge_cases/xmen.txt           -                                   - file with extension should not be deleted
+        # f/edge_cases/xmen               -                                   - file with no extension should not deleted
+        # f/edge_cases/html               -                                   - file with name that looks like an extension should not be deleted
+        # f/edge_cases                    -                                   - folder should not be deleted
+
+        it 'deletes any empty folders' do
+          expect(Dir.exist?(target_root_path)).to be true
+          # a/b/c                           - no files                          - all folders should be deleted
+          expect(Dir.exist?(File.join(target_root_path, 'a', 'b', 'c'))).to be false
+
+          # b                               -                                   - folder should be deleted
+          expect(Dir.exist?(File.join(target_root_path, 'b'))).to be false
+
+          # c                               -                                   - folder should not be deleted
+          expect(Dir.exist?(File.join(target_root_path, 'c', 'c', 'extract_only'))).to be true
+
+          # d/generated_only/extract_only   - has extracted files               - extracted files should exist, folder should not be deleted
+          expect(Dir.exist?(File.join(target_root_path, 'd', 'generated_only', 'extract_only'))).to be true
+
+          expect(Dir.exist?(File.join(target_root_path, 'e', 'generated_and_extract'))).to be true
+        end
+
+        it 'deletes transient files only' do
+          expect(File.exist?(b1_generated)).to be false
+          expect(File.exist?(b2_generated)).to be false
+          expect(File.exist?(b3_generated)).to be false
+          expect(File.exist?(b4_generated)).to be false
+
+          expect(File.exist?(d2_generated)).to be false
+
+          expect(File.exist?(e1_generated)).to be false
+        end
+
+        it 'does not delete extracted files or unknown file types' do
+          expect(File.exist?(c1_extracted)).to be true
+          expect(File.exist?(c2_extracted)).to be true
+
+          expect(File.exist?(d1_extracted)).to be true
+
+          expect(File.exist?(e2_extracted)).to be true
+
+          expect(File.exist?(f1_edge_case)).to be true
+          expect(File.exist?(f2_edge_case)).to be true
+          expect(File.exist?(f3_edge_case)).to be true
         end
       end
     end
