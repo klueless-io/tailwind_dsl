@@ -1,3 +1,10 @@
+## [0.0.19](https://github.com/klueless-io/tailwind_dsl/compare/v0.0.18...v0.0.19) (2022-10-21)
+
+
+### Bug Fixes
+
+* update file locations ([db95e15](https://github.com/klueless-io/tailwind_dsl/commit/db95e15dd7d08f765113ca4f6c9a00eda3cfc661))
+
 ## [0.0.18](https://github.com/klueless-io/tailwind_dsl/compare/v0.0.17...v0.0.18) (2022-10-20)
 
 
