@@ -3,15 +3,15 @@
 module TailwindDsl
   module Etl
     module RawComponents
-      # NOTE: Director is badly named.
+      # NOTE: Load is badly named.
 
-      # Use the Director to build the UiKit which will store the JSON representations of each Design System plus components.
+      # Use the Load to build the UiKit which will store the JSON representations of each Design System plus components.
       #
       # This is a raw representation of the source.
       #
       # This data structure will be used by the component transformer to build
       # auxiliary data structures for components such as clean HTML, Astro, data shapes.
-      class Director
+      class Load
         attr_reader :uikit
 
         def initialize

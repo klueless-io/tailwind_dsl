@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-RSpec.describe TailwindDsl::Etl::RawComponents::Director do
+RSpec.describe TailwindDsl::Etl::RawComponents::Load do
   subject { instance }
 
   let(:instance) { described_class.new }

@@ -5,7 +5,7 @@ require 'cmdlet'
 require_relative 'tailwind_dsl/version'
 # require_relative '_'
 
-require_relative 'tailwind_dsl/etl/raw_components/director'
+require_relative 'tailwind_dsl/etl/raw_components/load'
 require_relative 'tailwind_dsl/etl/raw_components/transformer'
 
 require_relative 'tailwind_dsl/etl/element'
