@@ -51,24 +51,6 @@ module TailwindDsl
           raise 'Target path does not exist' unless Dir.exist?(target_root_path)
         end
 
-        def clear_root_path
-          Dir.glob("#{target_root_path}/**/*")
-             .select { |path| transient_file?(path) }
-             .each { |path| File.delete(path) }
-
-          Dir.glob("#{target_root_path}/**/")
-             .reverse_each { |d| Dir.rmdir d if Dir.entries(d).size == 2 }
-        end
-
-        def transient_file?(path)
-          return false if File.directory?(path)
-
-          ext = File.basename(path).split('.', 2)[1]
-          ext = ext.nil? ? '' : ".#{ext}"
-
-          TRANSIENT_FILE_EXTENSIONS.include?(ext)
-        end
-
         def query_components
           RawComponentQuery.query(uikit,
                                   source_root_path: source_root_path,
@@ -215,6 +197,24 @@ module TailwindDsl
               typography: raw_tailwind_config.include?("require('@tailwindcss/typography')")
             }
           }
+        end
+
+        def clear_root_path
+          Dir.glob("#{target_root_path}/**/*")
+             .select { |path| transient_file?(path) }
+             .each { |path| File.delete(path) }
+
+          Dir.glob("#{target_root_path}/**/")
+             .reverse_each { |d| Dir.rmdir d if Dir.entries(d).size == 2 }
+        end
+
+        def transient_file?(path)
+          return false if File.directory?(path)
+
+          ext = File.basename(path).split('.', 2)[1]
+          ext = ext.nil? ? '' : ".#{ext}"
+
+          TRANSIENT_FILE_EXTENSIONS.include?(ext)
         end
       end
     end

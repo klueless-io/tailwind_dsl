@@ -27,6 +27,7 @@
                 "tailwind_config_file": "marketing/section/cta/03.tailwind.config.js",
                 "settings_file": "marketing/section/cta/03.settings.json",
                 "data_file": "marketing/section/cta/03.data.json",
+                "model_file": "marketing/section/cta/03.model.rb",
                 "astro_file": "marketing/section/cta/03.astro"
               }
             },
@@ -41,6 +42,7 @@
                 "tailwind_config_file": "marketing/section/cta/02.tailwind.config.js",
                 "settings_file": "marketing/section/cta/02.settings.json",
                 "data_file": "marketing/section/cta/02.data.json",
+                "model_file": "marketing/section/cta/02.model.rb",
                 "astro_file": "marketing/section/cta/02.astro"
               }
             },
@@ -55,6 +57,7 @@
                 "tailwind_config_file": "marketing/section/cta/01.tailwind.config.js",
                 "settings_file": "marketing/section/cta/01.settings.json",
                 "data_file": "marketing/section/cta/01.data.json",
+                "model_file": "marketing/section/cta/01.model.rb",
                 "astro_file": "marketing/section/cta/01.astro"
               }
             }
@@ -88,6 +91,7 @@
                 "tailwind_config_file": "card/style1.tailwind.config.js",
                 "settings_file": "card/style1.settings.json",
                 "data_file": "card/style1.data.json",
+                "model_file": "card/style1.model.rb",
                 "astro_file": "card/style1.astro"
               }
             },
@@ -102,6 +106,7 @@
                 "tailwind_config_file": "card/style2.tailwind.config.js",
                 "settings_file": "card/style2.settings.json",
                 "data_file": "card/style2.data.json",
+                "model_file": "card/style2.model.rb",
                 "astro_file": "card/style2.astro"
               }
             }
@@ -126,6 +131,7 @@
                 "tailwind_config_file": "faq/style1.tailwind.config.js",
                 "settings_file": "faq/style1.settings.json",
                 "data_file": "faq/style1.data.json",
+                "model_file": "faq/style1.model.rb",
                 "astro_file": "faq/style1.astro"
               }
             },
@@ -140,6 +146,7 @@
                 "tailwind_config_file": "faq/style2.tailwind.config.js",
                 "settings_file": "faq/style2.settings.json",
                 "data_file": "faq/style2.data.json",
+                "model_file": "faq/style2.model.rb",
                 "astro_file": "faq/style2.astro"
               }
             }

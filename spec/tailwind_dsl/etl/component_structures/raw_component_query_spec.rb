@@ -12,7 +12,7 @@ RSpec.describe TailwindDsl::Etl::ComponentStructures::RawComponentQuery do
                           target_root_path: component_structure_root_path)
   end
 
-  let(:raw_component_root_path) { File.join(SPEC_FOLDER, 'samples/components') }
+  let(:raw_component_root_path) { File.join(SPEC_FOLDER, 'samples/02-components') }
   let(:component_structure_root_path) { File.join(temp_folder, 'components') }
 
   # it do

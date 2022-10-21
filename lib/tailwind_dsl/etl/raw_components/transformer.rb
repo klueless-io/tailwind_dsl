@@ -108,6 +108,7 @@ module TailwindDsl
             tailwind_config_file: "#{key}.tailwind.config.js",
             settings_file: "#{key}.settings.json",
             data_file: "#{key}.data.json",
+            model_file: "#{key}.model.rb",
             astro_file: "#{key}.astro"
           )
         end

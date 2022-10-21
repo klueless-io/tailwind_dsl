@@ -6,7 +6,7 @@ RSpec.describe TailwindDsl::Etl::RawComponents::Director do
   subject { instance }
 
   let(:instance) { described_class.new }
-  let(:component_path) { File.join(SPEC_FOLDER, 'samples/components') }
+  let(:component_path) { File.join(SPEC_FOLDER, 'samples/01-raw_components') }
 
   context 'initialize' do
     it { is_expected.to be_a described_class }

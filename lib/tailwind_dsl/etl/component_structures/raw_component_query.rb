@@ -29,8 +29,18 @@ module TailwindDsl
             puts format('%-30<key>s : %<value>s', key: 'Group folder', value: folder)
           end
         end
-        FilePath = Struct.new(:source_file, :target_html_file, :target_clean_html_file, :target_tailwind_config_file, :target_settings_file, :target_data_file, :target_astro_file,
-                              keyword_init: true) do
+
+        FilePath = Struct.new(
+          :source_file,
+          :target_html_file,
+          :target_clean_html_file,
+          :target_tailwind_config_file,
+          :target_settings_file,
+          :target_data_file,
+          :target_model_file,
+          :target_astro_file,
+          keyword_init: true
+        ) do
           # rubocop:disable Metrics/AbcSize
           def debug
             puts format('%-30<key>s : %<value>s', key: 'Source file', value: source_file)
@@ -39,6 +49,7 @@ module TailwindDsl
             puts format('%-30<key>s : %<value>s', key: 'Target tailwind config file', value: target_tailwind_config_file)
             puts format('%-30<key>s : %<value>s', key: 'Target settings file', value: target_settings_file)
             puts format('%-30<key>s : %<value>s', key: 'Target data file', value: target_data_file)
+            puts format('%-30<key>s : %<value>s', key: 'Target model file', value: target_model_file)
             puts format('%-30<key>s : %<value>s', key: 'Target astro file', value: target_astro_file)
           end
           # rubocop:enable Metrics/AbcSize
@@ -176,6 +187,7 @@ module TailwindDsl
             target_tailwind_config_file: file.target.tailwind_config_file,
             target_settings_file: file.target.settings_file,
             target_data_file: file.target.data_file,
+            target_model_file: file.target.model_file,
             target_astro_file: file.target.astro_file
           }
         end
@@ -189,6 +201,7 @@ module TailwindDsl
             target_tailwind_config_file: File.join(target_path, file.target.tailwind_config_file),
             target_settings_file: File.join(target_path, file.target.settings_file),
             target_data_file: File.join(target_path, file.target.data_file),
+            target_model_file: File.join(target_path, file.target.model_file),
             target_astro_file: File.join(target_path, file.target.astro_file)
           }
         end

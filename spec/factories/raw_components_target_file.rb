@@ -10,6 +10,7 @@ FactoryBot.define do
     tailwind_config_file  { 'ecommerce/page/product-pages/03.tailwind.config.js' }
     settings_file         { 'ecommerce/page/product-pages/03.settings.json' }
     data_file             { 'ecommerce/page/product-pages/03.data.json' }
+    model_file            { 'ecommerce/page/product-pages/03.model.rb' }
     astro_file            { 'ecommerce/page/product-pages/03.astro' }
   end
 end

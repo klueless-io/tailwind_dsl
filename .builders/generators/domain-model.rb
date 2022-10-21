@@ -216,6 +216,7 @@ KManager.action :domain_model do
             .field(:tailwind_config_file  , type: :string)
             .field(:settings_file         , type: :string)
             .field(:data_file             , type: :string)
+            .field(:model_file            , type: :string)
             .field(:astro_file            , type: :string)
         end
 

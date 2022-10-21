@@ -12,6 +12,7 @@ module TailwindDsl
         attr_accessor :tailwind_config_file
         attr_accessor :settings_file
         attr_accessor :data_file
+        attr_accessor :model_file
         attr_accessor :astro_file
 
         def initialize(**args)
@@ -20,6 +21,7 @@ module TailwindDsl
           @tailwind_config_file = grab_arg(args, :tailwind_config_file, guard: 'Missing tailwind_config_file')
           @settings_file = grab_arg(args, :settings_file, guard: 'Missing settings_file')
           @data_file = grab_arg(args, :data_file, guard: 'Missing data_file')
+          @model_file = grab_arg(args, :model_file) # , guard: 'Missing model_file')
           @astro_file = grab_arg(args, :astro_file, guard: 'Missing astro_file')
         end
 
@@ -30,6 +32,7 @@ module TailwindDsl
             tailwind_config_file: tailwind_config_file,
             settings_file: settings_file,
             data_file: data_file,
+            model_file: model_file,
             astro_file: astro_file
           }
         end
