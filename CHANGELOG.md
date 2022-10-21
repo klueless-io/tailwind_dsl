@@ -1,3 +1,10 @@
+## [0.0.20](https://github.com/klueless-io/tailwind_dsl/compare/v0.0.19...v0.0.20) (2022-10-21)
+
+
+### Bug Fixes
+
+* rename director to load ([db85a1b](https://github.com/klueless-io/tailwind_dsl/commit/db85a1b85804390865ec66dabe9d7561767c6578))
+
 ## [0.0.19](https://github.com/klueless-io/tailwind_dsl/compare/v0.0.18...v0.0.19) (2022-10-21)
 
 
