@@ -1,0 +1,10 @@
+{
+  "heading": "Ready to dive in?",
+  "subheading": "Start your free trial today.",
+  "text": "Ac euismod vel sit maecenas id pellentesque eu sed consectetur. Malesuada adipiscing sagittis vel nulla nec.",
+  "button": {
+    "text": "Sign up for free",
+    "url": "#"
+  },
+  "imageUrl": "https://tailwindui.com/img/component-images/full-width-with-sidebar.jpg"
+}
