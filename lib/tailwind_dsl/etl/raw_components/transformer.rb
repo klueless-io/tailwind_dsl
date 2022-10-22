@@ -31,7 +31,7 @@ module TailwindDsl
         private
 
         def process_files
-          glob = File.join(path, '**', '*')
+          glob = File.join(path, '**', '*.html')
 
           Dir.glob(glob) do |entry|
             next if reject?(entry)
