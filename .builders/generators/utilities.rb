@@ -20,7 +20,7 @@ KManager.action :utilities do
         target_component_model_path = k_builder.target_folders.get(:component_models)
 
         # Builds the design_system.json by reading all the HTML templates for every UIKit found the source_component_path
-        uikit = helpers.build_design_systems(source_component_path)
+        uikit = helpers.load_design_systems(source_component_path)
 
         add('design_system.json', content: JSON.pretty_generate(uikit.to_h))
 
@@ -49,16 +49,16 @@ KManager.action :utilities do
 
   end
 
-  def build_design_systems(source_component_path)
-    director = TailwindDsl::Etl::RawComponents::Director.new
+  def load_design_systems(source_component_path)
+    loader = TailwindDsl::Etl::RawComponents::Load.new
 
-    director.add_design_system(File.join(source_component_path, 'tui'))
-    # director.add_design_system(File.join(source_component_path, 'codepen'))
-    # director.add_design_system(File.join(source_component_path, 'devdojo'))
-    # director.add_design_system(File.join(source_component_path, 'merakiui'))
-    # director.add_design_system(File.join(source_component_path, 'noq'))
-    # director.add_design_system(File.join(source_component_path, 'starter-kit'))
-    director.uikit
+    loader.add_design_system(File.join(source_component_path, 'tui'))
+    # loader.add_design_system(File.join(source_component_path, 'codepen'))
+    # loader.add_design_system(File.join(source_component_path, 'devdojo'))
+    # loader.add_design_system(File.join(source_component_path, 'merakiui'))
+    # loader.add_design_system(File.join(source_component_path, 'noq'))
+    # loader.add_design_system(File.join(source_component_path, 'starter-kit'))
+    loader.uikit
   end
 
   def generate_components(uikit, source_component_path, target_folder, reset_root_path: false)

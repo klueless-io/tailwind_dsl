@@ -5,11 +5,11 @@ module TailwindDsl
     module ComponentModels
       class Gpt3Extractor
         def extract_data(component)
-          puts "extract data for #{component} using GPT3"
+          puts "extract #{component.relative.source_file} to #{component.relative.target_data_file} using GPT3"
         end
 
         def extract_model(component)
-          puts "extract model for #{component} using GPT3"
+          puts "extract #{component.relative.source_file} to #{component.relative.target_model_file} using GPT3"
         end
       end
 
