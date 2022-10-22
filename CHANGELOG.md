@@ -1,3 +1,12 @@
+## [0.0.21](https://github.com/klueless-io/tailwind_dsl/compare/v0.0.20...v0.0.21) (2022-10-22)
+
+
+### Bug Fixes
+
+* add unit tests for extracting data using FakeDataExtrator ([80f32f8](https://github.com/klueless-io/tailwind_dsl/commit/80f32f8b68d2d4a4a9321a62d4d2c92eb6ee5ad0))
+* add unit tests for extracting data using FakeDataExtrator ([088edb1](https://github.com/klueless-io/tailwind_dsl/commit/088edb175f3f35b7e71a1225722676243aca88af))
+* add unit tests for extracting data using FakeDataExtrator ([ef210a6](https://github.com/klueless-io/tailwind_dsl/commit/ef210a6dbc713a2642c1cf0c473684d3227ba9a0))
+
 ## [0.0.20](https://github.com/klueless-io/tailwind_dsl/compare/v0.0.19...v0.0.20) (2022-10-21)
 
 
