@@ -3,6 +3,16 @@
 - Workflows to Extract
 - Translate, Load raw Tailwind HTML Templates into their constituent parts.
 
+## Caveats to be aware of
+
+> If `uikit.json` is out of date, then regenerate `uikit.sample.json` and copy it's contents into `uikit.json`
+
+## Root folders
+
+> If you see `*_root_path`, this means the base file under which multiple design systems reside.
+
+> This is a problem because design systems cannot live in their own locations and it has added complexity to the system, I need to refactor this concept.
+
 ## Flow
 
 - Raw Components

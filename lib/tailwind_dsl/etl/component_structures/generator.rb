@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+# Build/Translate COMPONENT STRUCTURE
+
 module TailwindDsl
   module Etl
     module ComponentStructures

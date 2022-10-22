@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 
+# This is Reusable across concerns, it should be in it's own folder or in the ETL root
+# Rename to component_list or component_query
+
 module TailwindDsl
   module Etl
     module ComponentStructures
@@ -118,7 +121,7 @@ module TailwindDsl
         end
 
         def call
-          @components = build_components
+          @components = build_components.sort_by { |component| [component.design_system.name, component.group.key, component.name] }
 
           self
         end

@@ -18,16 +18,23 @@ module TailwindDsl
         attr_reader :components
         attr_reader :target_root_path
         attr_reader :batch_size
-        attr_reader :batch_left
         attr_reader :use_prompt
         attr_reader :filter_design_system
         attr_reader :extract_handler
 
+        # Create comment for this initialize method
+
+        # @param [Array] components list of components that can be used to extract data
+        # @param [String] target_root_path root directory where the extracted data will be written to, this is the root path for all design systems and groups
+        # @param [Hash] args
+        # @option args [Integer] :batch_size number of components to process, default is 1
+        # @option args [Boolean] :use_prompt console based prompt so the user can guide the extractor, default is false
+        # @option args [String] :filter_design_system name of the design system to filter on, default is nil meaning all
+        # @option args [Class] :extract_handler class that implements the extract_data and extract_model methods, default is Gpt3Extractor
         def initialize(components, target_root_path, **args)
           @components = components
           @target_root_path = target_root_path
           @batch_size = args[:batch_size] || 1
-          @batch_left = batch_size
           @use_prompt = args[:use_prompt] || false
           @filter_design_system = args[:filter_design_system] || nil
           @extract_handler = (args[:extract_handler] || Gpt3Extractor).new
@@ -45,16 +52,17 @@ module TailwindDsl
         #             if :use_prompt is true then display the input/output files and ask if you wish to process the component or skip.
         #             process the component by calling the GPT3 API and save the results to the target folder.
 
-        # rubocop:disable Metrics/AbcSize
         def extract
           guards
 
-          filter_components.each do |component|
-            puts "Processing: #{component.design_system.name} -> #{component.group.key} -> #{component.name} -> remaining#: #{batch_left}"
+          remaining = batch_size
 
-            component.debug
-            # component_model_path = File.join(target_root_path, component.design_system.name, component.group_hierarchy, "#{component.name}.model.rb")
-            # next if File.exist?(component_model_path)
+          filter_components.each do |component|
+            # puts "Processing: #{component.design_system.name} -> #{component.group.key} -> #{component.name} -> remaining#: #{remaining}"
+
+            component_guards(component)
+
+            next if data_file_exist?(component) && model_file_exist?(component)
 
             # if use_prompt
             #   puts "Input: #{component.cleansed_html_path}"
@@ -63,21 +71,13 @@ module TailwindDsl
             #   next unless STDIN.gets.chomp == 'y'
             # end
 
-            # puts "Processing: #{component_model_path}"
+            extract_handler.extract_data(component)   unless data_file_exist?(component)
+            extract_handler.extract_model(component)  unless model_file_exist?(component)
 
-            # next if extract_handler
-
-            # model = Gpt3::ComponentModel.new(component.cleansed_html_path)
-            # model.save(component_model_path)
-
-            extract_handler.extract_data(component)
-            extract_handler.extract_model(component)
-
-            @batch_left -= 1
-            break if batch_left.zero?
+            remaining -= 1
+            break if remaining.zero?
           end
         end
-        # rubocop:enable Metrics/AbcSize
 
         private
 
@@ -88,10 +88,23 @@ module TailwindDsl
           raise 'Extract handler must implement extract_model method' unless extract_handler.respond_to?(:extract_model)
         end
 
+        def component_guards(component)
+          path = File.join(component.design_system.target_path, component.group.folder)
+          raise "Folder does not exist: '#{path}', make sure you run component structure generator first." unless File.exist?(path)
+        end
+
         def filter_components
           return components unless filter_design_system
 
           components.select { |component| component.design_system.name == filter_design_system }
+        end
+
+        def data_file_exist?(component)
+          File.exist?(component.absolute.target_data_file)
+        end
+
+        def model_file_exist?(component)
+          File.exist?(component.absolute.target_model_file)
         end
       end
     end

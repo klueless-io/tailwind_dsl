@@ -6,7 +6,7 @@ RSpec.describe TailwindDsl::Etl::RawComponents::Load do
   subject { instance }
 
   let(:instance) { described_class.new }
-  let(:component_path) { File.join(SPEC_FOLDER, 'samples/01-raw_components') }
+  let(:target_root_path) { File.join(SPEC_FOLDER, 'samples/01-raw_components') }
 
   context 'initialize' do
     it { is_expected.to be_a described_class }
@@ -19,7 +19,7 @@ RSpec.describe TailwindDsl::Etl::RawComponents::Load do
   end
 
   context '#add_design_system' do
-    let(:path) { File.join(component_path, name) }
+    let(:path) { File.join(target_root_path, name) }
     let(:name) { 'tui' }
 
     before { instance.add_design_system(path) }
@@ -32,26 +32,26 @@ RSpec.describe TailwindDsl::Etl::RawComponents::Load do
   end
 
   context 'examples' do
-    let(:output_path) { File.join(SPEC_FOLDER, 'samples/output') }
+    let(:target_root_path) { File.join(SPEC_FOLDER, 'samples/output') }
 
     context 'sample' do
       before do
-        instance.add_design_system(File.join(component_path, 'tui'))
-        instance.add_design_system(File.join(component_path, 'noq'))
+        instance.add_design_system(File.join(target_root_path, 'tui'))
+        instance.add_design_system(File.join(target_root_path, 'noq'))
       end
 
-      it { instance.write(File.join(output_path, 'uikit.sample.json')) }
+      it { instance.write(File.join(target_root_path, 'uikit.sample.json')) }
     end
 
     context 'live' do
-      let(:component_path) { File.expand_path('~/dev/kgems/k_templates/templates/tailwind') }
+      let(:target_root_path) { File.expand_path('~/dev/kgems/k_templates/templates/tailwind') }
 
       before do
-        instance.add_design_system(File.join(component_path, 'tui'))
-        instance.add_design_system(File.join(component_path, 'noq'))
+        instance.add_design_system(File.join(target_root_path, 'tui'))
+        instance.add_design_system(File.join(target_root_path, 'noq'))
       end
 
-      it { instance.write(File.join(output_path, 'uikit.live.json')) }
+      it { instance.write(File.join(target_root_path, 'uikit.live.json')) }
     end
   end
 end

@@ -26,11 +26,11 @@ RSpec.describe TailwindDsl::Etl::ComponentStructures::RawComponentQuery do
     it 'has a list of hash with expected data' do
       expect(subject).to be_a(Array)
       expect(subject.first)
-        .to include(name: '03')
-        .and include(design_system: include(name: 'tui'))
-        .and include(group: include(key: 'marketing.section.cta'))
-        .and include(absolute: include(source_file: end_with('marketing/section/cta/03.html')))
-        .and include(relative: include(source_file: end_with('marketing/section/cta/03.html')))
+        .to include(name: 'style1')
+        .and include(design_system: include(name: 'noq'))
+        .and include(group: include(key: 'card'))
+        .and include(absolute: include(source_file: end_with('card/style1.html')))
+        .and include(relative: include(source_file: end_with('card/style1.html')))
     end
   end
 
@@ -39,11 +39,11 @@ RSpec.describe TailwindDsl::Etl::ComponentStructures::RawComponentQuery do
     it 'has a components with expected data' do
       expect(subject).to be_a(Array)
       expect(subject.first)
-        .to have_attributes(name: '03')
-        .and have_attributes(design_system: have_attributes(name: 'tui'))
-        .and have_attributes(group: have_attributes(key: 'marketing.section.cta'))
-        .and have_attributes(absolute: have_attributes(source_file: end_with('marketing/section/cta/03.html')))
-        .and have_attributes(relative: have_attributes(source_file: end_with('marketing/section/cta/03.html')))
+        .to have_attributes(name: 'style1')
+        .and have_attributes(design_system: have_attributes(name: 'noq'))
+        .and have_attributes(group: have_attributes(key: 'card'))
+        .and have_attributes(absolute: have_attributes(source_file: end_with('card/style1.html')))
+        .and have_attributes(relative: have_attributes(source_file: end_with('card/style1.html')))
     end
   end
 end
