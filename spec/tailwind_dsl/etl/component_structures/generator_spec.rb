@@ -38,11 +38,11 @@ RSpec.describe TailwindDsl::Etl::ComponentStructures::Generator do
     it 'has a records with expected data' do
       expect(subject).to be_a(Array)
       expect(subject.first)
-        .to include(name: 'style1')
+        .to have_attributes(name: 'style1')
         .and have_attributes(design_system: have_attributes(name: 'noq'))
-        .and include(group: include(key: 'card'))
-        .and include(absolute: include(source_file: end_with('card/style1.html')))
-        .and include(relative: include(source_file: end_with('card/style1.html')))
+        .and have_attributes(group: have_attributes(key: 'card'))
+        .and have_attributes(absolute: have_attributes(source_file: end_with('card/style1.html')))
+        .and have_attributes(relative: have_attributes(source_file: end_with('card/style1.html')))
     end
   end
 
