@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-# frozen_string_literal: true
-
 module TailwindDsl
   module Etl
     module Extractors
@@ -15,6 +13,7 @@ module TailwindDsl
 
         def extract
           puts 'do some magic and write to target_file'
+          puts "target_file: #{target_file}"
           File.write(target_file, 'GTP3 data')
           # do some GPT3 magic
         end
