@@ -1,3 +1,11 @@
+## [0.0.22](https://github.com/klueless-io/tailwind_dsl/compare/v0.0.21...v0.0.22) (2022-10-23)
+
+
+### Bug Fixes
+
+* fix cops ([d6715ee](https://github.com/klueless-io/tailwind_dsl/commit/d6715ee147066f8c6b3e5c9a5b326f8d684931d5))
+* refactor data, base and batch extractors ([a119911](https://github.com/klueless-io/tailwind_dsl/commit/a119911da74595a2935ad0e9a626b9ea05fcffe4))
+
 ## [0.0.21](https://github.com/klueless-io/tailwind_dsl/compare/v0.0.20...v0.0.21) (2022-10-22)
 
 
