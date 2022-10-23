@@ -2,25 +2,15 @@
 
 module TailwindDsl
   module Etl
-    module ComponentModels
-      class Gpt3Extractor
-        def extract_data(component)
-          puts "extract #{component.relative.source_file} to #{component.relative.target_data_file} using GPT3"
-        end
-
-        def extract_model(component)
-          puts "extract #{component.relative.source_file} to #{component.relative.target_model_file} using GPT3"
-        end
-      end
-
-      # Extract component models by reading the cleansed component HTML and then using GPT3 to infer both the data/model structure.
-      class Extractor
+    module Extractors
+      # Extract component data an place into a nwe file using a an extractor.
+      # Currently designed to work with GPT3 to infer some type of target structure.
+      class BatchExtraction
         attr_reader :components
         attr_reader :target_root_path
         attr_reader :batch_size
         attr_reader :use_prompt
-        attr_reader :filter_design_system
-        attr_reader :extract_handler
+        attr_reader :filter_design_system # this should be renamed and reshaped to a complex filter object
 
         # Create comment for this initialize method
 
@@ -30,14 +20,14 @@ module TailwindDsl
         # @option args [Integer] :batch_size number of components to process, default is 1
         # @option args [Boolean] :use_prompt console based prompt so the user can guide the extractor, default is false
         # @option args [String] :filter_design_system name of the design system to filter on, default is nil meaning all
-        # @option args [Class] :extract_handler class that implements the extract_data and extract_model methods, default is Gpt3Extractor
+        # @option args [Class] :extract_handler class that implements an extract method
         def initialize(components, target_root_path, **args)
           @components = components
           @target_root_path = target_root_path
           @batch_size = args[:batch_size] || 1
           @use_prompt = args[:use_prompt] || false
           @filter_design_system = args[:filter_design_system] || nil
-          @extract_handler = (args[:extract_handler] || Gpt3Extractor).new
+          @extract_handler = args[:extract_handler]
         end
 
         # Goal:       Extract the next (batch_size) component models using GPT3 and save them to target_root_path
@@ -53,16 +43,17 @@ module TailwindDsl
         #             process the component by calling the GPT3 API and save the results to the target folder.
 
         def extract
-          guards
+          raise "Batch size must be greater than 0, got: #{batch_size}" if batch_size <= 0
 
           remaining = batch_size
 
           filter_components.each do |component|
             # puts "Processing: #{component.design_system.name} -> #{component.group.key} -> #{component.name} -> remaining#: #{remaining}"
 
-            component_guards(component)
+            component_guard(component)
+            extractor.component = component
 
-            next if data_file_exist?(component) && model_file_exist?(component)
+            next if File.exist?(extractor.target_file)
 
             # if use_prompt
             #   puts "Input: #{component.cleansed_html_path}"
@@ -71,24 +62,29 @@ module TailwindDsl
             #   next unless STDIN.gets.chomp == 'y'
             # end
 
-            extract_handler.extract_data(component)   unless data_file_exist?(component)
-            extract_handler.extract_model(component)  unless model_file_exist?(component)
+            extractor.extract
 
             remaining -= 1
             break if remaining.zero?
           end
         end
 
-        private
+        def extractor
+          return @extractor if defined? @extractor
 
-        def guards
-          raise "Batch size must be greater than 0, got: #{batch_size}" if batch_size <= 0
-          raise 'Extract handler is required' unless extract_handler
-          raise 'Extract handler must implement extract_data method' unless extract_handler.respond_to?(:extract_data)
-          raise 'Extract handler must implement extract_model method' unless extract_handler.respond_to?(:extract_model)
+          raise 'Extract handler is required' unless @extract_handler
+
+          @extractor = @extract_handler.new
+
+          raise 'Extract handler must implement extract method' unless @extractor.respond_to?(:extract)
+          raise 'Extract handler must implement target_file method' unless @extractor.respond_to?(:target_file)
+
+          @extractor
         end
 
-        def component_guards(component)
+        private
+
+        def component_guard(component)
           path = File.join(component.design_system.target_path, component.group.folder)
           raise "Folder does not exist: '#{path}', make sure you run component structure generator first." unless File.exist?(path)
         end
@@ -99,13 +95,9 @@ module TailwindDsl
           components.select { |component| component.design_system.name == filter_design_system }
         end
 
-        def data_file_exist?(component)
-          File.exist?(component.absolute.target_data_file)
-        end
-
-        def model_file_exist?(component)
-          File.exist?(component.absolute.target_model_file)
-        end
+        # def target_file(component)
+        #   raise NotImplementedError, 'target_file is not implemented'
+        # end
       end
     end
   end

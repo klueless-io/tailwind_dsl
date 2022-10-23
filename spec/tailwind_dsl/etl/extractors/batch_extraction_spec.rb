@@ -2,19 +2,18 @@
 
 require 'spec_helper'
 
-class FakeExtractor
-  def extract_data(component)
-    # puts "extract #{component.relative.source_file} to #{component.relative.target_data_file}"
-    File.write(component.absolute.target_data_file, 'fake data')
+class FakeExtractor < TailwindDsl::Etl::Extractors::BaseExtractor
+  def target_file
+    component.absolute.target_data_file
   end
 
-  def extract_model(component)
-    # puts "extract #{component.relative.source_file} to #{component.relative.target_model_file}"
-    File.write(component.absolute.target_model_file, 'fake model')
+  def extract
+    # puts "extract #{component.relative.source_file} to #{component.relative.target_data_file}"
+    File.write(target_file, 'fake data')
   end
 end
 
-RSpec.describe TailwindDsl::Etl::ComponentModels::Extractor do
+RSpec.describe TailwindDsl::Etl::Extractors::BatchExtraction do
   include_context :use_temp_folder
   include_context :get_uikit
 
@@ -36,7 +35,7 @@ RSpec.describe TailwindDsl::Etl::ComponentModels::Extractor do
   end
 
   let(:instance) do
-    TailwindDsl::Etl::ComponentModels::Extractor.new(
+    described_class.new(
       components,
       target_root_path,
       batch_size: batch_size,
@@ -79,17 +78,44 @@ RSpec.describe TailwindDsl::Etl::ComponentModels::Extractor do
       it { is_expected.to eq('tui') }
     end
 
-    context '.extract_handler' do
-      subject { instance.extract_handler }
+    context '.extractor' do
+      subject { instance.extractor }
 
       it { is_expected.to be_a(FakeExtractor) }
+
+      context 'when extract_handler is not set' do
+        let(:extract_handler) { nil }
+
+        it { expect { subject }.to raise_error(RuntimeError, 'Extract handler is required') }
+      end
+
+      context 'when extract_handler does not implement :extract method' do
+        let(:extract_handler) { Class.new }
+
+        it { expect { subject }.to raise_error(RuntimeError, 'Extract handler must implement extract method') }
+      end
+
+      context 'when extract_handler does not implement :target_file method' do
+        let(:extract_handler) do
+          Class.new do
+            def extract; end
+          end
+        end
+
+        it { expect { subject }.to raise_error(RuntimeError, 'Extract handler must implement target_file method') }
+      end
     end
   end
 
   describe '#extract' do
     let(:extract_handler) { FakeExtractor }
 
-    # fit { subject }
+    context 'when batch_size is 0' do
+      let(:batch_size) { 0 }
+
+      it { expect { instance.extract }.to raise_error(/Batch size must be greater than 0/) }
+    end
+
     context 'target folder does not exist' do
       it { expect { instance.extract }.to raise_error(/Folder does not exist/) }
     end

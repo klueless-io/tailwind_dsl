@@ -18,7 +18,9 @@ require_relative 'tailwind_dsl/etl/raw_components/schema/uikit'
 require_relative 'tailwind_dsl/etl/component_structures/raw_component_query'
 require_relative 'tailwind_dsl/etl/component_structures/generator'
 
-require_relative 'tailwind_dsl/etl/component_models/extractor'
+require_relative 'tailwind_dsl/etl/extractors/base_extractor'
+require_relative 'tailwind_dsl/etl/extractors/batch_extraction'
+# require_relative 'tailwind_dsl/etl/extractors/data_extractor'
 # require_relative 'tailwind_dsl/astro_demo/generate_astro_page_data'
 
 module TailwindDsl
