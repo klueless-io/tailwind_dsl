@@ -1,3 +1,10 @@
+## [0.0.27](https://github.com/klueless-io/tailwind_dsl/compare/v0.0.26...v0.0.27) (2022-10-24)
+
+
+### Bug Fixes
+
+* testing GHA flag [#4](https://github.com/klueless-io/tailwind_dsl/issues/4) ([e553363](https://github.com/klueless-io/tailwind_dsl/commit/e553363cb336f18a3d6e74d75382bbd95177d51d))
+
 ## [0.0.26](https://github.com/klueless-io/tailwind_dsl/compare/v0.0.25...v0.0.26) (2022-10-24)
 
 
