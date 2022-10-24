@@ -23,7 +23,6 @@ RSpec.describe TailwindDsl::Etl::ComponentStructures::Generator do
 
   let(:source_root_path) { File.join(SPEC_FOLDER, 'samples/01-raw_components') }
   let(:target_root_path) { File.join(temp_folder, 'components') }
-  # let(:target_root_path) { File.join(SPEC_FOLDER, 'samples/02-components') } # If you need to refresh 02-component_structures
 
   describe '.components' do
     subject { instance.components }

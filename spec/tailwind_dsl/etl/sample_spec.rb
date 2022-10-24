@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-# return if ENV.fetch('GITHUB_ACTIONS', nil)
+return if ENV.fetch('GITHUB_ACTIONS', nil)
 
 RSpec.describe TailwindDsl::Etl::RawComponents::Load do
   let(:instance) { described_class.new }
@@ -45,12 +45,6 @@ RSpec.describe TailwindDsl::Etl::ComponentStructures::Generator do
     before { FileUtils.mkdir_p(target_root_path) }
 
     it { instance.generate }
-
-    it { puts "GHA FLAG: #{ENV.fetch('GITHUB_ACTIONS', nil)}" }
-
-    describe 'yyy' do
-      it { puts 'yyy' }
-    end
   end
 end
 
