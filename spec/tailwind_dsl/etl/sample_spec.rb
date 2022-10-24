@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-return if ENV.fetch('GITHUB_ACTIONS', nil)
+# return if ENV.fetch('GITHUB_ACTIONS', nil)
 
 RSpec.describe TailwindDsl::Etl::RawComponents::Load do
   let(:instance) { described_class.new }
