@@ -1,3 +1,10 @@
+## [0.0.28](https://github.com/klueless-io/tailwind_dsl/compare/v0.0.27...v0.0.28) (2022-10-24)
+
+
+### Bug Fixes
+
+* remove sample specs from git hub actions ([2595490](https://github.com/klueless-io/tailwind_dsl/commit/2595490dc3e90d343c5e3e8f203ad4f71ba8dec4))
+
 ## [0.0.27](https://github.com/klueless-io/tailwind_dsl/compare/v0.0.26...v0.0.27) (2022-10-24)
 
 
