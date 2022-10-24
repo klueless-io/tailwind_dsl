@@ -39,12 +39,20 @@ RSpec.describe TailwindDsl::Etl::ComponentStructures::Generator do
   let(:source_root_path) { File.join(SPEC_FOLDER, 'samples/01-raw_components') }
   let(:target_root_path) { File.join(SPEC_FOLDER, 'samples/02-components') }
 
-  context 'sample' do
+  fcontext 'sample' do
     before { FileUtils.mkdir_p(target_root_path) }
 
     it { instance.generate }
 
-    it { puts ENV['GITHUB_ACTIONS'] }
+    it { puts "GHA FLAG: #{ENV.fetch('GITHUB_ACTIONS', nil)}" }
+    
+    describe 'xxx' do
+      it { puts 'xxx' }
+    end unless ENV.fetch('GITHUB_ACTIONS', nil)
+  
+    describe 'yyy' do
+      it { puts 'yyy' }
+    end
   end
 end
 
