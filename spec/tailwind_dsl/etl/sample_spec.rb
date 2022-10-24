@@ -2,6 +2,8 @@
 
 require 'spec_helper'
 
+return if ENV.fetch('GITHUB_ACTIONS', nil)
+
 RSpec.describe TailwindDsl::Etl::RawComponents::Load do
   let(:instance) { described_class.new }
   let(:target_root_path) { File.join(SPEC_FOLDER, 'samples/00-data') }
@@ -39,18 +41,12 @@ RSpec.describe TailwindDsl::Etl::ComponentStructures::Generator do
   let(:source_root_path) { File.join(SPEC_FOLDER, 'samples/01-raw_components') }
   let(:target_root_path) { File.join(SPEC_FOLDER, 'samples/02-components') }
 
-  fcontext 'sample' do
+  context 'sample' do
     before { FileUtils.mkdir_p(target_root_path) }
 
     it { instance.generate }
 
     it { puts "GHA FLAG: #{ENV.fetch('GITHUB_ACTIONS', nil)}" }
-
-    unless ENV.fetch('GITHUB_ACTIONS', nil)
-      describe 'xxx' do
-        it { puts 'xxx' }
-      end
-    end
 
     describe 'yyy' do
       it { puts 'yyy' }
