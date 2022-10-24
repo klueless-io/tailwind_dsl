@@ -1,3 +1,10 @@
+## [0.0.23](https://github.com/klueless-io/tailwind_dsl/compare/v0.0.22...v0.0.23) (2022-10-24)
+
+
+### Bug Fixes
+
+* refactor sample support ([1f6b464](https://github.com/klueless-io/tailwind_dsl/commit/1f6b464a72a93fd8ffba0b192f214d3212b988df))
+
 ## [0.0.22](https://github.com/klueless-io/tailwind_dsl/compare/v0.0.21...v0.0.22) (2022-10-23)
 
 
