@@ -29,7 +29,14 @@ KManager.action :utilities do
         components = component_generator.components
 
         # Use GPT3 to extract component models in supervised fashion
-        helpers.extract_next_component_model(components, target_component_model_path, batch_size: 1, use_prompt: true, filter_design_system: 'tui')
+        helpers.batch_extraction(
+          components,
+          target_component_model_path,
+          batch_size: 1,
+          use_prompt: true,
+          filter_design_system: 'tui',
+          extract_handler: TailwindDsl::Etl::Extractors::DataExtractor
+        )
         # puts target_component_path
         # /Users/davidcruwys/dev/kgems/tailwind_dsl/.components
 
@@ -67,13 +74,18 @@ KManager.action :utilities do
     generator
   end
 
-  # Extracts the next component model using GPT3
+  # Extracts the next component data using GPT3
   #
   # This needs to be supervised and verified, so it will only do a few models at a time
-  def extract_next_component_model(components, target_folder, batch_size: 1, use_prompt: false, filter_design_system: nil)
-    puts target_folder
-    extractor = TailwindDsl::Etl::ComponentModels::Extractor.new(components, target_folder, batch_size: batch_size, use_prompt: use_prompt, filter_design_system: filter_design_system)
-    extractor.extract
+  def batch_extraction(components, target_folder, batch_size: 1, use_prompt: false, filter_design_system: nil, extract_handler: nil)
+    extraction = TailwindDsl::Etl::Extractors::BatchExtraction.new(
+      components,
+      target_folder,
+      batch_size: batch_size,
+      use_prompt: use_prompt,
+      filter_design_system: filter_design_system,
+      extract_handler: extract_handler)
+    extraction.extract
   end
 end
 
