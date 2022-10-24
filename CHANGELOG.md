@@ -1,3 +1,10 @@
+## [0.0.24](https://github.com/klueless-io/tailwind_dsl/compare/v0.0.23...v0.0.24) (2022-10-24)
+
+
+### Bug Fixes
+
+* before GHA flag ([30edfa9](https://github.com/klueless-io/tailwind_dsl/commit/30edfa985b3ec7c06d6997ee53f1b009f64fe803))
+
 ## [0.0.23](https://github.com/klueless-io/tailwind_dsl/compare/v0.0.22...v0.0.23) (2022-10-24)
 
 
