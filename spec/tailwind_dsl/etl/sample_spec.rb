@@ -39,11 +39,13 @@ RSpec.describe TailwindDsl::Etl::ComponentStructures::Generator do
   let(:source_root_path) { File.join(SPEC_FOLDER, 'samples/01-raw_components') }
   let(:target_root_path) { File.join(SPEC_FOLDER, 'samples/02-components') }
 
-  before do
-    FileUtils.mkdir_p(target_root_path)
-  end
+  context 'sample' do
+    before { FileUtils.mkdir_p(target_root_path) }
 
-  it { instance.generate }
+    it { instance.generate }
+
+    it { puts ENV['GITHUB_ACTIONS'] }
+  end
 end
 
 # describe 'sample - gpt3 data extractor' do
