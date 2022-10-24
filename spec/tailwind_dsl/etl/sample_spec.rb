@@ -45,11 +45,13 @@ RSpec.describe TailwindDsl::Etl::ComponentStructures::Generator do
     it { instance.generate }
 
     it { puts "GHA FLAG: #{ENV.fetch('GITHUB_ACTIONS', nil)}" }
-    
-    describe 'xxx' do
-      it { puts 'xxx' }
-    end unless ENV.fetch('GITHUB_ACTIONS', nil)
-  
+
+    unless ENV.fetch('GITHUB_ACTIONS', nil)
+      describe 'xxx' do
+        it { puts 'xxx' }
+      end
+    end
+
     describe 'yyy' do
       it { puts 'yyy' }
     end
