@@ -2,6 +2,7 @@
 
 require 'spec_helper'
 
+# MOVE QUERY OUT TO OWN FOLDER
 RSpec.describe TailwindDsl::Etl::ComponentStructures::RawComponentQuery do
   include_context :use_temp_folder
   include_context :get_uikit

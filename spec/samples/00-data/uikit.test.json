@@ -8,7 +8,7 @@
       "groups": [
         {
           "key": "marketing.section.cta",
-          "type": "cta",
+          "type": "03.html",
           "folder": "marketing/section/cta",
           "sub_keys": [
             "marketing",
@@ -74,7 +74,7 @@
       "groups": [
         {
           "key": "card",
-          "type": "card",
+          "type": "style1.html",
           "folder": "card",
           "sub_keys": [
             "card"
@@ -114,7 +114,7 @@
         },
         {
           "key": "faq",
-          "type": "faq",
+          "type": "style1.html",
           "folder": "faq",
           "sub_keys": [
             "faq"

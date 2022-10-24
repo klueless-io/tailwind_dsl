@@ -30,7 +30,7 @@
         "marketing.sections.content": 6,
         "marketing.sections.blog": 3,
         "marketing.sections.team": 8,
-        "marketing.sections.cta_sections": 16,
+        "marketing.sections.cta_sections": 8,
         "marketing.sections.testimonial": 5,
         "marketing.sections.feature": 10,
         "marketing.sections.logo_cloud": 5,
@@ -45,7 +45,7 @@
         "marketing.page.404": 6,
         "marketing.page.pricing": 6,
         "marketing.element.flyout_menu": 6,
-        "marketing.element.header": 6,
+        "marketing.element.header": 5,
         "marketing.element.banner": 4,
         "application_ui.page.home_screens": 5,
         "application_ui.page.detail_screens": 6,
@@ -100,7 +100,7 @@
       "groups": [
         {
           "key": "ecommerce.page.category_pages",
-          "type": "category-pages",
+          "type": "03.html",
           "folder": "ecommerce/page/category-pages",
           "sub_keys": [
             "ecommerce",
@@ -187,7 +187,7 @@
         },
         {
           "key": "ecommerce.page.product_pages",
-          "type": "product-pages",
+          "type": "03.html",
           "folder": "ecommerce/page/product-pages",
           "sub_keys": [
             "ecommerce",
@@ -274,7 +274,7 @@
         },
         {
           "key": "ecommerce.page.shopping_cart_pages",
-          "type": "shopping-cart-pages",
+          "type": "03.html",
           "folder": "ecommerce/page/shopping-cart-pages",
           "sub_keys": [
             "ecommerce",
@@ -331,7 +331,7 @@
         },
         {
           "key": "ecommerce.page.order_history_pages",
-          "type": "order-history-pages",
+          "type": "03.html",
           "folder": "ecommerce/page/order-history-pages",
           "sub_keys": [
             "ecommerce",
@@ -418,7 +418,7 @@
         },
         {
           "key": "ecommerce.page.checkout_pages",
-          "type": "checkout-pages",
+          "type": "03.html",
           "folder": "ecommerce/page/checkout-pages",
           "sub_keys": [
             "ecommerce",
@@ -505,7 +505,7 @@
         },
         {
           "key": "ecommerce.page.store_front_pages",
-          "type": "store-front-pages",
+          "type": "03.html",
           "folder": "ecommerce/page/store-front-pages",
           "sub_keys": [
             "ecommerce",
@@ -577,7 +577,7 @@
         },
         {
           "key": "ecommerce.page.order_detail_pages",
-          "type": "order-detail-pages",
+          "type": "03.html",
           "folder": "ecommerce/page/order-detail-pages",
           "sub_keys": [
             "ecommerce",
@@ -634,7 +634,7 @@
         },
         {
           "key": "ecommerce.components.product_features",
-          "type": "product-features",
+          "type": "03.html",
           "folder": "ecommerce/components/product-features",
           "sub_keys": [
             "ecommerce",
@@ -781,7 +781,7 @@
         },
         {
           "key": "ecommerce.components.product_quick_views",
-          "type": "product-quick-views",
+          "type": "03.html",
           "folder": "ecommerce/components/product-quick-views",
           "sub_keys": [
             "ecommerce",
@@ -853,7 +853,7 @@
         },
         {
           "key": "ecommerce.components.incentives",
-          "type": "incentives",
+          "type": "03.html",
           "folder": "ecommerce/components/incentives",
           "sub_keys": [
             "ecommerce",
@@ -985,7 +985,7 @@
         },
         {
           "key": "ecommerce.components.product_overviews",
-          "type": "product-overviews",
+          "type": "03.html",
           "folder": "ecommerce/components/product-overviews",
           "sub_keys": [
             "ecommerce",
@@ -1072,7 +1072,7 @@
         },
         {
           "key": "ecommerce.components.category_previews",
-          "type": "category-previews",
+          "type": "03.html",
           "folder": "ecommerce/components/category-previews",
           "sub_keys": [
             "ecommerce",
@@ -1174,7 +1174,7 @@
         },
         {
           "key": "ecommerce.components.store_navigation",
-          "type": "store-navigation",
+          "type": "03.html",
           "folder": "ecommerce/components/store-navigation",
           "sub_keys": [
             "ecommerce",
@@ -1261,7 +1261,7 @@
         },
         {
           "key": "ecommerce.components.order_summaries",
-          "type": "order-summaries",
+          "type": "03.html",
           "folder": "ecommerce/components/order-summaries",
           "sub_keys": [
             "ecommerce",
@@ -1333,7 +1333,7 @@
         },
         {
           "key": "ecommerce.components.promo_sections",
-          "type": "promo-sections",
+          "type": "03.html",
           "folder": "ecommerce/components/promo-sections",
           "sub_keys": [
             "ecommerce",
@@ -1465,7 +1465,7 @@
         },
         {
           "key": "ecommerce.components.checkout_forms",
-          "type": "checkout-forms",
+          "type": "03.html",
           "folder": "ecommerce/components/checkout-forms",
           "sub_keys": [
             "ecommerce",
@@ -1552,7 +1552,7 @@
         },
         {
           "key": "ecommerce.components.category_filters",
-          "type": "category-filters",
+          "type": "03.html",
           "folder": "ecommerce/components/category-filters",
           "sub_keys": [
             "ecommerce",
@@ -1639,7 +1639,7 @@
         },
         {
           "key": "ecommerce.components.product_lists",
-          "type": "product-lists",
+          "type": "03.html",
           "folder": "ecommerce/components/product-lists",
           "sub_keys": [
             "ecommerce",
@@ -1816,7 +1816,7 @@
         },
         {
           "key": "ecommerce.components.order_history",
-          "type": "order-history",
+          "type": "03.html",
           "folder": "ecommerce/components/order-history",
           "sub_keys": [
             "ecommerce",
@@ -1888,7 +1888,7 @@
         },
         {
           "key": "ecommerce.components.shopping_carts",
-          "type": "shopping-carts",
+          "type": "03.html",
           "folder": "ecommerce/components/shopping-carts",
           "sub_keys": [
             "ecommerce",
@@ -1990,7 +1990,7 @@
         },
         {
           "key": "ecommerce.components.reviews",
-          "type": "reviews",
+          "type": "03.html",
           "folder": "ecommerce/components/reviews",
           "sub_keys": [
             "ecommerce",
@@ -2062,7 +2062,7 @@
         },
         {
           "key": "marketing.sections.footer",
-          "type": "footer",
+          "type": "03.html",
           "folder": "marketing/sections/footer",
           "sub_keys": [
             "marketing",
@@ -2179,7 +2179,7 @@
         },
         {
           "key": "marketing.sections.contact",
-          "type": "contact",
+          "type": "03.html",
           "folder": "marketing/sections/contact",
           "sub_keys": [
             "marketing",
@@ -2296,7 +2296,7 @@
         },
         {
           "key": "marketing.sections.faq",
-          "type": "faq",
+          "type": "03.html",
           "folder": "marketing/sections/faq",
           "sub_keys": [
             "marketing",
@@ -2443,7 +2443,7 @@
         },
         {
           "key": "marketing.sections.content",
-          "type": "content",
+          "type": "03.html",
           "folder": "marketing/sections/content",
           "sub_keys": [
             "marketing",
@@ -2545,7 +2545,7 @@
         },
         {
           "key": "marketing.sections.blog",
-          "type": "blog",
+          "type": "03.html",
           "folder": "marketing/sections/blog",
           "sub_keys": [
             "marketing",
@@ -2602,7 +2602,7 @@
         },
         {
           "key": "marketing.sections.team",
-          "type": "team",
+          "type": "03.html",
           "folder": "marketing/sections/team",
           "sub_keys": [
             "marketing",
@@ -2734,7 +2734,7 @@
         },
         {
           "key": "marketing.sections.cta_sections",
-          "type": "cta-sections",
+          "type": "03.html",
           "folder": "marketing/sections/cta-sections",
           "sub_keys": [
             "marketing",
@@ -2770,36 +2770,6 @@
                 "data_file": "marketing/sections/cta-sections/02.data.json",
                 "model_file": "marketing/sections/cta-sections/02.model.rb",
                 "astro_file": "marketing/sections/cta-sections/02.astro"
-              }
-            },
-            {
-              "name": "01.json",
-              "file_name": "01.json",
-              "file_name_only": "01",
-              "file": "marketing/sections/cta-sections/01.json",
-              "target": {
-                "html_file": "marketing/sections/cta-sections/01.html",
-                "clean_html_file": "marketing/sections/cta-sections/01.clean.html",
-                "tailwind_config_file": "marketing/sections/cta-sections/01.tailwind.config.js",
-                "settings_file": "marketing/sections/cta-sections/01.settings.json",
-                "data_file": "marketing/sections/cta-sections/01.data.json",
-                "model_file": "marketing/sections/cta-sections/01.model.rb",
-                "astro_file": "marketing/sections/cta-sections/01.astro"
-              }
-            },
-            {
-              "name": "06.json",
-              "file_name": "06.json",
-              "file_name_only": "06",
-              "file": "marketing/sections/cta-sections/06.json",
-              "target": {
-                "html_file": "marketing/sections/cta-sections/06.html",
-                "clean_html_file": "marketing/sections/cta-sections/06.clean.html",
-                "tailwind_config_file": "marketing/sections/cta-sections/06.tailwind.config.js",
-                "settings_file": "marketing/sections/cta-sections/06.settings.json",
-                "data_file": "marketing/sections/cta-sections/06.data.json",
-                "model_file": "marketing/sections/cta-sections/06.model.rb",
-                "astro_file": "marketing/sections/cta-sections/06.astro"
               }
             },
             {
@@ -2848,21 +2818,6 @@
               }
             },
             {
-              "name": "07.json",
-              "file_name": "07.json",
-              "file_name_only": "07",
-              "file": "marketing/sections/cta-sections/07.json",
-              "target": {
-                "html_file": "marketing/sections/cta-sections/07.html",
-                "clean_html_file": "marketing/sections/cta-sections/07.clean.html",
-                "tailwind_config_file": "marketing/sections/cta-sections/07.tailwind.config.js",
-                "settings_file": "marketing/sections/cta-sections/07.settings.json",
-                "data_file": "marketing/sections/cta-sections/07.data.json",
-                "model_file": "marketing/sections/cta-sections/07.model.rb",
-                "astro_file": "marketing/sections/cta-sections/07.astro"
-              }
-            },
-            {
               "name": "07.html",
               "file_name": "07.html",
               "file_name_only": "07",
@@ -2875,51 +2830,6 @@
                 "data_file": "marketing/sections/cta-sections/07.data.json",
                 "model_file": "marketing/sections/cta-sections/07.model.rb",
                 "astro_file": "marketing/sections/cta-sections/07.astro"
-              }
-            },
-            {
-              "name": "04.json",
-              "file_name": "04.json",
-              "file_name_only": "04",
-              "file": "marketing/sections/cta-sections/04.json",
-              "target": {
-                "html_file": "marketing/sections/cta-sections/04.html",
-                "clean_html_file": "marketing/sections/cta-sections/04.clean.html",
-                "tailwind_config_file": "marketing/sections/cta-sections/04.tailwind.config.js",
-                "settings_file": "marketing/sections/cta-sections/04.settings.json",
-                "data_file": "marketing/sections/cta-sections/04.data.json",
-                "model_file": "marketing/sections/cta-sections/04.model.rb",
-                "astro_file": "marketing/sections/cta-sections/04.astro"
-              }
-            },
-            {
-              "name": "08.json",
-              "file_name": "08.json",
-              "file_name_only": "08",
-              "file": "marketing/sections/cta-sections/08.json",
-              "target": {
-                "html_file": "marketing/sections/cta-sections/08.html",
-                "clean_html_file": "marketing/sections/cta-sections/08.clean.html",
-                "tailwind_config_file": "marketing/sections/cta-sections/08.tailwind.config.js",
-                "settings_file": "marketing/sections/cta-sections/08.settings.json",
-                "data_file": "marketing/sections/cta-sections/08.data.json",
-                "model_file": "marketing/sections/cta-sections/08.model.rb",
-                "astro_file": "marketing/sections/cta-sections/08.astro"
-              }
-            },
-            {
-              "name": "05.json",
-              "file_name": "05.json",
-              "file_name_only": "05",
-              "file": "marketing/sections/cta-sections/05.json",
-              "target": {
-                "html_file": "marketing/sections/cta-sections/05.html",
-                "clean_html_file": "marketing/sections/cta-sections/05.clean.html",
-                "tailwind_config_file": "marketing/sections/cta-sections/05.tailwind.config.js",
-                "settings_file": "marketing/sections/cta-sections/05.settings.json",
-                "data_file": "marketing/sections/cta-sections/05.data.json",
-                "model_file": "marketing/sections/cta-sections/05.model.rb",
-                "astro_file": "marketing/sections/cta-sections/05.astro"
               }
             },
             {
@@ -2951,42 +2861,12 @@
                 "model_file": "marketing/sections/cta-sections/01.model.rb",
                 "astro_file": "marketing/sections/cta-sections/01.astro"
               }
-            },
-            {
-              "name": "02.json",
-              "file_name": "02.json",
-              "file_name_only": "02",
-              "file": "marketing/sections/cta-sections/02.json",
-              "target": {
-                "html_file": "marketing/sections/cta-sections/02.html",
-                "clean_html_file": "marketing/sections/cta-sections/02.clean.html",
-                "tailwind_config_file": "marketing/sections/cta-sections/02.tailwind.config.js",
-                "settings_file": "marketing/sections/cta-sections/02.settings.json",
-                "data_file": "marketing/sections/cta-sections/02.data.json",
-                "model_file": "marketing/sections/cta-sections/02.model.rb",
-                "astro_file": "marketing/sections/cta-sections/02.astro"
-              }
-            },
-            {
-              "name": "03.json",
-              "file_name": "03.json",
-              "file_name_only": "03",
-              "file": "marketing/sections/cta-sections/03.json",
-              "target": {
-                "html_file": "marketing/sections/cta-sections/03.html",
-                "clean_html_file": "marketing/sections/cta-sections/03.clean.html",
-                "tailwind_config_file": "marketing/sections/cta-sections/03.tailwind.config.js",
-                "settings_file": "marketing/sections/cta-sections/03.settings.json",
-                "data_file": "marketing/sections/cta-sections/03.data.json",
-                "model_file": "marketing/sections/cta-sections/03.model.rb",
-                "astro_file": "marketing/sections/cta-sections/03.astro"
-              }
             }
           ]
         },
         {
           "key": "marketing.sections.testimonial",
-          "type": "testimonial",
+          "type": "03.html",
           "folder": "marketing/sections/testimonial",
           "sub_keys": [
             "marketing",
@@ -3073,7 +2953,7 @@
         },
         {
           "key": "marketing.sections.feature",
-          "type": "feature",
+          "type": "03.html",
           "folder": "marketing/sections/feature",
           "sub_keys": [
             "marketing",
@@ -3235,7 +3115,7 @@
         },
         {
           "key": "marketing.sections.logo_cloud",
-          "type": "logo-cloud",
+          "type": "03.html",
           "folder": "marketing/sections/logo-cloud",
           "sub_keys": [
             "marketing",
@@ -3322,7 +3202,7 @@
         },
         {
           "key": "marketing.sections.newsletter",
-          "type": "newsletter",
+          "type": "03.html",
           "folder": "marketing/sections/newsletter",
           "sub_keys": [
             "marketing",
@@ -3424,7 +3304,7 @@
         },
         {
           "key": "marketing.sections.hero",
-          "type": "hero",
+          "type": "03.html",
           "folder": "marketing/sections/hero",
           "sub_keys": [
             "marketing",
@@ -3571,7 +3451,7 @@
         },
         {
           "key": "marketing.sections.pricing",
-          "type": "pricing",
+          "type": "03.html",
           "folder": "marketing/sections/pricing",
           "sub_keys": [
             "marketing",
@@ -3718,7 +3598,7 @@
         },
         {
           "key": "marketing.sections.header",
-          "type": "header",
+          "type": "03.html",
           "folder": "marketing/sections/header",
           "sub_keys": [
             "marketing",
@@ -3805,7 +3685,7 @@
         },
         {
           "key": "marketing.sections.stats",
-          "type": "stats",
+          "type": "03.html",
           "folder": "marketing/sections/stats",
           "sub_keys": [
             "marketing",
@@ -3877,7 +3757,7 @@
         },
         {
           "key": "marketing.sections.banner",
-          "type": "banner",
+          "type": "03.html",
           "folder": "marketing/sections/banner",
           "sub_keys": [
             "marketing",
@@ -3949,7 +3829,7 @@
         },
         {
           "key": "marketing.page.landing",
-          "type": "landing",
+          "type": "03.html",
           "folder": "marketing/page/landing",
           "sub_keys": [
             "marketing",
@@ -4006,7 +3886,7 @@
         },
         {
           "key": "marketing.page.contact",
-          "type": "contact",
+          "type": "03.html",
           "folder": "marketing/page/contact",
           "sub_keys": [
             "marketing",
@@ -4078,7 +3958,7 @@
         },
         {
           "key": "marketing.page.404",
-          "type": "404",
+          "type": "03.html",
           "folder": "marketing/page/404",
           "sub_keys": [
             "marketing",
@@ -4180,7 +4060,7 @@
         },
         {
           "key": "marketing.page.pricing",
-          "type": "pricing",
+          "type": "03.html",
           "folder": "marketing/page/pricing",
           "sub_keys": [
             "marketing",
@@ -4282,7 +4162,7 @@
         },
         {
           "key": "marketing.element.flyout_menu",
-          "type": "flyout-menu",
+          "type": "03.html",
           "folder": "marketing/element/flyout-menu",
           "sub_keys": [
             "marketing",
@@ -4384,7 +4264,7 @@
         },
         {
           "key": "marketing.element.header",
-          "type": "header",
+          "type": "03.html",
           "folder": "marketing/element/header",
           "sub_keys": [
             "marketing",
@@ -4420,21 +4300,6 @@
                 "data_file": "marketing/element/header/02.data.json",
                 "model_file": "marketing/element/header/02.model.rb",
                 "astro_file": "marketing/element/header/02.astro"
-              }
-            },
-            {
-              "name": "01.js",
-              "file_name": "01.js",
-              "file_name_only": "01",
-              "file": "marketing/element/header/01.js",
-              "target": {
-                "html_file": "marketing/element/header/01.html",
-                "clean_html_file": "marketing/element/header/01.clean.html",
-                "tailwind_config_file": "marketing/element/header/01.tailwind.config.js",
-                "settings_file": "marketing/element/header/01.settings.json",
-                "data_file": "marketing/element/header/01.data.json",
-                "model_file": "marketing/element/header/01.model.rb",
-                "astro_file": "marketing/element/header/01.astro"
               }
             },
             {
@@ -4486,7 +4351,7 @@
         },
         {
           "key": "marketing.element.banner",
-          "type": "banner",
+          "type": "03.html",
           "folder": "marketing/element/banner",
           "sub_keys": [
             "marketing",
@@ -4558,7 +4423,7 @@
         },
         {
           "key": "application_ui.page.home_screens",
-          "type": "home-screens",
+          "type": "03.html",
           "folder": "application-ui/page/home-screens",
           "sub_keys": [
             "application-ui",
@@ -4645,7 +4510,7 @@
         },
         {
           "key": "application_ui.page.detail_screens",
-          "type": "detail-screens",
+          "type": "03.html",
           "folder": "application-ui/page/detail-screens",
           "sub_keys": [
             "application-ui",
@@ -4747,7 +4612,7 @@
         },
         {
           "key": "application_ui.page.settings_screens",
-          "type": "settings-screens",
+          "type": "03.html",
           "folder": "application-ui/page/settings-screens",
           "sub_keys": [
             "application-ui",
@@ -4834,7 +4699,7 @@
         },
         {
           "key": "application_ui.overlays.slide_overs",
-          "type": "slide-overs",
+          "type": "03.html",
           "folder": "application-ui/overlays/slide-overs",
           "sub_keys": [
             "application-ui",
@@ -5026,7 +4891,7 @@
         },
         {
           "key": "application_ui.overlays.modals",
-          "type": "modals",
+          "type": "03.html",
           "folder": "application-ui/overlays/modals",
           "sub_keys": [
             "application-ui",
@@ -5128,7 +4993,7 @@
         },
         {
           "key": "application_ui.overlays.notifications",
-          "type": "notifications",
+          "type": "03.html",
           "folder": "application-ui/overlays/notifications",
           "sub_keys": [
             "application-ui",
@@ -5230,7 +5095,7 @@
         },
         {
           "key": "application_ui.layout.panels",
-          "type": "panels",
+          "type": "03.html",
           "folder": "application-ui/layout/panels",
           "sub_keys": [
             "application-ui",
@@ -5392,7 +5257,7 @@
         },
         {
           "key": "application_ui.layout.dividers",
-          "type": "dividers",
+          "type": "03.html",
           "folder": "application-ui/layout/dividers",
           "sub_keys": [
             "application-ui",
@@ -5524,7 +5389,7 @@
         },
         {
           "key": "application_ui.layout.media_objects",
-          "type": "media-objects",
+          "type": "03.html",
           "folder": "application-ui/layout/media-objects",
           "sub_keys": [
             "application-ui",
@@ -5656,7 +5521,7 @@
         },
         {
           "key": "application_ui.layout.containers",
-          "type": "containers",
+          "type": "03.html",
           "folder": "application-ui/layout/containers",
           "sub_keys": [
             "application-ui",
@@ -5743,7 +5608,7 @@
         },
         {
           "key": "application_ui.layout.list_containers",
-          "type": "list-containers",
+          "type": "03.html",
           "folder": "application-ui/layout/list-containers",
           "sub_keys": [
             "application-ui",
@@ -5860,7 +5725,7 @@
         },
         {
           "key": "application_ui.component.form.text_area",
-          "type": "text-area",
+          "type": "03.html",
           "folder": "application-ui/component/form/text-area",
           "sub_keys": [
             "application-ui",
@@ -5948,7 +5813,7 @@
         },
         {
           "key": "application_ui.component.form.signin_registration",
-          "type": "signin-registration",
+          "type": "03.html",
           "folder": "application-ui/component/form/signin-registration",
           "sub_keys": [
             "application-ui",
@@ -6006,7 +5871,7 @@
         },
         {
           "key": "application_ui.component.form.form_layout",
-          "type": "form-layout",
+          "type": "03.html",
           "folder": "application-ui/component/form/form-layout",
           "sub_keys": [
             "application-ui",
@@ -6094,7 +5959,7 @@
         },
         {
           "key": "application_ui.component.form.checkboxes",
-          "type": "checkboxes",
+          "type": "03.html",
           "folder": "application-ui/component/form/checkboxes",
           "sub_keys": [
             "application-ui",
@@ -6167,7 +6032,7 @@
         },
         {
           "key": "application_ui.component.form.input_group",
-          "type": "input-group",
+          "type": "19.html",
           "folder": "application-ui/component/form/input-group",
           "sub_keys": [
             "application-ui",
@@ -6495,7 +6360,7 @@
         },
         {
           "key": "application_ui.component.form.toggles",
-          "type": "toggles",
+          "type": "03.html",
           "folder": "application-ui/component/form/toggles",
           "sub_keys": [
             "application-ui",
@@ -6583,7 +6448,7 @@
         },
         {
           "key": "application_ui.component.form.action_panel",
-          "type": "action-panel",
+          "type": "03.html",
           "folder": "application-ui/component/form/action-panel",
           "sub_keys": [
             "application-ui",
@@ -6716,7 +6581,7 @@
         },
         {
           "key": "application_ui.component.form.comboboxes",
-          "type": "comboboxes",
+          "type": "03.html",
           "folder": "application-ui/component/form/comboboxes",
           "sub_keys": [
             "application-ui",
@@ -6804,7 +6669,7 @@
         },
         {
           "key": "application_ui.component.form.radio_group",
-          "type": "radio-group",
+          "type": "03.html",
           "folder": "application-ui/component/form/radio-group",
           "sub_keys": [
             "application-ui",
@@ -6997,7 +6862,7 @@
         },
         {
           "key": "application_ui.component.form.select_menu",
-          "type": "select-menu",
+          "type": "03.html",
           "folder": "application-ui/component/form/select-menu",
           "sub_keys": [
             "application-ui",
@@ -7115,7 +6980,7 @@
         },
         {
           "key": "application_ui.component.heading.page",
-          "type": "page",
+          "type": "03.html",
           "folder": "application-ui/component/heading/page",
           "sub_keys": [
             "application-ui",
@@ -7293,7 +7158,7 @@
         },
         {
           "key": "application_ui.component.heading.section",
-          "type": "section",
+          "type": "03.html",
           "folder": "application-ui/component/heading/section",
           "sub_keys": [
             "application-ui",
@@ -7456,7 +7321,7 @@
         },
         {
           "key": "application_ui.component.heading.card",
-          "type": "card",
+          "type": "03.html",
           "folder": "application-ui/component/heading/card",
           "sub_keys": [
             "application-ui",
@@ -7559,7 +7424,7 @@
         },
         {
           "key": "application_ui.component.element.buttons",
-          "type": "buttons",
+          "type": "03.html",
           "folder": "application-ui/component/element/buttons",
           "sub_keys": [
             "application-ui",
@@ -7677,7 +7542,7 @@
         },
         {
           "key": "application_ui.component.element.button_groups",
-          "type": "button-groups",
+          "type": "03.html",
           "folder": "application-ui/component/element/button-groups",
           "sub_keys": [
             "application-ui",
@@ -7765,7 +7630,7 @@
         },
         {
           "key": "application_ui.component.element.dropdowns",
-          "type": "dropdowns",
+          "type": "03.html",
           "folder": "application-ui/component/element/dropdowns",
           "sub_keys": [
             "application-ui",
@@ -7853,7 +7718,7 @@
         },
         {
           "key": "application_ui.component.element.avatars",
-          "type": "avatars",
+          "type": "03.html",
           "folder": "application-ui/component/element/avatars",
           "sub_keys": [
             "application-ui",
@@ -8031,7 +7896,7 @@
         },
         {
           "key": "application_ui.component.element.badges",
-          "type": "badges",
+          "type": "03.html",
           "folder": "application-ui/component/element/badges",
           "sub_keys": [
             "application-ui",
@@ -8149,7 +8014,7 @@
         },
         {
           "key": "application_ui.component.navigation.tabs",
-          "type": "tabs",
+          "type": "03.html",
           "folder": "application-ui/component/navigation/tabs",
           "sub_keys": [
             "application-ui",
@@ -8282,7 +8147,7 @@
         },
         {
           "key": "application_ui.component.navigation.navbar",
-          "type": "navbar",
+          "type": "03.html",
           "folder": "application-ui/component/navigation/navbar",
           "sub_keys": [
             "application-ui",
@@ -8460,7 +8325,7 @@
         },
         {
           "key": "application_ui.component.navigation.pagination",
-          "type": "pagination",
+          "type": "03.html",
           "folder": "application-ui/component/navigation/pagination",
           "sub_keys": [
             "application-ui",
@@ -8518,7 +8383,7 @@
         },
         {
           "key": "application_ui.component.navigation.sidebar_navigation",
-          "type": "sidebar-navigation",
+          "type": "03.html",
           "folder": "application-ui/component/navigation/sidebar-navigation",
           "sub_keys": [
             "application-ui",
@@ -8651,7 +8516,7 @@
         },
         {
           "key": "application_ui.component.navigation.command_palettes",
-          "type": "command-palettes",
+          "type": "03.html",
           "folder": "application-ui/component/navigation/command-palettes",
           "sub_keys": [
             "application-ui",
@@ -8799,7 +8664,7 @@
         },
         {
           "key": "application_ui.component.navigation.steps",
-          "type": "steps",
+          "type": "03.html",
           "folder": "application-ui/component/navigation/steps",
           "sub_keys": [
             "application-ui",
@@ -8932,7 +8797,7 @@
         },
         {
           "key": "application_ui.component.navigation.breadcrumbs",
-          "type": "breadcrumbs",
+          "type": "03.html",
           "folder": "application-ui/component/navigation/breadcrumbs",
           "sub_keys": [
             "application-ui",
@@ -9005,7 +8870,7 @@
         },
         {
           "key": "application_ui.component.navigation.vertical_navigation",
-          "type": "vertical-navigation",
+          "type": "03.html",
           "folder": "application-ui/component/navigation/vertical-navigation",
           "sub_keys": [
             "application-ui",
@@ -9108,7 +8973,7 @@
         },
         {
           "key": "application_ui.component.feedback.alert",
-          "type": "alert",
+          "type": "03.html",
           "folder": "application-ui/component/feedback/alert",
           "sub_keys": [
             "application-ui",
@@ -9211,7 +9076,7 @@
         },
         {
           "key": "application_ui.component.feedback.empty_state",
-          "type": "empty-state",
+          "type": "03.html",
           "folder": "application-ui/component/feedback/empty-state",
           "sub_keys": [
             "application-ui",
@@ -9314,7 +9179,7 @@
         },
         {
           "key": "application_ui.component.list.table",
-          "type": "table",
+          "type": "15.html",
           "folder": "application-ui/component/list/table",
           "sub_keys": [
             "application-ui",
@@ -9567,7 +9432,7 @@
         },
         {
           "key": "application_ui.component.list.feed",
-          "type": "feed",
+          "type": "03.html",
           "folder": "application-ui/component/list/feed",
           "sub_keys": [
             "application-ui",
@@ -9625,7 +9490,7 @@
         },
         {
           "key": "application_ui.component.list.grid_list",
-          "type": "grid-list",
+          "type": "03.html",
           "folder": "application-ui/component/list/grid-list",
           "sub_keys": [
             "application-ui",
@@ -9728,7 +9593,7 @@
         },
         {
           "key": "application_ui.component.list.stacked_list",
-          "type": "stacked-list",
+          "type": "03.html",
           "folder": "application-ui/component/list/stacked-list",
           "sub_keys": [
             "application-ui",
@@ -9861,7 +9726,7 @@
         },
         {
           "key": "application_ui.application_shells.sidebar",
-          "type": "sidebar",
+          "type": "03.html",
           "folder": "application-ui/application-shells/sidebar",
           "sub_keys": [
             "application-ui",
@@ -9993,7 +9858,7 @@
         },
         {
           "key": "application_ui.application_shells.stacked",
-          "type": "stacked",
+          "type": "03.html",
           "folder": "application-ui/application-shells/stacked",
           "sub_keys": [
             "application-ui",
@@ -10140,7 +10005,7 @@
         },
         {
           "key": "application_ui.application_shells.multi_column",
-          "type": "multi-column",
+          "type": "03.html",
           "folder": "application-ui/application-shells/multi-column",
           "sub_keys": [
             "application-ui",
@@ -10257,7 +10122,7 @@
         },
         {
           "key": "application_ui.data_display.calendar",
-          "type": "calendar",
+          "type": "03.html",
           "folder": "application-ui/data-display/calendar",
           "sub_keys": [
             "application-ui",
@@ -10389,7 +10254,7 @@
         },
         {
           "key": "application_ui.data_display.description_list",
-          "type": "description-list",
+          "type": "03.html",
           "folder": "application-ui/data-display/description-list",
           "sub_keys": [
             "application-ui",
@@ -10476,7 +10341,7 @@
         },
         {
           "key": "application_ui.data_display.stats",
-          "type": "stats",
+          "type": "03.html",
           "folder": "application-ui/data-display/stats",
           "sub_keys": [
             "application-ui",
@@ -10610,7 +10475,7 @@
         },
         {
           "key": "footer",
-          "type": "footer",
+          "type": "style1.html",
           "folder": "footer",
           "sub_keys": [
             "footer"
@@ -10650,7 +10515,7 @@
         },
         {
           "key": "form",
-          "type": "form",
+          "type": "login2.html",
           "folder": "form",
           "sub_keys": [
             "form"
@@ -10720,7 +10585,7 @@
         },
         {
           "key": "card",
-          "type": "card",
+          "type": "style1.html",
           "folder": "card",
           "sub_keys": [
             "card"
@@ -10805,7 +10670,7 @@
         },
         {
           "key": "faq",
-          "type": "faq",
+          "type": "style1.html",
           "folder": "faq",
           "sub_keys": [
             "faq"
@@ -10845,7 +10710,7 @@
         },
         {
           "key": "element",
-          "type": "element",
+          "type": "list_of_shops.html",
           "folder": "element",
           "sub_keys": [
             "element"
@@ -11080,7 +10945,7 @@
         },
         {
           "key": "content",
-          "type": "content",
+          "type": "style1.html",
           "folder": "content",
           "sub_keys": [
             "content"
@@ -11105,7 +10970,7 @@
         },
         {
           "key": "teams",
-          "type": "teams",
+          "type": "style1.html",
           "folder": "teams",
           "sub_keys": [
             "teams"
@@ -11130,7 +10995,7 @@
         },
         {
           "key": "feature",
-          "type": "feature",
+          "type": "style1.html",
           "folder": "feature",
           "sub_keys": [
             "feature"
@@ -11155,7 +11020,7 @@
         },
         {
           "key": "nav",
-          "type": "nav",
+          "type": "style1.html",
           "folder": "nav",
           "sub_keys": [
             "nav"
@@ -11195,7 +11060,7 @@
         },
         {
           "key": "hero",
-          "type": "hero",
+          "type": "style1.html",
           "folder": "hero",
           "sub_keys": [
             "hero"
@@ -11220,7 +11085,7 @@
         },
         {
           "key": "custom",
-          "type": "custom",
+          "type": "checkout1.html",
           "folder": "custom",
           "sub_keys": [
             "custom"
@@ -11305,7 +11170,7 @@
         },
         {
           "key": "pricing",
-          "type": "pricing",
+          "type": "style1.html",
           "folder": "pricing",
           "sub_keys": [
             "pricing"
@@ -11345,7 +11210,7 @@
         },
         {
           "key": "header",
-          "type": "header",
+          "type": "style1.html",
           "folder": "header",
           "sub_keys": [
             "header"
@@ -11370,7 +11235,7 @@
         },
         {
           "key": "stats",
-          "type": "stats",
+          "type": "style1.html",
           "folder": "stats",
           "sub_keys": [
             "stats"

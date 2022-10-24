@@ -42,5 +42,6 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'cmdlet', '~> 0'
   # spec.add_dependency 'dry-initializer', '~> 0'
+  spec.add_dependency 'gpt3-builder'
   spec.add_dependency 'k_log', '~> 0'
 end
