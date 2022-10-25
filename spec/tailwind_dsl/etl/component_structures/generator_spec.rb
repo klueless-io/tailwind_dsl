@@ -21,7 +21,7 @@ RSpec.describe TailwindDsl::Etl::ComponentStructures::Generator do
 
   let(:instance) { described_class.new(uikit, source_root_path, target_root_path) }
 
-  let(:source_root_path) { File.join(SPEC_FOLDER, 'samples/01-raw_components') }
+  let(:source_root_path) { File.join(SPEC_FOLDER, 'samples/00-raw_components') }
   let(:target_root_path) { File.join(temp_folder, 'components') }
 
   describe '.components' do

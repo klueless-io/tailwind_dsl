@@ -4,12 +4,16 @@ require 'spec_helper'
 
 return if ENV.fetch('GITHUB_ACTIONS', nil)
 
+# 00-raw_components
+#   This is a custom folder with HTML structures that are used to generate the constituent components
+# 01-data
+#   This contains generated uikit JSON data
 RSpec.describe TailwindDsl::Etl::RawComponents::Load do
   let(:instance) { described_class.new }
-  let(:target_root_path) { File.join(SPEC_FOLDER, 'samples/00-data') }
+  let(:target_root_path) { File.join(SPEC_FOLDER, 'samples/01-data') }
 
   context 'sample' do
-    let(:source_root_path) { 'spec/samples/01-raw_components' }
+    let(:source_root_path) { 'spec/samples/00-raw_components' }
 
     before do
       instance.add_design_system(File.join(source_root_path, 'tui'))
@@ -31,6 +35,7 @@ RSpec.describe TailwindDsl::Etl::RawComponents::Load do
   end
 end
 
+# This will generate 02-components by reading data from 00-raw_components and 01-data/uikit.test.json
 RSpec.describe TailwindDsl::Etl::ComponentStructures::Generator do
   include_context :get_uikit
 
@@ -38,7 +43,7 @@ RSpec.describe TailwindDsl::Etl::ComponentStructures::Generator do
 
   let(:instance) { described_class.new(uikit, source_root_path, target_root_path) }
 
-  let(:source_root_path) { File.join(SPEC_FOLDER, 'samples/01-raw_components') }
+  let(:source_root_path) { File.join(SPEC_FOLDER, 'samples/00-raw_components') }
   let(:target_root_path) { File.join(SPEC_FOLDER, 'samples/02-components') }
 
   context 'sample' do
@@ -47,6 +52,40 @@ RSpec.describe TailwindDsl::Etl::ComponentStructures::Generator do
     it { instance.generate }
   end
 end
+
+# This will extract additional data using GPT3 from 02-components folder
+# and placing side by side with existing files
+RSpec.describe TailwindDsl::Etl::Extractors::BatchExtraction do
+  include_context :get_uikit
+
+  let(:source_root_path) { File.join(SPEC_FOLDER, 'samples/00-raw_components') }
+  let(:target_root_path) { File.join(SPEC_FOLDER, 'samples/02-components') }
+
+  let(:components) do
+    TailwindDsl::Etl::ComponentStructures::RawComponentQuery.query(uikit,
+                                                                   source_root_path: source_root_path,
+                                                                   target_root_path: target_root_path)
+                                                            .components
+  end
+
+  let(:instance) do
+    described_class.new(
+      components,
+      target_root_path,
+      batch_size: 1,
+      use_prompt: false,
+      filter_design_system: 'tui',
+      extract_handler: TailwindDsl::Etl::Extractors::DataExtractor
+    )
+  end
+
+  context 'sample' do
+    before { FileUtils.mkdir_p(target_root_path) }
+
+    it { instance.extract }
+  end
+end
+
 
 # describe 'sample - gpt3 data extractor' do
 #   let(:extract_handler) { TailwindDsl::Etl::Extractors::DataExtractor }
