@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'cmdlet'
+require 'gpt3/builder'
 
 require_relative 'tailwind_dsl/version'
 # require_relative '_'

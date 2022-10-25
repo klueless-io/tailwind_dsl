@@ -75,9 +75,11 @@ RSpec.describe TailwindDsl::Etl::Extractors::BatchExtraction do
       batch_size: 1,
       use_prompt: false,
       filter_design_system: 'tui',
-      extract_handler: TailwindDsl::Etl::Extractors::DataExtractor
+      extract_handler: extract_handler
     )
   end
+
+  let(:extract_handler) { TailwindDsl::Etl::Extractors::DataExtractor }
 
   context 'sample' do
     before { FileUtils.mkdir_p(target_root_path) }
@@ -85,12 +87,3 @@ RSpec.describe TailwindDsl::Etl::Extractors::BatchExtraction do
     it { instance.extract }
   end
 end
-
-
-# describe 'sample - gpt3 data extractor' do
-#   let(:extract_handler) { TailwindDsl::Etl::Extractors::DataExtractor }
-
-#   fit do
-#     instance.extract
-#   end
-# end
