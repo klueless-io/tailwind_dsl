@@ -25,6 +25,7 @@ RSpec.describe TailwindDsl::Etl::Extractors::BatchExtraction do
   # let(:raw_component_root_path) { File.join(SPEC_FOLDER, 'samples/02-components') }
   # let(:component_root_path) { File.join(temp_folder, 'components') }
   let(:batch_size) { 1 }
+  let(:filter) { { design_system: 'tui' } }
   let(:extract_handler) { FakeExtractor }
 
   let(:components) do
@@ -39,8 +40,7 @@ RSpec.describe TailwindDsl::Etl::Extractors::BatchExtraction do
       components,
       target_root_path,
       batch_size: batch_size,
-      use_prompt: false,
-      filter_design_system: 'tui', # ADD SUPPORT FOR application-ui/application-shells/multi-column
+      filter: filter, # ADD SUPPORT FOR application-ui/application-shells/multi-column
       extract_handler: extract_handler
     )
   end
@@ -66,16 +66,10 @@ RSpec.describe TailwindDsl::Etl::Extractors::BatchExtraction do
       it { is_expected.to eq(1) }
     end
 
-    context '.use_prompt' do
-      subject { instance.use_prompt }
+    context '.filter' do
+      subject { instance.filter }
 
-      it { is_expected.to eq(false) }
-    end
-
-    context '.filter_design_system' do
-      subject { instance.filter_design_system }
-
-      it { is_expected.to eq('tui') }
+      it { is_expected.to include(design_system: 'tui') }
     end
 
     context '.extractor' do
@@ -109,6 +103,7 @@ RSpec.describe TailwindDsl::Etl::Extractors::BatchExtraction do
 
   describe '#extract' do
     let(:extract_handler) { FakeExtractor }
+    let(:batch_size) { 1 }
 
     context 'when batch_size is 0' do
       let(:batch_size) { 0 }
@@ -126,8 +121,6 @@ RSpec.describe TailwindDsl::Etl::Extractors::BatchExtraction do
       let(:component_folder) { File.join(target_root_path, 'tui', 'marketing', 'section', 'cta') }
 
       context 'batch_size = 1, call once' do
-        let(:batch_size) { 1 }
-
         it do
           instance.extract
           expect(File.exist?(File.join(component_folder, '01.data.json'))).to be_truthy
@@ -149,8 +142,6 @@ RSpec.describe TailwindDsl::Etl::Extractors::BatchExtraction do
       end
 
       context 'batch_size = 1, call twice' do
-        let(:batch_size) { 1 }
-
         it do
           instance.extract
           instance.extract
@@ -158,6 +149,43 @@ RSpec.describe TailwindDsl::Etl::Extractors::BatchExtraction do
           expect(File.exist?(File.join(component_folder, '01.data.json'))).to be_truthy
           expect(File.exist?(File.join(component_folder, '02.data.json'))).to be_truthy
           expect(File.exist?(File.join(component_folder, '03.data.json'))).to be_falsey
+        end
+      end
+
+      context 'when filtering for design_system' do
+        let(:filter) { { design_system: 'noq' } }
+        let(:component_folder) { File.join(target_root_path, 'noq', 'card') }
+
+        it do
+          instance.extract
+
+          expect(File.exist?(File.join(component_folder, 'style1.data.json'))).to be_truthy
+          expect(File.exist?(File.join(component_folder, 'style2.data.json'))).to be_falsey
+        end
+      end
+
+      context 'when filtering for group key' do
+        let(:filter) { { design_system: 'tui', group_key: 'marketing.section.stats' } }
+        let(:component_folder) { File.join(target_root_path, 'tui', 'marketing', 'section', 'stats') }
+
+        it do
+          instance.extract
+
+          expect(File.exist?(File.join(component_folder, '01.data.json'))).to be_truthy
+          expect(File.exist?(File.join(component_folder, '02.data.json'))).to be_falsey
+        end
+      end
+
+      context 'when filtering group key exclusion' do
+        # when you exclude stats, means we are including cta
+        let(:filter) { { design_system: 'tui', exclude_group_key: 'marketing.section.cta' } }
+        let(:component_folder) { File.join(target_root_path, 'tui', 'marketing', 'section', 'stats') }
+
+        fit do
+          instance.extract
+
+          expect(File.exist?(File.join(component_folder, '01.data.json'))).to be_truthy
+          expect(File.exist?(File.join(component_folder, '02.data.json'))).to be_falsey
         end
       end
     end

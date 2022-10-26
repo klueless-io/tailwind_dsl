@@ -3,7 +3,8 @@
     {
       "name": "tui",
       "stats": {
-        "marketing.section.cta": 3
+        "marketing.section.cta": 3,
+        "marketing.section.stats": 4
       },
       "groups": [
         {
@@ -59,6 +60,78 @@
                 "data_file": "marketing/section/cta/01.data.json",
                 "model_file": "marketing/section/cta/01.model.rb",
                 "astro_file": "marketing/section/cta/01.astro"
+              }
+            }
+          ]
+        },
+        {
+          "key": "marketing.section.stats",
+          "type": "03.html",
+          "folder": "marketing/section/stats",
+          "sub_keys": [
+            "marketing",
+            "section",
+            "stats"
+          ],
+          "files": [
+            {
+              "name": "03.html",
+              "file_name": "03.html",
+              "file_name_only": "03",
+              "file": "marketing/section/stats/03.html",
+              "target": {
+                "html_file": "marketing/section/stats/03.html",
+                "clean_html_file": "marketing/section/stats/03.clean.html",
+                "tailwind_config_file": "marketing/section/stats/03.tailwind.config.js",
+                "settings_file": "marketing/section/stats/03.settings.json",
+                "data_file": "marketing/section/stats/03.data.json",
+                "model_file": "marketing/section/stats/03.model.rb",
+                "astro_file": "marketing/section/stats/03.astro"
+              }
+            },
+            {
+              "name": "02.html",
+              "file_name": "02.html",
+              "file_name_only": "02",
+              "file": "marketing/section/stats/02.html",
+              "target": {
+                "html_file": "marketing/section/stats/02.html",
+                "clean_html_file": "marketing/section/stats/02.clean.html",
+                "tailwind_config_file": "marketing/section/stats/02.tailwind.config.js",
+                "settings_file": "marketing/section/stats/02.settings.json",
+                "data_file": "marketing/section/stats/02.data.json",
+                "model_file": "marketing/section/stats/02.model.rb",
+                "astro_file": "marketing/section/stats/02.astro"
+              }
+            },
+            {
+              "name": "04.html",
+              "file_name": "04.html",
+              "file_name_only": "04",
+              "file": "marketing/section/stats/04.html",
+              "target": {
+                "html_file": "marketing/section/stats/04.html",
+                "clean_html_file": "marketing/section/stats/04.clean.html",
+                "tailwind_config_file": "marketing/section/stats/04.tailwind.config.js",
+                "settings_file": "marketing/section/stats/04.settings.json",
+                "data_file": "marketing/section/stats/04.data.json",
+                "model_file": "marketing/section/stats/04.model.rb",
+                "astro_file": "marketing/section/stats/04.astro"
+              }
+            },
+            {
+              "name": "01.html",
+              "file_name": "01.html",
+              "file_name_only": "01",
+              "file": "marketing/section/stats/01.html",
+              "target": {
+                "html_file": "marketing/section/stats/01.html",
+                "clean_html_file": "marketing/section/stats/01.clean.html",
+                "tailwind_config_file": "marketing/section/stats/01.tailwind.config.js",
+                "settings_file": "marketing/section/stats/01.settings.json",
+                "data_file": "marketing/section/stats/01.data.json",
+                "model_file": "marketing/section/stats/01.model.rb",
+                "astro_file": "marketing/section/stats/01.astro"
               }
             }
           ]
