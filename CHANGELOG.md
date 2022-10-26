@@ -1,3 +1,10 @@
+## [0.0.29](https://github.com/klueless-io/tailwind_dsl/compare/v0.0.28...v0.0.29) (2022-10-26)
+
+
+### Bug Fixes
+
+* rename raw_component_query ([07b736e](https://github.com/klueless-io/tailwind_dsl/commit/07b736e1602f8be4507a4d1ec5da066c7673e797))
+
 ## [0.0.28](https://github.com/klueless-io/tailwind_dsl/compare/v0.0.27...v0.0.28) (2022-10-24)
 
 
