@@ -1,3 +1,10 @@
+## [0.0.30](https://github.com/klueless-io/tailwind_dsl/compare/v0.0.29...v0.0.30) (2022-10-26)
+
+
+### Bug Fixes
+
+* add inclusion and exclusion filters ([f1112bd](https://github.com/klueless-io/tailwind_dsl/commit/f1112bd926e31efa2f2e7e76df91e9ccd02b4dbe))
+
 ## [0.0.29](https://github.com/klueless-io/tailwind_dsl/compare/v0.0.28...v0.0.29) (2022-10-26)
 
 
