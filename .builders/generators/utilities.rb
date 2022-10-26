@@ -1,3 +1,5 @@
+require 'gpt3/builder'
+
 KManager.action :utilities do
   helpers = self
 

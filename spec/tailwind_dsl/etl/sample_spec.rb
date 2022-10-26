@@ -81,9 +81,9 @@ RSpec.describe TailwindDsl::Etl::Extractors::BatchExtraction do
 
   let(:extract_handler) { TailwindDsl::Etl::Extractors::DataExtractor }
 
-  context 'sample' do
-    before { FileUtils.mkdir_p(target_root_path) }
+  # context 'sample' do
+  #   before { FileUtils.mkdir_p(target_root_path) }
 
-    it { instance.extract }
-  end
+  #   it { instance.extract }
+  # end
 end

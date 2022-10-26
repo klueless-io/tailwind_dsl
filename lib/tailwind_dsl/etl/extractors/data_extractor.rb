@@ -11,12 +11,27 @@ module TailwindDsl
           component.absolute.target_data_file
         end
 
+        # rubocop:disable Metrics/AbcSize
         def extract
-          puts 'do some magic and write to target_file'
-          puts "target_file: #{target_file}"
-          File.write(target_file, 'GTP3 data')
-          # do some GPT3 magic
+          builder = Gpt3::Builder::Gpt3Builder.init
+
+          tokens = 250
+
+          source_file = component.absolute.target_clean_html_file
+          source = File.read(source_file)
+
+          target_file = component.absolute.target_data_file
+          component_type = component.group.sub_keys.last
+
+          builder
+            .start("Extract JSON data from '#{component_type}' HTML component")
+            .message('HTML:')
+            .example(source)
+            .message('JSON:')
+            .complete(engine: 'code-davinci-002', max_tokens: tokens, suffix: "\n")
+            .write_result(target_file)
         end
+        # rubocop:enable Metrics/AbcSize
       end
     end
   end

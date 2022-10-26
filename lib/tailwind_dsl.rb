@@ -6,6 +6,8 @@ require 'gpt3/builder'
 require_relative 'tailwind_dsl/version'
 # require_relative '_'
 
+require_relative 'tailwind_dsl/etl/component_query'
+
 require_relative 'tailwind_dsl/etl/raw_components/load'
 require_relative 'tailwind_dsl/etl/raw_components/transformer'
 
@@ -16,7 +18,6 @@ require_relative 'tailwind_dsl/etl/raw_components/schema/group'
 require_relative 'tailwind_dsl/etl/raw_components/schema/design_system'
 require_relative 'tailwind_dsl/etl/raw_components/schema/uikit'
 
-require_relative 'tailwind_dsl/etl/component_structures/raw_component_query'
 require_relative 'tailwind_dsl/etl/component_structures/generator'
 
 require_relative 'tailwind_dsl/etl/extractors/base_extractor'

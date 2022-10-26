@@ -1,0 +1,13 @@
+{
+  "title": "Ready to dive in?",
+  "subtitle": "Start your free trial today.",
+  "description": "Ac euismod vel sit maecenas id pellentesque eu sed consectetur. Malesuada adipiscing sagittis vel nulla nec.",
+  "button": {
+    "text": "Sign up for free",
+    "url": "#"
+  },
+  "image": {
+    "url": "https://tailwindui.com/img/component-images/full-width-with-sidebar.jpg",
+    "alt": "App screenshot"
+  }
+}

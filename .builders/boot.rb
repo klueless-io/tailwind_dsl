@@ -6,7 +6,10 @@ CONFIG_KEY = :tailwind_dsl
 
 log.kv 'working folder', Dir.pwd
 
-require_relative '../lib/tailwind_dsl'
+# require 'gpt3/builder'
+# require '/Users/davidcruwys/.asdf/installs/ruby/2.7.6/lib/ruby/gems/2.7.0/gems/gpt3-builder-0.0.3/lib/gpt3/builder'
+
+# require_relative '../lib/tailwind_dsl'
 
 KConfig.configure do |config|
   config.handlebars.defaults.add_all_defaults

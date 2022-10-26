@@ -28,10 +28,10 @@ RSpec.describe TailwindDsl::Etl::Extractors::BatchExtraction do
   let(:extract_handler) { FakeExtractor }
 
   let(:components) do
-    TailwindDsl::Etl::ComponentStructures::RawComponentQuery.query(uikit,
-                                                                   source_root_path: source_root_path,
-                                                                   target_root_path: target_root_path)
-                                                            .components
+    TailwindDsl::Etl::ComponentQuery.query(uikit,
+                                           source_root_path: source_root_path,
+                                           target_root_path: target_root_path)
+                                    .components
   end
 
   let(:instance) do
@@ -40,7 +40,7 @@ RSpec.describe TailwindDsl::Etl::Extractors::BatchExtraction do
       target_root_path,
       batch_size: batch_size,
       use_prompt: false,
-      filter_design_system: 'tui',
+      filter_design_system: 'tui', # ADD SUPPORT FOR application-ui/application-shells/multi-column
       extract_handler: extract_handler
     )
   end
@@ -51,7 +51,7 @@ RSpec.describe TailwindDsl::Etl::Extractors::BatchExtraction do
     context '.components' do
       subject { instance.components.first }
 
-      it { is_expected.to be_a(::TailwindDsl::Etl::ComponentStructures::RawComponentQuery::Component) }
+      it { is_expected.to be_a(::TailwindDsl::Etl::ComponentQuery::Component) }
     end
 
     context '.target_root_path' do

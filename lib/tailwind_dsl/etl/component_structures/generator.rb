@@ -54,10 +54,10 @@ module TailwindDsl
         end
 
         def query_components
-          RawComponentQuery.query(uikit,
-                                  source_root_path: source_root_path,
-                                  target_root_path: target_root_path)
-                           .components
+          ComponentQuery.query(uikit,
+                               source_root_path: source_root_path,
+                               target_root_path: target_root_path)
+                        .components
         end
 
         def process_components
