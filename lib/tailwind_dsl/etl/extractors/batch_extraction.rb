@@ -70,19 +70,22 @@ module TailwindDsl
           raise "Folder does not exist: '#{path}', make sure you run component structure generator first." unless File.exist?(path)
         end
 
-        # rubocop:disable Metrics/AbcSize, Metrics/CyclomaticComplexity
+        # rubocop:disable Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
         def filter_components
           return components unless filter
 
           result = components
           # inclusions
           result = result.select { |component| component.design_system.name == filter[:design_system] }     if filter[:design_system]
-          result = result.select { |component| component.group.key == filter[:group_key] }                  if filter[:group_key]
+          result = result.select { |component| component.group.key == filter[:group_key] }                  if filter[:group_key].is_a?(String)
+          result = result.select { |component| filter[:group_key].include?(component.group.key) }           if filter[:group_key].is_a?(Array)
           # exclusions
-          result = result.reject { |component| component.group.key == filter[:exclude_group_key] }          if filter[:exclude_group_key]
+          result = result.reject { |component| component.group.key == filter[:exclude_group_key] }          if filter[:exclude_group_key].is_a?(String)
+          result = result.reject { |component| filter[:exclude_group_key].include?(component.group.key) }   if filter[:exclude_group_key].is_a?(Array)
+
           result
         end
-        # rubocop:enable Metrics/AbcSize, Metrics/CyclomaticComplexity
+        # rubocop:enable Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
       end
     end
   end

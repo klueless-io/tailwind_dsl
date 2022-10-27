@@ -176,12 +176,17 @@ RSpec.describe TailwindDsl::Etl::Extractors::BatchExtraction do
         end
       end
 
+      # Add include and exclude FILTERS
+      # folder: application-ui/application-shells/multi-column
+      # group_keys: marketing.section.stats, marketing.section.cta
+      # folders: application-ui/application-shells/multi-column, application-ui/application-shells/sidebars
+
       context 'when filtering group key exclusion' do
         # when you exclude stats, means we are including cta
         let(:filter) { { design_system: 'tui', exclude_group_key: 'marketing.section.cta' } }
         let(:component_folder) { File.join(target_root_path, 'tui', 'marketing', 'section', 'stats') }
 
-        fit do
+        it do
           instance.extract
 
           expect(File.exist?(File.join(component_folder, '01.data.json'))).to be_truthy

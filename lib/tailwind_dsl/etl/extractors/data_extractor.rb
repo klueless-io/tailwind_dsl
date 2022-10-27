@@ -30,6 +30,9 @@ module TailwindDsl
             .message('JSON:')
             .complete(engine: 'code-davinci-002', max_tokens: tokens, suffix: "\n")
             .write_result(target_file)
+
+          puts "Extracted data for #{component_type} component: #{component.name} into file"
+          puts target_file
         end
         # rubocop:enable Metrics/AbcSize
       end

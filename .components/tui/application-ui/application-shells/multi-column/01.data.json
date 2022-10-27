@@ -1,0 +1,37 @@
+{
+  "todo": "SVG Icons and Profile Name in footer",
+  "sidebar": {
+    "items": [
+      {
+        "title": "Dashboard",
+        "icon": "Dashboard",
+        "url": "/dashboard"
+      },
+      {
+        "title": "Calendar",
+        "icon": "Calendar",
+        "url": "/calendar"
+      },
+      {
+        "title": "Teams",
+        "icon": "Teams",
+        "url": "/teams"
+      },
+      {
+        "title": "Directory",
+        "icon": "Directory",
+        "url": "/directory"
+      },
+      {
+        "title": "Announcements",
+        "icon": "Announcements",
+        "url": "/announcements"
+      },
+      {
+        "title": "Office Map",
+        "icon": "OfficeMap",
+        "url": "/office-map"
+      }
+    ]
+  }
+}

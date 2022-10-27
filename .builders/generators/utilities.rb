@@ -35,8 +35,15 @@ KManager.action :utilities do
           components,
           target_component_model_path,
           batch_size: 1,
-          use_prompt: true,
-          filter_design_system: 'tui',
+          filter: {
+            design_system: 'tui',
+            exclude_group_key: [
+              'application_ui.application_shells.multi_column',
+              'application_ui.application_shells.sidebar',
+              'application_ui.element.avatars',
+              'application_ui.element.badges'
+            ]
+          },
           extract_handler: TailwindDsl::Etl::Extractors::DataExtractor
         )
         # puts target_component_path
@@ -79,13 +86,12 @@ KManager.action :utilities do
   # Extracts the next component data using GPT3
   #
   # This needs to be supervised and verified, so it will only do a few models at a time
-  def batch_extraction(components, target_folder, batch_size: 1, use_prompt: false, filter_design_system: nil, extract_handler: nil)
+  def batch_extraction(components, target_folder, batch_size: 1, filter: nil, extract_handler: nil)
     extraction = TailwindDsl::Etl::Extractors::BatchExtraction.new(
       components,
       target_folder,
       batch_size: batch_size,
-      use_prompt: use_prompt,
-      filter_design_system: filter_design_system,
+      filter: filter,
       extract_handler: extract_handler)
     extraction.extract
   end
