@@ -40,8 +40,9 @@ KManager.action :utilities do
             exclude_group_key: [
               'application_ui.application_shells.multi_column',
               'application_ui.application_shells.sidebar',
-              'application_ui.element.avatars',
-              'application_ui.element.badges'
+              'application_ui.application_shells.stacked',
+              'application_ui.component.element.avatars',
+              'application_ui.component.element.badges'
             ]
           },
           extract_handler: TailwindDsl::Etl::Extractors::DataExtractor

@@ -15,7 +15,7 @@ module TailwindDsl
         def extract
           builder = Gpt3::Builder::Gpt3Builder.init
 
-          tokens = 250
+          tokens = 700
 
           source_file = component.absolute.target_clean_html_file
           source = File.read(source_file)

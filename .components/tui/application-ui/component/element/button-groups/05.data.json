@@ -1,0 +1,15 @@
+
+{
+  "classes": [
+    { 
+      "alias": "dropdown_button",
+      "class": "-ml-px block w-full rounded-l-none rounded-r-md border border-gray-300 bg-white py-2 pl-3 pr-9 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+    }
+  ],
+  "type": "button-groups",
+  "dropdown_options": [
+    "Unread messages",
+    "Sent messages",
+    "All messages"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "type": "button-groups",
+  "buttons": [
+    {
+      "text": "Previous",
+      "icon": "chevron-left"
+    },
+    {
+      "text": "Next",
+      "icon": "chevron-right"
+    }
+  ]
+}
