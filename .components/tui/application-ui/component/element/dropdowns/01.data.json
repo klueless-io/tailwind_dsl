@@ -1,0 +1,40 @@
+{
+  "classes": [
+    {
+      "alias": "menu-item-link",
+      "class": "text-gray-700 block px-4 py-2 text-sm"
+    },
+    { 
+      "alias": "menu-item-button",
+      "class": "text-gray-700 block w-full px-4 py-2 text-left text-sm"
+    }
+  ],
+  "type": "dropdowns",
+  "label": "Options",
+  "items": [
+    {
+      "type": "link",
+      "label": "Account settings",
+      "calias": "menu-item-link",
+      "href": "#"
+    },
+    {
+      "type": "link",
+      "label": "Support",
+      "calias": "menu-item-link",
+      "href": "#"
+    },
+    {
+      "type": "link",
+      "label": "License",
+      "calias": "menu-item-link",
+      "href": "#"
+    },
+    {
+      "type": "button",
+      "label": "Sign out",
+      "calias": "menu-item-button",
+      "href": "#"
+    }
+  ]
+}

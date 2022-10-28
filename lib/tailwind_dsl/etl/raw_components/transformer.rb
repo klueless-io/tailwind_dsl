@@ -42,12 +42,12 @@ module TailwindDsl
           end
         end
 
-        # rubocop:disable Metrics/AbcSize
         def assign_group(entry)
           target_path = File.directory?(entry) ? entry : File.dirname(entry)
-          relative_folder = Pathname.new(target_path).relative_path_from(Pathname.new(path)).to_s
+          relative_folder = Pathname.new(target_path)
+                                    .relative_path_from(Pathname.new(path)).to_s
 
-          group_key = relative_folder == '.' ? '@' :  relative_folder.split('/').map { |part| snake.call(part) }.join('.')
+          group_key = relative_folder == '.' ? '@' : relative_folder.split('/').map { |part| snake.call(part) }.join('.')
 
           @current_group = group_lookup[group_key]
 
@@ -56,7 +56,6 @@ module TailwindDsl
           @current_group = group(entry, relative_folder, group_key)
           group_lookup[group_key] = current_group
         end
-        # rubocop:enable Metrics/AbcSize
 
         def process_file(entry)
           key = File.join(current_group.folder, File.basename(entry, File.extname(entry)))

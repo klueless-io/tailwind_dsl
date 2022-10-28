@@ -42,7 +42,8 @@ KManager.action :utilities do
               'application_ui.application_shells.sidebar',
               'application_ui.application_shells.stacked',
               'application_ui.component.element.avatars',
-              'application_ui.component.element.badges'
+              'application_ui.component.element.badges',
+              'application_ui.component.element.buttons'
             ]
           },
           extract_handler: TailwindDsl::Etl::Extractors::DataExtractor

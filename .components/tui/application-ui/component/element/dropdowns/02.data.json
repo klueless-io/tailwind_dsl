@@ -1,0 +1,56 @@
+{
+  "classes": [
+    {
+      "alias": "menu-item",
+      "class": "text-gray-700 block px-4 py-2 text-sm"
+    }
+  ],
+  "type": "dropdowns",
+  "label": "Options",
+  "items": [
+    {
+      "type": "menu-item",
+      "label": "Edit",
+      "href": "pencil-square"
+    },
+    {
+      "type": "menu-item",
+      "label": "Duplicate",
+      "href": "#"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "menu-item",
+      "label": "Archive",
+      "href": "#"
+    },
+    {
+      "type": "menu-item",
+      "label": "Move",
+      "href": "#"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "menu-item",
+      "label": "Share",
+      "href": "#"
+    },
+    {
+      "type": "menu-item",
+      "label": "Add to favorites",
+      "href": "#"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "menu-item",
+      "label": "Delete",
+      "href": "#"
+    }
+  ]
+}

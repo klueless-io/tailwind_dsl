@@ -1,4 +1,3 @@
-
 {
   "classes": [
     { 
@@ -18,15 +17,15 @@
   "buttons": [
     {
       "text": "Years",
-      "alias": "left"
+      "calias": "left"
     },
     {
       "text": "Months",
-      "alias": "middle"
+      "calias": "middle"
     },
     {
       "text": "Days",
-      "alias": "right"
+      "calias": "right"
     }
   ]
 }

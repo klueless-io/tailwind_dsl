@@ -12,12 +12,12 @@
   "type": "button-groups",
   "buttons": [
     {
-      "alias": "left",
+      "calias": "left",
       "text": "Bookmark",
       "icon": "bookmark"
     },
     {
-      "alias": "right",
+      "calias": "right",
       "text": "12k"
     }
   ]

@@ -1,0 +1,28 @@
+
+{
+  "type": "dropdowns",
+  "id": "menu-button",
+  "label": "Options",
+  "items": [
+    {
+      "type": "text",
+      "id": "menu-item-0",
+      "label": "Account settings"
+    },
+    {
+      "type": "text",
+      "id": "menu-item-1",
+      "label": "Support"
+    },
+    {
+      "type": "text",
+      "id": "menu-item-2",
+      "label": "License"
+    },
+    {
+      "type": "button",
+      "id": "menu-item-3",
+      "label": "Sign out"
+    }
+  ]
+}
