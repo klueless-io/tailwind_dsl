@@ -1,3 +1,10 @@
+## [0.0.32](https://github.com/klueless-io/tailwind_dsl/compare/v0.0.31...v0.0.32) (2022-10-27)
+
+
+### Bug Fixes
+
+* add data.json for button-groups ([e3768ae](https://github.com/klueless-io/tailwind_dsl/commit/e3768aeb794fbabd93e8e31d9cf31f9cb7caf054))
+
 ## [0.0.31](https://github.com/klueless-io/tailwind_dsl/compare/v0.0.30...v0.0.31) (2022-10-27)
 
 
